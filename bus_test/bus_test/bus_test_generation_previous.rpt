@@ -1,0 +1,49 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/hws_master/Projects/bus_test/bus_test.qsys --block-symbol-file --output-directory=/home/hws_master/Projects/bus_test/bus_test --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading bus_test/bus_test.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 21.1]
+Progress: Parameterizing module clk_0
+Progress: Adding simple_soma_0 [simple_soma 1.0.1]
+Progress: Parameterizing module simple_soma_0
+Progress: Adding simple_synapse_0 [simple_synapse 1.0.1]
+Progress: Parameterizing module simple_synapse_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/hws_master/Projects/bus_test/bus_test.qsys --synthesis=VHDL --output-directory=/home/hws_master/Projects/bus_test/bus_test/synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Progress: Loading bus_test/bus_test.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 21.1]
+Progress: Parameterizing module clk_0
+Progress: Adding simple_soma_0 [simple_soma 1.0.1]
+Progress: Parameterizing module simple_soma_0
+Progress: Adding simple_synapse_0 [simple_synapse 1.0.1]
+Progress: Parameterizing module simple_synapse_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: bus_test: Generating bus_test "bus_test" for QUARTUS_SYNTH
+Info: Interconnect is inserted between master simple_soma_0.m_spike and slave simple_synapse_0.s_spike because the master has address signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master simple_soma_0.m_spike and slave simple_synapse_0.s_spike because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master simple_soma_0.m_synapse and slave simple_synapse_0.s_synapse because the master has address signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master simple_soma_0.m_synapse and slave simple_synapse_0.s_synapse because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master simple_soma_0.m_time and slave simple_synapse_0.s_time because the master has address signal 1 bit wide, but the slave is 8 bit wide.
+Info: Interconnect is inserted between master simple_soma_0.m_time and slave simple_synapse_0.s_time because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: simple_soma_0: "bus_test" instantiated simple_soma "simple_soma_0"
+Info: simple_synapse_0: "bus_test" instantiated simple_synapse "simple_synapse_0"
+Info: mm_interconnect_0: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_0"
+Info: mm_interconnect_1: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_1"
+Info: mm_interconnect_2: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_2"
+Info: rst_controller: "bus_test" instantiated altera_reset_controller "rst_controller"
+Info: simple_soma_0_m_spike_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "simple_soma_0_m_spike_translator"
+Info: simple_synapse_0_s_spike_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "simple_synapse_0_s_spike_translator"
+Info: bus_test: Done "bus_test" with 9 modules, 11 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

@@ -1,0 +1,6 @@
+
+State Machine - |simple_soma_sm|state
+Name state.STATE_SPIKE state.STATE_WAIT state.STATE_IDLE 
+state.STATE_IDLE 0 0 0 
+state.STATE_WAIT 0 1 1 
+state.STATE_SPIKE 1 0 1 

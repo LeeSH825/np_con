@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element bus_test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element simple_soma_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element simple_synapse_0
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element simple_synapse_0.s_spike
+   {
+      datum baseAddress
+      {
+         value = "8";
+         type = "String";
+      }
+   }
+   element simple_synapse_0.s_synapse
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element simple_synapse_0.s_time
+   {
+      datum baseAddress
+      {
+         value = "22";
+         type = "String";
+      }
+   }
+   element test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="5CSEBA6U23I7" />
+ <parameter name="deviceFamily" value="Cyclone V" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="bus_test.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <module name="clk_0" kind="clock_source" version="21.1" enabled="1">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module name="simple_soma_0" kind="simple_soma" version="1.0.1" enabled="1">
+  <parameter name="THRESHOLD" value="10" />
+  <parameter name="TIME_WIDTH" value="8" />
+ </module>
+ <module
+   name="simple_synapse_0"
+   kind="simple_synapse"
+   version="1.0.1"
+   enabled="1">
+  <parameter name="THRESHOLD" value="10" />
+  <parameter name="TIME_WIDTH" value="8" />
+ </module>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="simple_soma_0.m_spike"
+   end="simple_synapse_0.s_spike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0008" />
+  <parameter name="defaultConnection" value="true" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="simple_soma_0.m_synapse"
+   end="simple_synapse_0.s_synapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="true" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="simple_soma_0.m_time"
+   end="simple_synapse_0.s_time">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0016" />
+  <parameter name="defaultConnection" value="true" />
+ </connection>
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="simple_soma_0.clock" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="simple_synapse_0.clock" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="simple_synapse_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="simple_soma_0.reset_sink" />
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

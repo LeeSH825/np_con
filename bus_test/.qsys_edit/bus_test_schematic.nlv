@@ -1,0 +1,15 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst bus_test.simple_synapse_0 -pg 1 -lvl 3 -y 30
+preplace inst bus_test.simple_soma_0 -pg 1 -lvl 2 -y 70
+preplace inst bus_test.clk_0 -pg 1 -lvl 1 -y 30
+preplace inst bus_test -pg 1 -lvl 1 -y 40 -regy -20
+preplace netloc EXPORT<net_container>bus_test</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)bus_test.reset) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>bus_test</net_container>(SLAVE)simple_synapse_0.clock,(MASTER)clk_0.clk,(SLAVE)simple_soma_0.clock) 1 1 2 280 40 N
+preplace netloc FAN_OUT<net_container>bus_test</net_container>(SLAVE)simple_soma_0.reset_sink,(MASTER)clk_0.clk_reset,(SLAVE)simple_synapse_0.reset_sink) 1 1 2 260 60 N
+preplace netloc POINT_TO_POINT<net_container>bus_test</net_container>(MASTER)simple_soma_0.m_spike,(SLAVE)simple_synapse_0.s_spike) 1 2 1 N
+preplace netloc POINT_TO_POINT<net_container>bus_test</net_container>(SLAVE)simple_synapse_0.s_synapse,(MASTER)simple_soma_0.m_synapse) 1 2 1 N
+preplace netloc EXPORT<net_container>bus_test</net_container>(SLAVE)bus_test.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc POINT_TO_POINT<net_container>bus_test</net_container>(MASTER)simple_soma_0.m_time,(SLAVE)simple_synapse_0.s_time) 1 2 1 N
+levelinfo -pg 1 0 50 620
+levelinfo -hier bus_test 60 90 310 490 610
