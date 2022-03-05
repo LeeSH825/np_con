@@ -2,7 +2,76 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "avs_s0_waitrequest",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_readdata_target_synapse_addr[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_readdata_target_synapse_addr[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_readdata_target_synapse_addr[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_readdata_target_synapse_addr[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_readdata_target_synapse_addr[4]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_read_target_synapse_addr",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[7]",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

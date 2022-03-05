@@ -1,13 +1,13 @@
-Fitter Status : Successful - Fri Mar  4 17:40:43 2022
+Fitter Status : Successful - Sun Mar  6 01:15:18 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : bus_test
-Top-level Entity Name : simple_soma_sm
+Top-level Entity Name : simple_SDC_sm
 Family : Cyclone V
 Device : 5CSEBA6U23I7
 Timing Models : Final
-Logic utilization (in ALMs) : 1 / 41,910 ( < 1 % )
-Total registers : 0
-Total pins : 41 / 314 ( 13 % )
+Logic utilization (in ALMs) : 54 / 41,910 ( < 1 % )
+Total registers : 39
+Total pins : 20 / 314 ( 6 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 5,662,720 ( 0 % )
 Total RAM Blocks : 0 / 553 ( 0 % )

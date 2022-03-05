@@ -1,5 +1,5 @@
 Flow report for bus_test
-Sat Mar  5 00:24:18 2022
+Sun Mar  6 01:18:29 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Mar  5 00:24:18 2022       ;
+; Flow Status                     ; Successful - Sun Mar  6 01:18:29 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; bus_test                                    ;
-; Top-level Entity Name           ; simple_soma_sm                              ;
+; Top-level Entity Name           ; simple_SDC_sm                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEBA6U23I7                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 1 / 41,910 ( < 1 % )                        ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 41 / 314 ( 13 % )                           ;
+; Logic utilization (in ALMs)     ; 54 / 41,910 ( < 1 % )                       ;
+; Total registers                 ; 39                                          ;
+; Total pins                      ; 20 / 314 ( 6 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 5,662,720 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 112 ( 0 % )                             ;
@@ -68,35 +68,35 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/04/2022 17:40:21 ;
+; Start date & time ; 03/06/2022 01:14:29 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; bus_test            ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                  ;
-+-------------------------------------+----------------------------------------+---------------+----------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id                        ;
-+-------------------------------------+----------------------------------------+---------------+----------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 91757296835.164638322111201            ; --            ; --             ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --             ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --             ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --             ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --             ; eda_board_design_symbol           ;
-; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --             ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (VHDL)               ; <None>        ; --             ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --             ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --             ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --             ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; simple_soma_sm ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; simple_soma_sm ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; simple_soma_sm ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --             ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --             ; --                                ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --             ; --                                ;
-; TOP_LEVEL_ENTITY                    ; simple_soma_sm                         ; bus_test      ; --             ; --                                ;
-+-------------------------------------+----------------------------------------+---------------+----------------+-----------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++-------------------------------------+----------------------------------------+---------------+---------------+-----------------------------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name   ; Section Id                        ;
++-------------------------------------+----------------------------------------+---------------+---------------+-----------------------------------+
+; COMPILER_SIGNATURE_ID               ; 123719800942382.164649686923780        ; --            ; --            ; --                                ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_timing           ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_boundary_scan    ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_signal_integrity ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --            ; eda_board_design_symbol           ;
+; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                   ; --            ; --            ; eda_simulation                    ;
+; EDA_SIMULATION_TOOL                 ; Questa Intel FPGA (VHDL)               ; <None>        ; --            ; --                                ;
+; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --            ; eda_simulation                    ;
+; MAX_CORE_JUNCTION_TEMP              ; 100                                    ; --            ; --            ; --                                ;
+; MIN_CORE_JUNCTION_TEMP              ; -40                                    ; --            ; --            ; --                                ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; simple_SDC_sm ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; simple_SDC_sm ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; simple_SDC_sm ; Top                               ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --            ; --                                ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --            ; --                                ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --            ; --                                ;
+; TOP_LEVEL_ENTITY                    ; simple_SDC_sm                          ; bus_test      ; --            ; --                                ;
++-------------------------------------+----------------------------------------+---------------+---------------+-----------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -104,41 +104,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 495 MB              ; 00:00:24                           ;
-; Fitter               ; 00:00:14     ; 1.0                     ; 2296 MB             ; 00:00:39                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 506 MB              ; 00:00:03                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 925 MB              ; 00:00:02                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 687 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 684 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 685 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 691 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 684 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 688 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 684 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 687 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 683 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 691 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 684 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 690 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 683 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 688 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 684 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 688 MB              ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
+; Analysis & Synthesis ; 00:00:24     ; 1.0                     ; 4914 MB             ; 00:00:28                           ;
+; Fitter               ; 00:00:24     ; 1.0                     ; 7338 MB             ; 00:01:23                           ;
+; Assembler            ; 00:00:04     ; 1.0                     ; 4881 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.2                     ; 5270 MB             ; 00:00:05                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
@@ -146,80 +115,27 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
 ; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4726 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
-; Total                ; 00:01:03     ; --                      ; --                  ; 00:01:41                           ;
+; Total                ; 00:01:03     ; --                      ; --                  ; 00:02:07                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+----------------------+------------------+----------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
-+----------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; Fitter               ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; Assembler            ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; Timing Analyzer      ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; HWS              ; Ubuntu 20.04.4 ; 20         ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10     ; 10.0       ; x86_64         ;
-+----------------------+------------------+----------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; XYNUS-MAIN       ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
@@ -230,54 +146,12 @@ quartus_fit --read_settings_files=off --write_settings_files=off bus_test -c bus
 quartus_asm --read_settings_files=off --write_settings_files=off bus_test -c bus_test
 quartus_sta bus_test -c bus_test
 quartus_eda --read_settings_files=off --write_settings_files=off bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/qsim/simulation/test1.vwf.vht
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/Projects/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/Projects/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/Projects/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/Projects/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/Projects/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/Projects/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/Projects/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=/home/hws_master/Projects/bus_test/simulation/test1.vwf.vht
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=C:\Users\Xynus_Main\bus_test\simulation/test1.vwf.vht
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/Projects/bus_test/simulation/test1.vwf --testbench_file=C:\Users\Xynus_Main\bus_test\simulation/test1.vwf.vht
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:\Users\Xynus_Main\bus_test\simulation/test1.vwf --testbench_file=C:\Users\Xynus_Main\bus_test\simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:\Users\Xynus_Main\bus_test\simulation\qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:\Users\Xynus_Main\bus_test\simulation/test1.vwf --testbench_file=C:\Users\Xynus_Main\bus_test\simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:\Users\Xynus_Main\bus_test\simulation\qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:\Users\Xynus_Main\bus_test\simulation/test1.vwf --testbench_file=C:\Users\Xynus_Main\bus_test\simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:\Users\Xynus_Main\bus_test\simulation\qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:\Users\Xynus_Main\bus_test\simulation\test1.vwf --testbench_file=C:\Users\Xynus_Main\bus_test\simulation\test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:\Users\Xynus_Main\bus_test\simulation\qsim\ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:\Users\Xynus_Main\bus_test\simulation\test1.vwf --testbench_file=C:\Users\Xynus_Main\bus_test\simulation\test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:\Users\Xynus_Main\bus_test\simulation\qsim\ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:\Users\Xynus_Main\bus_test\simulation\test1.vwf --testbench_file=C:\Users\Xynus_Main\bus_test\simulation\test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:\Users\Xynus_Main\bus_test\simulation\qsim\ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/bus_test/simulation/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/bus_test/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/bus_test/simulation/qsim/ bus_test -c bus_test
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/bus_test/simulation/test1.vwf --testbench_file=C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/bus_test/simulation/qsim/ bus_test -c bus_test
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/np_con/bus_test/simulation/test_SDC.vwf --testbench_file=C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/ bus_test -c bus_test
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/np_con/bus_test/simulation/test_SDC.vwf --testbench_file=C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/ bus_test -c bus_test
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/np_con/bus_test/simulation/test_SDC.vwf --testbench_file=C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/ bus_test -c bus_test
 
 
 

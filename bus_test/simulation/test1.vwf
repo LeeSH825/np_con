@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/bus_test/simulation/test1.vwf" --testbench_file="C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/bus_test/simulation/test1.vwf" --testbench_file="C:/Users/Xynus_Main/bus_test/simulation/qsim/simulation/test1.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/bus_test/simulation/qsim/" bus_test -c bus_test</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/bus_test/simulation/qsim/" bus_test -c bus_test</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/np_con/bus_test/simulation/test1.vwf" --testbench_file="C:/Users/Xynus_Main/np_con/bus_test/simulation/test1.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/np_con/bus_test/simulation/test1.vwf" --testbench_file="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test1.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work bus_test.vho
@@ -825,7 +825,9 @@ TRANSITION_LIST("avs_s0_write_synapse")
 		LEVEL 1 FOR 20.0;
 		LEVEL 0 FOR 30.0;
 		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 880.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 70.0;
+		LEVEL 0 FOR 800.0;
 	}
 }
 
@@ -870,7 +872,9 @@ TRANSITION_LIST("avs_s0_writedata_synapse[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 130.0;
+		LEVEL 1 FOR 70.0;
+		LEVEL 0 FOR 800.0;
 	}
 }
 
@@ -892,7 +896,9 @@ TRANSITION_LIST("avs_s0_writedata_synapse[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 130.0;
+		LEVEL 1 FOR 70.0;
+		LEVEL 0 FOR 800.0;
 	}
 }
 
@@ -930,9 +936,7 @@ TRANSITION_LIST("rst")
 		REPEAT = 1;
 		LEVEL 0 FOR 20.0;
 		LEVEL 1 FOR 20.0;
-		LEVEL 0 FOR 70.0;
-		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 880.0;
+		LEVEL 0 FOR 960.0;
 	}
 }
 

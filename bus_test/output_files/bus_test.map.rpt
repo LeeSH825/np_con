@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bus_test
-Fri Mar  4 17:40:29 2022
+Sun Mar  6 01:14:53 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -13,13 +13,14 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |simple_soma_sm|state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Parameter Settings for User Entity Instance: Top-level Entity: |simple_soma_sm
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |simple_SDC_sm
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -46,14 +47,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Mar  4 17:40:29 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Mar  6 01:14:53 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; bus_test                                    ;
-; Top-level Entity Name           ; simple_soma_sm                              ;
+; Top-level Entity Name           ; simple_SDC_sm                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 41                                          ;
+; Total registers                 ; 39                                          ;
+; Total pins                      ; 20                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -72,7 +73,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
-; Top-level entity name                                                           ; simple_soma_sm     ; bus_test           ;
+; Top-level entity name                                                           ; simple_SDC_sm      ; bus_test           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -158,14 +159,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 24          ;
+; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -174,69 +176,57 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                              ; Library ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; src/simple_soma_sm.vhd           ; yes             ; User VHDL File  ; /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd ;         ;
+; src/simple_SDC_sm.vhd            ; yes             ; User VHDL File  ; C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd ;         ;
 +----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                            ;
-+---------------------------------------------+--------------------------+
-; Resource                                    ; Usage                    ;
-+---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 0                        ;
-;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 0                        ;
-;     -- 7 input functions                    ; 0                        ;
-;     -- 6 input functions                    ; 0                        ;
-;     -- 5 input functions                    ; 0                        ;
-;     -- 4 input functions                    ; 0                        ;
-;     -- <=3 input functions                  ; 0                        ;
-;                                             ;                          ;
-; Dedicated logic registers                   ; 0                        ;
-;                                             ;                          ;
-; I/O pins                                    ; 41                       ;
-;                                             ;                          ;
-; Total DSP Blocks                            ; 0                        ;
-;                                             ;                          ;
-; Maximum fan-out node                        ; avs_m0_address[0]~output ;
-; Maximum fan-out                             ; 1                        ;
-; Total fan-out                               ; 41                       ;
-; Average fan-out                             ; 0.50                     ;
-+---------------------------------------------+--------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 69    ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 96    ;
+;     -- 7 input functions                    ; 2     ;
+;     -- 6 input functions                    ; 39    ;
+;     -- 5 input functions                    ; 2     ;
+;     -- 4 input functions                    ; 6     ;
+;     -- <=3 input functions                  ; 47    ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 39    ;
+;                                             ;       ;
+; I/O pins                                    ; 20    ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; state ;
+; Maximum fan-out                             ; 49    ;
+; Total fan-out                               ; 522   ;
+; Average fan-out                             ; 2.98  ;
++---------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name    ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
-; |simple_soma_sm            ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 41   ; 0            ; |simple_soma_sm     ; simple_soma_sm ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+----------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
+; |simple_SDC_sm             ; 96 (96)             ; 39 (39)                   ; 0                 ; 0          ; 20   ; 0            ; |simple_SDC_sm      ; simple_SDC_sm ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------+
-; State Machine - |simple_soma_sm|state                                       ;
-+-------------------+-------------------+------------------+------------------+
-; Name              ; state.STATE_SPIKE ; state.STATE_WAIT ; state.STATE_IDLE ;
-+-------------------+-------------------+------------------+------------------+
-; state.STATE_IDLE  ; 0                 ; 0                ; 0                ;
-; state.STATE_WAIT  ; 0                 ; 1                ; 1                ;
-; state.STATE_SPIKE ; 1                 ; 0                ; 1                ;
-+-------------------+-------------------+------------------+------------------+
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; state.STATE_IDLE                      ; Lost fanout        ;
-; state.STATE_WAIT                      ; Lost fanout        ;
-; state.STATE_SPIKE                     ; Lost fanout        ;
-; Total Number of Removed Registers = 3 ;                    ;
-+---------------------------------------+--------------------+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++---------------------------------------------+----------------------------------------+
+; Register name                               ; Reason for Removal                     ;
++---------------------------------------------+----------------------------------------+
+; avs_s0_readdata_target_synapse_addr[5]~reg0 ; Stuck at GND due to stuck port data_in ;
+; avs_s0_readdata_target_synapse_addr[6]~reg0 ; Stuck at GND due to stuck port data_in ;
+; avs_s0_readdata_target_synapse_addr[7]~reg0 ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 3       ;                                        ;
++---------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -244,26 +234,76 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 39    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 2     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 37    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |simple_soma_sm ;
-+-----------------------+----------+---------------------------------------------+
-; Parameter Name        ; Value    ; Type                                        ;
-+-----------------------+----------+---------------------------------------------+
-; THRESHOLD             ; 10       ; Signed Integer                              ;
-; TIME_WIDTH            ; 8        ; Signed Integer                              ;
-; ADDR_WIDTH            ; 7        ; Signed Integer                              ;
-; UPLOAD_SERVER_ADDRESS ; 00000001 ; Unsigned Binary                             ;
-+-----------------------+----------+---------------------------------------------+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; index[31]                               ; 1       ;
+; index[0]                                ; 1       ;
+; index[1]                                ; 1       ;
+; index[2]                                ; 1       ;
+; index[3]                                ; 1       ;
+; index[30]                               ; 1       ;
+; index[29]                               ; 1       ;
+; index[28]                               ; 1       ;
+; index[27]                               ; 1       ;
+; index[26]                               ; 1       ;
+; index[25]                               ; 1       ;
+; index[24]                               ; 1       ;
+; index[23]                               ; 1       ;
+; index[22]                               ; 1       ;
+; index[21]                               ; 1       ;
+; index[20]                               ; 1       ;
+; index[19]                               ; 1       ;
+; index[18]                               ; 1       ;
+; index[17]                               ; 1       ;
+; index[16]                               ; 1       ;
+; index[15]                               ; 1       ;
+; index[14]                               ; 1       ;
+; index[13]                               ; 1       ;
+; index[12]                               ; 1       ;
+; index[11]                               ; 1       ;
+; index[10]                               ; 1       ;
+; index[9]                                ; 1       ;
+; index[8]                                ; 1       ;
+; index[7]                                ; 1       ;
+; index[6]                                ; 1       ;
+; index[5]                                ; 1       ;
+; index[4]                                ; 1       ;
+; Total number of inverted registers = 32 ;         ;
++-----------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |simple_SDC_sm|avs_s0_readdata_target_synapse_addr[0]~reg0 ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |simple_SDC_sm|index[22]                                   ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |simple_SDC_sm|index[0]                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |simple_SDC_sm ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; DATA_WIDTH     ; 8     ; Signed Integer                                       ;
+; ADDR_WIDTH     ; 7     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -272,13 +312,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 2                           ;
-;     normal            ; 2                           ;
-;         0 data inputs ; 2                           ;
-; boundary_port         ; 41                          ;
+; arriav_ff             ; 39                          ;
+;     CLR               ; 2                           ;
+;     ENA               ; 37                          ;
+; arriav_lcell_comb     ; 97                          ;
+;     arith             ; 41                          ;
+;         1 data inputs ; 40                          ;
+;         2 data inputs ; 1                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 54                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 6                           ;
+;         5 data inputs ; 2                           ;
+;         6 data inputs ; 39                          ;
+; boundary_port         ; 20                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 5.10                        ;
+; Average LUT depth     ; 3.87                        ;
 +-----------------------+-----------------------------+
 
 
@@ -297,23 +350,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Mar  4 17:40:21 2022
+    Info: Processing started: Sun Mar  6 01:14:29 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus_test -c bus_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20032): Parallel compilation is enabled and will use up to 12 processors
 Info (12248): Elaborating Platform Designer system entity "bus_test.qsys"
-Info (12250): 2022.03.04.17:40:26 Progress: Loading bus_test/bus_test.qsys
-Info (12250): 2022.03.04.17:40:26 Progress: Reading input file
-Info (12250): 2022.03.04.17:40:26 Progress: Adding clk_0 [clock_source 21.1]
-Info (12250): 2022.03.04.17:40:26 Progress: Parameterizing module clk_0
-Info (12250): 2022.03.04.17:40:26 Progress: Adding simple_soma_0 [simple_soma 1.0.1]
-Info (12250): 2022.03.04.17:40:26 Progress: Parameterizing module simple_soma_0
-Info (12250): 2022.03.04.17:40:26 Progress: Adding simple_synapse_0 [simple_synapse 1.0.1]
-Info (12250): 2022.03.04.17:40:26 Progress: Parameterizing module simple_synapse_0
-Info (12250): 2022.03.04.17:40:26 Progress: Building connections
-Info (12250): 2022.03.04.17:40:26 Progress: Parameterizing connections
-Info (12250): 2022.03.04.17:40:26 Progress: Validating
-Info (12250): 2022.03.04.17:40:26 Progress: Done reading input file
+Info (12250): 2022.03.06.01:14:38 Progress: Loading bus_test/bus_test.qsys
+Info (12250): 2022.03.06.01:14:38 Progress: Reading input file
+Info (12250): 2022.03.06.01:14:38 Progress: Adding clk_0 [clock_source 21.1]
+Info (12250): 2022.03.06.01:14:39 Progress: Parameterizing module clk_0
+Info (12250): 2022.03.06.01:14:39 Progress: Adding simple_soma_0 [simple_soma 1.0.1]
+Info (12250): 2022.03.06.01:14:39 Progress: Parameterizing module simple_soma_0
+Info (12250): 2022.03.06.01:14:39 Progress: Adding simple_synapse_0 [simple_synapse 1.0.1]
+Info (12250): 2022.03.06.01:14:39 Progress: Parameterizing module simple_synapse_0
+Info (12250): 2022.03.06.01:14:39 Progress: Building connections
+Info (12250): 2022.03.06.01:14:39 Progress: Parameterizing connections
+Info (12250): 2022.03.06.01:14:39 Progress: Validating
+Info (12250): 2022.03.06.01:14:39 Progress: Done reading input file
 Info (12250): Bus_test: Generating bus_test "bus_test" for QUARTUS_SYNTH
 Info (12250): Interconnect is inserted between master simple_soma_0.m_spike and slave simple_synapse_0.s_spike because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
 Info (12250): Interconnect is inserted between master simple_soma_0.m_synapse and slave simple_synapse_0.s_synapse because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
@@ -329,144 +382,46 @@ Info (12250): Simple_soma_0_m_spike_translator: "mm_interconnect_0" instantiated
 Info (12250): Simple_synapse_0_s_spike_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "simple_synapse_0_s_spike_translator"
 Info (12250): Bus_test: Done "bus_test" with 9 modules, 11 files
 Info (12249): Finished elaborating Platform Designer system entity "bus_test.qsys"
+Info (12021): Found 2 design units, including 1 entities, in source file src/simple_sdc_sm.vhd
+    Info (12022): Found design unit 1: simple_SDC_sm-behavior File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 21
+    Info (12023): Found entity 1: simple_SDC_sm File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/simple_up_server_sm.vhd
+    Info (12022): Found design unit 1: simple_up_server_sm-behavioral File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_up_server_sm.vhd Line: 37
+    Info (12023): Found entity 1: simple_up_server_sm File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_up_server_sm.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file src/simple_soma_sm.vhd
-    Info (12022): Found design unit 1: simple_soma_sm-behavioral File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 57
-    Info (12023): Found entity 1: simple_soma_sm File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 5
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/bus_test.v
-    Info (12023): Found entity 1: bus_test File: /home/hws_master/Projects/bus_test/db/ip/bus_test/bus_test.v Line: 6
+    Info (12022): Found design unit 1: simple_soma_sm-behavioral File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_soma_sm.vhd Line: 57
+    Info (12023): Found entity 1: simple_soma_sm File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_soma_sm.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file db/ip/bus_test/bus_test.vhd
+    Info (12022): Found design unit 1: bus_test-rtl File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/bus_test.vhd Line: 16
+    Info (12023): Found entity 1: bus_test File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/bus_test.vhd Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/altera_merlin_master_translator.sv
-    Info (12023): Found entity 1: altera_merlin_master_translator File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/altera_merlin_master_translator.sv Line: 32
+    Info (12023): Found entity 1: altera_merlin_master_translator File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/altera_merlin_master_translator.sv Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/altera_merlin_slave_translator.sv
-    Info (12023): Found entity 1: altera_merlin_slave_translator File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/altera_merlin_slave_translator.sv Line: 35
+    Info (12023): Found entity 1: altera_merlin_slave_translator File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/altera_merlin_slave_translator.sv Line: 35
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/altera_reset_controller.v
-    Info (12023): Found entity 1: altera_reset_controller File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/altera_reset_controller.v Line: 42
+    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/altera_reset_controller.v Line: 42
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/altera_reset_synchronizer.v
-    Info (12023): Found entity 1: altera_reset_synchronizer File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/altera_reset_synchronizer.v Line: 24
+    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/altera_reset_synchronizer.v Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/bus_test_mm_interconnect_0.v
-    Info (12023): Found entity 1: bus_test_mm_interconnect_0 File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_0.v Line: 9
+    Info (12023): Found entity 1: bus_test_mm_interconnect_0 File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_0.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/bus_test_mm_interconnect_1.v
-    Info (12023): Found entity 1: bus_test_mm_interconnect_1 File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_1.v Line: 9
+    Info (12023): Found entity 1: bus_test_mm_interconnect_1 File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_1.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/bus_test_mm_interconnect_2.v
-    Info (12023): Found entity 1: bus_test_mm_interconnect_2 File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_2.v Line: 9
+    Info (12023): Found entity 1: bus_test_mm_interconnect_2 File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_2.v Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/bus_test/submodules/simple_soma.vhd
-    Info (12022): Found design unit 1: simple_soma-behavioral File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/simple_soma.vhd Line: 31
-    Info (12023): Found entity 1: simple_soma File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/simple_soma.vhd Line: 5
+    Info (12022): Found design unit 1: simple_soma-behavioral File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/simple_soma.vhd Line: 31
+    Info (12023): Found entity 1: simple_soma File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/simple_soma.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file db/ip/bus_test/submodules/simple_synapse.vhd
-    Info (12022): Found design unit 1: simple_synapse-behavioral File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/simple_synapse.vhd Line: 28
-    Info (12023): Found entity 1: simple_synapse File: /home/hws_master/Projects/bus_test/db/ip/bus_test/submodules/simple_synapse.vhd Line: 5
-Info (12127): Elaborating entity "simple_soma_sm" for the top level hierarchy
-Warning (10542): VHDL Variable Declaration warning at simple_soma_sm.vhd(81): used initial value expression for variable "temp_TIME" because variable was never assigned a value File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 81
-Warning (10492): VHDL Process Statement warning at simple_soma_sm.vhd(100): signal "state" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 100
-Warning (10631): VHDL Process Statement warning at simple_soma_sm.vhd(75): inferring latch(es) for signal or variable "avs_m0_address", which holds its previous value in one or more paths through the process File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Warning (10631): VHDL Process Statement warning at simple_soma_sm.vhd(75): inferring latch(es) for signal or variable "avs_m0_write_spike", which holds its previous value in one or more paths through the process File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Warning (10631): VHDL Process Statement warning at simple_soma_sm.vhd(75): inferring latch(es) for signal or variable "avs_m0_writedata_spike_time", which holds its previous value in one or more paths through the process File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Warning (10631): VHDL Process Statement warning at simple_soma_sm.vhd(75): inferring latch(es) for signal or variable "avs_s0_response_synapse", which holds its previous value in one or more paths through the process File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Warning (10631): VHDL Process Statement warning at simple_soma_sm.vhd(75): inferring latch(es) for signal or variable "internal_reg", which holds its previous value in one or more paths through the process File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Warning (10631): VHDL Process Statement warning at simple_soma_sm.vhd(75): inferring latch(es) for signal or variable "wait_TIME", which holds its previous value in one or more paths through the process File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_s0_response_synapse[0]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_s0_response_synapse[1]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_writedata_spike_time[0]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_writedata_spike_time[1]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_writedata_spike_time[2]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_writedata_spike_time[3]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_writedata_spike_time[4]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_writedata_spike_time[5]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_writedata_spike_time[6]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_writedata_spike_time[7]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_write_spike" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_address[0]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_address[1]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_address[2]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_address[3]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_address[4]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_address[5]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_address[6]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "avs_m0_address[7]" at simple_soma_sm.vhd(75) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (10041): Inferred latch for "wait_TIME[0]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[1]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[2]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[3]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[4]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[5]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[6]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[7]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[8]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[9]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[10]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[11]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[12]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[13]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[14]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[15]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[16]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[17]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[18]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[19]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[20]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[21]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[22]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[23]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[24]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[25]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[26]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[27]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[28]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[29]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[30]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "wait_TIME[31]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[0]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[1]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[2]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[3]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[4]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[5]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[6]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[7]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[8]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[9]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[10]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[11]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[12]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[13]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[14]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[15]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[16]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[17]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[18]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[19]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[20]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[21]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[22]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[23]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[24]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[25]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[26]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[27]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[28]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[29]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[30]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
-Info (10041): Inferred latch for "internal_reg[31]" at simple_soma_sm.vhd(84) File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 84
+    Info (12022): Found design unit 1: simple_synapse-behavioral File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/simple_synapse.vhd Line: 28
+    Info (12023): Found entity 1: simple_synapse File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/simple_synapse.vhd Line: 5
+Info (12127): Elaborating entity "simple_SDC_sm" for the top level hierarchy
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "internal_ram" is uninferred due to inappropriate RAM size File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 28
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "avs_m0_address[0]" is stuck at VCC File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_address[1]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_address[2]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_address[3]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_address[4]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_address[5]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_address[6]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_address[7]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_write_spike" is stuck at VCC File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 19
-    Warning (13410): Pin "avs_m0_writedata_spike_time[0]" is stuck at VCC File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_writedata_spike_time[1]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_writedata_spike_time[2]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_writedata_spike_time[3]" is stuck at VCC File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_writedata_spike_time[4]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_writedata_spike_time[5]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_writedata_spike_time[6]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_m0_writedata_spike_time[7]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_s0_response_synapse[0]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-    Warning (13410): Pin "avs_s0_response_synapse[1]" is stuck at GND File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 75
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "avs_s0_readdata_target_synapse_addr[5]" is stuck at GND File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 40
+    Warning (13410): Pin "avs_s0_readdata_target_synapse_addr[6]" is stuck at GND File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 40
+    Warning (13410): Pin "avs_s0_readdata_target_synapse_addr[7]" is stuck at GND File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 40
+Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 55 assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
 Warning (20013): Ignored 68 assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
 Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
@@ -476,36 +431,14 @@ Warning (20013): Ignored 12 assignments for entity "bus_test_mm_interconnect_1" 
 Warning (20013): Ignored 12 assignments for entity "bus_test_mm_interconnect_2" -- entity does not exist in design
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 22 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "avs_s0_address[0]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 49
-    Warning (15610): No output dependent on input pin "avs_s0_address[1]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 49
-    Warning (15610): No output dependent on input pin "avs_s0_address[2]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 49
-    Warning (15610): No output dependent on input pin "avs_s0_address[3]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 49
-    Warning (15610): No output dependent on input pin "avs_s0_address[4]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 49
-    Warning (15610): No output dependent on input pin "avs_s0_address[5]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 49
-    Warning (15610): No output dependent on input pin "avs_s0_address[6]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 49
-    Warning (15610): No output dependent on input pin "avs_s0_address[7]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 49
-    Warning (15610): No output dependent on input pin "avs_s0_writedata_synapse[7]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 52
-    Warning (15610): No output dependent on input pin "avs_s0_writedata_synapse[6]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 52
-    Warning (15610): No output dependent on input pin "avs_s0_writedata_synapse[5]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 52
-    Warning (15610): No output dependent on input pin "avs_s0_writedata_synapse[4]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 52
-    Warning (15610): No output dependent on input pin "avs_s0_writedata_synapse[3]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 52
-    Warning (15610): No output dependent on input pin "avs_s0_writedata_synapse[2]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 52
-    Warning (15610): No output dependent on input pin "avs_s0_writedata_synapse[1]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 52
-    Warning (15610): No output dependent on input pin "avs_s0_writedata_synapse[0]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 52
-    Warning (15610): No output dependent on input pin "avs_s0_write_synapse" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 51
-    Warning (15610): No output dependent on input pin "rst" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 12
-    Warning (15610): No output dependent on input pin "avs_m0_response_spike[0]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 21
-    Warning (15610): No output dependent on input pin "avs_m0_response_spike[1]" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 21
-    Warning (15610): No output dependent on input pin "clk" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 11
-    Warning (15610): No output dependent on input pin "avs_m0_waitrequest" File: /home/hws_master/Projects/bus_test/src/simple_soma_sm.vhd Line: 17
-Info (21057): Implemented 41 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 22 input pins
-    Info (21059): Implemented 19 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 495 megabytes
-    Info: Processing ended: Fri Mar  4 17:40:29 2022
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:24
+Info (21057): Implemented 116 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 9 output pins
+    Info (21061): Implemented 96 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 4914 megabytes
+    Info: Processing ended: Sun Mar  6 01:14:53 2022
+    Info: Elapsed time: 00:00:24
+    Info: Total CPU time (on all processors): 00:00:28
 
 

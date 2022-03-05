@@ -1,5 +1,5 @@
 Assembler report for bus_test
-Fri Mar  4 17:40:47 2022
+Sun Mar  6 01:15:24 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: bus_test.sof
+  5. Assembler Device Options: C:/Users/Xynus_Main/np_con/bus_test/output_files/bus_test.sof
   6. Assembler Messages
 
 
@@ -38,9 +38,9 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Mar  4 17:40:47 2022 ;
+; Assembler Status      ; Successful - Sun Mar  6 01:15:24 2022 ;
 ; Revision Name         ; bus_test                              ;
-; Top-level Entity Name ; simple_soma_sm                        ;
+; Top-level Entity Name ; simple_SDC_sm                         ;
 ; Family                ; Cyclone V                             ;
 ; Device                ; 5CSEBA6U23I7                          ;
 +-----------------------+---------------------------------------+
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+--------------------------------------------------------------+
-; Assembler Generated Files                                    ;
-+--------------------------------------------------------------+
-; File Name                                                    ;
-+--------------------------------------------------------------+
-; /home/hws_master/Projects/bus_test/output_files/bus_test.sof ;
-+--------------------------------------------------------------+
++---------------------------------------------------------------+
+; Assembler Generated Files                                     ;
++---------------------------------------------------------------+
+; File Name                                                     ;
++---------------------------------------------------------------+
+; C:/Users/Xynus_Main/np_con/bus_test/output_files/bus_test.sof ;
++---------------------------------------------------------------+
 
 
-+----------------------------------------+
-; Assembler Device Options: bus_test.sof ;
-+----------------+-----------------------+
-; Option         ; Setting               ;
-+----------------+-----------------------+
-; JTAG usercode  ; 0x00B02895            ;
-; Checksum       ; 0x00B02895            ;
-+----------------+-----------------------+
++-----------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Xynus_Main/np_con/bus_test/output_files/bus_test.sof ;
++----------------+------------------------------------------------------------------------+
+; Option         ; Setting                                                                ;
++----------------+------------------------------------------------------------------------+
+; JTAG usercode  ; 0x00B20458                                                             ;
+; Checksum       ; 0x00B20458                                                             ;
++----------------+------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Mar  4 17:40:44 2022
+    Info: Processing started: Sun Mar  6 01:15:20 2022
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off bus_test -c bus_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 506 megabytes
-    Info: Processing ended: Fri Mar  4 17:40:47 2022
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4882 megabytes
+    Info: Processing ended: Sun Mar  6 01:15:24 2022
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 

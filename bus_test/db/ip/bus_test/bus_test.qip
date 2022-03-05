@@ -2,7 +2,7 @@ set_global_assignment -entity "bus_test" -library "bus_test" -name IP_TOOL_NAME 
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_TOOL_VERSION "21.1"
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "bus_test" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../bus_test.sopcinfo"]
-set_global_assignment -entity "bus_test" -library "bus_test" -name SLD_INFO "QSYS_NAME bus_test HAS_SOPCINFO 1 GENERATION_ID 1646383226"
+set_global_assignment -entity "bus_test" -library "bus_test" -name SLD_INFO "QSYS_NAME bus_test HAS_SOPCINFO 1 GENERATION_ID 1646496879"
 set_global_assignment -library "bus_test" -name SLD_FILE [file join $::quartus(qip_path) "bus_test.debuginfo"]
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone V}"
@@ -14,7 +14,7 @@ set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTY0NjM4MzIyNg==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTY0NjQ5Njg3OQ==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRUJBNlUyM0k3::QXV0byBERVZJQ0U="
 set_global_assignment -entity "bus_test" -library "bus_test" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Nw==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -212,7 +212,7 @@ set_global_assignment -entity "simple_soma" -library "bus_test" -name IP_COMPONE
 set_global_assignment -entity "simple_soma" -library "bus_test" -name IP_COMPONENT_PARAMETER "VEhSRVNIT0xE::MTA=::VEhSRVNIT0xE"
 set_global_assignment -entity "simple_soma" -library "bus_test" -name IP_COMPONENT_PARAMETER "VElNRV9XSURUSA==::OA==::VElNRV9XSURUSA=="
 
-set_global_assignment -library "bus_test" -name VERILOG_FILE [file join $::quartus(qip_path) "bus_test.v"]
+set_global_assignment -library "bus_test" -name VHDL_FILE [file join $::quartus(qip_path) "bus_test.vhd"]
 set_global_assignment -library "bus_test" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.v"]
 set_global_assignment -library "bus_test" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_reset_synchronizer.v"]
 set_global_assignment -library "bus_test" -name SDC_FILE [file join $::quartus(qip_path) "submodules/altera_reset_controller.sdc"]

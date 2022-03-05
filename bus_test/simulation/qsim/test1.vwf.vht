@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "03/05/2022 00:19:02"
+-- Generated on "03/05/2022 20:21:47"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          simple_soma_sm
 -- 
@@ -40,20 +40,18 @@ SIGNAL avs_m0_waitrequest : STD_LOGIC;
 SIGNAL avs_m0_write_spike : STD_LOGIC;
 SIGNAL avs_m0_writedata_spike_time : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL avs_s0_address : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL avs_s0_response_synapse : STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL avs_s0_write_synapse : STD_LOGIC;
 SIGNAL avs_s0_writedata_synapse : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL clk : STD_LOGIC;
 SIGNAL rst : STD_LOGIC;
 COMPONENT simple_soma_sm
 	PORT (
-	avs_m0_address : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	avs_m0_address : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	avs_m0_response_spike : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
 	avs_m0_waitrequest : IN STD_LOGIC;
-	avs_m0_write_spike : BUFFER STD_LOGIC;
-	avs_m0_writedata_spike_time : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	avs_m0_write_spike : OUT STD_LOGIC;
+	avs_m0_writedata_spike_time : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	avs_s0_address : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-	avs_s0_response_synapse : BUFFER STD_LOGIC_VECTOR(1 DOWNTO 0);
 	avs_s0_write_synapse : IN STD_LOGIC;
 	avs_s0_writedata_synapse : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 	clk : IN STD_LOGIC;
@@ -70,7 +68,6 @@ BEGIN
 	avs_m0_write_spike => avs_m0_write_spike,
 	avs_m0_writedata_spike_time => avs_m0_writedata_spike_time,
 	avs_s0_address => avs_s0_address,
-	avs_s0_response_synapse => avs_s0_response_synapse,
 	avs_s0_write_synapse => avs_s0_write_synapse,
 	avs_s0_writedata_synapse => avs_s0_writedata_synapse,
 	clk => clk,
@@ -171,6 +168,18 @@ END PROCESS t_prcs_avs_s0_address_0;
 t_prcs_avs_s0_write_synapse: PROCESS
 BEGIN
 	avs_s0_write_synapse <= '0';
+	WAIT FOR 50000 ps;
+	avs_s0_write_synapse <= '1';
+	WAIT FOR 20000 ps;
+	avs_s0_write_synapse <= '0';
+	WAIT FOR 30000 ps;
+	avs_s0_write_synapse <= '1';
+	WAIT FOR 20000 ps;
+	avs_s0_write_synapse <= '0';
+	WAIT FOR 10000 ps;
+	avs_s0_write_synapse <= '1';
+	WAIT FOR 20000 ps;
+	avs_s0_write_synapse <= '0';
 WAIT;
 END PROCESS t_prcs_avs_s0_write_synapse;
 -- avs_s0_writedata_synapse[7]
@@ -201,11 +210,23 @@ END PROCESS t_prcs_avs_s0_writedata_synapse_4;
 t_prcs_avs_s0_writedata_synapse_3: PROCESS
 BEGIN
 	avs_s0_writedata_synapse(3) <= '0';
+	WAIT FOR 130000 ps;
+	avs_s0_writedata_synapse(3) <= '1';
+	WAIT FOR 20000 ps;
+	avs_s0_writedata_synapse(3) <= '0';
 WAIT;
 END PROCESS t_prcs_avs_s0_writedata_synapse_3;
 -- avs_s0_writedata_synapse[2]
 t_prcs_avs_s0_writedata_synapse_2: PROCESS
 BEGIN
+	avs_s0_writedata_synapse(2) <= '0';
+	WAIT FOR 50000 ps;
+	avs_s0_writedata_synapse(2) <= '1';
+	WAIT FOR 20000 ps;
+	avs_s0_writedata_synapse(2) <= '0';
+	WAIT FOR 30000 ps;
+	avs_s0_writedata_synapse(2) <= '1';
+	WAIT FOR 20000 ps;
 	avs_s0_writedata_synapse(2) <= '0';
 WAIT;
 END PROCESS t_prcs_avs_s0_writedata_synapse_2;
@@ -213,11 +234,23 @@ END PROCESS t_prcs_avs_s0_writedata_synapse_2;
 t_prcs_avs_s0_writedata_synapse_1: PROCESS
 BEGIN
 	avs_s0_writedata_synapse(1) <= '0';
+	WAIT FOR 130000 ps;
+	avs_s0_writedata_synapse(1) <= '1';
+	WAIT FOR 20000 ps;
+	avs_s0_writedata_synapse(1) <= '0';
 WAIT;
 END PROCESS t_prcs_avs_s0_writedata_synapse_1;
 -- avs_s0_writedata_synapse[0]
 t_prcs_avs_s0_writedata_synapse_0: PROCESS
 BEGIN
+	avs_s0_writedata_synapse(0) <= '0';
+	WAIT FOR 50000 ps;
+	avs_s0_writedata_synapse(0) <= '1';
+	WAIT FOR 20000 ps;
+	avs_s0_writedata_synapse(0) <= '0';
+	WAIT FOR 30000 ps;
+	avs_s0_writedata_synapse(0) <= '1';
+	WAIT FOR 20000 ps;
 	avs_s0_writedata_synapse(0) <= '0';
 WAIT;
 END PROCESS t_prcs_avs_s0_writedata_synapse_0;
