@@ -1,0 +1,694 @@
+Analysis & Synthesis report for addr
+Mon Mar 21 10:53:51 2022
+Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |addr_slave|m0_state
+  9. State Machine - |addr_slave|s0_state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |addr_slave
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2021  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Mar 21 10:53:51 2022       ;
+; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
+; Revision Name                   ; addr                                        ;
+; Top-level Entity Name           ; addr_slave                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 4                                           ;
+; Total pins                      ; 110                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
+; Top-level entity name                                                           ; addr_slave         ; addr               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 24          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 12          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; src/addr_slave.vhd               ; yes             ; User VHDL File  ; /home/hws_master/np_con/address_test/src/addr_slave.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimate of Logic utilization (ALMs needed) ; 81                  ;
+;                                             ;                     ;
+; Combinational ALUT usage for logic          ; 161                 ;
+;     -- 7 input functions                    ; 0                   ;
+;     -- 6 input functions                    ; 0                   ;
+;     -- 5 input functions                    ; 0                   ;
+;     -- 4 input functions                    ; 0                   ;
+;     -- <=3 input functions                  ; 161                 ;
+;                                             ;                     ;
+; Dedicated logic registers                   ; 4                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 110                 ;
+;                                             ;                     ;
+; Total DSP Blocks                            ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; s0_state.STATE_IDLE ;
+; Maximum fan-out                             ; 54                  ;
+; Total fan-out                               ; 655                 ;
+; Average fan-out                             ; 1.70                ;
++---------------------------------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |addr_slave                ; 161 (161)           ; 4 (4)                     ; 0                 ; 0          ; 110  ; 0            ; |addr_slave         ; addr_slave  ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |addr_slave|m0_state                                                              ;
++------------------------+------------------------+------------------------+------------------------+
+; Name                   ; m0_state.STATE_WAIT_m0 ; m0_state.STATE_PUSH_m0 ; m0_state.STATE_IDLE_m0 ;
++------------------------+------------------------+------------------------+------------------------+
+; m0_state.STATE_IDLE_m0 ; 0                      ; 0                      ; 0                      ;
+; m0_state.STATE_PUSH_m0 ; 0                      ; 1                      ; 1                      ;
+; m0_state.STATE_WAIT_m0 ; 1                      ; 0                      ; 1                      ;
++------------------------+------------------------+------------------------+------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------+
+; State Machine - |addr_slave|s0_state                                                  ;
++---------------------+---------------------+---------------------+---------------------+
+; Name                ; s0_state.STATE_WAIT ; s0_state.STATE_PUSH ; s0_state.STATE_IDLE ;
++---------------------+---------------------+---------------------+---------------------+
+; s0_state.STATE_IDLE ; 0                   ; 0                   ; 0                   ;
+; s0_state.STATE_PUSH ; 0                   ; 1                   ; 1                   ;
+; s0_state.STATE_WAIT ; 1                   ; 0                   ; 1                   ;
++---------------------+---------------------+---------------------+---------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                 ;
++------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
++------------------------------------------------------+---------------------+------------------------+
+; avm_m0_address[0]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[1]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[2]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[3]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[4]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[5]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[6]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[7]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[8]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[9]$latch                              ; Selector23          ; yes                    ;
+; avm_m0_address[10]$latch                             ; Selector23          ; yes                    ;
+; avm_m0_address[11]$latch                             ; Selector23          ; yes                    ;
+; avm_m0_burstcount[0]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_burstcount[1]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_burstcount[2]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_burstcount[3]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_byteenable[0]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_byteenable[1]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_byteenable[2]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_byteenable[3]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_write$latch                                   ; Selector23          ; yes                    ;
+; avm_m0_writedata[0]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[1]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[2]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[3]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[4]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[5]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[6]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[7]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[8]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[9]$latch                            ; Selector23          ; yes                    ;
+; avm_m0_writedata[10]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[11]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[12]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[13]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[14]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[15]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[16]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[17]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[18]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[19]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[20]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[21]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[22]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[23]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[24]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[25]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[26]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[27]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[28]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[29]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[30]$latch                           ; Selector23          ; yes                    ;
+; avm_m0_writedata[31]$latch                           ; Selector23          ; yes                    ;
+; temp_addr[0]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[1]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[2]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[3]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[4]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[5]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[6]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[7]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[8]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[9]                                         ; temp_burst[0]       ; yes                    ;
+; temp_addr[10]                                        ; temp_burst[0]       ; yes                    ;
+; temp_addr[11]                                        ; temp_burst[0]       ; yes                    ;
+; temp_burst[0]                                        ; temp_burst[0]       ; yes                    ;
+; temp_burst[1]                                        ; temp_burst[0]       ; yes                    ;
+; temp_burst[2]                                        ; temp_burst[0]       ; yes                    ;
+; temp_burst[3]                                        ; temp_burst[0]       ; yes                    ;
+; temp_byte[0]                                         ; temp_burst[0]       ; yes                    ;
+; temp_byte[1]                                         ; temp_burst[0]       ; yes                    ;
+; temp_byte[2]                                         ; temp_burst[0]       ; yes                    ;
+; temp_byte[3]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[0]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[1]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[2]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[3]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[4]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[5]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[6]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[7]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[8]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[9]                                         ; temp_burst[0]       ; yes                    ;
+; temp_data[10]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[11]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[12]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[13]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[14]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[15]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[16]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[17]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[18]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[19]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[20]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[21]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[22]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[23]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[24]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[25]                                        ; temp_burst[0]       ; yes                    ;
+; temp_data[26]                                        ; temp_burst[0]       ; yes                    ;
+; Number of user-specified and inferred latches = 105  ;                     ;                        ;
++------------------------------------------------------+---------------------+------------------------+
+Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; s0_state.STATE_WAIT                   ; Stuck at GND due to stuck port data_in ;
+; m0_state.STATE_WAIT_m0                ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 4     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 3:1                ; 52 bits   ; 104 LEs       ; 104 LEs              ; 0 LEs                  ; No         ; |addr_slave|temp_data[17]  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |addr_slave ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; ADDRESS_WIDTH  ; 12    ; Signed Integer                                    ;
+; BURST_WIDTH    ; 4     ; Signed Integer                                    ;
+; BYTE_WIDTH     ; 4     ; Signed Integer                                    ;
+; DATA_WIDTH     ; 32    ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 4                           ;
+;     CLR               ; 4                           ;
+; arriav_lcell_comb     ; 162                         ;
+;     normal            ; 162                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 158                         ;
+; boundary_port         ; 110                         ;
+;                       ;                             ;
+; Max LUT depth         ; 2.00                        ;
+; Average LUT depth     ; 1.66                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+    Info: Processing started: Mon Mar 21 10:53:46 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off addr -c addr
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file src/addr_master.vhd
+    Info (12022): Found design unit 1: addr_master-rtl File: /home/hws_master/np_con/address_test/src/addr_master.vhd Line: 31
+    Info (12023): Found entity 1: addr_master File: /home/hws_master/np_con/address_test/src/addr_master.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/addr_slave.vhd
+    Info (12022): Found design unit 1: addr_slave-behaviour File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 33
+    Info (12023): Found entity 1: addr_slave File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 6
+Info (12127): Elaborating entity "addr_slave" for the top level hierarchy
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(67): inferring latch(es) for signal or variable "temp_data", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(67): inferring latch(es) for signal or variable "temp_addr", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(67): inferring latch(es) for signal or variable "temp_byte", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(67): inferring latch(es) for signal or variable "temp_burst", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(67): inferring latch(es) for signal or variable "avs_s0_waitrequest", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(67): inferring latch(es) for signal or variable "go", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(148): inferring latch(es) for signal or variable "wait_sig", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(148): inferring latch(es) for signal or variable "avm_m0_write", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(148): inferring latch(es) for signal or variable "avm_m0_writedata", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(148): inferring latch(es) for signal or variable "avm_m0_address", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(148): inferring latch(es) for signal or variable "avm_m0_burstcount", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Warning (10631): VHDL Process Statement warning at addr_slave.vhd(148): inferring latch(es) for signal or variable "avm_m0_byteenable", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_byteenable[0]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_byteenable[1]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_byteenable[2]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_byteenable[3]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_burstcount[0]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_burstcount[1]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_burstcount[2]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_burstcount[3]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[0]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[1]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[2]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[3]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[4]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[5]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[6]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[7]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[8]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[9]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[10]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_address[11]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[0]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[1]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[2]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[3]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[4]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[5]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[6]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[7]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[8]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[9]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[10]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[11]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[12]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[13]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[14]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[15]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[16]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[17]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[18]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[19]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[20]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[21]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[22]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[23]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[24]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[25]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[26]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[27]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[28]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[29]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[30]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_writedata[31]" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "avm_m0_write" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "wait_sig" at addr_slave.vhd(148) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+Info (10041): Inferred latch for "go" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "avs_s0_waitrequest" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_burst[0]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_burst[1]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_burst[2]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_burst[3]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_byte[0]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_byte[1]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_byte[2]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_byte[3]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[0]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[1]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[2]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[3]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[4]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[5]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[6]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[7]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[8]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[9]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[10]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_addr[11]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[0]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[1]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[2]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[3]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[4]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[5]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[6]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[7]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[8]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[9]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[10]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[11]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[12]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[13]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[14]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[15]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[16]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[17]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[18]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[19]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[20]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[21]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[22]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[23]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[24]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[25]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[26]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[27]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[28]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[29]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[30]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Info (10041): Inferred latch for "temp_data[31]" at addr_slave.vhd(67) File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+Warning (14026): LATCH primitive "go" is permanently enabled File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 51
+Warning (13012): Latch avm_m0_write$latch has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 148
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal m0_state.STATE_PUSH_m0 File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 39
+Warning (13012): Latch temp_addr[0] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[1] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[2] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[3] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[4] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[5] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[6] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[7] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[8] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[9] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[10] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_addr[11] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_burst[0] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_burst[1] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_burst[2] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_burst[3] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_byte[0] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_byte[1] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_byte[2] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_byte[3] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[0] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[1] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[2] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[3] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[4] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[5] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[6] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[7] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[8] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[9] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[10] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[11] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[12] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[13] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[14] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[15] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[16] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[17] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[18] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[19] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[20] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[21] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[22] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[23] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[24] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[25] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[26] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[27] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[28] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[29] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[30] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13012): Latch temp_data[31] has unsafe behavior File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 67
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal s0_state.STATE_IDLE File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 38
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "avs_s0_waitrequest" is stuck at GND File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 16
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "avm_m0_waitrequest" File: /home/hws_master/np_con/address_test/src/addr_slave.vhd Line: 24
+Info (21057): Implemented 275 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 56 input pins
+    Info (21059): Implemented 54 output pins
+    Info (21061): Implemented 165 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 124 warnings
+    Info: Peak virtual memory: 600 megabytes
+    Info: Processing ended: Mon Mar 21 10:53:51 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:13
+
+

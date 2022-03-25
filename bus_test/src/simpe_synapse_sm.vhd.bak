@@ -1,0 +1,139 @@
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+
+--use work.PROPERTIES_PACK.all;
+
+entity simpe_synapse_sm is
+    generic(	FIFO_SIZE : integer := 1;
+				WEIGHT_MAX : integer := 256;
+				WEIGHT_MIN : integer := -256;
+
+				DATA_WIDTH : integer := 8;
+				ADDR_WIDTH : integer := 2;
+
+				LEARNING_RATE : integer := 3
+	);
+	port (	clk : in std_logic;
+			rst : in std_logic;
+
+			-- Avalon-MM slave interface
+			-- interface with Upload Server
+			avs_broadcastSpike_address : out std_logic_vector(ADDR_WIDTH downto 0);
+			avs_broadcastSpike_waitrequest : out std_logic;
+
+			avs_broadcastSpike_write : in std_logic;
+			avs_broadcastSpike_writedata : in std_logic_vector(DATA_WIDTH-1 downto 0);
+
+			-- Avalon-MM Master Interface
+			-- Interface with Download Server
+			avm_pushSynapse_address : out std_logic_vector(ADDR_WIDTH downto 0);
+			avm_pushSynapse_waitrequest : in std_logic;
+
+			avm_pushSynapse_write : out std_logic;
+			avm_pushSynapse_writedata : out std_logic_vector(DATA_WIDTH-1 downto 0)
+
+		
+	);
+end entity simpe_synapse_sm;
+
+architecture Behavior of simpe_synapse_sm is
+type state_type is (STATE_IDLE, STATE_SYNAPSE ,STATE_WAIT);
+signal state : state_type;
+signal next_state : state_type;
+
+type fifo_replacement is array (integer range 0 to FIFO_SIZE) of std_logic_vector(DATA_WIDTH-1 downto 0);
+signal synapse_archive : fifo_replacement;
+
+signal delta_weight : integer := 0;
+signal syanpse_weight : integer := 0;
+	
+begin
+
+	process(clk, rst, state, next_state)
+	begin
+		if rst = '1'  then
+			state <= STATE_IDLE;
+		elsif (rising_edge(clk)) then
+			state <= next_state;
+		end if;
+	end process;
+
+	process(clk, rst, state,
+			avs_broadcastSpike_write, avs_broadcastSpike_writedata,
+			avm_pushSynapse_waitrequest)
+
+		variable fifo_idx : integer := 1;
+
+		-- TODO: convert to sfixed
+		variable delta_time : integer := 0;
+
+	begin
+
+	if rst = '1' then
+		avs_broadcastSpike_waitrequest <= '0';
+		avm_pushSynapse_address <= (others => '0');
+		avm_pushSynapse_write <= '1';
+		avm_pushSynapse_writedata <= (others => '0');
+
+		delta_weight <= 0;
+		syanpse_weight <= 0;
+		fifo_idx := 0;
+		delta_time := 0;
+
+		for i in 0 to FIFO_SIZE loop
+			synapse_archive(i) <= (others => '0');
+		end loop;
+	else
+		case state is
+			when STATE_IDLE =>
+				if (avs_broadcastSpike_write = '1') then
+					synapse_archive(fifo_idx) <= avs_broadcastSpike_writedata;
+					fifo_idx := fifo_idx + 1;
+					next_state <= STATE_SYNAPSE;
+				else
+					next_state <= STATE_IDLE;
+				end if;
+			
+			when STATE_SYNAPSE =>
+				 avm_pushSynapse_write <= '1';
+
+				 delta_time := to_signed(synapse_archive(1)) - to_sogned(synapse_archive(0));			-- TODO: needs to expand to 3-base STDP
+				 if 0 < delta_time and delta_time < 5 then
+				 	delta_weight <= 1 - 2 * delta_time;
+				 else
+					delta_weight <= -1;
+				 end if;
+
+				 if delta_weight > 0 then
+					synapse_weight <= synapse_weight + LEARNING_RATE * delta_weight * (WEIGHT_MAX - synapse_weight);
+				 else
+					synapse_weight <= synapse_weight + LEARNING_RATE * delta_weight * (synapse_weight - WEIGHT_MIN);
+				 end if;
+
+				 avm_pushSynapse_writedata <=  STD_LOGIC_VECTOR(to_signed(synapse_weight, DATA_WIDTH));
+				 if (avm_pushSynapse_waitrequest = '1') then
+					next_state <= STATE_WAIT;
+				 else
+					next_state <= STATE_IDLE;
+				 end if;
+
+			when STATE_WAIT =>
+				 if (avm_pushSynapse_waitrequest = '1') then
+					next_state <= STATE_WAIT;
+				 else
+					next_state <= STATE_IDLE;
+				 end if;
+
+		end case;
+	end if;
+
+	-- FIFO behavior
+	if fifo_idx = FIFO_SIZE then
+		fifo_idx := 0;
+	else
+		idx := idx;
+	end if;
+	end process;
+	
+end architecture Behavior;

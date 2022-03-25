@@ -1,0 +1,441 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "avm_m0_address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[8]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[9]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[10]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_address[11]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_burstcount[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_burstcount[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_burstcount[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_burstcount[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_byteenable[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_byteenable[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_byteenable[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_byteenable[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_write",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[4]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[5]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[6]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[7]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[8]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[9]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[10]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[11]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[12]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[13]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[14]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[15]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[16]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[17]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[18]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[19]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[20]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[21]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[22]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[23]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[24]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[25]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[26]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[27]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[28]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[29]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[30]",
+					"strict" : false
+				},
+				{
+					"name" : "avm_m0_writedata[31]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_write",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[4]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[5]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[6]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[7]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[8]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[9]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[10]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_address[11]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_burstcount[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_burstcount[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_burstcount[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_burstcount[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_byteenable[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_byteenable[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_byteenable[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_byteenable[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[4]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[5]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[6]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[7]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[8]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[9]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[10]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[11]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[12]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[13]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[14]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[15]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[16]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[17]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[18]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[19]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[20]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[21]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[22]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[23]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[24]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[25]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[26]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[27]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[28]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[29]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[30]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_s0_writedata[31]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

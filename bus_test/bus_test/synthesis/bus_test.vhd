@@ -14,82 +14,91 @@ entity bus_test is
 end entity bus_test;
 
 architecture rtl of bus_test is
-	component simple_soma is
+	component simple_SDC_sm is
 		generic (
-			THRESHOLD  : integer := 10;
-			TIME_WIDTH : integer := 8
+			DATA_WIDTH : integer := 8;
+			ADDR_WIDTH : integer := 7
 		);
 		port (
-			clk                        : in  std_logic                    := 'X';             -- clk
-			rst                        : in  std_logic                    := 'X';             -- reset
-			avs_m_read_synapse         : out std_logic;                                       -- read
-			avs_m_readdata_synapse     : in  std_logic_vector(7 downto 0) := (others => 'X'); -- readdata
-			m_synapse_waitrequest      : in  std_logic                    := 'X';             -- waitrequest
-			avs_m_write_spike          : out std_logic;                                       -- write
-			avs_m_writedata_spike_time : out std_logic_vector(7 downto 0);                    -- writedata
-			m_spike_waitrequest        : in  std_logic                    := 'X';             -- waitrequest
-			avs_m_address              : out std_logic;                                       -- address
-			avs_m_read_time            : out std_logic;                                       -- read
-			avs_m_readdata_time        : in  std_logic_vector(7 downto 0) := (others => 'X'); -- readdata
-			m_time_waitrequest         : in  std_logic                    := 'X'              -- waitrequest
+			clk                                 : in  std_logic                    := 'X';             -- clk
+			avs_s0_address                      : in  std_logic_vector(7 downto 0) := (others => 'X'); -- address
+			avs_s0_waitrequest                  : out std_logic;                                       -- waitrequest
+			avs_s0_read_target_synapse_addr     : in  std_logic                    := 'X';             -- read
+			avs_s0_readdata_target_synapse_addr : out std_logic_vector(7 downto 0);                    -- readdata
+			rst                                 : in  std_logic                    := 'X'              -- reset
 		);
-	end component simple_soma;
+	end component simple_SDC_sm;
 
-	component simple_synapse is
+	component simple_up_server_sm is
 		generic (
-			THRESHOLD  : integer := 10;
-			TIME_WIDTH : integer := 8
+			DATA_WIDTH : integer := 8;
+			ADDR_WIDTH : integer := 7
 		);
 		port (
-			clk                        : in  std_logic                    := 'X';             -- clk
-			rst                        : in  std_logic                    := 'X';             -- reset
-			avs_s_read_synapse         : in  std_logic                    := 'X';             -- read
-			avs_s_readdata_synapse     : out std_logic_vector(7 downto 0);                    -- readdata
-			avs_s_write_spike          : in  std_logic                    := 'X';             -- write
-			avs_s_writedata_spike_time : in  std_logic_vector(7 downto 0) := (others => 'X'); -- writedata
-			avs_s_address              : in  std_logic_vector(7 downto 0) := (others => 'X'); -- address
-			avs_s_read_time            : in  std_logic                    := 'X';             -- read
-			avs_s_readdata_time        : out std_logic_vector(7 downto 0)                     -- readdata
+			clk                                 : in  std_logic                    := 'X';             -- clk
+			avs_s0_address                      : in  std_logic_vector(7 downto 0) := (others => 'X'); -- address
+			avs_s0_write_spike                  : in  std_logic                    := 'X';             -- write
+			avs_s0_writedata_spike_time         : in  std_logic_vector(7 downto 0) := (others => 'X'); -- writedata
+			avm_m0_address                      : out std_logic_vector(7 downto 0);                    -- address
+			avm_m0_waitrequest                  : in  std_logic                    := 'X';             -- waitrequest
+			avm_m0_write_spike                  : out std_logic;                                       -- write
+			avm_m0_writedata_spike_time         : out std_logic_vector(8 downto 0);                    -- writedata
+			avm_m1_address                      : out std_logic_vector(7 downto 0);                    -- address
+			avm_m1_waitrequest                  : in  std_logic                    := 'X';             -- waitrequest
+			avm_m1_read_target_synapse_addr     : out std_logic;                                       -- read
+			avm_m1_readdata_target_synapse_addr : in  std_logic_vector(7 downto 0) := (others => 'X'); -- readdata
+			rst                                 : in  std_logic                    := 'X'              -- reset
 		);
-	end component simple_synapse;
+	end component simple_up_server_sm;
+
+	component simple_soma_sm is
+		generic (
+			THRESHOLD             : integer                      := 10;
+			DATA_WIDTH            : integer                      := 8;
+			ADDR_WIDTH            : integer                      := 7;
+			UPLOAD_SERVER_ADDRESS : std_logic_vector(7 downto 0) := "00000001"
+		);
+		port (
+			clk                         : in  std_logic                    := 'X';             -- clk
+			avs_s0_address              : in  std_logic_vector(7 downto 0) := (others => 'X'); -- address
+			avs_s0_write_synapse        : in  std_logic                    := 'X';             -- write
+			avs_s0_writedata_synapse    : in  std_logic_vector(7 downto 0) := (others => 'X'); -- writedata
+			rst                         : in  std_logic                    := 'X';             -- reset
+			avm_m0_address              : out std_logic_vector(7 downto 0);                    -- address
+			avm_m0_waitrequest          : in  std_logic                    := 'X';             -- waitrequest
+			avm_m0_write_spike          : out std_logic;                                       -- write
+			avm_m0_writedata_spike_time : out std_logic_vector(7 downto 0)                     -- writedata
+		);
+	end component simple_soma_sm;
 
 	component bus_test_mm_interconnect_0 is
 		port (
-			clk_0_clk_clk                                        : in  std_logic                    := 'X';             -- clk
-			simple_soma_0_reset_sink_reset_bridge_in_reset_reset : in  std_logic                    := 'X';             -- reset
-			simple_soma_0_m_spike_waitrequest                    : out std_logic;                                       -- waitrequest
-			simple_soma_0_m_spike_write                          : in  std_logic                    := 'X';             -- write
-			simple_soma_0_m_spike_writedata                      : in  std_logic_vector(7 downto 0) := (others => 'X'); -- writedata
-			simple_synapse_0_s_spike_write                       : out std_logic;                                       -- write
-			simple_synapse_0_s_spike_writedata                   : out std_logic_vector(7 downto 0)                     -- writedata
+			clk_0_clk_clk                                           : in  std_logic                    := 'X';             -- clk
+			simple_soma_SM_0_reset_sink_reset_bridge_in_reset_reset : in  std_logic                    := 'X';             -- reset
+			simple_soma_SM_0_m0_address                             : in  std_logic_vector(7 downto 0) := (others => 'X'); -- address
+			simple_soma_SM_0_m0_waitrequest                         : out std_logic;                                       -- waitrequest
+			simple_soma_SM_0_m0_write                               : in  std_logic                    := 'X';             -- write
+			simple_soma_SM_0_m0_writedata                           : in  std_logic_vector(7 downto 0) := (others => 'X'); -- writedata
+			simple_UP_Server_State_Machine_0_s0_address             : out std_logic_vector(7 downto 0);                    -- address
+			simple_UP_Server_State_Machine_0_s0_write               : out std_logic;                                       -- write
+			simple_UP_Server_State_Machine_0_s0_writedata           : out std_logic_vector(7 downto 0)                     -- writedata
 		);
 	end component bus_test_mm_interconnect_0;
 
 	component bus_test_mm_interconnect_1 is
 		port (
-			clk_0_clk_clk                                        : in  std_logic                    := 'X';             -- clk
-			simple_soma_0_reset_sink_reset_bridge_in_reset_reset : in  std_logic                    := 'X';             -- reset
-			simple_soma_0_m_synapse_waitrequest                  : out std_logic;                                       -- waitrequest
-			simple_soma_0_m_synapse_read                         : in  std_logic                    := 'X';             -- read
-			simple_soma_0_m_synapse_readdata                     : out std_logic_vector(7 downto 0);                    -- readdata
-			simple_synapse_0_s_synapse_read                      : out std_logic;                                       -- read
-			simple_synapse_0_s_synapse_readdata                  : in  std_logic_vector(7 downto 0) := (others => 'X')  -- readdata
+			clk_0_clk_clk                                                           : in  std_logic                    := 'X';             -- clk
+			simple_UP_Server_State_Machine_0_reset_sink_reset_bridge_in_reset_reset : in  std_logic                    := 'X';             -- reset
+			simple_UP_Server_State_Machine_0_m1_address                             : in  std_logic_vector(7 downto 0) := (others => 'X'); -- address
+			simple_UP_Server_State_Machine_0_m1_waitrequest                         : out std_logic;                                       -- waitrequest
+			simple_UP_Server_State_Machine_0_m1_read                                : in  std_logic                    := 'X';             -- read
+			simple_UP_Server_State_Machine_0_m1_readdata                            : out std_logic_vector(7 downto 0);                    -- readdata
+			simple_SDC_State_Machine_0_s0_address                                   : out std_logic_vector(7 downto 0);                    -- address
+			simple_SDC_State_Machine_0_s0_read                                      : out std_logic;                                       -- read
+			simple_SDC_State_Machine_0_s0_readdata                                  : in  std_logic_vector(7 downto 0) := (others => 'X'); -- readdata
+			simple_SDC_State_Machine_0_s0_waitrequest                               : in  std_logic                    := 'X'              -- waitrequest
 		);
 	end component bus_test_mm_interconnect_1;
-
-	component bus_test_mm_interconnect_2 is
-		port (
-			clk_0_clk_clk                                        : in  std_logic                    := 'X';             -- clk
-			simple_soma_0_reset_sink_reset_bridge_in_reset_reset : in  std_logic                    := 'X';             -- reset
-			simple_soma_0_m_time_address                         : in  std_logic_vector(0 downto 0) := (others => 'X'); -- address
-			simple_soma_0_m_time_waitrequest                     : out std_logic;                                       -- waitrequest
-			simple_soma_0_m_time_read                            : in  std_logic                    := 'X';             -- read
-			simple_soma_0_m_time_readdata                        : out std_logic_vector(7 downto 0);                    -- readdata
-			simple_synapse_0_s_time_address                      : out std_logic_vector(7 downto 0);                    -- address
-			simple_synapse_0_s_time_read                         : out std_logic;                                       -- read
-			simple_synapse_0_s_time_readdata                     : in  std_logic_vector(7 downto 0) := (others => 'X')  -- readdata
-		);
-	end component bus_test_mm_interconnect_2;
 
 	component altera_reset_controller is
 		generic (
@@ -157,98 +166,105 @@ architecture rtl of bus_test is
 		);
 	end component altera_reset_controller;
 
-	signal simple_soma_0_m_spike_waitrequest                     : std_logic;                    -- mm_interconnect_0:simple_soma_0_m_spike_waitrequest -> simple_soma_0:m_spike_waitrequest
-	signal simple_soma_0_m_spike_write                           : std_logic;                    -- simple_soma_0:avs_m_write_spike -> mm_interconnect_0:simple_soma_0_m_spike_write
-	signal simple_soma_0_m_spike_writedata                       : std_logic_vector(7 downto 0); -- simple_soma_0:avs_m_writedata_spike_time -> mm_interconnect_0:simple_soma_0_m_spike_writedata
-	signal mm_interconnect_0_simple_synapse_0_s_spike_write      : std_logic;                    -- mm_interconnect_0:simple_synapse_0_s_spike_write -> simple_synapse_0:avs_s_write_spike
-	signal mm_interconnect_0_simple_synapse_0_s_spike_writedata  : std_logic_vector(7 downto 0); -- mm_interconnect_0:simple_synapse_0_s_spike_writedata -> simple_synapse_0:avs_s_writedata_spike_time
-	signal simple_soma_0_m_synapse_readdata                      : std_logic_vector(7 downto 0); -- mm_interconnect_1:simple_soma_0_m_synapse_readdata -> simple_soma_0:avs_m_readdata_synapse
-	signal simple_soma_0_m_synapse_waitrequest                   : std_logic;                    -- mm_interconnect_1:simple_soma_0_m_synapse_waitrequest -> simple_soma_0:m_synapse_waitrequest
-	signal simple_soma_0_m_synapse_read                          : std_logic;                    -- simple_soma_0:avs_m_read_synapse -> mm_interconnect_1:simple_soma_0_m_synapse_read
-	signal mm_interconnect_1_simple_synapse_0_s_synapse_readdata : std_logic_vector(7 downto 0); -- simple_synapse_0:avs_s_readdata_synapse -> mm_interconnect_1:simple_synapse_0_s_synapse_readdata
-	signal mm_interconnect_1_simple_synapse_0_s_synapse_read     : std_logic;                    -- mm_interconnect_1:simple_synapse_0_s_synapse_read -> simple_synapse_0:avs_s_read_synapse
-	signal simple_soma_0_m_time_readdata                         : std_logic_vector(7 downto 0); -- mm_interconnect_2:simple_soma_0_m_time_readdata -> simple_soma_0:avs_m_readdata_time
-	signal simple_soma_0_m_time_waitrequest                      : std_logic;                    -- mm_interconnect_2:simple_soma_0_m_time_waitrequest -> simple_soma_0:m_time_waitrequest
-	signal simple_soma_0_m_time_address                          : std_logic;                    -- simple_soma_0:avs_m_address -> mm_interconnect_2:simple_soma_0_m_time_address
-	signal simple_soma_0_m_time_read                             : std_logic;                    -- simple_soma_0:avs_m_read_time -> mm_interconnect_2:simple_soma_0_m_time_read
-	signal mm_interconnect_2_simple_synapse_0_s_time_readdata    : std_logic_vector(7 downto 0); -- simple_synapse_0:avs_s_readdata_time -> mm_interconnect_2:simple_synapse_0_s_time_readdata
-	signal mm_interconnect_2_simple_synapse_0_s_time_address     : std_logic_vector(7 downto 0); -- mm_interconnect_2:simple_synapse_0_s_time_address -> simple_synapse_0:avs_s_address
-	signal mm_interconnect_2_simple_synapse_0_s_time_read        : std_logic;                    -- mm_interconnect_2:simple_synapse_0_s_time_read -> simple_synapse_0:avs_s_read_time
-	signal rst_controller_reset_out_reset                        : std_logic;                    -- rst_controller:reset_out -> [mm_interconnect_0:simple_soma_0_reset_sink_reset_bridge_in_reset_reset, mm_interconnect_1:simple_soma_0_reset_sink_reset_bridge_in_reset_reset, mm_interconnect_2:simple_soma_0_reset_sink_reset_bridge_in_reset_reset, simple_soma_0:rst, simple_synapse_0:rst]
-	signal reset_reset_n_ports_inv                               : std_logic;                    -- reset_reset_n:inv -> rst_controller:reset_in0
+	signal simple_soma_sm_0_m0_waitrequest                                 : std_logic;                    -- mm_interconnect_0:simple_soma_SM_0_m0_waitrequest -> simple_soma_SM_0:avm_m0_waitrequest
+	signal simple_soma_sm_0_m0_address                                     : std_logic_vector(7 downto 0); -- simple_soma_SM_0:avm_m0_address -> mm_interconnect_0:simple_soma_SM_0_m0_address
+	signal simple_soma_sm_0_m0_write                                       : std_logic;                    -- simple_soma_SM_0:avm_m0_write_spike -> mm_interconnect_0:simple_soma_SM_0_m0_write
+	signal simple_soma_sm_0_m0_writedata                                   : std_logic_vector(7 downto 0); -- simple_soma_SM_0:avm_m0_writedata_spike_time -> mm_interconnect_0:simple_soma_SM_0_m0_writedata
+	signal mm_interconnect_0_simple_up_server_state_machine_0_s0_address   : std_logic_vector(7 downto 0); -- mm_interconnect_0:simple_UP_Server_State_Machine_0_s0_address -> simple_UP_Server_State_Machine_0:avs_s0_address
+	signal mm_interconnect_0_simple_up_server_state_machine_0_s0_write     : std_logic;                    -- mm_interconnect_0:simple_UP_Server_State_Machine_0_s0_write -> simple_UP_Server_State_Machine_0:avs_s0_write_spike
+	signal mm_interconnect_0_simple_up_server_state_machine_0_s0_writedata : std_logic_vector(7 downto 0); -- mm_interconnect_0:simple_UP_Server_State_Machine_0_s0_writedata -> simple_UP_Server_State_Machine_0:avs_s0_writedata_spike_time
+	signal simple_up_server_state_machine_0_m1_waitrequest                 : std_logic;                    -- mm_interconnect_1:simple_UP_Server_State_Machine_0_m1_waitrequest -> simple_UP_Server_State_Machine_0:avm_m1_waitrequest
+	signal simple_up_server_state_machine_0_m1_readdata                    : std_logic_vector(7 downto 0); -- mm_interconnect_1:simple_UP_Server_State_Machine_0_m1_readdata -> simple_UP_Server_State_Machine_0:avm_m1_readdata_target_synapse_addr
+	signal simple_up_server_state_machine_0_m1_address                     : std_logic_vector(7 downto 0); -- simple_UP_Server_State_Machine_0:avm_m1_address -> mm_interconnect_1:simple_UP_Server_State_Machine_0_m1_address
+	signal simple_up_server_state_machine_0_m1_read                        : std_logic;                    -- simple_UP_Server_State_Machine_0:avm_m1_read_target_synapse_addr -> mm_interconnect_1:simple_UP_Server_State_Machine_0_m1_read
+	signal mm_interconnect_1_simple_sdc_state_machine_0_s0_readdata        : std_logic_vector(7 downto 0); -- simple_SDC_State_Machine_0:avs_s0_readdata_target_synapse_addr -> mm_interconnect_1:simple_SDC_State_Machine_0_s0_readdata
+	signal mm_interconnect_1_simple_sdc_state_machine_0_s0_waitrequest     : std_logic;                    -- simple_SDC_State_Machine_0:avs_s0_waitrequest -> mm_interconnect_1:simple_SDC_State_Machine_0_s0_waitrequest
+	signal mm_interconnect_1_simple_sdc_state_machine_0_s0_address         : std_logic_vector(7 downto 0); -- mm_interconnect_1:simple_SDC_State_Machine_0_s0_address -> simple_SDC_State_Machine_0:avs_s0_address
+	signal mm_interconnect_1_simple_sdc_state_machine_0_s0_read            : std_logic;                    -- mm_interconnect_1:simple_SDC_State_Machine_0_s0_read -> simple_SDC_State_Machine_0:avs_s0_read_target_synapse_addr
+	signal rst_controller_reset_out_reset                                  : std_logic;                    -- rst_controller:reset_out -> [mm_interconnect_0:simple_soma_SM_0_reset_sink_reset_bridge_in_reset_reset, mm_interconnect_1:simple_UP_Server_State_Machine_0_reset_sink_reset_bridge_in_reset_reset, simple_SDC_State_Machine_0:rst, simple_UP_Server_State_Machine_0:rst, simple_soma_SM_0:rst]
+	signal reset_reset_n_ports_inv                                         : std_logic;                    -- reset_reset_n:inv -> rst_controller:reset_in0
 
 begin
 
-	simple_soma_0 : component simple_soma
+	simple_sdc_state_machine_0 : component simple_SDC_sm
 		generic map (
-			THRESHOLD  => 10,
-			TIME_WIDTH => 8
+			DATA_WIDTH => 8,
+			ADDR_WIDTH => 7
 		)
 		port map (
-			clk                        => clk_clk,                             --      clock.clk
-			rst                        => rst_controller_reset_out_reset,      -- reset_sink.reset
-			avs_m_read_synapse         => simple_soma_0_m_synapse_read,        --  m_synapse.read
-			avs_m_readdata_synapse     => simple_soma_0_m_synapse_readdata,    --           .readdata
-			m_synapse_waitrequest      => simple_soma_0_m_synapse_waitrequest, --           .waitrequest
-			avs_m_write_spike          => simple_soma_0_m_spike_write,         --    m_spike.write
-			avs_m_writedata_spike_time => simple_soma_0_m_spike_writedata,     --           .writedata
-			m_spike_waitrequest        => simple_soma_0_m_spike_waitrequest,   --           .waitrequest
-			avs_m_address              => simple_soma_0_m_time_address,        --     m_time.address
-			avs_m_read_time            => simple_soma_0_m_time_read,           --           .read
-			avs_m_readdata_time        => simple_soma_0_m_time_readdata,       --           .readdata
-			m_time_waitrequest         => simple_soma_0_m_time_waitrequest     --           .waitrequest
+			clk                                 => clk_clk,                                                     --      clock.clk
+			avs_s0_address                      => mm_interconnect_1_simple_sdc_state_machine_0_s0_address,     --         s0.address
+			avs_s0_waitrequest                  => mm_interconnect_1_simple_sdc_state_machine_0_s0_waitrequest, --           .waitrequest
+			avs_s0_read_target_synapse_addr     => mm_interconnect_1_simple_sdc_state_machine_0_s0_read,        --           .read
+			avs_s0_readdata_target_synapse_addr => mm_interconnect_1_simple_sdc_state_machine_0_s0_readdata,    --           .readdata
+			rst                                 => rst_controller_reset_out_reset                               -- reset_sink.reset
 		);
 
-	simple_synapse_0 : component simple_synapse
+	simple_up_server_state_machine_0 : component simple_up_server_sm
 		generic map (
-			THRESHOLD  => 10,
-			TIME_WIDTH => 8
+			DATA_WIDTH => 8,
+			ADDR_WIDTH => 7
 		)
 		port map (
-			clk                        => clk_clk,                                               --      clock.clk
-			rst                        => rst_controller_reset_out_reset,                        -- reset_sink.reset
-			avs_s_read_synapse         => mm_interconnect_1_simple_synapse_0_s_synapse_read,     --  s_synapse.read
-			avs_s_readdata_synapse     => mm_interconnect_1_simple_synapse_0_s_synapse_readdata, --           .readdata
-			avs_s_write_spike          => mm_interconnect_0_simple_synapse_0_s_spike_write,      --    s_spike.write
-			avs_s_writedata_spike_time => mm_interconnect_0_simple_synapse_0_s_spike_writedata,  --           .writedata
-			avs_s_address              => mm_interconnect_2_simple_synapse_0_s_time_address,     --     s_time.address
-			avs_s_read_time            => mm_interconnect_2_simple_synapse_0_s_time_read,        --           .read
-			avs_s_readdata_time        => mm_interconnect_2_simple_synapse_0_s_time_readdata     --           .readdata
+			clk                                 => clk_clk,                                                         --      clock.clk
+			avs_s0_address                      => mm_interconnect_0_simple_up_server_state_machine_0_s0_address,   --         s0.address
+			avs_s0_write_spike                  => mm_interconnect_0_simple_up_server_state_machine_0_s0_write,     --           .write
+			avs_s0_writedata_spike_time         => mm_interconnect_0_simple_up_server_state_machine_0_s0_writedata, --           .writedata
+			avm_m0_address                      => open,                                                            --         m0.address
+			avm_m0_waitrequest                  => open,                                                            --           .waitrequest
+			avm_m0_write_spike                  => open,                                                            --           .write
+			avm_m0_writedata_spike_time         => open,                                                            --           .writedata
+			avm_m1_address                      => simple_up_server_state_machine_0_m1_address,                     --         m1.address
+			avm_m1_waitrequest                  => simple_up_server_state_machine_0_m1_waitrequest,                 --           .waitrequest
+			avm_m1_read_target_synapse_addr     => simple_up_server_state_machine_0_m1_read,                        --           .read
+			avm_m1_readdata_target_synapse_addr => simple_up_server_state_machine_0_m1_readdata,                    --           .readdata
+			rst                                 => rst_controller_reset_out_reset                                   -- reset_sink.reset
+		);
+
+	simple_soma_sm_0 : component simple_soma_sm
+		generic map (
+			THRESHOLD             => 10,
+			DATA_WIDTH            => 8,
+			ADDR_WIDTH            => 7,
+			UPLOAD_SERVER_ADDRESS => "00000001"
+		)
+		port map (
+			clk                         => clk_clk,                         --      clock.clk
+			avs_s0_address              => open,                            --         s0.address
+			avs_s0_write_synapse        => open,                            --           .write
+			avs_s0_writedata_synapse    => open,                            --           .writedata
+			rst                         => rst_controller_reset_out_reset,  -- reset_sink.reset
+			avm_m0_address              => simple_soma_sm_0_m0_address,     --         m0.address
+			avm_m0_waitrequest          => simple_soma_sm_0_m0_waitrequest, --           .waitrequest
+			avm_m0_write_spike          => simple_soma_sm_0_m0_write,       --           .write
+			avm_m0_writedata_spike_time => simple_soma_sm_0_m0_writedata    --           .writedata
 		);
 
 	mm_interconnect_0 : component bus_test_mm_interconnect_0
 		port map (
-			clk_0_clk_clk                                        => clk_clk,                                              --                                      clk_0_clk.clk
-			simple_soma_0_reset_sink_reset_bridge_in_reset_reset => rst_controller_reset_out_reset,                       -- simple_soma_0_reset_sink_reset_bridge_in_reset.reset
-			simple_soma_0_m_spike_waitrequest                    => simple_soma_0_m_spike_waitrequest,                    --                          simple_soma_0_m_spike.waitrequest
-			simple_soma_0_m_spike_write                          => simple_soma_0_m_spike_write,                          --                                               .write
-			simple_soma_0_m_spike_writedata                      => simple_soma_0_m_spike_writedata,                      --                                               .writedata
-			simple_synapse_0_s_spike_write                       => mm_interconnect_0_simple_synapse_0_s_spike_write,     --                       simple_synapse_0_s_spike.write
-			simple_synapse_0_s_spike_writedata                   => mm_interconnect_0_simple_synapse_0_s_spike_writedata  --                                               .writedata
+			clk_0_clk_clk                                           => clk_clk,                                                         --                                         clk_0_clk.clk
+			simple_soma_SM_0_reset_sink_reset_bridge_in_reset_reset => rst_controller_reset_out_reset,                                  -- simple_soma_SM_0_reset_sink_reset_bridge_in_reset.reset
+			simple_soma_SM_0_m0_address                             => simple_soma_sm_0_m0_address,                                     --                               simple_soma_SM_0_m0.address
+			simple_soma_SM_0_m0_waitrequest                         => simple_soma_sm_0_m0_waitrequest,                                 --                                                  .waitrequest
+			simple_soma_SM_0_m0_write                               => simple_soma_sm_0_m0_write,                                       --                                                  .write
+			simple_soma_SM_0_m0_writedata                           => simple_soma_sm_0_m0_writedata,                                   --                                                  .writedata
+			simple_UP_Server_State_Machine_0_s0_address             => mm_interconnect_0_simple_up_server_state_machine_0_s0_address,   --               simple_UP_Server_State_Machine_0_s0.address
+			simple_UP_Server_State_Machine_0_s0_write               => mm_interconnect_0_simple_up_server_state_machine_0_s0_write,     --                                                  .write
+			simple_UP_Server_State_Machine_0_s0_writedata           => mm_interconnect_0_simple_up_server_state_machine_0_s0_writedata  --                                                  .writedata
 		);
 
 	mm_interconnect_1 : component bus_test_mm_interconnect_1
 		port map (
-			clk_0_clk_clk                                        => clk_clk,                                               --                                      clk_0_clk.clk
-			simple_soma_0_reset_sink_reset_bridge_in_reset_reset => rst_controller_reset_out_reset,                        -- simple_soma_0_reset_sink_reset_bridge_in_reset.reset
-			simple_soma_0_m_synapse_waitrequest                  => simple_soma_0_m_synapse_waitrequest,                   --                        simple_soma_0_m_synapse.waitrequest
-			simple_soma_0_m_synapse_read                         => simple_soma_0_m_synapse_read,                          --                                               .read
-			simple_soma_0_m_synapse_readdata                     => simple_soma_0_m_synapse_readdata,                      --                                               .readdata
-			simple_synapse_0_s_synapse_read                      => mm_interconnect_1_simple_synapse_0_s_synapse_read,     --                     simple_synapse_0_s_synapse.read
-			simple_synapse_0_s_synapse_readdata                  => mm_interconnect_1_simple_synapse_0_s_synapse_readdata  --                                               .readdata
-		);
-
-	mm_interconnect_2 : component bus_test_mm_interconnect_2
-		port map (
-			clk_0_clk_clk                                        => clk_clk,                                            --                                      clk_0_clk.clk
-			simple_soma_0_reset_sink_reset_bridge_in_reset_reset => rst_controller_reset_out_reset,                     -- simple_soma_0_reset_sink_reset_bridge_in_reset.reset
-			simple_soma_0_m_time_address(0)                      => simple_soma_0_m_time_address,                       --                           simple_soma_0_m_time.address
-			simple_soma_0_m_time_waitrequest                     => simple_soma_0_m_time_waitrequest,                   --                                               .waitrequest
-			simple_soma_0_m_time_read                            => simple_soma_0_m_time_read,                          --                                               .read
-			simple_soma_0_m_time_readdata                        => simple_soma_0_m_time_readdata,                      --                                               .readdata
-			simple_synapse_0_s_time_address                      => mm_interconnect_2_simple_synapse_0_s_time_address,  --                        simple_synapse_0_s_time.address
-			simple_synapse_0_s_time_read                         => mm_interconnect_2_simple_synapse_0_s_time_read,     --                                               .read
-			simple_synapse_0_s_time_readdata                     => mm_interconnect_2_simple_synapse_0_s_time_readdata  --                                               .readdata
+			clk_0_clk_clk                                                           => clk_clk,                                                     --                                                         clk_0_clk.clk
+			simple_UP_Server_State_Machine_0_reset_sink_reset_bridge_in_reset_reset => rst_controller_reset_out_reset,                              -- simple_UP_Server_State_Machine_0_reset_sink_reset_bridge_in_reset.reset
+			simple_UP_Server_State_Machine_0_m1_address                             => simple_up_server_state_machine_0_m1_address,                 --                               simple_UP_Server_State_Machine_0_m1.address
+			simple_UP_Server_State_Machine_0_m1_waitrequest                         => simple_up_server_state_machine_0_m1_waitrequest,             --                                                                  .waitrequest
+			simple_UP_Server_State_Machine_0_m1_read                                => simple_up_server_state_machine_0_m1_read,                    --                                                                  .read
+			simple_UP_Server_State_Machine_0_m1_readdata                            => simple_up_server_state_machine_0_m1_readdata,                --                                                                  .readdata
+			simple_SDC_State_Machine_0_s0_address                                   => mm_interconnect_1_simple_sdc_state_machine_0_s0_address,     --                                     simple_SDC_State_Machine_0_s0.address
+			simple_SDC_State_Machine_0_s0_read                                      => mm_interconnect_1_simple_sdc_state_machine_0_s0_read,        --                                                                  .read
+			simple_SDC_State_Machine_0_s0_readdata                                  => mm_interconnect_1_simple_sdc_state_machine_0_s0_readdata,    --                                                                  .readdata
+			simple_SDC_State_Machine_0_s0_waitrequest                               => mm_interconnect_1_simple_sdc_state_machine_0_s0_waitrequest  --                                                                  .waitrequest
 		);
 
 	rst_controller : component altera_reset_controller

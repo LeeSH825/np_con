@@ -1,8 +1,8 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/np_con/bus_test/simulation/test1.vwf" --testbench_file="C:/Users/Xynus_Main/np_con/bus_test/simulation/test1.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/np_con/bus_test/simulation/test1.vwf" --testbench_file="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test1.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="/home/hws_master/np_con/bus_test/simulation/test1.vwf" --testbench_file="/home/hws_master/np_con/bus_test/simulation/qsim/simulation/test1.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="/home/hws_master/np_con/bus_test/simulation/test1.vwf" --testbench_file="/home/hws_master/np_con/bus_test/simulation/qsim/simulation/test1.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/hws_master/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/hws_master/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work bus_test.vho
@@ -962,7 +962,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 2;
 	TREE_LEVEL = 0;
 	CHILDREN = 3, 4, 5, 6, 7, 8, 9, 10;
@@ -972,7 +972,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 3;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -982,7 +982,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -992,7 +992,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 5;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -1002,7 +1002,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 6;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -1012,7 +1012,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 7;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -1022,7 +1022,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 8;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -1032,7 +1032,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 9;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -1042,7 +1042,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_m0_address[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
 	PARENT = 2;
@@ -1190,7 +1190,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 25;
 	TREE_LEVEL = 0;
 	CHILDREN = 26, 27, 28, 29, 30, 31, 32, 33;
@@ -1200,7 +1200,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address[7]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 26;
 	TREE_LEVEL = 1;
 	PARENT = 25;
@@ -1210,7 +1210,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address[6]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 27;
 	TREE_LEVEL = 1;
 	PARENT = 25;
@@ -1220,7 +1220,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address[5]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 28;
 	TREE_LEVEL = 1;
 	PARENT = 25;
@@ -1230,7 +1230,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address[4]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 29;
 	TREE_LEVEL = 1;
 	PARENT = 25;
@@ -1240,7 +1240,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address[3]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 30;
 	TREE_LEVEL = 1;
 	PARENT = 25;
@@ -1250,7 +1250,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address[2]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 31;
 	TREE_LEVEL = 1;
 	PARENT = 25;
@@ -1260,7 +1260,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address[1]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 32;
 	TREE_LEVEL = 1;
 	PARENT = 25;
@@ -1270,7 +1270,7 @@ DISPLAY_LINE
 {
 	CHANNEL = "avs_s0_address[0]";
 	EXPAND_STATUS = COLLAPSED;
-	RADIX = Binary;
+	RADIX = Signed;
 	TREE_INDEX = 33;
 	TREE_LEVEL = 1;
 	PARENT = 25;

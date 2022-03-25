@@ -1,47 +1,53 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate /home/hws_master/Projects/bus_test/bus_test.qsys --block-symbol-file --output-directory=/home/hws_master/Projects/bus_test/bus_test --family="Cyclone V" --part=5CSEBA6U23I7
+Info: qsys-generate /home/hws_master/np_con/bus_test/bus_test.qsys --block-symbol-file --output-directory=/home/hws_master/np_con/bus_test/bus_test --family="Cyclone V" --part=5CSEBA6U23I7
 Progress: Loading bus_test/bus_test.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 21.1]
 Progress: Parameterizing module clk_0
-Progress: Adding simple_soma_0 [simple_soma 1.0.1]
-Progress: Parameterizing module simple_soma_0
-Progress: Adding simple_synapse_0 [simple_synapse 1.0.1]
-Progress: Parameterizing module simple_synapse_0
+Progress: Adding simple_SDC_State_Machine_0 [simple_SDC_State_Machine 1.0]
+Progress: Parameterizing module simple_SDC_State_Machine_0
+Progress: Adding simple_UP_Server_State_Machine_0 [simple_UP_Server_State_Machine 1.0]
+Progress: Parameterizing module simple_UP_Server_State_Machine_0
+Progress: Adding simple_soma_SM_0 [simple_soma_SM 1.0]
+Progress: Parameterizing module simple_soma_SM_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Warning: bus_test.simple_UP_Server_State_Machine_0: simple_UP_Server_State_Machine_0.m0 must be connected to an Avalon-MM slave
+Warning: bus_test.simple_soma_SM_0: simple_soma_SM_0.s0 must be connected to an Avalon-MM master
 Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate /home/hws_master/Projects/bus_test/bus_test.qsys --synthesis=VHDL --output-directory=/home/hws_master/Projects/bus_test/bus_test/synthesis --family="Cyclone V" --part=5CSEBA6U23I7
+Info: qsys-generate /home/hws_master/np_con/bus_test/bus_test.qsys --synthesis=VHDL --output-directory=/home/hws_master/np_con/bus_test/bus_test/synthesis --family="Cyclone V" --part=5CSEBA6U23I7
 Progress: Loading bus_test/bus_test.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 21.1]
 Progress: Parameterizing module clk_0
-Progress: Adding simple_soma_0 [simple_soma 1.0.1]
-Progress: Parameterizing module simple_soma_0
-Progress: Adding simple_synapse_0 [simple_synapse 1.0.1]
-Progress: Parameterizing module simple_synapse_0
+Progress: Adding simple_SDC_State_Machine_0 [simple_SDC_State_Machine 1.0]
+Progress: Parameterizing module simple_SDC_State_Machine_0
+Progress: Adding simple_UP_Server_State_Machine_0 [simple_UP_Server_State_Machine 1.0]
+Progress: Parameterizing module simple_UP_Server_State_Machine_0
+Progress: Adding simple_soma_SM_0 [simple_soma_SM 1.0]
+Progress: Parameterizing module simple_soma_SM_0
 Progress: Building connections
 Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
+Warning: bus_test.simple_UP_Server_State_Machine_0: simple_UP_Server_State_Machine_0.m0 must be connected to an Avalon-MM slave
+Warning: bus_test.simple_soma_SM_0: simple_soma_SM_0.s0 must be connected to an Avalon-MM master
 Info: bus_test: Generating bus_test "bus_test" for QUARTUS_SYNTH
-Info: Interconnect is inserted between master simple_soma_0.m_spike and slave simple_synapse_0.s_spike because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info: Interconnect is inserted between master simple_soma_0.m_synapse and slave simple_synapse_0.s_synapse because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info: Interconnect is inserted between master simple_soma_0.m_time and slave simple_synapse_0.s_time because the master has address signal 1 bit wide, but the slave is 8 bit wide.
-Info: Interconnect is inserted between master simple_soma_0.m_time and slave simple_synapse_0.s_time because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info: simple_soma_0: "bus_test" instantiated simple_soma "simple_soma_0"
-Info: simple_synapse_0: "bus_test" instantiated simple_synapse "simple_synapse_0"
+Info: Interconnect is inserted between master simple_soma_SM_0.m0 and slave simple_UP_Server_State_Machine_0.s0 because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
+Info: Interconnect is inserted between master simple_UP_Server_State_Machine_0.m1 and slave simple_SDC_State_Machine_0.s0 because they have different value on parameter addressUnits.
+Info: simple_SDC_State_Machine_0: "bus_test" instantiated simple_SDC_State_Machine "simple_SDC_State_Machine_0"
+Info: simple_UP_Server_State_Machine_0: "bus_test" instantiated simple_UP_Server_State_Machine "simple_UP_Server_State_Machine_0"
+Info: simple_soma_SM_0: "bus_test" instantiated simple_soma_SM "simple_soma_SM_0"
 Info: mm_interconnect_0: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_0"
 Info: mm_interconnect_1: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_1"
-Info: mm_interconnect_2: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_2"
 Info: rst_controller: "bus_test" instantiated altera_reset_controller "rst_controller"
-Info: simple_soma_0_m_spike_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "simple_soma_0_m_spike_translator"
-Info: simple_synapse_0_s_spike_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "simple_synapse_0_s_spike_translator"
+Info: simple_soma_SM_0_m0_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "simple_soma_SM_0_m0_translator"
+Info: simple_UP_Server_State_Machine_0_s0_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "simple_UP_Server_State_Machine_0_s0_translator"
 Info: bus_test: Done "bus_test" with 9 modules, 11 files
 Info: qsys-generate succeeded.
 Info: Finished: Create HDL design files for synthesis

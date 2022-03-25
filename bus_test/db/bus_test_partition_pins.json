@@ -4,71 +4,479 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "avs_s0_waitrequest",
+					"name" : "STDP_OUT[0]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_readdata_target_synapse_addr[0]",
+					"name" : "STDP_OUT[1]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_readdata_target_synapse_addr[1]",
+					"name" : "STDP_OUT[2]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_readdata_target_synapse_addr[2]",
+					"name" : "STDP_OUT[3]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_readdata_target_synapse_addr[3]",
+					"name" : "STDP_OUT[4]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_readdata_target_synapse_addr[4]",
+					"name" : "STDP_OUT[5]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_read_target_synapse_addr",
+					"name" : "STDP_OUT[6]",
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "STDP_OUT[7]",
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "dbg_PRE_0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_address[0]",
+					"name" : "dbg_PRE_0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_address[1]",
+					"name" : "dbg_PRE_0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_address[2]",
+					"name" : "dbg_PRE_0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_address[3]",
+					"name" : "dbg_PRE_0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_address[4]",
+					"name" : "dbg_PRE_0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_address[5]",
+					"name" : "dbg_PRE_0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_address[6]",
+					"name" : "dbg_PRE_0[7]",
 					"strict" : false
 				},
 				{
-					"name" : "avs_s0_address[7]",
+					"name" : "dbg_PRE_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_PRE_3[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_0[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_POST_3[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_DATA_CAL_POST[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_DATA_CAL_POST[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_DATA_CAL_POST[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_DATA_CAL_POST[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_DATA_CAL_POST[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_DATA_CAL_POST[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_DATA_CAL_POST[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_DATA_CAL_POST[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_ADDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_ADDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SUM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SUM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SUM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SUM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SUM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SUM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SUM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_SUM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_TEMP_SUM[0]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_TEMP_SUM[1]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_TEMP_SUM[2]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_TEMP_SUM[3]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_TEMP_SUM[4]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_TEMP_SUM[5]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_TEMP_SUM[6]",
+					"strict" : false
+				},
+				{
+					"name" : "dbg_TEMP_SUM[7]",
+					"strict" : false
+				},
+				{
+					"name" : "sys_clk",
+					"strict" : false
+				},
+				{
+					"name" : "synapsePush",
+					"strict" : false
+				},
+				{
+					"name" : "sys_rst",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_patchPREneuron",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_patchPOSTneuron",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_POST_FIFO[0]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_PRE_FIFO[0]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_POST_FIFO[1]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_PRE_FIFO[1]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_POST_FIFO[2]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_PRE_FIFO[2]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_POST_FIFO[3]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_PRE_FIFO[3]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_POST_FIFO[4]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_PRE_FIFO[4]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_POST_FIFO[5]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_PRE_FIFO[5]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_POST_FIFO[6]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_PRE_FIFO[6]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_POST_FIFO[7]",
+					"strict" : false
+				},
+				{
+					"name" : "STDP_DATAIN_PRE_FIFO[7]",
 					"strict" : false
 				}
 			]

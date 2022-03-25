@@ -1,0 +1,59 @@
+m255
+K4
+z2
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/hws_master/np_con/address_test/avlm_avls_1x1_vhdl
+vavlm_avls_1x1_mm_interconnect_0_router_001
+Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z2 !s110 1647434853
+!i10b 1
+!s100 gCQ1Om[cOEDf9N`?R[k@W1
+IOZQ8iBU=83O7>>8onn5R_0
+S1
+R0
+Z3 w1647434692
+Z4 8avlm_avls_1x1/simulation/submodules/avlm_avls_1x1_mm_interconnect_0_router_001.sv
+Z5 Favlm_avls_1x1/simulation/submodules/avlm_avls_1x1_mm_interconnect_0_router_001.sv
+!i122 11
+L0 84 130
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z8 !s108 1647434853.000000
+!s107 avlm_avls_1x1/simulation/submodules/avlm_avls_1x1_mm_interconnect_0_router_001.sv|
+Z9 !s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/avlm_avls_1x1_mm_interconnect_0_router_001.sv|-L|altera_common_sv_packages|-work|router_001|
+!i113 0
+Z10 o-sv -L altera_common_sv_packages -work router_001 -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z11 tCvgOpt 0
+vavlm_avls_1x1_mm_interconnect_0_router_001_default_decode
+R1
+R2
+!i10b 1
+!s100 je75]DSLU=HkSj_VTnY<m3
+IP>I5kk>^Gn60MFLBcP9Ri3
+S1
+R0
+R3
+R4
+R5
+!i122 11
+L0 45 37
+R6
+R7
+r1
+!s85 0
+31
+R8
+Z12 !s107 avlm_avls_1x1/simulation/submodules/avlm_avls_1x1_mm_interconnect_0_router_001.sv|
+R9
+!i113 0
+R10
+R11

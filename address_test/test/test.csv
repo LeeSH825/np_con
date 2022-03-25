@@ -1,0 +1,20 @@
+# system info test on 2022.03.16.11:39:13
+system_info:
+name,value
+DEVICE,5CSEBA6U23I7
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1647398352
+#
+#
+# Files generated for test on 2022.03.16.11:39:13
+files:
+filepath,kind,attributes,module,is_top
+simulation/test.vhd,VHDL,,test,true
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+test.addr_master_0,test_addr_master_0
+test.mm_slave_bfm_0,altera_avalon_mm_slave_bfm_vhdl
+test.mm_interconnect_0,test_mm_interconnect_0
+test.rst_controller,altera_reset_controller

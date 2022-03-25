@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element addr_master_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element mm_slave_bfm_0
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element mm_slave_bfm_0.s0
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element s0
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="5CSEBA6U23I7" />
+ <parameter name="deviceFamily" value="Cyclone V" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="addr.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface name="addr_master_0_conduit_end" internal="addr_master_0.conduit_end" />
+ <interface
+   name="addr_master_0_data_in"
+   internal="addr_master_0.data_in"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="addr_master_0_dbg_data_in"
+   internal="addr_master_0.dbg_data_in"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="addr_master_0_dbg_input_en"
+   internal="addr_master_0.dbg_input_en"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="addr_master_0_dbg_output_en"
+   internal="addr_master_0.dbg_output_en"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="addr_master_0_dbg_write_data"
+   internal="addr_master_0.dbg_write_data"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="addr_master_0_dbg_write_to"
+   internal="addr_master_0.dbg_write_to"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="addr_master_0_input_en"
+   internal="addr_master_0.input_en"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="addr_master_0_output_en"
+   internal="addr_master_0.output_en"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="addr_master_0_write_to"
+   internal="addr_master_0.write_to"
+   type="conduit"
+   dir="end" />
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <module name="addr_master_0" kind="addr_master" version="1.0" enabled="1" />
+ <module name="clk_0" kind="clock_source" version="21.1" enabled="1">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <module
+   name="mm_slave_bfm_0"
+   kind="altera_avalon_mm_slave_bfm"
+   version="21.1"
+   enabled="1">
+  <parameter name="ADDRESS_UNITS" value="WORDS" />
+  <parameter name="ASSERT_HIGH_ARBITERLOCK" value="1" />
+  <parameter name="ASSERT_HIGH_BYTEENABLE" value="1" />
+  <parameter name="ASSERT_HIGH_LOCK" value="1" />
+  <parameter name="ASSERT_HIGH_READ" value="1" />
+  <parameter name="ASSERT_HIGH_READDATAVALID" value="1" />
+  <parameter name="ASSERT_HIGH_RESET" value="1" />
+  <parameter name="ASSERT_HIGH_WAITREQUEST" value="1" />
+  <parameter name="ASSERT_HIGH_WRITE" value="1" />
+  <parameter name="AV_ADDRESS_W" value="16" />
+  <parameter name="AV_BURSTCOUNT_W" value="3" />
+  <parameter name="AV_BURST_BNDR_ONLY" value="1" />
+  <parameter name="AV_BURST_LINEWRAP" value="1" />
+  <parameter name="AV_FIX_READ_LATENCY" value="0" />
+  <parameter name="AV_MAX_PENDING_READS" value="1" />
+  <parameter name="AV_MAX_PENDING_WRITES" value="0" />
+  <parameter name="AV_NUMSYMBOLS" value="4" />
+  <parameter name="AV_READRESPONSE_W" value="8" />
+  <parameter name="AV_READ_WAIT_TIME" value="1" />
+  <parameter name="AV_REGISTERINCOMINGSIGNALS" value="0" />
+  <parameter name="AV_SYMBOL_W" value="8" />
+  <parameter name="AV_WRITERESPONSE_W" value="8" />
+  <parameter name="AV_WRITE_WAIT_TIME" value="0" />
+  <parameter name="REGISTER_WAITREQUEST" value="0" />
+  <parameter name="USE_ADDRESS" value="1" />
+  <parameter name="USE_ARBITERLOCK" value="0" />
+  <parameter name="USE_BEGIN_BURST_TRANSFER" value="0" />
+  <parameter name="USE_BEGIN_TRANSFER" value="0" />
+  <parameter name="USE_BURSTCOUNT" value="0" />
+  <parameter name="USE_BYTE_ENABLE" value="1" />
+  <parameter name="USE_CLKEN" value="0" />
+  <parameter name="USE_DEBUGACCESS" value="0" />
+  <parameter name="USE_LOCK" value="0" />
+  <parameter name="USE_READ" value="0" />
+  <parameter name="USE_READRESPONSE" value="0" />
+  <parameter name="USE_READ_DATA" value="0" />
+  <parameter name="USE_READ_DATA_VALID" value="0" />
+  <parameter name="USE_TRANSACTIONID" value="0" />
+  <parameter name="USE_WAIT_REQUEST" value="1" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="USE_WRITERESPONSE" value="0" />
+  <parameter name="USE_WRITE_DATA" value="1" />
+  <parameter name="VHDL_ID" value="0" />
+ </module>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="addr_master_0.m0"
+   end="mm_slave_bfm_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="mm_slave_bfm_0.clk" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="addr_master_0.clock" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="mm_slave_bfm_0.clk_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="addr_master_0.reset_sink" />
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

@@ -1,0 +1,347 @@
+m255
+K4
+z2
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/hws_master/np_con/address_test/avlm_avls_1x1_vhdl
+valtera_avalon_st_pipeline_base
+Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z2 !s110 1647434516
+!i10b 1
+!s100 cGCeQ81QUBhXX?C>8;47E2
+I_6I3abccVgD1<Y;2kL@:z0
+S1
+R0
+Z3 w1647412569
+8avlm_avls_1x1/simulation/submodules/altera_avalon_st_pipeline_base.v
+Favlm_avls_1x1/simulation/submodules/altera_avalon_st_pipeline_base.v
+!i122 59
+L0 22 118
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z6 !s108 1647434516.000000
+!s107 avlm_avls_1x1/simulation/submodules/altera_avalon_st_pipeline_base.v|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_avalon_st_pipeline_base.v|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+Z7 o-sv -L altera_common_sv_packages -work slave_0_s0_burst_adapter -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+valtera_avalon_st_pipeline_stage
+R1
+R2
+!i10b 1
+!s100 P0Tn6inUZG>=8TYCUDfMb0
+I5T9WUzJT5d96o9L?7H8IT2
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/altera_avalon_st_pipeline_stage.sv
+Favlm_avls_1x1/simulation/submodules/altera_avalon_st_pipeline_stage.sv
+!i122 58
+L0 22 143
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/altera_avalon_st_pipeline_stage.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_avalon_st_pipeline_stage.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8
+valtera_default_burst_converter
+R1
+R2
+!i10b 1
+!s100 <4WHm<O`l=dbZ71Vk8h2_0
+IoJHRYJ4NfmT8KNMQP]9Te2
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/altera_default_burst_converter.sv
+Favlm_avls_1x1/simulation/submodules/altera_default_burst_converter.sv
+!i122 56
+L0 30 160
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/altera_default_burst_converter.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_default_burst_converter.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8
+valtera_incr_burst_converter
+R1
+R2
+!i10b 1
+!s100 9XnYLVoZ9NiheHSi;S@6Q2
+IIc4LEkaGCJLSX?:@=8RJU2
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/altera_incr_burst_converter.sv
+Favlm_avls_1x1/simulation/submodules/altera_incr_burst_converter.sv
+!i122 54
+L0 28 283
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/altera_incr_burst_converter.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_incr_burst_converter.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_address_alignment
+R1
+R2
+!i10b 1
+!s100 d[l4mS4WfF?SDFFCfRDR=1
+I5bT?C?dma4GmUeR5z[3mG1
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/altera_merlin_address_alignment.sv
+Favlm_avls_1x1/simulation/submodules/altera_merlin_address_alignment.sv
+!i122 57
+L0 26 238
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/altera_merlin_address_alignment.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_merlin_address_alignment.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter
+R1
+R2
+!i10b 1
+!s100 e@bdb4=kN^EMo=azQ8FI51
+I5i<mT^ENJbRHhmPHH4j0L0
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter.sv
+Favlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter.sv
+!i122 50
+L0 21 241
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_13_1
+R1
+R2
+!i10b 1
+!s100 5lQKG<]TnhJC21B4@4@_?0
+IYX6:;BaVdj3g5MCic]IQ`2
+S1
+R0
+R3
+Z9 8avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_13_1.sv
+Z10 Favlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_13_1.sv
+!i122 52
+L0 264 909
+R4
+R5
+r1
+!s85 0
+31
+R6
+Z11 !s107 avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_13_1.sv|
+Z12 !s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_13_1.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_adder
+R1
+R2
+!i10b 1
+!s100 5B1`Ck[i_zliOnETSWE@V2
+I`ie;BzNVOUfKnk9CPc]5E0
+S1
+R0
+R3
+R9
+R10
+!i122 52
+L0 55 20
+R4
+R5
+r1
+!s85 0
+31
+R6
+R11
+R12
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_burstwrap_increment
+R1
+R2
+!i10b 1
+!s100 EB<J0_k`UPfeS]nWPRZbJ1
+IcHAHINWRc^UcZ`SdN]j@^3
+S1
+R0
+R3
+R9
+R10
+!i122 52
+L0 40 14
+R4
+R5
+r1
+!s85 0
+31
+R6
+R11
+R12
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_min
+R1
+R2
+!i10b 1
+!s100 _aBNXo[b80ezR39L^F9MP0
+I<=@WJaVS3Tj77YKilHC5@3
+S1
+R0
+R3
+R9
+R10
+!i122 52
+L0 98 164
+R4
+R5
+r1
+!s85 0
+31
+R6
+R11
+R12
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_new
+R1
+R2
+!i10b 1
+!s100 P1DJd<dH7_cNnVj7ncP;l3
+IoM?6IYiF`fe5mNBL8Rb=b1
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_new.sv
+Favlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_new.sv
+!i122 53
+L0 25 1865
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_new.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_new.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_subtractor
+R1
+R2
+!i10b 1
+!s100 ;5O<IebR[R5^CNMc94J[g0
+ITQKPmkNf_nA@[C60ojlZ73
+S1
+R0
+R3
+R9
+R10
+!i122 52
+L0 77 13
+R4
+R5
+r1
+!s85 0
+31
+R6
+R11
+R12
+!i113 0
+R7
+R8
+valtera_merlin_burst_adapter_uncompressed_only
+R1
+R2
+!i10b 1
+!s100 8`CF0X];9[bDChnXF0SNf0
+IPC9RoQn7Uo53gm[_:kI[Q0
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv
+Favlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv
+!i122 51
+L0 39 53
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_merlin_burst_adapter_uncmpr.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8
+valtera_wrap_burst_converter
+R1
+R2
+!i10b 1
+!s100 >5Z0MlJWBMhMHg^LJmTLn1
+IL;J12f;3imU8;jm43FKc@1
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/altera_wrap_burst_converter.sv
+Favlm_avls_1x1/simulation/submodules/altera_wrap_burst_converter.sv
+!i122 55
+L0 27 309
+R4
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/altera_wrap_burst_converter.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/altera_wrap_burst_converter.sv|-L|altera_common_sv_packages|-work|slave_0_s0_burst_adapter|
+!i113 0
+R7
+R8

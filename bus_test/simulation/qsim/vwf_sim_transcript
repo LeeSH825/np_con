@@ -1,214 +1,84 @@
 Determining the location of the ModelSim executable...
 
-Using: C:\intelFPGA\20.1\modelsim_ase\win32aloem
+Using: /home/hws_master/intelFPGA_lite/21.1/questa_fse/bin
 
 To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
 Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/np_con/bus_test/simulation/test_SDC.vwf" --testbench_file="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="/home/hws_master/np_con/bus_test/STDP_REG_TEST.vwf" --testbench_file="/home/hws_master/np_con/bus_test/simulation/qsim/STDP_REG_TEST.vwf.vht"
 
-Info: *******************************************************************
-Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Copyright (C) 2021  Intel Corporation. All rights reserved.
-    Info: Your use of Intel Corporation's design tools, logic functions 
-    Info: and other software and tools, and any partner logic 
-    Info: functions, and any output files from any of the foregoing 
-    Info: (including device programming or simulation files), and any 
-    Info: associated documentation or information are expressly subject 
-    Info: to the terms and conditions of the Intel Program License 
-    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
-    Info: the Intel FPGA IP License Agreement, or other applicable license
-    Info: agreement, including, without limitation, that your use is for
-    Info: the sole purpose of programming logic devices manufactured by
-    Info: Intel and sold by Intel or its authorized distributors.  Please
-    Info: refer to the applicable agreement for further details, at
-    Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Mar  6 01:18:26 2022
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=C:/Users/Xynus_Main/np_con/bus_test/simulation/test_SDC.vwf --testbench_file=C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-
-t find port "index[13]" in design
-
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition    Info: Copyright (C) 2021  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Fri Mar 25 12:53:20 2022Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source=/home/hws_master/np_con/bus_test/STDP_REG_TEST.vwf --testbench_file=/home/hws_master/np_con/bus_test/simulation/qsim/STDP_REG_TEST.vwf.vhtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+g test bench files
+e when writing test bench files
+rning (201005): Ignoring output pin "dbg_TEMP_SUM[2]" in vector source file when writing test bench files
 Completed successfully. 
 
 **** Generating the functional simulation netlist ****
 
-quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/" bus_test -c bus_test
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/hws_master/np_con/bus_test/simulation/qsim/" bus_test -c bus_test
 
-Info: *******************************************************************
-Info: Running Quartus Prime EDA Netlist Writer
-    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Copyright (C) 2021  Intel Corporation. All rights reserved.
-    Info: Your use of Intel Corporation's design tools, logic functions 
-    Info: and other software and tools, and any partner logic 
-    Info: functions, and any output files from any of the foregoing 
-    Info: (including device programming or simulation files), and any 
-    Info: associated documentation or information are expressly subject 
-    Info: to the terms and conditions of the Intel Program License 
-    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
-    Info: the Intel FPGA IP License Agreement, or other applicable license
-    Info: agreement, including, without limitation, that your use is for
-    Info: the sole purpose of programming logic devices manufactured by
-    Info: Intel and sold by Intel or its authorized distributors.  Please
-    Info: refer to the applicable agreement for further details, at
-    Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Mar  6 01:18:28 2022
-Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/ bus_test -c bus_test
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file bus_test.vho in folder "C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4727 megabytes
-    Info: Processing ended: Sun Mar  6 01:18:29 2022
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
-
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition    Info: Copyright (C) 2021  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Fri Mar 25 12:53:21 2022Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/np_con/bus_test/simulation/qsim/ bus_test -c bus_testWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file bus_test.vho in folder "/home/hws_master/np_con/bus_test/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 706 megabytes    Info: Processing ended: Fri Mar 25 12:53:22 2022    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:00
 Completed successfully. 
 
 **** Generating the ModelSim .do script ****
 
-C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/bus_test.do generated.
+/home/hws_master/np_con/bus_test/simulation/qsim/bus_test.do generated.
 
 Completed successfully. 
 
 **** Running the ModelSim simulation ****
 
-C:/intelFPGA/20.1/modelsim_ase/win32aloem/vsim -c -do bus_test.do
+/home/hws_master/intelFPGA_lite/21.1/questa_fse/bin/vsim -c -do bus_test.do
 
 Reading pref.tcl
-
-
-# 2020.1
-
-
+# 2021.2
 # do bus_test.do
-
 # ** Warning: (vlib-34) Library already exists at "work".
-
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-
-# Start time: 01:18:30 on Mar 06,2022
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 12:53:22 on Mar 25,2022
 # vcom -work work bus_test.vho 
-
 # -- Loading package STANDARD
-
 # -- Loading package TEXTIO
-
 # -- Loading package std_logic_1164
-
 # -- Loading package VITAL_Timing
-
 # -- Loading package VITAL_Primitives
-
 # -- Loading package dffeas_pack
 # -- Loading package altera_primitives_components
-
 # -- Loading package altera_lnsim_components
-
 # -- Loading package cyclonev_atom_pack
-
 # -- Loading package cyclonev_components
-
-# -- Compiling entity simple_SDC_sm
-
-# -- Compiling architecture structure of simple_SDC_sm
-
-# End time: 01:18:30 on Mar 06,2022, Elapsed time: 0:00:00
-
+# -- Compiling entity shift_reg_post_add
+# -- Compiling architecture structure of shift_reg_post_add
+# End time: 12:53:22 on Mar 25,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-
-# Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
-
-# Start time: 01:18:30 on Mar 06,2022
-# vcom -work work simulation/test_SDC.vwf.vht 
-
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 12:53:22 on Mar 25,2022
+# vcom -work work STDP_REG_TEST.vwf.vht 
 # -- Loading package STANDARD
-
 # -- Loading package TEXTIO
-
 # -- Loading package std_logic_1164
-
-# -- Compiling entity simple_SDC_sm_vhd_vec_tst
-
-# -- Compiling architecture simple_SDC_sm_arch of simple_SDC_sm_vhd_vec_tst
-
-# End time: 01:18:30 on Mar 06,2022, Elapsed time: 0:00:00
-
-# Errors: 0, Warnings: 0
-
-# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.simple_SDC_sm_vhd_vec_tst 
-# Start time: 01:18:30 on Mar 06,2022
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading work.simple_sdc_sm_vhd_vec_tst(simple_sdc_sm_arch)
-# Loading ieee.vital_timing(body)
-# Loading ieee.vital_primitives(body)
-# Loading altera.dffeas_pack
-# Loading altera.altera_primitives_components
-# Loading altera_lnsim.altera_lnsim_components
-# Loading cyclonev.cyclonev_atom_pack(body)
-# Loading cyclonev.cyclonev_components
-# Loading work.simple_sdc_sm(structure)
-# Loading ieee.std_logic_arith(body)
-# Loading cyclonev.cyclonev_io_obuf(arch)
-# Loading cyclonev.cyclonev_io_ibuf(arch)
-# Loading cyclonev.cyclonev_clkena(behavior)
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)
-# Loading altera.dffeas(vital_dffeas)
-# ** Warning: Design size of 28274 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
-
-# after#34
-
-# End time: 01:18:30 on Mar 06,2022, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 1
-
+# -- Compiling entity shift_reg_post_add_vhd_vec_tst
+# -- Compiling architecture shift_reg_post_add_arch of shift_reg_post_add_vhd_vec_tst
+# End time: 12:53:22 on Mar 25,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.shift_reg_post_add_vhd_vec_tst # Start time: 12:53:22 on Mar 25,2022# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Intel Starter FPGA Edition-64# //  Version 2021.2 linux_x86_64 Apr 14 2021# //# //  Copyright 1991-2021 Mentor Graphics Corporation# //  All Rights Reserved.# //# //  QuestaSim and its associated documentation contain trade# //  secrets and commercial or financial information that are the property of# //  Mentor Graphics Corporation and are privileged, confidential,# //  and exempt from disclosure under the Freedom of Information Act,# //  5 U.S.C. Section 552. Furthermore, this information# //  is prohibited from disclosure under the Trade Secrets Act,# //  18 U.S.C. Section 1905.# //
+# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.shift_reg_post_add_vhd_vec_tst(shift_reg_post_add_arch)#1# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading altera.dffeas_pack# Loading altera.altera_primitives_components# Loading altera_lnsim.altera_lnsim_components# Loading cyclonev.cyclonev_atom_pack(body)# Loading cyclonev.cyclonev_components# Loading work.shift_reg_post_add(structure)#1# Loading ieee.std_logic_arith(body)# Loading cyclonev.cyclonev_io_obuf(arch)#1# Loading cyclonev.cyclonev_io_ibuf(arch)#1# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#1# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#2# Loading altera.dffeas(vital_dffeas)#1# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#3# Loading altera.dffeas(vital_dffeas)#2# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#4# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#5# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#6# Loading altera.dffeas(vital_dffeas)#3# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#7# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#8# Loading altera.dffeas(vital_dffeas)#4# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#9# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#10# Loading altera.dffeas(vital_dffeas)#5# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#11# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#12# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#13# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#14# Loading altera.dffeas(vital_dffeas)#6# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#15# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#16# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#17# Loading altera.dffeas(vital_dffeas)#7# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#18# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#19# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#20# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#21# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#22# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#23# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#24# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#25# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#26# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#27# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#28# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#29# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#30# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#31# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#32# Loading altera.dffeas(vital_dffeas)#8# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#33# Loading altera.dffeas(vital_dffeas)#9# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#34# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#35# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#36# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#37# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#38# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#39# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#40# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#41# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#42# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#43# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#44# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#45# Loading altera.dffeas(vital_dffeas)#10# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#46# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#47# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#48# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#49# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#50# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#51# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#52# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#53# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#54# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#55# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#56# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#57# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#58
+# after#35
+# End time: 12:53:22 on Mar 25,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/Xynus_Main/np_con/bus_test/simulation/test_SDC.vwf...
+Reading /home/hws_master/np_con/bus_test/STDP_REG_TEST.vwf...
 
-Reading C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/bus_test.msim.vcd...
+Reading /home/hws_master/np_con/bus_test/simulation/qsim/bus_test.msim.vcd...
 
 Processing channel transitions... 
 
-Warning: internal_ram[15] - signal not found in VCD.
-
-Warning: internal_ram[14] - signal not found in VCD.
-
-Warning: internal_ram[13] - signal not found in VCD.
-
-Warning: internal_ram[12] - signal not found in VCD.
-
-Warning: internal_ram[11] - signal not found in VCD.
-
-Warning: internal_ram[10] - signal not found in VCD.
-
-Warning: internal_ram[9] - signal not found in VCD.
-
-Warning: internal_ram[8] - signal not found in VCD.
-
-Warning: internal_ram[7] - signal not found in VCD.
-
-Warning: internal_ram[6] - signal not found in VCD.
-
-Warning: internal_ram[5] - signal not found in VCD.
-
-Warning: internal_ram[4] - signal not found in VCD.
-
-Warning: internal_ram[3] - signal not found in VCD.
-
-Warning: internal_ram[2] - signal not found in VCD.
-
-Warning: internal_ram[1] - signal not found in VCD.
-
-Warning: internal_ram[0] - signal not found in VCD.
-
-Writing the resulting VWF to C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/bus_test_20220306011831.sim.vwf
+Writing the resulting VWF to /home/hws_master/np_con/bus_test/simulation/qsim/bus_test_20220325125322.sim.vwf
 
 Finished VCD to VWF conversion.
 

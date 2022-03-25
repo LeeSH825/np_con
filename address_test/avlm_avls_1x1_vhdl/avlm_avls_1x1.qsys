@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element avlm_avls_1x1
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element clk
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+   element master_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element merlin_master_agent_0
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element mm_monitor_0
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+   element monitor_0
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
+   element slave_0
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element slave_0__0
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element slave_0__0.s0
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element slave_0___
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element slave_0_err
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+   element slave_0_err.s0
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element test_0
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
+   element test_0.s0
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="5CSEBA6U23I7" />
+ <parameter name="deviceFamily" value="Cyclone V" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface name="clk" internal="clk.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk.clk_in_reset" type="reset" dir="end" />
+ <interface name="slave_0_0_coe_dbg_data" internal="slave_0__0.coe_dbg_data" />
+ <interface
+   name="slave_0_0_coe_dbg_data_write"
+   internal="slave_0__0.coe_dbg_data_write" />
+ <interface name="slave_0_0_coe_dbg_out_en" internal="slave_0__0.coe_dbg_out_en" />
+ <interface
+   name="slave_0_0_coe_dbg_wait_pin"
+   internal="slave_0__0.coe_dbg_wait_pin" />
+ <interface name="slave_0_0_coe_out_en" internal="slave_0__0.coe_out_en" />
+ <interface name="slave_0_0_coe_out_pin" internal="slave_0__0.coe_out_pin" />
+ <interface name="slave_0_0_coe_wait_pin" internal="slave_0__0.coe_wait_pin" />
+ <interface name="slave_0_s0" internal="slave_0___.s0" />
+ <interface
+   name="slave_template_0_user_interface"
+   internal="slave_0_err.user_interface" />
+ <module name="clk" kind="clock_source" version="21.1" enabled="1">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="DEASSERT" />
+ </module>
+ <module
+   name="master_0"
+   kind="altera_avalon_mm_master_bfm"
+   version="21.1"
+   enabled="1">
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="ASSERT_HIGH_ARBITERLOCK" value="1" />
+  <parameter name="ASSERT_HIGH_BYTEENABLE" value="1" />
+  <parameter name="ASSERT_HIGH_LOCK" value="1" />
+  <parameter name="ASSERT_HIGH_READ" value="1" />
+  <parameter name="ASSERT_HIGH_READDATAVALID" value="1" />
+  <parameter name="ASSERT_HIGH_RESET" value="1" />
+  <parameter name="ASSERT_HIGH_WAITREQUEST" value="1" />
+  <parameter name="ASSERT_HIGH_WRITE" value="1" />
+  <parameter name="AV_ADDRESS_W" value="32" />
+  <parameter name="AV_ALWAYS_BURST_MAX_BURST" value="0" />
+  <parameter name="AV_BURSTCOUNT_W" value="4" />
+  <parameter name="AV_BURST_BNDR_ONLY" value="0" />
+  <parameter name="AV_BURST_LINEWRAP" value="0" />
+  <parameter name="AV_CONSTANT_BURST_BEHAVIOR" value="1" />
+  <parameter name="AV_FIX_READ_LATENCY" value="0" />
+  <parameter name="AV_MAX_PENDING_READS" value="8" />
+  <parameter name="AV_MAX_PENDING_WRITES" value="0" />
+  <parameter name="AV_NUMSYMBOLS" value="4" />
+  <parameter name="AV_READRESPONSE_W" value="8" />
+  <parameter name="AV_READ_WAIT_TIME" value="1" />
+  <parameter name="AV_REGISTERINCOMINGSIGNALS" value="0" />
+  <parameter name="AV_SYMBOL_W" value="8" />
+  <parameter name="AV_WRITERESPONSE_W" value="8" />
+  <parameter name="AV_WRITE_WAIT_TIME" value="0" />
+  <parameter name="REGISTER_WAITREQUEST" value="0" />
+  <parameter name="USE_ADDRESS" value="1" />
+  <parameter name="USE_ARBITERLOCK" value="0" />
+  <parameter name="USE_BEGIN_BURST_TRANSFER" value="0" />
+  <parameter name="USE_BEGIN_TRANSFER" value="0" />
+  <parameter name="USE_BURSTCOUNT" value="1" />
+  <parameter name="USE_BYTE_ENABLE" value="1" />
+  <parameter name="USE_CLKEN" value="0" />
+  <parameter name="USE_DEBUGACCESS" value="0" />
+  <parameter name="USE_LOCK" value="0" />
+  <parameter name="USE_READ" value="1" />
+  <parameter name="USE_READRESPONSE" value="0" />
+  <parameter name="USE_READ_DATA" value="1" />
+  <parameter name="USE_READ_DATA_VALID" value="1" />
+  <parameter name="USE_TRANSACTIONID" value="0" />
+  <parameter name="USE_WAIT_REQUEST" value="1" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="USE_WRITERESPONSE" value="0" />
+  <parameter name="USE_WRITE_DATA" value="1" />
+  <parameter name="VHDL_ID" value="0" />
+ </module>
+ <module
+   name="merlin_master_agent_0"
+   kind="altera_merlin_master_agent"
+   version="21.1"
+   enabled="0">
+  <parameter name="ADDR_MAP" value="" />
+  <parameter name="AV_BURSTBOUNDARIES" value="0" />
+  <parameter name="AV_BURSTCOUNT_W" value="3" />
+  <parameter name="AV_LINEWRAPBURSTS" value="0" />
+  <parameter name="BURSTWRAP_VALUE" value="4" />
+  <parameter name="CACHE_VALUE" value="0" />
+  <parameter name="ID" value="1" />
+  <parameter name="MERLIN_PACKET_FORMAT" value="" />
+  <parameter name="PKT_ADDR_H" value="73" />
+  <parameter name="PKT_ADDR_L" value="42" />
+  <parameter name="PKT_ADDR_SIDEBAND_H" value="99" />
+  <parameter name="PKT_ADDR_SIDEBAND_L" value="95" />
+  <parameter name="PKT_BEGIN_BURST" value="81" />
+  <parameter name="PKT_BURSTWRAP_H" value="79" />
+  <parameter name="PKT_BURSTWRAP_L" value="77" />
+  <parameter name="PKT_BURST_SIZE_H" value="86" />
+  <parameter name="PKT_BURST_SIZE_L" value="84" />
+  <parameter name="PKT_BURST_TYPE_H" value="94" />
+  <parameter name="PKT_BURST_TYPE_L" value="93" />
+  <parameter name="PKT_BYTEEN_H" value="5" />
+  <parameter name="PKT_BYTEEN_L" value="2" />
+  <parameter name="PKT_BYTE_CNT_H" value="76" />
+  <parameter name="PKT_BYTE_CNT_L" value="74" />
+  <parameter name="PKT_CACHE_H" value="92" />
+  <parameter name="PKT_CACHE_L" value="89" />
+  <parameter name="PKT_DATA_H" value="37" />
+  <parameter name="PKT_DATA_L" value="6" />
+  <parameter name="PKT_DATA_SIDEBAND_H" value="107" />
+  <parameter name="PKT_DATA_SIDEBAND_L" value="100" />
+  <parameter name="PKT_DEST_ID_H" value="0" />
+  <parameter name="PKT_DEST_ID_L" value="0" />
+  <parameter name="PKT_ORI_BURST_SIZE_H" value="116" />
+  <parameter name="PKT_ORI_BURST_SIZE_L" value="114" />
+  <parameter name="PKT_PROTECTION_H" value="80" />
+  <parameter name="PKT_PROTECTION_L" value="80" />
+  <parameter name="PKT_QOS_H" value="111" />
+  <parameter name="PKT_QOS_L" value="108" />
+  <parameter name="PKT_RESPONSE_STATUS_H" value="113" />
+  <parameter name="PKT_RESPONSE_STATUS_L" value="112" />
+  <parameter name="PKT_SRC_ID_H" value="1" />
+  <parameter name="PKT_SRC_ID_L" value="1" />
+  <parameter name="PKT_THREAD_ID_H" value="88" />
+  <parameter name="PKT_THREAD_ID_L" value="87" />
+  <parameter name="PKT_TRANS_COMPRESSED_READ" value="41" />
+  <parameter name="PKT_TRANS_EXCLUSIVE" value="83" />
+  <parameter name="PKT_TRANS_LOCK" value="82" />
+  <parameter name="PKT_TRANS_POSTED" value="40" />
+  <parameter name="PKT_TRANS_READ" value="38" />
+  <parameter name="PKT_TRANS_WRITE" value="39" />
+  <parameter name="SECURE_ACCESS_BIT" value="1" />
+  <parameter name="ST_CHANNEL_W" value="1" />
+  <parameter name="ST_DATA_W" value="115" />
+  <parameter name="SUPPRESS_0_BYTEEN_RSP" value="1" />
+  <parameter name="USE_READRESPONSE" value="0" />
+  <parameter name="USE_WRITERESPONSE" value="0" />
+ </module>
+ <module
+   name="mm_monitor_0"
+   kind="altera_avalon_mm_monitor"
+   version="21.1"
+   enabled="0">
+  <parameter name="AV_ADDRESS_W" value="32" />
+  <parameter name="AV_ALWAYS_BURST_MAX_BURST" value="0" />
+  <parameter name="AV_BURSTCOUNT_W" value="3" />
+  <parameter name="AV_BURST_BNDR_ONLY" value="0" />
+  <parameter name="AV_BURST_LINEWRAP" value="0" />
+  <parameter name="AV_CONSTANT_BURST_BEHAVIOR" value="1" />
+  <parameter name="AV_FIX_READ_LATENCY" value="0" />
+  <parameter name="AV_MAX_CONTINUOUS_READ" value="5" />
+  <parameter name="AV_MAX_CONTINUOUS_READDATAVALID" value="5" />
+  <parameter name="AV_MAX_CONTINUOUS_WAITREQUEST" value="5" />
+  <parameter name="AV_MAX_CONTINUOUS_WRITE" value="5" />
+  <parameter name="AV_MAX_PENDING_READS" value="1" />
+  <parameter name="AV_MAX_PENDING_WRITES" value="0" />
+  <parameter name="AV_MAX_READ_LATENCY" value="100" />
+  <parameter name="AV_MAX_WAITREQUESTED_READ" value="100" />
+  <parameter name="AV_MAX_WAITREQUESTED_WRITE" value="100" />
+  <parameter name="AV_NUMSYMBOLS" value="4" />
+  <parameter name="AV_READRESPONSE_W" value="8" />
+  <parameter name="AV_READ_TIMEOUT" value="100" />
+  <parameter name="AV_READ_WAIT_TIME" value="1" />
+  <parameter name="AV_REGISTERINCOMINGSIGNALS" value="0" />
+  <parameter name="AV_SYMBOL_W" value="8" />
+  <parameter name="AV_WAITREQUEST_TIMEOUT" value="1024" />
+  <parameter name="AV_WRITERESPONSE_W" value="8" />
+  <parameter name="AV_WRITE_TIMEOUT" value="100" />
+  <parameter name="AV_WRITE_WAIT_TIME" value="0" />
+  <parameter name="MASTER_ADDRESS_TYPE" value="SYMBOLS" />
+  <parameter name="REGISTER_WAITREQUEST" value="0" />
+  <parameter name="SLAVE_ADDRESS_TYPE" value="WORDS" />
+  <parameter name="USE_ADDRESS" value="1" />
+  <parameter name="USE_ARBITERLOCK" value="0" />
+  <parameter name="USE_BEGIN_BURST_TRANSFER" value="0" />
+  <parameter name="USE_BEGIN_TRANSFER" value="0" />
+  <parameter name="USE_BURSTCOUNT" value="0" />
+  <parameter name="USE_BYTE_ENABLE" value="1" />
+  <parameter name="USE_CLKEN" value="0" />
+  <parameter name="USE_DEBUGACCESS" value="0" />
+  <parameter name="USE_LOCK" value="0" />
+  <parameter name="USE_READ" value="1" />
+  <parameter name="USE_READRESPONSE" value="0" />
+  <parameter name="USE_READ_DATA" value="1" />
+  <parameter name="USE_READ_DATA_VALID" value="1" />
+  <parameter name="USE_TRANSACTIONID" value="0" />
+  <parameter name="USE_WAIT_REQUEST" value="1" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="USE_WRITERESPONSE" value="0" />
+  <parameter name="USE_WRITE_DATA" value="1" />
+  <parameter name="VHDL_ID" value="0" />
+ </module>
+ <module name="monitor_0" kind="monitor" version="1.0" enabled="1">
+  <parameter name="ADDRESS_WIDTH" value="12" />
+  <parameter name="BURST_WIDTH" value="4" />
+  <parameter name="BYTE_WIDTH" value="4" />
+  <parameter name="DATA_WIDTH" value="32" />
+ </module>
+ <module
+   name="slave_0"
+   kind="altera_avalon_mm_slave_bfm"
+   version="21.1"
+   enabled="1">
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="ASSERT_HIGH_ARBITERLOCK" value="1" />
+  <parameter name="ASSERT_HIGH_BYTEENABLE" value="1" />
+  <parameter name="ASSERT_HIGH_LOCK" value="1" />
+  <parameter name="ASSERT_HIGH_READ" value="1" />
+  <parameter name="ASSERT_HIGH_READDATAVALID" value="1" />
+  <parameter name="ASSERT_HIGH_RESET" value="1" />
+  <parameter name="ASSERT_HIGH_WAITREQUEST" value="1" />
+  <parameter name="ASSERT_HIGH_WRITE" value="1" />
+  <parameter name="AV_ADDRESS_W" value="12" />
+  <parameter name="AV_BURSTCOUNT_W" value="4" />
+  <parameter name="AV_BURST_BNDR_ONLY" value="0" />
+  <parameter name="AV_BURST_LINEWRAP" value="0" />
+  <parameter name="AV_FIX_READ_LATENCY" value="0" />
+  <parameter name="AV_MAX_PENDING_READS" value="1" />
+  <parameter name="AV_MAX_PENDING_WRITES" value="0" />
+  <parameter name="AV_NUMSYMBOLS" value="4" />
+  <parameter name="AV_READRESPONSE_W" value="8" />
+  <parameter name="AV_READ_WAIT_TIME" value="1" />
+  <parameter name="AV_REGISTERINCOMINGSIGNALS" value="0" />
+  <parameter name="AV_SYMBOL_W" value="8" />
+  <parameter name="AV_WRITERESPONSE_W" value="8" />
+  <parameter name="AV_WRITE_WAIT_TIME" value="0" />
+  <parameter name="REGISTER_WAITREQUEST" value="0" />
+  <parameter name="USE_ADDRESS" value="1" />
+  <parameter name="USE_ARBITERLOCK" value="0" />
+  <parameter name="USE_BEGIN_BURST_TRANSFER" value="0" />
+  <parameter name="USE_BEGIN_TRANSFER" value="0" />
+  <parameter name="USE_BURSTCOUNT" value="1" />
+  <parameter name="USE_BYTE_ENABLE" value="1" />
+  <parameter name="USE_CLKEN" value="0" />
+  <parameter name="USE_DEBUGACCESS" value="0" />
+  <parameter name="USE_LOCK" value="0" />
+  <parameter name="USE_READ" value="1" />
+  <parameter name="USE_READRESPONSE" value="0" />
+  <parameter name="USE_READ_DATA" value="1" />
+  <parameter name="USE_READ_DATA_VALID" value="1" />
+  <parameter name="USE_TRANSACTIONID" value="0" />
+  <parameter name="USE_WAIT_REQUEST" value="1" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="USE_WRITERESPONSE" value="0" />
+  <parameter name="USE_WRITE_DATA" value="1" />
+  <parameter name="VHDL_ID" value="0" />
+ </module>
+ <module name="slave_0__0" kind="slave_0" version="1.0" enabled="0" />
+ <module
+   name="slave_0___"
+   kind="altera_avalon_mm_slave_bfm"
+   version="21.1"
+   enabled="0">
+  <parameter name="ADDRESS_UNITS" value="SYMBOLS" />
+  <parameter name="ASSERT_HIGH_ARBITERLOCK" value="1" />
+  <parameter name="ASSERT_HIGH_BYTEENABLE" value="1" />
+  <parameter name="ASSERT_HIGH_LOCK" value="1" />
+  <parameter name="ASSERT_HIGH_READ" value="1" />
+  <parameter name="ASSERT_HIGH_READDATAVALID" value="1" />
+  <parameter name="ASSERT_HIGH_RESET" value="1" />
+  <parameter name="ASSERT_HIGH_WAITREQUEST" value="1" />
+  <parameter name="ASSERT_HIGH_WRITE" value="1" />
+  <parameter name="AV_ADDRESS_W" value="12" />
+  <parameter name="AV_BURSTCOUNT_W" value="4" />
+  <parameter name="AV_BURST_BNDR_ONLY" value="0" />
+  <parameter name="AV_BURST_LINEWRAP" value="0" />
+  <parameter name="AV_FIX_READ_LATENCY" value="0" />
+  <parameter name="AV_MAX_PENDING_READS" value="8" />
+  <parameter name="AV_MAX_PENDING_WRITES" value="0" />
+  <parameter name="AV_NUMSYMBOLS" value="4" />
+  <parameter name="AV_READRESPONSE_W" value="8" />
+  <parameter name="AV_READ_WAIT_TIME" value="1" />
+  <parameter name="AV_REGISTERINCOMINGSIGNALS" value="0" />
+  <parameter name="AV_SYMBOL_W" value="8" />
+  <parameter name="AV_WRITERESPONSE_W" value="8" />
+  <parameter name="AV_WRITE_WAIT_TIME" value="0" />
+  <parameter name="REGISTER_WAITREQUEST" value="0" />
+  <parameter name="USE_ADDRESS" value="1" />
+  <parameter name="USE_ARBITERLOCK" value="0" />
+  <parameter name="USE_BEGIN_BURST_TRANSFER" value="0" />
+  <parameter name="USE_BEGIN_TRANSFER" value="0" />
+  <parameter name="USE_BURSTCOUNT" value="1" />
+  <parameter name="USE_BYTE_ENABLE" value="1" />
+  <parameter name="USE_CLKEN" value="0" />
+  <parameter name="USE_DEBUGACCESS" value="0" />
+  <parameter name="USE_LOCK" value="0" />
+  <parameter name="USE_READ" value="1" />
+  <parameter name="USE_READRESPONSE" value="0" />
+  <parameter name="USE_READ_DATA" value="1" />
+  <parameter name="USE_READ_DATA_VALID" value="1" />
+  <parameter name="USE_TRANSACTIONID" value="0" />
+  <parameter name="USE_WAIT_REQUEST" value="1" />
+  <parameter name="USE_WRITE" value="1" />
+  <parameter name="USE_WRITERESPONSE" value="0" />
+  <parameter name="USE_WRITE_DATA" value="1" />
+  <parameter name="VHDL_ID" value="0" />
+ </module>
+ <module name="slave_0_err" kind="slave_template" version="2.0" enabled="0">
+  <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="DATA_WIDTH" value="8" />
+  <parameter name="ENABLE_SYNC_SIGNALS" value="1" />
+  <parameter name="IRQ_EN" value="0" />
+  <parameter name="MODE_0" value="2" />
+  <parameter name="MODE_1" value="4" />
+  <parameter name="MODE_10" value="4" />
+  <parameter name="MODE_11" value="4" />
+  <parameter name="MODE_12" value="4" />
+  <parameter name="MODE_13" value="4" />
+  <parameter name="MODE_14" value="4" />
+  <parameter name="MODE_15" value="4" />
+  <parameter name="MODE_2" value="4" />
+  <parameter name="MODE_3" value="4" />
+  <parameter name="MODE_4" value="4" />
+  <parameter name="MODE_5" value="4" />
+  <parameter name="MODE_6" value="4" />
+  <parameter name="MODE_7" value="4" />
+  <parameter name="MODE_8" value="4" />
+  <parameter name="MODE_9" value="4" />
+ </module>
+ <module name="test_0" kind="test" version="1.0" enabled="0">
+  <parameter name="ADDRESS_WIDTH" value="12" />
+  <parameter name="BURST_WIDTH" value="4" />
+  <parameter name="BYTE_WIDTH" value="4" />
+  <parameter name="DATA_WIDTH" value="32" />
+ </module>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="master_0.m0"
+   end="merlin_master_agent_0.av">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="master_0.m0"
+   end="mm_monitor_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="mm_monitor_0.m0"
+   end="slave_0__0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="avalon" version="21.1" start="master_0.m0" end="slave_0_err.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="avalon" version="21.1" start="master_0.m0" end="test_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="avalon" version="21.1" start="test_0.m0" end="slave_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="avalon" version="21.1" start="master_0.m0" end="monitor_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection kind="avalon" version="21.1" start="monitor_0.m0" end="slave_0.s0">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon_streaming"
+   version="21.1"
+   start="merlin_master_agent_0.cp"
+   end="merlin_master_agent_0.rp" />
+ <connection kind="clock" version="21.1" start="clk.clk" end="master_0.clk" />
+ <connection kind="clock" version="21.1" start="clk.clk" end="slave_0__0.clk" />
+ <connection kind="clock" version="21.1" start="clk.clk" end="mm_monitor_0.clk" />
+ <connection kind="clock" version="21.1" start="clk.clk" end="slave_0___.clk" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk.clk"
+   end="merlin_master_agent_0.clk" />
+ <connection kind="clock" version="21.1" start="clk.clk" end="slave_0.clk" />
+ <connection kind="clock" version="21.1" start="clk.clk" end="test_0.clock" />
+ <connection kind="clock" version="21.1" start="clk.clk" end="monitor_0.clock" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk.clk"
+   end="slave_0_err.clock_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="master_0.clk_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="slave_0__0.clk_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="mm_monitor_0.clk_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="slave_0___.clk_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="merlin_master_agent_0.clk_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="slave_0.clk_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="slave_0_err.clock_reset_reset" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="test_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk.clk_reset"
+   end="monitor_0.reset_sink" />
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

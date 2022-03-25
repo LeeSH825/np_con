@@ -30,9 +30,7 @@ Progress: Parameterizing connections
 Progress: Validating
 Progress: Done reading input file
 Info: bus_test: Generating bus_test "bus_test" for QUARTUS_SYNTH
-Info: Interconnect is inserted between master simple_soma_0.m_spike and slave simple_synapse_0.s_spike because the master has address signal 1 bit wide, but the slave is 0 bit wide.
 Info: Interconnect is inserted between master simple_soma_0.m_spike and slave simple_synapse_0.s_spike because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info: Interconnect is inserted between master simple_soma_0.m_synapse and slave simple_synapse_0.s_synapse because the master has address signal 1 bit wide, but the slave is 0 bit wide.
 Info: Interconnect is inserted between master simple_soma_0.m_synapse and slave simple_synapse_0.s_synapse because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
 Info: Interconnect is inserted between master simple_soma_0.m_time and slave simple_synapse_0.s_time because the master has address signal 1 bit wide, but the slave is 8 bit wide.
 Info: Interconnect is inserted between master simple_soma_0.m_time and slave simple_synapse_0.s_time because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.

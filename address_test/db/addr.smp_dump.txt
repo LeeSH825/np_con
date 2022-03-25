@@ -1,0 +1,12 @@
+
+State Machine - |addr_slave|m0_state
+Name m0_state.STATE_WAIT_m0 m0_state.STATE_PUSH_m0 m0_state.STATE_IDLE_m0 
+m0_state.STATE_IDLE_m0 0 0 0 
+m0_state.STATE_PUSH_m0 0 1 1 
+m0_state.STATE_WAIT_m0 1 0 1 
+
+State Machine - |addr_slave|s0_state
+Name s0_state.STATE_WAIT s0_state.STATE_PUSH s0_state.STATE_IDLE 
+s0_state.STATE_IDLE 0 0 0 
+s0_state.STATE_PUSH 0 1 1 
+s0_state.STATE_WAIT 1 0 1 

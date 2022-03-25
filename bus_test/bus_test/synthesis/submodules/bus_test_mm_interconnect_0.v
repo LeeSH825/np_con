@@ -7,33 +7,35 @@
 
 `timescale 1 ps / 1 ps
 module bus_test_mm_interconnect_0 (
-		input  wire       clk_0_clk_clk,                                        //                                      clk_0_clk.clk
-		input  wire       simple_soma_0_reset_sink_reset_bridge_in_reset_reset, // simple_soma_0_reset_sink_reset_bridge_in_reset.reset
-		output wire       simple_soma_0_m_spike_waitrequest,                    //                          simple_soma_0_m_spike.waitrequest
-		input  wire       simple_soma_0_m_spike_write,                          //                                               .write
-		input  wire [7:0] simple_soma_0_m_spike_writedata,                      //                                               .writedata
-		output wire       simple_synapse_0_s_spike_write,                       //                       simple_synapse_0_s_spike.write
-		output wire [7:0] simple_synapse_0_s_spike_writedata                    //                                               .writedata
+		input  wire       clk_0_clk_clk,                                           //                                         clk_0_clk.clk
+		input  wire       simple_soma_SM_0_reset_sink_reset_bridge_in_reset_reset, // simple_soma_SM_0_reset_sink_reset_bridge_in_reset.reset
+		input  wire [7:0] simple_soma_SM_0_m0_address,                             //                               simple_soma_SM_0_m0.address
+		output wire       simple_soma_SM_0_m0_waitrequest,                         //                                                  .waitrequest
+		input  wire       simple_soma_SM_0_m0_write,                               //                                                  .write
+		input  wire [7:0] simple_soma_SM_0_m0_writedata,                           //                                                  .writedata
+		output wire [7:0] simple_UP_Server_State_Machine_0_s0_address,             //               simple_UP_Server_State_Machine_0_s0.address
+		output wire       simple_UP_Server_State_Machine_0_s0_write,               //                                                  .write
+		output wire [7:0] simple_UP_Server_State_Machine_0_s0_writedata            //                                                  .writedata
 	);
 
-	wire        simple_soma_0_m_spike_translator_avalon_universal_master_0_waitrequest;   // simple_synapse_0_s_spike_translator:uav_waitrequest -> simple_soma_0_m_spike_translator:uav_waitrequest
-	wire  [7:0] simple_soma_0_m_spike_translator_avalon_universal_master_0_readdata;      // simple_synapse_0_s_spike_translator:uav_readdata -> simple_soma_0_m_spike_translator:uav_readdata
-	wire        simple_soma_0_m_spike_translator_avalon_universal_master_0_debugaccess;   // simple_soma_0_m_spike_translator:uav_debugaccess -> simple_synapse_0_s_spike_translator:uav_debugaccess
-	wire  [0:0] simple_soma_0_m_spike_translator_avalon_universal_master_0_address;       // simple_soma_0_m_spike_translator:uav_address -> simple_synapse_0_s_spike_translator:uav_address
-	wire        simple_soma_0_m_spike_translator_avalon_universal_master_0_read;          // simple_soma_0_m_spike_translator:uav_read -> simple_synapse_0_s_spike_translator:uav_read
-	wire  [0:0] simple_soma_0_m_spike_translator_avalon_universal_master_0_byteenable;    // simple_soma_0_m_spike_translator:uav_byteenable -> simple_synapse_0_s_spike_translator:uav_byteenable
-	wire        simple_soma_0_m_spike_translator_avalon_universal_master_0_readdatavalid; // simple_synapse_0_s_spike_translator:uav_readdatavalid -> simple_soma_0_m_spike_translator:uav_readdatavalid
-	wire        simple_soma_0_m_spike_translator_avalon_universal_master_0_lock;          // simple_soma_0_m_spike_translator:uav_lock -> simple_synapse_0_s_spike_translator:uav_lock
-	wire        simple_soma_0_m_spike_translator_avalon_universal_master_0_write;         // simple_soma_0_m_spike_translator:uav_write -> simple_synapse_0_s_spike_translator:uav_write
-	wire  [7:0] simple_soma_0_m_spike_translator_avalon_universal_master_0_writedata;     // simple_soma_0_m_spike_translator:uav_writedata -> simple_synapse_0_s_spike_translator:uav_writedata
-	wire  [0:0] simple_soma_0_m_spike_translator_avalon_universal_master_0_burstcount;    // simple_soma_0_m_spike_translator:uav_burstcount -> simple_synapse_0_s_spike_translator:uav_burstcount
+	wire        simple_soma_sm_0_m0_translator_avalon_universal_master_0_waitrequest;   // simple_UP_Server_State_Machine_0_s0_translator:uav_waitrequest -> simple_soma_SM_0_m0_translator:uav_waitrequest
+	wire  [7:0] simple_soma_sm_0_m0_translator_avalon_universal_master_0_readdata;      // simple_UP_Server_State_Machine_0_s0_translator:uav_readdata -> simple_soma_SM_0_m0_translator:uav_readdata
+	wire        simple_soma_sm_0_m0_translator_avalon_universal_master_0_debugaccess;   // simple_soma_SM_0_m0_translator:uav_debugaccess -> simple_UP_Server_State_Machine_0_s0_translator:uav_debugaccess
+	wire  [7:0] simple_soma_sm_0_m0_translator_avalon_universal_master_0_address;       // simple_soma_SM_0_m0_translator:uav_address -> simple_UP_Server_State_Machine_0_s0_translator:uav_address
+	wire        simple_soma_sm_0_m0_translator_avalon_universal_master_0_read;          // simple_soma_SM_0_m0_translator:uav_read -> simple_UP_Server_State_Machine_0_s0_translator:uav_read
+	wire  [0:0] simple_soma_sm_0_m0_translator_avalon_universal_master_0_byteenable;    // simple_soma_SM_0_m0_translator:uav_byteenable -> simple_UP_Server_State_Machine_0_s0_translator:uav_byteenable
+	wire        simple_soma_sm_0_m0_translator_avalon_universal_master_0_readdatavalid; // simple_UP_Server_State_Machine_0_s0_translator:uav_readdatavalid -> simple_soma_SM_0_m0_translator:uav_readdatavalid
+	wire        simple_soma_sm_0_m0_translator_avalon_universal_master_0_lock;          // simple_soma_SM_0_m0_translator:uav_lock -> simple_UP_Server_State_Machine_0_s0_translator:uav_lock
+	wire        simple_soma_sm_0_m0_translator_avalon_universal_master_0_write;         // simple_soma_SM_0_m0_translator:uav_write -> simple_UP_Server_State_Machine_0_s0_translator:uav_write
+	wire  [7:0] simple_soma_sm_0_m0_translator_avalon_universal_master_0_writedata;     // simple_soma_SM_0_m0_translator:uav_writedata -> simple_UP_Server_State_Machine_0_s0_translator:uav_writedata
+	wire  [0:0] simple_soma_sm_0_m0_translator_avalon_universal_master_0_burstcount;    // simple_soma_SM_0_m0_translator:uav_burstcount -> simple_UP_Server_State_Machine_0_s0_translator:uav_burstcount
 
 	altera_merlin_master_translator #(
-		.AV_ADDRESS_W                (1),
+		.AV_ADDRESS_W                (8),
 		.AV_DATA_W                   (8),
 		.AV_BURSTCOUNT_W             (1),
 		.AV_BYTEENABLE_W             (1),
-		.UAV_ADDRESS_W               (1),
+		.UAV_ADDRESS_W               (8),
 		.UAV_BURSTCOUNT_W            (1),
 		.USE_READ                    (0),
 		.USE_WRITE                   (1),
@@ -52,50 +54,50 @@ module bus_test_mm_interconnect_0 (
 		.UAV_CONSTANT_BURST_BEHAVIOR (0),
 		.AV_LINEWRAPBURSTS           (0),
 		.AV_REGISTERINCOMINGSIGNALS  (0)
-	) simple_soma_0_m_spike_translator (
-		.clk                    (clk_0_clk_clk),                                                            //                       clk.clk
-		.reset                  (simple_soma_0_reset_sink_reset_bridge_in_reset_reset),                     //                     reset.reset
-		.uav_address            (simple_soma_0_m_spike_translator_avalon_universal_master_0_address),       // avalon_universal_master_0.address
-		.uav_burstcount         (simple_soma_0_m_spike_translator_avalon_universal_master_0_burstcount),    //                          .burstcount
-		.uav_read               (simple_soma_0_m_spike_translator_avalon_universal_master_0_read),          //                          .read
-		.uav_write              (simple_soma_0_m_spike_translator_avalon_universal_master_0_write),         //                          .write
-		.uav_waitrequest        (simple_soma_0_m_spike_translator_avalon_universal_master_0_waitrequest),   //                          .waitrequest
-		.uav_readdatavalid      (simple_soma_0_m_spike_translator_avalon_universal_master_0_readdatavalid), //                          .readdatavalid
-		.uav_byteenable         (simple_soma_0_m_spike_translator_avalon_universal_master_0_byteenable),    //                          .byteenable
-		.uav_readdata           (simple_soma_0_m_spike_translator_avalon_universal_master_0_readdata),      //                          .readdata
-		.uav_writedata          (simple_soma_0_m_spike_translator_avalon_universal_master_0_writedata),     //                          .writedata
-		.uav_lock               (simple_soma_0_m_spike_translator_avalon_universal_master_0_lock),          //                          .lock
-		.uav_debugaccess        (simple_soma_0_m_spike_translator_avalon_universal_master_0_debugaccess),   //                          .debugaccess
-		.av_waitrequest         (simple_soma_0_m_spike_waitrequest),                                        //      avalon_anti_master_0.waitrequest
-		.av_write               (simple_soma_0_m_spike_write),                                              //                          .write
-		.av_writedata           (simple_soma_0_m_spike_writedata),                                          //                          .writedata
-		.av_address             (1'b0),                                                                     //               (terminated)
-		.av_burstcount          (1'b1),                                                                     //               (terminated)
-		.av_byteenable          (1'b1),                                                                     //               (terminated)
-		.av_beginbursttransfer  (1'b0),                                                                     //               (terminated)
-		.av_begintransfer       (1'b0),                                                                     //               (terminated)
-		.av_chipselect          (1'b0),                                                                     //               (terminated)
-		.av_read                (1'b0),                                                                     //               (terminated)
-		.av_readdata            (),                                                                         //               (terminated)
-		.av_readdatavalid       (),                                                                         //               (terminated)
-		.av_lock                (1'b0),                                                                     //               (terminated)
-		.av_debugaccess         (1'b0),                                                                     //               (terminated)
-		.uav_clken              (),                                                                         //               (terminated)
-		.av_clken               (1'b1),                                                                     //               (terminated)
-		.uav_response           (2'b00),                                                                    //               (terminated)
-		.av_response            (),                                                                         //               (terminated)
-		.uav_writeresponsevalid (1'b0),                                                                     //               (terminated)
-		.av_writeresponsevalid  ()                                                                          //               (terminated)
+	) simple_soma_sm_0_m0_translator (
+		.clk                    (clk_0_clk_clk),                                                          //                       clk.clk
+		.reset                  (simple_soma_SM_0_reset_sink_reset_bridge_in_reset_reset),                //                     reset.reset
+		.uav_address            (simple_soma_sm_0_m0_translator_avalon_universal_master_0_address),       // avalon_universal_master_0.address
+		.uav_burstcount         (simple_soma_sm_0_m0_translator_avalon_universal_master_0_burstcount),    //                          .burstcount
+		.uav_read               (simple_soma_sm_0_m0_translator_avalon_universal_master_0_read),          //                          .read
+		.uav_write              (simple_soma_sm_0_m0_translator_avalon_universal_master_0_write),         //                          .write
+		.uav_waitrequest        (simple_soma_sm_0_m0_translator_avalon_universal_master_0_waitrequest),   //                          .waitrequest
+		.uav_readdatavalid      (simple_soma_sm_0_m0_translator_avalon_universal_master_0_readdatavalid), //                          .readdatavalid
+		.uav_byteenable         (simple_soma_sm_0_m0_translator_avalon_universal_master_0_byteenable),    //                          .byteenable
+		.uav_readdata           (simple_soma_sm_0_m0_translator_avalon_universal_master_0_readdata),      //                          .readdata
+		.uav_writedata          (simple_soma_sm_0_m0_translator_avalon_universal_master_0_writedata),     //                          .writedata
+		.uav_lock               (simple_soma_sm_0_m0_translator_avalon_universal_master_0_lock),          //                          .lock
+		.uav_debugaccess        (simple_soma_sm_0_m0_translator_avalon_universal_master_0_debugaccess),   //                          .debugaccess
+		.av_address             (simple_soma_SM_0_m0_address),                                            //      avalon_anti_master_0.address
+		.av_waitrequest         (simple_soma_SM_0_m0_waitrequest),                                        //                          .waitrequest
+		.av_write               (simple_soma_SM_0_m0_write),                                              //                          .write
+		.av_writedata           (simple_soma_SM_0_m0_writedata),                                          //                          .writedata
+		.av_burstcount          (1'b1),                                                                   //               (terminated)
+		.av_byteenable          (1'b1),                                                                   //               (terminated)
+		.av_beginbursttransfer  (1'b0),                                                                   //               (terminated)
+		.av_begintransfer       (1'b0),                                                                   //               (terminated)
+		.av_chipselect          (1'b0),                                                                   //               (terminated)
+		.av_read                (1'b0),                                                                   //               (terminated)
+		.av_readdata            (),                                                                       //               (terminated)
+		.av_readdatavalid       (),                                                                       //               (terminated)
+		.av_lock                (1'b0),                                                                   //               (terminated)
+		.av_debugaccess         (1'b0),                                                                   //               (terminated)
+		.uav_clken              (),                                                                       //               (terminated)
+		.av_clken               (1'b1),                                                                   //               (terminated)
+		.uav_response           (2'b00),                                                                  //               (terminated)
+		.av_response            (),                                                                       //               (terminated)
+		.uav_writeresponsevalid (1'b0),                                                                   //               (terminated)
+		.av_writeresponsevalid  ()                                                                        //               (terminated)
 	);
 
 	altera_merlin_slave_translator #(
-		.AV_ADDRESS_W                   (1),
+		.AV_ADDRESS_W                   (8),
 		.AV_DATA_W                      (8),
 		.UAV_DATA_W                     (8),
 		.AV_BURSTCOUNT_W                (1),
 		.AV_BYTEENABLE_W                (1),
 		.UAV_BYTEENABLE_W               (1),
-		.UAV_ADDRESS_W                  (1),
+		.UAV_ADDRESS_W                  (8),
 		.UAV_BURSTCOUNT_W               (1),
 		.AV_READLATENCY                 (0),
 		.USE_READDATAVALID              (0),
@@ -114,42 +116,42 @@ module bus_test_mm_interconnect_0 (
 		.AV_WRITE_WAIT_CYCLES           (0),
 		.AV_SETUP_WAIT_CYCLES           (0),
 		.AV_DATA_HOLD_CYCLES            (0)
-	) simple_synapse_0_s_spike_translator (
-		.clk                    (clk_0_clk_clk),                                                            //                      clk.clk
-		.reset                  (simple_soma_0_reset_sink_reset_bridge_in_reset_reset),                     //                    reset.reset
-		.uav_address            (simple_soma_0_m_spike_translator_avalon_universal_master_0_address),       // avalon_universal_slave_0.address
-		.uav_burstcount         (simple_soma_0_m_spike_translator_avalon_universal_master_0_burstcount),    //                         .burstcount
-		.uav_read               (simple_soma_0_m_spike_translator_avalon_universal_master_0_read),          //                         .read
-		.uav_write              (simple_soma_0_m_spike_translator_avalon_universal_master_0_write),         //                         .write
-		.uav_waitrequest        (simple_soma_0_m_spike_translator_avalon_universal_master_0_waitrequest),   //                         .waitrequest
-		.uav_readdatavalid      (simple_soma_0_m_spike_translator_avalon_universal_master_0_readdatavalid), //                         .readdatavalid
-		.uav_byteenable         (simple_soma_0_m_spike_translator_avalon_universal_master_0_byteenable),    //                         .byteenable
-		.uav_readdata           (simple_soma_0_m_spike_translator_avalon_universal_master_0_readdata),      //                         .readdata
-		.uav_writedata          (simple_soma_0_m_spike_translator_avalon_universal_master_0_writedata),     //                         .writedata
-		.uav_lock               (simple_soma_0_m_spike_translator_avalon_universal_master_0_lock),          //                         .lock
-		.uav_debugaccess        (simple_soma_0_m_spike_translator_avalon_universal_master_0_debugaccess),   //                         .debugaccess
-		.av_write               (simple_synapse_0_s_spike_write),                                           //      avalon_anti_slave_0.write
-		.av_writedata           (simple_synapse_0_s_spike_writedata),                                       //                         .writedata
-		.av_address             (),                                                                         //              (terminated)
-		.av_read                (),                                                                         //              (terminated)
-		.av_readdata            (8'b10101101),                                                              //              (terminated)
-		.av_begintransfer       (),                                                                         //              (terminated)
-		.av_beginbursttransfer  (),                                                                         //              (terminated)
-		.av_burstcount          (),                                                                         //              (terminated)
-		.av_byteenable          (),                                                                         //              (terminated)
-		.av_readdatavalid       (1'b0),                                                                     //              (terminated)
-		.av_waitrequest         (1'b0),                                                                     //              (terminated)
-		.av_writebyteenable     (),                                                                         //              (terminated)
-		.av_lock                (),                                                                         //              (terminated)
-		.av_chipselect          (),                                                                         //              (terminated)
-		.av_clken               (),                                                                         //              (terminated)
-		.uav_clken              (1'b0),                                                                     //              (terminated)
-		.av_debugaccess         (),                                                                         //              (terminated)
-		.av_outputenable        (),                                                                         //              (terminated)
-		.uav_response           (),                                                                         //              (terminated)
-		.av_response            (2'b00),                                                                    //              (terminated)
-		.uav_writeresponsevalid (),                                                                         //              (terminated)
-		.av_writeresponsevalid  (1'b0)                                                                      //              (terminated)
+	) simple_up_server_state_machine_0_s0_translator (
+		.clk                    (clk_0_clk_clk),                                                          //                      clk.clk
+		.reset                  (simple_soma_SM_0_reset_sink_reset_bridge_in_reset_reset),                //                    reset.reset
+		.uav_address            (simple_soma_sm_0_m0_translator_avalon_universal_master_0_address),       // avalon_universal_slave_0.address
+		.uav_burstcount         (simple_soma_sm_0_m0_translator_avalon_universal_master_0_burstcount),    //                         .burstcount
+		.uav_read               (simple_soma_sm_0_m0_translator_avalon_universal_master_0_read),          //                         .read
+		.uav_write              (simple_soma_sm_0_m0_translator_avalon_universal_master_0_write),         //                         .write
+		.uav_waitrequest        (simple_soma_sm_0_m0_translator_avalon_universal_master_0_waitrequest),   //                         .waitrequest
+		.uav_readdatavalid      (simple_soma_sm_0_m0_translator_avalon_universal_master_0_readdatavalid), //                         .readdatavalid
+		.uav_byteenable         (simple_soma_sm_0_m0_translator_avalon_universal_master_0_byteenable),    //                         .byteenable
+		.uav_readdata           (simple_soma_sm_0_m0_translator_avalon_universal_master_0_readdata),      //                         .readdata
+		.uav_writedata          (simple_soma_sm_0_m0_translator_avalon_universal_master_0_writedata),     //                         .writedata
+		.uav_lock               (simple_soma_sm_0_m0_translator_avalon_universal_master_0_lock),          //                         .lock
+		.uav_debugaccess        (simple_soma_sm_0_m0_translator_avalon_universal_master_0_debugaccess),   //                         .debugaccess
+		.av_address             (simple_UP_Server_State_Machine_0_s0_address),                            //      avalon_anti_slave_0.address
+		.av_write               (simple_UP_Server_State_Machine_0_s0_write),                              //                         .write
+		.av_writedata           (simple_UP_Server_State_Machine_0_s0_writedata),                          //                         .writedata
+		.av_read                (),                                                                       //              (terminated)
+		.av_readdata            (8'b10101101),                                                            //              (terminated)
+		.av_begintransfer       (),                                                                       //              (terminated)
+		.av_beginbursttransfer  (),                                                                       //              (terminated)
+		.av_burstcount          (),                                                                       //              (terminated)
+		.av_byteenable          (),                                                                       //              (terminated)
+		.av_readdatavalid       (1'b0),                                                                   //              (terminated)
+		.av_waitrequest         (1'b0),                                                                   //              (terminated)
+		.av_writebyteenable     (),                                                                       //              (terminated)
+		.av_lock                (),                                                                       //              (terminated)
+		.av_chipselect          (),                                                                       //              (terminated)
+		.av_clken               (),                                                                       //              (terminated)
+		.uav_clken              (1'b0),                                                                   //              (terminated)
+		.av_debugaccess         (),                                                                       //              (terminated)
+		.av_outputenable        (),                                                                       //              (terminated)
+		.uav_response           (),                                                                       //              (terminated)
+		.av_response            (2'b00),                                                                  //              (terminated)
+		.uav_writeresponsevalid (),                                                                       //              (terminated)
+		.av_writeresponsevalid  (1'b0)                                                                    //              (terminated)
 	);
 
 endmodule

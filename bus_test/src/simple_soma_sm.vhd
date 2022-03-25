@@ -5,7 +5,7 @@ use IEEE.numeric_std.all;
 entity simple_soma_sm is
 	generic( 	THRESHOLD : integer := 10;
 				DATA_WIDTH : integer := 8;
-				ADDR_WIDTH : integer := 7;
+				ADDR_WIDTH : integer := 2;
 				UPLOAD_SERVER_ADDRESS : std_logic_vector(7 downto 0) := "00000001"
 	);
 	port(		clk : in std_logic;
@@ -13,12 +13,12 @@ entity simple_soma_sm is
 
 				-- Avalon-MM Master Interface
 				-- Master_0 : spike
-				avm_m0_address : out std_logic_vector(ADDR_WIDTH downto 0);
-				avm_m0_waitrequest : in std_logic;
+				avm_pushSpike_address : out std_logic_vector(ADDR_WIDTH downto 0);
+				avm_pushSpike_waitrequest : in std_logic;
 
-				avm_m0_write_spike : out std_logic;
-				avm_m0_writedata_spike_time : out std_logic_vector(DATA_WIDTH-1 downto 0);
-				avm_m0_response_spike : in std_logic_vector(1 downto 0);
+				avm_pushSpike_write : out std_logic;
+				avm_pushSpike_writedata : out std_logic_vector(DATA_WIDTH-1 downto 0);
+				avm_pushSpike_response : in std_logic_vector(1 downto 0);
 
 
 				-- -- Master_1 : read synapse_weight
@@ -46,10 +46,10 @@ entity simple_soma_sm is
 				-- avs_s0_writedata_address : in std_logic_vector(DATA_WIDTH downto 0)
 
 				-- Slave_0 : get synapse
-				avs_s0_address : in std_logic_vector(ADDR_WIDTH downto 0);
+				avs_pullSynapse_address : in std_logic_vector(ADDR_WIDTH downto 0);
 
-				avs_s0_write_synapse : in std_logic;
-				avs_s0_writedata_synapse : in std_logic_vector(DATA_WIDTH-1 downto 0)
+				avs_pullSynapse_write : in std_logic;
+				avs_pullSynapse_writedata : in std_logic_vector(DATA_WIDTH-1 downto 0)
 				--avs_s0_response_synapse : out std_logic_vector(1 downto 0)
 	);
 end simple_soma_sm;
@@ -73,9 +73,9 @@ begin
 	-- end process;
 
 	process(clk, rst, state,
-			avm_m0_waitrequest, avm_m0_response_spike,
+			avm_pushSpike_waitrequest, avm_pushSpike_response,
 			--avs_m1_waitrequest. avs_m1_readdata_synapse,
-			avs_s0_address, avs_s0_write_synapse, avs_s0_writedata_synapse)
+			avs_pullSynapse_address, avs_pullSynapse_write, avs_pullSynapse_writedata)
 
 			variable internal_reg : integer := 0;
 			variable temp_TIME : integer := 9;
@@ -84,9 +84,9 @@ begin
 	if rst = '1' then
 		state <= STATE_IDLE;
 		
-		avm_m0_address <= (others => '0');
-		avm_m0_write_spike <= '0';
-		avm_m0_writedata_spike_time <= (others =>'0');
+		avm_pushSpike_address <= (others => '0');
+		avm_pushSpike_write <= '0';
+		avm_pushSpike_writedata <= (others =>'0');
 
 		--avs_m1_address <= (others => 'X');
 		--avs_m1_read_synapse <= 'X';
@@ -99,14 +99,16 @@ begin
 	elsif rising_edge(clk) then
 		case state is
 		when STATE_IDLE =>
-			avm_m0_address <= (others => '0');
-			avm_m0_write_spike <= '0';
-			avm_m0_writedata_spike_time <= (others => '0');
-			if (avs_s0_write_synapse = '1') then
-				internal_reg := internal_reg + to_integer(signed(avs_s0_writedata_synapse));
+			avm_pushSpike_address <= (others => '0');
+			avm_pushSpike_write <= '0';
+			avm_pushSpike_writedata <= (others => '0');
+
+			if (avs_pullSynapse_write = '1') then
+				internal_reg := internal_reg + to_integer(signed(avs_pullSynapse_writedata));
 				--avs_s0_response_synapse <= "00";
-				if (internal_reg > THRESHOLD) then
+				if (internal_reg >= THRESHOLD) then
 					-- next_state <= STATE_SPIKE;
+					avm_pushSpike_write <= '1';
 					state <= STATE_SPIKE;
 				else
 					-- next_state <= STATE_IDLE;
@@ -115,14 +117,13 @@ begin
 			else
 				state <= STATE_IDLE;
 				-- next_state <= STATE_IDLE;
-				
 			end if;
 
 		when STATE_SPIKE =>
-			avm_m0_address <= UPLOAD_SERVER_ADDRESS;
-			avm_m0_write_spike <= '1';
-			avm_m0_writedata_spike_time <= std_logic_vector(to_signed(temp_TIME, DATA_WIDTH));
-			if (avm_m0_waitrequest = '1') then
+			avm_pushSpike_address <= UPLOAD_SERVER_ADDRESS;
+			avm_pushSpike_write <= '1';
+			avm_pushSpike_writedata <= std_logic_vector(to_signed(temp_TIME, DATA_WIDTH));
+			if (avm_pushSpike_waitrequest = '1') then
 				-- next_state <= STATE_SPIKE;
 				state <= STATE_SPIKE;
 			else
@@ -130,7 +131,7 @@ begin
 				state <= STATE_WAIT;
 				wait_TIME := 5;
 			end if;
-			if (avm_m0_response_spike = "00" ) then
+			if (avm_pushSpike_response = "00" ) then
 				-- next_state <= STATE_WAIT;
 				state <= STATE_WAIT;
 				wait_TIME := 5;
@@ -147,9 +148,9 @@ begin
 				-- next_state <= STATE_WAIT;
 				state <= STATE_WAIT;
 				wait_TIME := wait_TIME - 1;
-				avm_m0_address <= (others => '0');
-				avm_m0_write_spike <= '0';
-				avm_m0_writedata_spike_time <= (others=> '0');
+				avm_pushSpike_address <= (others => '0');
+				avm_pushSpike_write <= '0';
+				avm_pushSpike_writedata <= (others=> '0');
 				-- wait request or something?
 			end if;
 
@@ -157,9 +158,9 @@ begin
 			-- next_state <= STATE_IDLE;
 			state <= STATE_IDLE;
 		
-			avm_m0_address <= (others => '0');
-			avm_m0_write_spike <= '0';
-			avm_m0_writedata_spike_time <= (others=> '0');
+			avm_pushSpike_address <= (others => '0');
+			avm_pushSpike_write <= '0';
+			avm_pushSpike_writedata <= (others=> '0');
 	
 			--avs_m1_address <= (others => 'X');
 			--avs_m1_read_synapse <= 'X';

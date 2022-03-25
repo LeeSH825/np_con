@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_avalon_reset_source.vhd"
+   type="VHDL"
+   library="test_inst_reset_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_avalon_clock_source.vhd"
+   type="VHDL"
+   library="test_inst_clk_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0006_vhdl_pkg.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_write_to_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0006.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_write_to_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0005_vhdl_pkg.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_input_en_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0005.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_input_en_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0004_vhdl_pkg.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_dbg_write_to_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0004.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_dbg_write_to_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0003_vhdl_pkg.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_dbg_input_en_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0003.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_dbg_input_en_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0002_vhdl_pkg.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_dbg_data_in_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0002.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_dbg_data_in_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_vhdl_pkg.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_data_in_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/altera_conduit_bfm.vhd"
+   type="VHDL"
+   library="test_inst_addr_master_0_data_in_bfm" />
+ <file
+   path="test/testbench/test_tb/simulation/submodules/test.vhd"
+   type="VHDL"
+   library="test_inst" />
+ <file path="test/testbench/test_tb/simulation/test_tb.vhd" type="VHDL" />
+ <topLevel name="test_tb" />
+ <deviceFamily name="cyclonev" />
+</simPackage>

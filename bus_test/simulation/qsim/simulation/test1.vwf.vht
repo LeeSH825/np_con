@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "03/05/2022 20:25:49"
+-- Generated on "03/06/2022 16:48:58"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          simple_soma_sm
 -- 
@@ -34,11 +34,11 @@ END simple_soma_sm_vhd_vec_tst;
 ARCHITECTURE simple_soma_sm_arch OF simple_soma_sm_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL avs_m0_address : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL avs_m0_response_spike : STD_LOGIC_VECTOR(1 DOWNTO 0);
-SIGNAL avs_m0_waitrequest : STD_LOGIC;
-SIGNAL avs_m0_write_spike : STD_LOGIC;
-SIGNAL avs_m0_writedata_spike_time : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL avm_m0_address : STD_LOGIC_VECTOR(7 DOWNTO 0);
+SIGNAL avm_m0_response_spike : STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL avm_m0_waitrequest : STD_LOGIC;
+SIGNAL avm_m0_write_spike : STD_LOGIC;
+SIGNAL avm_m0_writedata_spike_time : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL avs_s0_address : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL avs_s0_write_synapse : STD_LOGIC;
 SIGNAL avs_s0_writedata_synapse : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -46,11 +46,11 @@ SIGNAL clk : STD_LOGIC;
 SIGNAL rst : STD_LOGIC;
 COMPONENT simple_soma_sm
 	PORT (
-	avs_m0_address : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	avs_m0_response_spike : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-	avs_m0_waitrequest : IN STD_LOGIC;
-	avs_m0_write_spike : OUT STD_LOGIC;
-	avs_m0_writedata_spike_time : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+	avm_m0_address : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
+	avm_m0_response_spike : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
+	avm_m0_waitrequest : IN STD_LOGIC;
+	avm_m0_write_spike : BUFFER STD_LOGIC;
+	avm_m0_writedata_spike_time : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0);
 	avs_s0_address : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 	avs_s0_write_synapse : IN STD_LOGIC;
 	avs_s0_writedata_synapse : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -62,11 +62,11 @@ BEGIN
 	i1 : simple_soma_sm
 	PORT MAP (
 -- list connections between master ports and signals
-	avs_m0_address => avs_m0_address,
-	avs_m0_response_spike => avs_m0_response_spike,
-	avs_m0_waitrequest => avs_m0_waitrequest,
-	avs_m0_write_spike => avs_m0_write_spike,
-	avs_m0_writedata_spike_time => avs_m0_writedata_spike_time,
+	avm_m0_address => avm_m0_address,
+	avm_m0_response_spike => avm_m0_response_spike,
+	avm_m0_waitrequest => avm_m0_waitrequest,
+	avm_m0_write_spike => avm_m0_write_spike,
+	avm_m0_writedata_spike_time => avm_m0_writedata_spike_time,
 	avs_s0_address => avs_s0_address,
 	avs_s0_write_synapse => avs_s0_write_synapse,
 	avs_s0_writedata_synapse => avs_s0_writedata_synapse,
@@ -96,25 +96,6 @@ BEGIN
 	rst <= '0';
 WAIT;
 END PROCESS t_prcs_rst;
--- avs_m0_response_spike[1]
-t_prcs_avs_m0_response_spike_1: PROCESS
-BEGIN
-	avs_m0_response_spike(1) <= '0';
-WAIT;
-END PROCESS t_prcs_avs_m0_response_spike_1;
--- avs_m0_response_spike[0]
-t_prcs_avs_m0_response_spike_0: PROCESS
-BEGIN
-	avs_m0_response_spike(0) <= '0';
-WAIT;
-END PROCESS t_prcs_avs_m0_response_spike_0;
-
--- avs_m0_waitrequest
-t_prcs_avs_m0_waitrequest: PROCESS
-BEGIN
-	avs_m0_waitrequest <= '0';
-WAIT;
-END PROCESS t_prcs_avs_m0_waitrequest;
 -- avs_s0_address[7]
 t_prcs_avs_s0_address_7: PROCESS
 BEGIN

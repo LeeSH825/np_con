@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2022.03.16.15:06:48"
+ outputDirectory="/home/hws_master/np_con/address_test/slave_template/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEBA6U23I7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="7"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_RESET_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clock_reset" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="clock_reset_reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock_reset" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="reset" direction="input" role="reset" width="1" />
+  </interface>
+  <interface name="s0" kind="avalon" start="0">
+   <property name="addressAlignment" value="DYNAMIC" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="2048" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clock_reset" />
+   <property name="associatedReset" value="clock_reset_reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="printableDevice" value="false" />
+   <property name="readLatency" value="3" />
+   <property name="readWaitStates" value="0" />
+   <property name="readWaitTime" value="0" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="0" />
+   <property name="writeWaitTime" value="0" />
+   <port name="slave_address" direction="input" role="address" width="9" />
+   <port name="slave_read" direction="input" role="read" width="1" />
+   <port name="slave_write" direction="input" role="write" width="1" />
+   <port name="slave_readdata" direction="output" role="readdata" width="32" />
+   <port name="slave_writedata" direction="input" role="writedata" width="32" />
+   <port name="slave_byteenable" direction="input" role="byteenable" width="4" />
+  </interface>
+  <interface name="user_interface" kind="conduit" start="0">
+   <property name="associatedClock" value="clock_reset" />
+   <property name="associatedReset" value="clock_reset_reset" />
+   <port name="user_dataout_0" direction="output" role="dataout_0" width="32" />
+   <port name="user_dataout_1" direction="output" role="dataout_1" width="32" />
+   <port name="user_dataout_2" direction="output" role="dataout_2" width="32" />
+   <port name="user_dataout_3" direction="output" role="dataout_3" width="32" />
+   <port name="user_dataout_4" direction="output" role="dataout_4" width="32" />
+   <port name="user_dataout_5" direction="output" role="dataout_5" width="32" />
+   <port name="user_dataout_6" direction="output" role="dataout_6" width="32" />
+   <port name="user_dataout_7" direction="output" role="dataout_7" width="32" />
+   <port name="user_dataout_8" direction="output" role="dataout_8" width="32" />
+   <port name="user_dataout_9" direction="output" role="dataout_9" width="32" />
+   <port
+       name="user_dataout_10"
+       direction="output"
+       role="dataout_10"
+       width="32" />
+   <port
+       name="user_dataout_11"
+       direction="output"
+       role="dataout_11"
+       width="32" />
+   <port
+       name="user_dataout_12"
+       direction="output"
+       role="dataout_12"
+       width="32" />
+   <port
+       name="user_dataout_13"
+       direction="output"
+       role="dataout_13"
+       width="32" />
+   <port
+       name="user_dataout_14"
+       direction="output"
+       role="dataout_14"
+       width="32" />
+   <port
+       name="user_dataout_15"
+       direction="output"
+       role="dataout_15"
+       width="32" />
+   <port name="user_datain_0" direction="input" role="datain_0" width="32" />
+   <port name="user_datain_1" direction="input" role="datain_1" width="32" />
+   <port name="user_datain_2" direction="input" role="datain_2" width="32" />
+   <port name="user_datain_3" direction="input" role="datain_3" width="32" />
+   <port name="user_datain_4" direction="input" role="datain_4" width="32" />
+   <port name="user_datain_5" direction="input" role="datain_5" width="32" />
+   <port name="user_datain_6" direction="input" role="datain_6" width="32" />
+   <port name="user_datain_7" direction="input" role="datain_7" width="32" />
+   <port name="user_datain_8" direction="input" role="datain_8" width="32" />
+   <port name="user_datain_9" direction="input" role="datain_9" width="32" />
+   <port name="user_datain_10" direction="input" role="datain_10" width="32" />
+   <port name="user_datain_11" direction="input" role="datain_11" width="32" />
+   <port name="user_datain_12" direction="input" role="datain_12" width="32" />
+   <port name="user_datain_13" direction="input" role="datain_13" width="32" />
+   <port name="user_datain_14" direction="input" role="datain_14" width="32" />
+   <port name="user_datain_15" direction="input" role="datain_15" width="32" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="slave_template:1.0:AUTO_CLOCK_RESET_CLOCK_DOMAIN=-1,AUTO_CLOCK_RESET_CLOCK_RATE=-1,AUTO_CLOCK_RESET_RESET_DOMAIN=-1,AUTO_DEVICE=5CSEBA6U23I7,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1647410808,AUTO_UNIQUE_ID=(slave_template:2.0:AUTO_CLOCK_RESET_CLOCK_RATE=0,AUTO_DEVICE_FAMILY=Cyclone V,DATA_WIDTH=32,ENABLE_SYNC_SIGNALS=0,IRQ_EN=0,MODE_0=2,MODE_1=2,MODE_10=2,MODE_11=2,MODE_12=2,MODE_13=2,MODE_14=2,MODE_15=2,MODE_2=2,MODE_3=2,MODE_4=2,MODE_5=2,MODE_6=2,MODE_7=2,MODE_8=2,MODE_9=2)"
+   instancePathKey="slave_template"
+   kind="slave_template"
+   version="1.0"
+   name="slave_template">
+  <parameter name="AUTO_CLOCK_RESET_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLOCK_RESET_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1647410808" />
+  <parameter name="AUTO_DEVICE" value="5CSEBA6U23I7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="/home/hws_master/np_con/address_test/slave_template/synthesis/slave_template.vhd"
+       type="VHDL" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/hws_master/np_con/address_test/slave_template/synthesis/slave_template.vhd"
+       type="VHDL" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="/home/hws_master/np_con/address_test/slave_template.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file path="/home/hws_master/np_con/address_test/slave_template.qsys" />
+  </childSourceFiles>
+  <instantiator instantiator="slave_template" as="slave_template_0" />
+  <messages>
+   <message level="Debug" culprit="slave_template">queue size: 0 starting:slave_template "slave_template"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="slave_template"><![CDATA["<b>slave_template</b>" reuses <b>slave_template</b> "<b>slave_template</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

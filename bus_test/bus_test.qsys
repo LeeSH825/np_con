@@ -17,6 +17,46 @@
          type = "String";
       }
    }
+   element bus_test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element bus_test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element bus_test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element bus_test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
+   element bus_test
+   {
+      datum _originalDeviceFamily
+      {
+         value = "Cyclone V";
+         type = "String";
+      }
+   }
    element clk_0
    {
       datum _sortIndex
@@ -25,31 +65,15 @@
          type = "int";
       }
    }
-   element simple_soma_0
+   element simple_SDC_State_Machine_0
    {
       datum _sortIndex
       {
-         value = "1";
+         value = "4";
          type = "int";
       }
    }
-   element simple_synapse_0
-   {
-      datum _sortIndex
-      {
-         value = "2";
-         type = "int";
-      }
-   }
-   element simple_synapse_0.s_spike
-   {
-      datum baseAddress
-      {
-         value = "8";
-         type = "String";
-      }
-   }
-   element simple_synapse_0.s_synapse
+   element simple_SDC_State_Machine_0.givetargetsynapseaddr
    {
       datum baseAddress
       {
@@ -57,12 +81,44 @@
          type = "String";
       }
    }
-   element simple_synapse_0.s_time
+   element simple_UP_Server_State_Machine_0
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element simple_UP_Server_State_Machine_0.pullspike
    {
       datum baseAddress
       {
-         value = "22";
+         value = "8";
          type = "String";
+      }
+   }
+   element simple_UP_Server_State_Machine_1
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element simple_UP_Server_State_Machine_1.pullspike
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element simple_soma_SM_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
       }
    }
    element test
@@ -102,65 +158,116 @@
   <parameter name="inputClockFrequency" value="0" />
   <parameter name="resetSynchronousEdges" value="NONE" />
  </module>
- <module name="simple_soma_0" kind="simple_soma" version="1.0.1" enabled="1">
-  <parameter name="THRESHOLD" value="10" />
-  <parameter name="TIME_WIDTH" value="8" />
+ <module
+   name="simple_SDC_State_Machine_0"
+   kind="simple_SDC_State_Machine"
+   version="1.0"
+   enabled="1">
+  <parameter name="ADDR_WIDTH" value="7" />
+  <parameter name="DATA_WIDTH" value="8" />
  </module>
  <module
-   name="simple_synapse_0"
-   kind="simple_synapse"
-   version="1.0.1"
+   name="simple_UP_Server_State_Machine_0"
+   kind="simple_UP_Server_State_Machine"
+   version="1.0"
    enabled="1">
+  <parameter name="ADDR_WIDTH" value="2" />
+  <parameter name="DATA_WIDTH" value="8" />
+ </module>
+ <module
+   name="simple_UP_Server_State_Machine_1"
+   kind="simple_UP_Server_State_Machine"
+   version="1.0"
+   enabled="1">
+  <parameter name="ADDR_WIDTH" value="2" />
+  <parameter name="DATA_WIDTH" value="8" />
+ </module>
+ <module
+   name="simple_soma_SM_0"
+   kind="simple_soma_SM"
+   version="1.0"
+   enabled="1">
+  <parameter name="ADDR_WIDTH" value="2" />
+  <parameter name="DATA_WIDTH" value="8" />
   <parameter name="THRESHOLD" value="10" />
-  <parameter name="TIME_WIDTH" value="8" />
+  <parameter name="UPLOAD_SERVER_ADDRESS" value="1" />
  </module>
  <connection
    kind="avalon"
    version="21.1"
-   start="simple_soma_0.m_spike"
-   end="simple_synapse_0.s_spike">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0008" />
-  <parameter name="defaultConnection" value="true" />
- </connection>
- <connection
-   kind="avalon"
-   version="21.1"
-   start="simple_soma_0.m_synapse"
-   end="simple_synapse_0.s_synapse">
+   start="simple_UP_Server_State_Machine_0.gettargetsynapseaddr"
+   end="simple_SDC_State_Machine_0.givetargetsynapseaddr">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x0000" />
-  <parameter name="defaultConnection" value="true" />
+  <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="avalon"
    version="21.1"
-   start="simple_soma_0.m_time"
-   end="simple_synapse_0.s_time">
+   start="simple_UP_Server_State_Machine_1.gettargetsynapseaddr"
+   end="simple_SDC_State_Machine_0.givetargetsynapseaddr">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0016" />
-  <parameter name="defaultConnection" value="true" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="simple_soma_SM_0.pushspike"
+   end="simple_UP_Server_State_Machine_0.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0008" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="simple_soma_SM_0.pushspike"
+   end="simple_UP_Server_State_Machine_1.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
    kind="clock"
    version="21.1"
    start="clk_0.clk"
-   end="simple_soma_0.clock" />
+   end="simple_UP_Server_State_Machine_0.clock" />
  <connection
    kind="clock"
    version="21.1"
    start="clk_0.clk"
-   end="simple_synapse_0.clock" />
+   end="simple_soma_SM_0.clock" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="simple_UP_Server_State_Machine_1.clock" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="simple_SDC_State_Machine_0.clock" />
  <connection
    kind="reset"
    version="21.1"
    start="clk_0.clk_reset"
-   end="simple_synapse_0.reset_sink" />
+   end="simple_soma_SM_0.reset_sink" />
  <connection
    kind="reset"
    version="21.1"
    start="clk_0.clk_reset"
-   end="simple_soma_0.reset_sink" />
+   end="simple_UP_Server_State_Machine_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="simple_UP_Server_State_Machine_1.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="simple_SDC_State_Machine_0.reset_sink" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
  <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />

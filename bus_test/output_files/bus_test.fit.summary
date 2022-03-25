@@ -1,20 +1,20 @@
-Fitter Status : Successful - Sun Mar  6 01:15:18 2022
+Fitter Status : Successful - Fri Mar 25 12:51:34 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : bus_test
-Top-level Entity Name : simple_SDC_sm
+Top-level Entity Name : shift_reg_post_add
 Family : Cyclone V
-Device : 5CSEBA6U23I7
+Device : 5CGXFC9E7F35C8
 Timing Models : Final
-Logic utilization (in ALMs) : 54 / 41,910 ( < 1 % )
-Total registers : 39
-Total pins : 20 / 314 ( 6 % )
+Logic utilization (in ALMs) : 87 / 113,560 ( < 1 % )
+Total registers : 108
+Total pins : 120 / 616 ( 19 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 5,662,720 ( 0 % )
-Total RAM Blocks : 0 / 553 ( 0 % )
-Total DSP Blocks : 0 / 112 ( 0 % )
-Total HSSI RX PCSs : 0
-Total HSSI PMA RX Deserializers : 0
-Total HSSI TX PCSs : 0
-Total HSSI PMA TX Serializers : 0
-Total PLLs : 0 / 6 ( 0 % )
+Total block memory bits : 0 / 12,492,800 ( 0 % )
+Total RAM Blocks : 0 / 1,220 ( 0 % )
+Total DSP Blocks : 0 / 342 ( 0 % )
+Total HSSI RX PCSs : 0 / 12 ( 0 % )
+Total HSSI PMA RX Deserializers : 0 / 12 ( 0 % )
+Total HSSI TX PCSs : 0 / 12 ( 0 % )
+Total HSSI PMA TX Serializers : 0 / 12 ( 0 % )
+Total PLLs : 0 / 20 ( 0 % )
 Total DLLs : 0 / 4 ( 0 % )

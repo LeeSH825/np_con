@@ -1,13 +1,13 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/np_con/bus_test/simulation/test_SDC.vwf" --testbench_file="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="C:/Users/Xynus_Main/np_con/bus_test/simulation/test_SDC.vwf" --testbench_file="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/Xynus_Main/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="/home/hws_master/np_con/bus_test/simulation/test_SDC.vwf" --testbench_file="/home/hws_master/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off bus_test -c bus_test --vector_source="/home/hws_master/np_con/bus_test/simulation/test_SDC.vwf" --testbench_file="/home/hws_master/np_con/bus_test/simulation/qsim/simulation/test_SDC.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/hws_master/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="/home/hws_master/np_con/bus_test/simulation/qsim/" bus_test -c bus_test</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vcom -work work bus_test.vho
 vcom -work work simulation/test_SDC.vwf.vht
-vsim  -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.simple_SDC_sm_vhd_vec_tst
+vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.simple_SDC_sm_vhd_vec_tst
 vcd file -direction bus_test.msim.vcd
 vcd add -internal simple_SDC_sm_vhd_vec_tst/*
 vcd add -internal simple_SDC_sm_vhd_vec_tst/i1/*
@@ -20,8 +20,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -40,8 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
-
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/

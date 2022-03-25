@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags="INTERNAL_COMPONENT=true"
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element slave_template_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="5CSEBA6U23I7" />
+ <parameter name="deviceFamily" value="Cyclone V" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="true" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="clock_reset"
+   internal="slave_template_0.clock_reset"
+   type="clock"
+   dir="end">
+  <port name="clk" internal="clk" />
+ </interface>
+ <interface
+   name="clock_reset_reset"
+   internal="slave_template_0.clock_reset_reset"
+   type="reset"
+   dir="end">
+  <port name="reset" internal="reset" />
+ </interface>
+ <interface name="s0" internal="slave_template_0.s0" type="avalon" dir="end">
+  <port name="slave_address" internal="slave_address" />
+  <port name="slave_read" internal="slave_read" />
+  <port name="slave_write" internal="slave_write" />
+  <port name="slave_readdata" internal="slave_readdata" />
+  <port name="slave_writedata" internal="slave_writedata" />
+  <port name="slave_byteenable" internal="slave_byteenable" />
+ </interface>
+ <interface
+   name="user_interface"
+   internal="slave_template_0.user_interface"
+   type="conduit"
+   dir="end">
+  <port name="user_dataout_0" internal="user_dataout_0" />
+  <port name="user_dataout_1" internal="user_dataout_1" />
+  <port name="user_dataout_2" internal="user_dataout_2" />
+  <port name="user_dataout_3" internal="user_dataout_3" />
+  <port name="user_dataout_4" internal="user_dataout_4" />
+  <port name="user_dataout_5" internal="user_dataout_5" />
+  <port name="user_dataout_6" internal="user_dataout_6" />
+  <port name="user_dataout_7" internal="user_dataout_7" />
+  <port name="user_dataout_8" internal="user_dataout_8" />
+  <port name="user_dataout_9" internal="user_dataout_9" />
+  <port name="user_dataout_10" internal="user_dataout_10" />
+  <port name="user_dataout_11" internal="user_dataout_11" />
+  <port name="user_dataout_12" internal="user_dataout_12" />
+  <port name="user_dataout_13" internal="user_dataout_13" />
+  <port name="user_dataout_14" internal="user_dataout_14" />
+  <port name="user_dataout_15" internal="user_dataout_15" />
+  <port name="user_datain_0" internal="user_datain_0" />
+  <port name="user_datain_1" internal="user_datain_1" />
+  <port name="user_datain_2" internal="user_datain_2" />
+  <port name="user_datain_3" internal="user_datain_3" />
+  <port name="user_datain_4" internal="user_datain_4" />
+  <port name="user_datain_5" internal="user_datain_5" />
+  <port name="user_datain_6" internal="user_datain_6" />
+  <port name="user_datain_7" internal="user_datain_7" />
+  <port name="user_datain_8" internal="user_datain_8" />
+  <port name="user_datain_9" internal="user_datain_9" />
+  <port name="user_datain_10" internal="user_datain_10" />
+  <port name="user_datain_11" internal="user_datain_11" />
+  <port name="user_datain_12" internal="user_datain_12" />
+  <port name="user_datain_13" internal="user_datain_13" />
+  <port name="user_datain_14" internal="user_datain_14" />
+  <port name="user_datain_15" internal="user_datain_15" />
+ </interface>
+ <module
+   name="slave_template_0"
+   kind="slave_template"
+   version="2.0"
+   enabled="1"
+   autoexport="1">
+  <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="DATA_WIDTH" value="32" />
+  <parameter name="ENABLE_SYNC_SIGNALS" value="0" />
+  <parameter name="IRQ_EN" value="0" />
+  <parameter name="MODE_0" value="2" />
+  <parameter name="MODE_1" value="2" />
+  <parameter name="MODE_10" value="2" />
+  <parameter name="MODE_11" value="2" />
+  <parameter name="MODE_12" value="2" />
+  <parameter name="MODE_13" value="2" />
+  <parameter name="MODE_14" value="2" />
+  <parameter name="MODE_15" value="2" />
+  <parameter name="MODE_2" value="2" />
+  <parameter name="MODE_3" value="2" />
+  <parameter name="MODE_4" value="2" />
+  <parameter name="MODE_5" value="2" />
+  <parameter name="MODE_6" value="2" />
+  <parameter name="MODE_7" value="2" />
+  <parameter name="MODE_8" value="2" />
+  <parameter name="MODE_9" value="2" />
+ </module>
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

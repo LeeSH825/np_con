@@ -4,17 +4,17 @@ use IEEE.numeric_std.all;
 
 entity simple_SDC_sm is
     generic(    DATA_WIDTH : integer := 8;
-                ADDR_WIDTH : integer := 7
+                ADDR_WIDTH : integer := 2
     );
     port (		clk : in std_logic;
 				rst : in std_logic;
 
                 -- Avalon-MM Slave Interface
-                avs_s0_address : in std_logic_vector(ADDR_WIDTH downto 0);
-                avs_s0_waitrequest : out std_logic;
+                avs_giveTargetSynapseAddr_address : in std_logic_vector(ADDR_WIDTH downto 0);
+                avs_giveTargetSynapseAddr_waitrequest : out std_logic;
 
-                avs_s0_read_target_synapse_addr : in std_logic;
-                avs_s0_readdata_target_synapse_addr : out std_logic_vector(ADDR_WIDTH downto 0)
+                avs_giveTargetSynapseAddr_read : in std_logic;
+                avs_giveTargetSynapseAddr_readdata : out std_logic_vector(ADDR_WIDTH downto 0)
     );
 end simple_SDC_sm;
 
@@ -31,7 +31,7 @@ signal internal_ram : ram_replacement := ("00000000", "00000001", "00000010", "0
 
 begin
     process(clk, rst, state,
-			avs_s0_address, avs_s0_read_target_synapse_addr)
+			avs_giveTargetSynapseAddr_address, avs_giveTargetSynapseAddr_read)
 
 	variable index : integer := -1;
 
@@ -39,27 +39,27 @@ begin
 
     if rst = '1' then
         state <= STATE_IDLE;
-        avs_s0_waitrequest <= '0';
+        avs_giveTargetSynapseAddr_waitrequest <= '0';
         -- for i in 0 to 15 loop
         --     internal_ram(i) <= (others => '0');
         -- end loop;
     elsif rising_edge(clk) then
         case state is
 		when STATE_IDLE =>
-			if (avs_s0_read_target_synapse_addr = '1') then
-				index := to_integer(signed(avs_s0_address));
-				avs_s0_readdata_target_synapse_addr <= internal_ram(index);
-				avs_s0_waitrequest <= '1';
-				if ((index%2) /= 0) then
+			if (avs_giveTargetSynapseAddr_read = '1') then
+				index := to_integer(signed(avs_giveTargetSynapseAddr_address));
+				avs_giveTargetSynapseAddr_readdata <= internal_ram(index);
+				avs_giveTargetSynapseAddr_waitrequest <= '1';
+				if ((index/2) /= 0) then
 					state <= STATE_BURST;
 				else
-					avs_s0_waitrequest <= '0';
+					avs_giveTargetSynapseAddr_waitrequest <= '0';
 					index := -1;
 					state <= STATE_IDLE;
 				end if;
 			else
-				avs_s0_readdata_target_synapse_addr <= (others => '0');
-				avs_s0_waitrequest <= '0';
+				avs_giveTargetSynapseAddr_readdata <= (others => '0');
+				avs_giveTargetSynapseAddr_waitrequest <= '0';
 			end if;
 		
 		when STATE_BURST =>
@@ -67,8 +67,8 @@ begin
 			if (index < 0) then
 				state <= STATE_IDLE;
 			else
-				avs_s0_readdata_target_synapse_addr <= internal_ram(index);
-				avs_s0_waitrequest <= '0';
+				avs_giveTargetSynapseAddr_readdata <= internal_ram(index);
+				avs_giveTargetSynapseAddr_waitrequest <= '0';
 				state <= STATE_BURST;
 			end if;
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bus_test
-Sun Mar  6 01:14:53 2022
+Fri Mar 25 12:51:07 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -14,13 +14,17 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Inverted Register Statistics
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
  11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |simple_SDC_sm
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |shift_reg_post_add
+ 13. Parameter Settings for User Entity Instance: shift_regi_post:PRE_STDP
+ 14. Parameter Settings for User Entity Instance: shift_regi_post:POST_STDP
+ 15. Port Connectivity Checks: "shift_regi_post:POST_STDP"
+ 16. Port Connectivity Checks: "shift_regi_post:PRE_STDP"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -47,14 +51,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Mar  6 01:14:53 2022       ;
+; Analysis & Synthesis Status     ; Successful - Fri Mar 25 12:51:07 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; bus_test                                    ;
-; Top-level Entity Name           ; simple_SDC_sm                               ;
+; Top-level Entity Name           ; shift_reg_post_add                          ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 39                                          ;
-; Total pins                      ; 20                                          ;
+; Total registers                 ; 105                                         ;
+; Total pins                      ; 120                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -72,8 +76,8 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CSEBA6U23I7       ;                    ;
-; Top-level entity name                                                           ; simple_SDC_sm      ; bus_test           ;
+; Device                                                                          ; 5CGXFC9E7F35C8     ;                    ;
+; Top-level entity name                                                           ; shift_reg_post_add ; bus_test           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -159,7 +163,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
+; Number detected on machine ; 24          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
@@ -167,66 +171,83 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                              ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
-; src/simple_SDC_sm.vhd            ; yes             ; User VHDL File  ; C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
+; src_new/shift_reg_post_add.vhd   ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd   ;         ;
+; src_new/shift_reg_post.vhd       ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/shift_reg_post.vhd       ;         ;
+; src_new/fixed_float_types_c.vhdl ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/fixed_float_types_c.vhdl ;         ;
+; src_new/fixed_pkg_c.vhdl         ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl         ;         ;
++----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 69    ;
-;                                             ;       ;
-; Combinational ALUT usage for logic          ; 96    ;
-;     -- 7 input functions                    ; 2     ;
-;     -- 6 input functions                    ; 39    ;
-;     -- 5 input functions                    ; 2     ;
-;     -- 4 input functions                    ; 6     ;
-;     -- <=3 input functions                  ; 47    ;
-;                                             ;       ;
-; Dedicated logic registers                   ; 39    ;
-;                                             ;       ;
-; I/O pins                                    ; 20    ;
-;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; state ;
-; Maximum fan-out                             ; 49    ;
-; Total fan-out                               ; 522   ;
-; Average fan-out                             ; 2.98  ;
-+---------------------------------------------+-------+
++-------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                 ;
++---------------------------------------------+---------------+
+; Resource                                    ; Usage         ;
++---------------------------------------------+---------------+
+; Estimate of Logic utilization (ALMs needed) ; 85            ;
+;                                             ;               ;
+; Combinational ALUT usage for logic          ; 158           ;
+;     -- 7 input functions                    ; 0             ;
+;     -- 6 input functions                    ; 11            ;
+;     -- 5 input functions                    ; 0             ;
+;     -- 4 input functions                    ; 36            ;
+;     -- <=3 input functions                  ; 111           ;
+;                                             ;               ;
+; Dedicated logic registers                   ; 105           ;
+;                                             ;               ;
+; I/O pins                                    ; 120           ;
+;                                             ;               ;
+; Total DSP Blocks                            ; 0             ;
+;                                             ;               ;
+; Maximum fan-out node                        ; sys_clk~input ;
+; Maximum fan-out                             ; 105           ;
+; Total fan-out                               ; 1276          ;
+; Average fan-out                             ; 2.54          ;
++---------------------------------------------+---------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
-; |simple_SDC_sm             ; 96 (96)             ; 39 (39)                   ; 0                 ; 0          ; 20   ; 0            ; |simple_SDC_sm      ; simple_SDC_sm ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                         ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name        ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+--------------------+--------------+
+; |shift_reg_post_add            ; 158 (14)            ; 105 (21)                  ; 0                 ; 0          ; 120  ; 0            ; |shift_reg_post_add                           ; shift_reg_post_add ; work         ;
+;    |shift_regi_post:POST_STDP| ; 44 (44)             ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |shift_reg_post_add|shift_regi_post:POST_STDP ; shift_regi_post    ; work         ;
+;    |shift_regi_post:PRE_STDP|  ; 100 (100)           ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |shift_reg_post_add|shift_regi_post:PRE_STDP  ; shift_regi_post    ; work         ;
++--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                   ;
-+---------------------------------------------+----------------------------------------+
-; Register name                               ; Reason for Removal                     ;
-+---------------------------------------------+----------------------------------------+
-; avs_s0_readdata_target_synapse_addr[5]~reg0 ; Stuck at GND due to stuck port data_in ;
-; avs_s0_readdata_target_synapse_addr[6]~reg0 ; Stuck at GND due to stuck port data_in ;
-; avs_s0_readdata_target_synapse_addr[7]~reg0 ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 3       ;                                        ;
-+---------------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; shift_regi_post:PRE_STDP|top[2]       ; Stuck at GND due to stuck port data_in ;
+; shift_regi_post:POST_STDP|top[2]      ; Stuck at GND due to stuck port data_in ;
+; idx[2]                                ; Stuck at GND due to stuck port data_in ;
+; CAL_ADDR[2]                           ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                           ;
++----------------------------------+---------------------------+----------------------------------------+
+; Register name                    ; Reason for Removal        ; Registers Removed due to This Register ;
++----------------------------------+---------------------------+----------------------------------------+
+; shift_regi_post:POST_STDP|top[2] ; Stuck at GND              ; idx[2], CAL_ADDR[2]                    ;
+;                                  ; due to stuck port data_in ;                                        ;
++----------------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -234,77 +255,97 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 39    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 2     ;
+; Total registers                              ; 105   ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 48    ;
+; Number of registers using Asynchronous Clear ; 95    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 37    ;
+; Number of registers using Clock Enable       ; 74    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; index[31]                               ; 1       ;
-; index[0]                                ; 1       ;
-; index[1]                                ; 1       ;
-; index[2]                                ; 1       ;
-; index[3]                                ; 1       ;
-; index[30]                               ; 1       ;
-; index[29]                               ; 1       ;
-; index[28]                               ; 1       ;
-; index[27]                               ; 1       ;
-; index[26]                               ; 1       ;
-; index[25]                               ; 1       ;
-; index[24]                               ; 1       ;
-; index[23]                               ; 1       ;
-; index[22]                               ; 1       ;
-; index[21]                               ; 1       ;
-; index[20]                               ; 1       ;
-; index[19]                               ; 1       ;
-; index[18]                               ; 1       ;
-; index[17]                               ; 1       ;
-; index[16]                               ; 1       ;
-; index[15]                               ; 1       ;
-; index[14]                               ; 1       ;
-; index[13]                               ; 1       ;
-; index[12]                               ; 1       ;
-; index[11]                               ; 1       ;
-; index[10]                               ; 1       ;
-; index[9]                                ; 1       ;
-; index[8]                                ; 1       ;
-; index[7]                                ; 1       ;
-; index[6]                                ; 1       ;
-; index[5]                                ; 1       ;
-; index[4]                                ; 1       ;
-; Total number of inverted registers = 32 ;         ;
-+-----------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|REG[0][2]       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|REG[1][-4]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|REG[2][-4]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|REG[3][3]       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:POST_STDP|REG[1][-1]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:POST_STDP|REG[2][2]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:POST_STDP|REG[3][-4]     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|DATA_CAL_OUT[0] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |shift_reg_post_add|shift_regi_post:POST_STDP|POP_OUT[7]     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |simple_SDC_sm|avs_s0_readdata_target_synapse_addr[0]~reg0 ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |simple_SDC_sm|index[22]                                   ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |simple_SDC_sm|index[0]                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |simple_SDC_sm ;
-+----------------+-------+------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                 ;
-+----------------+-------+------------------------------------------------------+
-; DATA_WIDTH     ; 8     ; Signed Integer                                       ;
-; ADDR_WIDTH     ; 7     ; Signed Integer                                       ;
-+----------------+-------+------------------------------------------------------+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |shift_reg_post_add ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; SHIFT_CAP_PRE  ; 4     ; Signed Integer                                            ;
+; SHIFT_CAP_POST ; 4     ; Signed Integer                                            ;
+; DATA_WID       ; 8     ; Signed Integer                                            ;
+; ADDR_WID       ; 3     ; Signed Integer                                            ;
+; REAL_WID       ; 4     ; Signed Integer                                            ;
+; IMG_WID        ; 4     ; Signed Integer                                            ;
++----------------+-------+-----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shift_regi_post:PRE_STDP ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; SHIFTGEG_CAP   ; 4     ; Signed Integer                               ;
+; DATA_WIDTH     ; 8     ; Signed Integer                               ;
+; ADDR_WIDTH     ; 3     ; Signed Integer                               ;
+; REAL_WIDTH     ; 4     ; Signed Integer                               ;
+; IMG_WIDTH      ; 4     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: shift_regi_post:POST_STDP ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; SHIFTGEG_CAP   ; 4     ; Signed Integer                                ;
+; DATA_WIDTH     ; 8     ; Signed Integer                                ;
+; ADDR_WIDTH     ; 3     ; Signed Integer                                ;
+; REAL_WIDTH     ; 4     ; Signed Integer                                ;
+; IMG_WIDTH      ; 4     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "shift_regi_post:POST_STDP"                                                                  ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_cal_en  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_cal_in  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; data_cal_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "shift_regi_post:PRE_STDP"                                                               ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; pop_en   ; Input  ; Info     ; Stuck at GND                                                                        ;
+; pop_addr ; Input  ; Info     ; Stuck at GND                                                                        ;
+; pop_out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; dbg_top  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -312,26 +353,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 39                          ;
-;     CLR               ; 2                           ;
-;     ENA               ; 37                          ;
-; arriav_lcell_comb     ; 97                          ;
-;     arith             ; 41                          ;
-;         1 data inputs ; 40                          ;
-;         2 data inputs ; 1                           ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 54                          ;
-;         0 data inputs ; 1                           ;
+; arriav_ff             ; 105                         ;
+;     CLR               ; 15                          ;
+;     CLR SCLR          ; 16                          ;
+;     ENA               ; 2                           ;
+;     ENA CLR           ; 16                          ;
+;     ENA CLR SLD       ; 48                          ;
+;     ENA SCLR          ; 8                           ;
+; arriav_lcell_comb     ; 159                         ;
+;     arith             ; 17                          ;
 ;         1 data inputs ; 1                           ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 6                           ;
-;         5 data inputs ; 2                           ;
-;         6 data inputs ; 39                          ;
-; boundary_port         ; 20                          ;
+;         4 data inputs ; 16                          ;
+;     normal            ; 51                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 15                          ;
+;         4 data inputs ; 20                          ;
+;         6 data inputs ; 11                          ;
+;     shared            ; 91                          ;
+;         0 data inputs ; 3                           ;
+;         2 data inputs ; 64                          ;
+;         3 data inputs ; 24                          ;
+; boundary_port         ; 120                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.10                        ;
-; Average LUT depth     ; 3.87                        ;
+; Max LUT depth         ; 7.70                        ;
+; Average LUT depth     ; 3.31                        ;
 +-----------------------+-----------------------------+
 
 
@@ -350,95 +396,71 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sun Mar  6 01:14:29 2022
+    Info: Processing started: Fri Mar 25 12:51:02 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus_test -c bus_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20032): Parallel compilation is enabled and will use up to 12 processors
-Info (12248): Elaborating Platform Designer system entity "bus_test.qsys"
-Info (12250): 2022.03.06.01:14:38 Progress: Loading bus_test/bus_test.qsys
-Info (12250): 2022.03.06.01:14:38 Progress: Reading input file
-Info (12250): 2022.03.06.01:14:38 Progress: Adding clk_0 [clock_source 21.1]
-Info (12250): 2022.03.06.01:14:39 Progress: Parameterizing module clk_0
-Info (12250): 2022.03.06.01:14:39 Progress: Adding simple_soma_0 [simple_soma 1.0.1]
-Info (12250): 2022.03.06.01:14:39 Progress: Parameterizing module simple_soma_0
-Info (12250): 2022.03.06.01:14:39 Progress: Adding simple_synapse_0 [simple_synapse 1.0.1]
-Info (12250): 2022.03.06.01:14:39 Progress: Parameterizing module simple_synapse_0
-Info (12250): 2022.03.06.01:14:39 Progress: Building connections
-Info (12250): 2022.03.06.01:14:39 Progress: Parameterizing connections
-Info (12250): 2022.03.06.01:14:39 Progress: Validating
-Info (12250): 2022.03.06.01:14:39 Progress: Done reading input file
-Info (12250): Bus_test: Generating bus_test "bus_test" for QUARTUS_SYNTH
-Info (12250): Interconnect is inserted between master simple_soma_0.m_spike and slave simple_synapse_0.s_spike because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info (12250): Interconnect is inserted between master simple_soma_0.m_synapse and slave simple_synapse_0.s_synapse because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info (12250): Interconnect is inserted between master simple_soma_0.m_time and slave simple_synapse_0.s_time because the master has address signal 1 bit wide, but the slave is 8 bit wide.
-Info (12250): Interconnect is inserted between master simple_soma_0.m_time and slave simple_synapse_0.s_time because the master has waitrequest signal 1 bit wide, but the slave is 0 bit wide.
-Info (12250): Simple_soma_0: "bus_test" instantiated simple_soma "simple_soma_0"
-Info (12250): Simple_synapse_0: "bus_test" instantiated simple_synapse "simple_synapse_0"
-Info (12250): Mm_interconnect_0: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_0"
-Info (12250): Mm_interconnect_1: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_1"
-Info (12250): Mm_interconnect_2: "bus_test" instantiated altera_mm_interconnect "mm_interconnect_2"
-Info (12250): Rst_controller: "bus_test" instantiated altera_reset_controller "rst_controller"
-Info (12250): Simple_soma_0_m_spike_translator: "mm_interconnect_0" instantiated altera_merlin_master_translator "simple_soma_0_m_spike_translator"
-Info (12250): Simple_synapse_0_s_spike_translator: "mm_interconnect_0" instantiated altera_merlin_slave_translator "simple_synapse_0_s_spike_translator"
-Info (12250): Bus_test: Done "bus_test" with 9 modules, 11 files
-Info (12249): Finished elaborating Platform Designer system entity "bus_test.qsys"
-Info (12021): Found 2 design units, including 1 entities, in source file src/simple_sdc_sm.vhd
-    Info (12022): Found design unit 1: simple_SDC_sm-behavior File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 21
-    Info (12023): Found entity 1: simple_SDC_sm File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file src/simple_up_server_sm.vhd
-    Info (12022): Found design unit 1: simple_up_server_sm-behavioral File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_up_server_sm.vhd Line: 37
-    Info (12023): Found entity 1: simple_up_server_sm File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_up_server_sm.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file src/simple_soma_sm.vhd
-    Info (12022): Found design unit 1: simple_soma_sm-behavioral File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_soma_sm.vhd Line: 57
-    Info (12023): Found entity 1: simple_soma_sm File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_soma_sm.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file db/ip/bus_test/bus_test.vhd
-    Info (12022): Found design unit 1: bus_test-rtl File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/bus_test.vhd Line: 16
-    Info (12023): Found entity 1: bus_test File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/bus_test.vhd Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/altera_merlin_master_translator.sv
-    Info (12023): Found entity 1: altera_merlin_master_translator File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/altera_merlin_master_translator.sv Line: 32
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/altera_merlin_slave_translator.sv
-    Info (12023): Found entity 1: altera_merlin_slave_translator File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/altera_merlin_slave_translator.sv Line: 35
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/altera_reset_controller.v
-    Info (12023): Found entity 1: altera_reset_controller File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/altera_reset_controller.v Line: 42
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/altera_reset_synchronizer.v
-    Info (12023): Found entity 1: altera_reset_synchronizer File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/altera_reset_synchronizer.v Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/bus_test_mm_interconnect_0.v
-    Info (12023): Found entity 1: bus_test_mm_interconnect_0 File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_0.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/bus_test_mm_interconnect_1.v
-    Info (12023): Found entity 1: bus_test_mm_interconnect_1 File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_1.v Line: 9
-Info (12021): Found 1 design units, including 1 entities, in source file db/ip/bus_test/submodules/bus_test_mm_interconnect_2.v
-    Info (12023): Found entity 1: bus_test_mm_interconnect_2 File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/bus_test_mm_interconnect_2.v Line: 9
-Info (12021): Found 2 design units, including 1 entities, in source file db/ip/bus_test/submodules/simple_soma.vhd
-    Info (12022): Found design unit 1: simple_soma-behavioral File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/simple_soma.vhd Line: 31
-    Info (12023): Found entity 1: simple_soma File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/simple_soma.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file db/ip/bus_test/submodules/simple_synapse.vhd
-    Info (12022): Found design unit 1: simple_synapse-behavioral File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/simple_synapse.vhd Line: 28
-    Info (12023): Found entity 1: simple_synapse File: C:/Users/Xynus_Main/np_con/bus_test/db/ip/bus_test/submodules/simple_synapse.vhd Line: 5
-Info (12127): Elaborating entity "simple_SDC_sm" for the top level hierarchy
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "internal_ram" is uninferred due to inappropriate RAM size File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 28
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file src_new/shift_reg_post_add.vhd
+    Info (12022): Found design unit 1: shift_reg_post_add-rtl File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 48
+    Info (12023): Found entity 1: shift_reg_post_add File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file src_new/shift_reg_post.vhd
+    Info (12022): Found design unit 1: shift_regi_post-rtler File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post.vhd Line: 40
+    Info (12023): Found entity 1: shift_regi_post File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file src_new/shift_reg.vhd
+    Info (12022): Found design unit 1: shift_regi-rtl File: /home/hws_master/np_con/bus_test/src_new/shift_reg.vhd Line: 28
+    Info (12023): Found entity 1: shift_regi File: /home/hws_master/np_con/bus_test/src_new/shift_reg.vhd Line: 8
+Info (12021): Found 1 design units, including 0 entities, in source file src_new/fixed_float_types_c.vhdl
+    Info (12022): Found design unit 1: fixed_float_types File: /home/hws_master/np_con/bus_test/src_new/fixed_float_types_c.vhdl Line: 16
+Info (12021): Found 2 design units, including 0 entities, in source file src_new/fixed_noresize.vhdl
+    Info (12022): Found design unit 1: fixed_noresize File: /home/hws_master/np_con/bus_test/src_new/fixed_noresize.vhdl Line: 36
+    Info (12022): Found design unit 2: fixed_noresize-body File: /home/hws_master/np_con/bus_test/src_new/fixed_noresize.vhdl Line: 1249
+Info (12021): Found 2 design units, including 0 entities, in source file src_new/fixed_pkg_c.vhdl
+    Info (12022): Found design unit 1: fixed_pkg File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 25
+    Info (12022): Found design unit 2: fixed_pkg-body File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1466
+Info (12021): Found 2 design units, including 1 entities, in source file src_new/fixed_synth.vhdl
+    Info (12022): Found design unit 1: fixed_synth-rtl File: /home/hws_master/np_con/bus_test/src_new/fixed_synth.vhdl Line: 25
+    Info (12023): Found entity 1: fixed_synth File: /home/hws_master/np_con/bus_test/src_new/fixed_synth.vhdl Line: 15
+Info (12021): Found 2 design units, including 1 entities, in source file src_new/synapse.vhd
+    Info (12022): Found design unit 1: synapse_module-rtl File: /home/hws_master/np_con/bus_test/src_new/synapse.vhd Line: 93
+    Info (12023): Found entity 1: synapse_module File: /home/hws_master/np_con/bus_test/src_new/synapse.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file src/simpe_synapse_sm.vhd
+    Info (12022): Found design unit 1: simpe_synapse_sm-Behavior File: /home/hws_master/np_con/bus_test/src/simpe_synapse_sm.vhd Line: 40
+    Info (12023): Found entity 1: simpe_synapse_sm File: /home/hws_master/np_con/bus_test/src/simpe_synapse_sm.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file src/simple_SDC_sm_mod.vhd
+    Info (12022): Found design unit 1: simple_SDC_sm-behavior File: /home/hws_master/np_con/bus_test/src/simple_SDC_sm_mod.vhd Line: 21
+    Info (12023): Found entity 1: simple_SDC_sm File: /home/hws_master/np_con/bus_test/src/simple_SDC_sm_mod.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/simple_up_server_sm_mod.vhd
+    Info (12022): Found design unit 1: simple_up_server_sm-behavioral File: /home/hws_master/np_con/bus_test/src/simple_up_server_sm_mod.vhd Line: 37
+    Info (12023): Found entity 1: simple_up_server_sm File: /home/hws_master/np_con/bus_test/src/simple_up_server_sm_mod.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file src/simple_soma_sm_mod.vhd
+    Info (12022): Found design unit 1: simple_soma_sm-behavioral File: /home/hws_master/np_con/bus_test/src/simple_soma_sm_mod.vhd Line: 57
+    Info (12023): Found entity 1: simple_soma_sm File: /home/hws_master/np_con/bus_test/src/simple_soma_sm_mod.vhd Line: 5
+Info (12127): Elaborating entity "shift_reg_post_add" for the top level hierarchy
+Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1470): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1470
+Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1471): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1471
+Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1472): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1472
+Warning (10036): Verilog HDL or VHDL warning at shift_reg_post_add.vhd(88): object "dbg_top_PRE" assigned a value but never read File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 88
+Warning (10540): VHDL Signal Declaration warning at shift_reg_post_add.vhd(91): used explicit default value for signal "ZERO_SIG" because signal was never assigned a value File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 91
+Warning (10540): VHDL Signal Declaration warning at shift_reg_post_add.vhd(92): used explicit default value for signal "ZERO_DATA_IN" because signal was never assigned a value File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 92
+Warning (10036): Verilog HDL or VHDL warning at shift_reg_post_add.vhd(93): object "ZERO_DATA_OUT" assigned a value but never read File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 93
+Warning (10540): VHDL Signal Declaration warning at shift_reg_post_add.vhd(94): used explicit default value for signal "ZERO_ADDR" because signal was never assigned a value File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 94
+Info (12128): Elaborating entity "shift_regi_post" for hierarchy "shift_regi_post:PRE_STDP" File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 97
+Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1470): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1470
+Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1471): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1471
+Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1472): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1472
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "avs_s0_readdata_target_synapse_addr[5]" is stuck at GND File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 40
-    Warning (13410): Pin "avs_s0_readdata_target_synapse_addr[6]" is stuck at GND File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 40
-    Warning (13410): Pin "avs_s0_readdata_target_synapse_addr[7]" is stuck at GND File: C:/Users/Xynus_Main/np_con/bus_test/src/simple_SDC_sm.vhd Line: 40
+    Warning (13410): Pin "dbg_ADDR[2]" is stuck at GND File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 41
 Info (286030): Timing-Driven Synthesis is running
-Warning (20013): Ignored 55 assignments for entity "altera_merlin_master_translator" -- entity does not exist in design
-Warning (20013): Ignored 68 assignments for entity "altera_merlin_slave_translator" -- entity does not exist in design
-Warning (20013): Ignored 35 assignments for entity "altera_reset_controller" -- entity does not exist in design
-Warning (20013): Ignored 19 assignments for entity "bus_test" -- entity does not exist in design
-Warning (20013): Ignored 12 assignments for entity "bus_test_mm_interconnect_0" -- entity does not exist in design
-Warning (20013): Ignored 12 assignments for entity "bus_test_mm_interconnect_1" -- entity does not exist in design
-Warning (20013): Ignored 12 assignments for entity "bus_test_mm_interconnect_2" -- entity does not exist in design
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 116 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 11 input pins
-    Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 96 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4914 megabytes
-    Info: Processing ended: Sun Mar  6 01:14:53 2022
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:28
+Info (21057): Implemented 294 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 21 input pins
+    Info (21059): Implemented 99 output pins
+    Info (21061): Implemented 174 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 611 megabytes
+    Info: Processing ended: Fri Mar 25 12:51:07 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:13
 
 

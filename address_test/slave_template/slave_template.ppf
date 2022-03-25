@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pinplan
+ variation_name="slave_template_0"
+ megafunction_name="SLAVE_TEMPLATE"
+ intended_family="Cyclone V"
+ specifies="all_ports">
+ <global>
+  <pin name="clk" direction="input" scope="external" />
+  <pin name="reset" direction="input" scope="external" />
+  <pin name="slave_address[8..0]" direction="input" scope="external" />
+  <pin name="slave_read" direction="input" scope="external" />
+  <pin name="slave_write" direction="input" scope="external" />
+  <pin name="slave_readdata[31..0]" direction="output" scope="external" />
+  <pin name="slave_writedata[31..0]" direction="input" scope="external" />
+  <pin name="slave_byteenable[3..0]" direction="input" scope="external" />
+  <pin name="user_dataout_0[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_1[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_2[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_3[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_4[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_5[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_6[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_7[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_8[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_9[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_10[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_11[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_12[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_13[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_14[31..0]" direction="output" scope="external" />
+  <pin name="user_dataout_15[31..0]" direction="output" scope="external" />
+  <pin name="user_datain_0[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_1[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_2[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_3[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_4[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_5[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_6[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_7[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_8[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_9[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_10[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_11[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_12[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_13[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_14[31..0]" direction="input" scope="external" />
+  <pin name="user_datain_15[31..0]" direction="input" scope="external" />
+ </global>
+</pinplan>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces" showResetDomains="0" showClockDomains="0">
+  <columns>
+   <connections preferredWidth="63" />
+   <irq preferredWidth="34" />
+   <export preferredWidth="255" />
+  </columns>
+ </systemtable>
+ <library expandedCategories="Project,Library" />
+ <window width="2160" height="1432" x="1920" y="0" />
+ <generation synthesis="VHDL" testbench_simulation="VHDL" simulation="VHDL" />
+</preferences>

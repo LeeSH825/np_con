@@ -67,7 +67,7 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   </table>
   <table class="blueBar">
    <tr>
-    <td class="l">2022.03.03.17:43:40</td>
+    <td class="l">2022.03.06.12:46:28</td>
     <td class="r">Datasheet</td>
    </tr>
   </table>
@@ -88,8 +88,14 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
    <div style="display:inline-block ; text-align:left"><span>
      <br/>All Components
      <br/>&#160;&#160;
-     <a href="#module_simple_synapse_0"><b>simple_synapse_0</b>
-     </a> simple_synapse 1.0.1</span>
+     <a href="#module_simple_SDC_State_Machine_0"><b>simple_SDC_State_Machine_0</b>
+     </a> simple_SDC_State_Machine 1.0
+     <br/>&#160;&#160;
+     <a href="#module_simple_UP_Server_State_Machine_0"><b>simple_UP_Server_State_Machine_0</b>
+     </a> simple_UP_Server_State_Machine 1.0
+     <br/>&#160;&#160;
+     <a href="#module_simple_soma_SM_0"><b>simple_soma_SM_0</b>
+     </a> simple_soma_SM 1.0</span>
    </div>
   </div>
   <div style="width:100% ;  height:10px"> </div>
@@ -97,19 +103,23 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
   <table class="mmap">
    <tr>
     <td class="empty" rowspan="2"></td>
-    <td class="mastermodule" colspan="3">
-     <a href="#module_simple_soma_0"><b>simple_soma_0</b>
+    <td class="mastermodule" colspan="2">
+     <a href="#module_simple_UP_Server_State_Machine_0"><b>simple_UP_Server_State_Machine_0</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_simple_soma_SM_0"><b>simple_soma_SM_0</b>
      </a>
     </td>
    </tr>
    <tr>
-    <td class="masterl">&#160;m_synapse</td>
-    <td class="masterm">&#160;m_spike</td>
-    <td class="masterr">&#160;m_time</td>
+    <td class="masterl">&#160;m0</td>
+    <td class="masterr">&#160;m1</td>
+    <td class="masterlr">&#160;m0</td>
    </tr>
    <tr>
     <td class="slavemodule">&#160;
-     <a href="#module_simple_synapse_0"><b>simple_synapse_0</b>
+     <a href="#module_simple_SDC_State_Machine_0"><b>simple_SDC_State_Machine_0</b>
      </a>
     </td>
     <td class="empty"></td>
@@ -117,19 +127,37 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     <td class="empty"></td>
    </tr>
    <tr>
-    <td class="slavem">s_synapse&#160;</td>
+    <td class="slaveb">s0&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_simple_UP_Server_State_Machine_0"><b>simple_UP_Server_State_Machine_0</b>
+     </a>
+    </td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
-    <td class="slavem">s_spike&#160;</td>
+    <td class="slaveb">s0&#160;</td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_simple_soma_SM_0"><b>simple_soma_SM_0</b>
+     </a>
+    </td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
    </tr>
    <tr>
-    <td class="slavem">s_time&#160;</td>
+    <td class="slaveb">s0&#160;</td>
     <td class="empty"></td>
     <td class="empty"></td>
     <td class="empty"></td>
@@ -182,126 +210,22 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
     </tr>
    </table>
   </div>
-  <a name="module_simple_soma_0"> </a>
+  <a name="module_simple_SDC_State_Machine_0"> </a>
   <div>
    <hr/>
-   <h2>simple_soma_0</h2>simple_soma v1.0.1
+   <h2>simple_SDC_State_Machine_0</h2>simple_SDC_State_Machine v1.0
    <br/>
    <div class="greydiv">
     <table class="connectionboxes">
      <tr>
-      <td class="neighbor" rowspan="4">
-       <a href="#module_clk_0">clk_0</a>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_simple_UP_Server_State_Machine_0">simple_UP_Server_State_Machine_0</a>
       </td>
-      <td class="from">clk&#160;&#160;</td>
-      <td class="main" rowspan="10">simple_soma_0</td>
+      <td class="from">m1&#160;&#160;</td>
+      <td class="main" rowspan="7">simple_SDC_State_Machine_0</td>
      </tr>
      <tr>
-      <td class="to">&#160;&#160;clock</td>
-     </tr>
-     <tr>
-      <td class="from">clk_reset&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;reset_sink</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">m_spike&#160;&#160;</td>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_simple_synapse_0">simple_synapse_0</a>
-      </td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;s_spike</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">m_synapse&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;s_synapse</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="from">m_time&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td></td>
-      <td></td>
-      <td class="to">&#160;&#160;s_time</td>
-     </tr>
-    </table>
-   </div>
-   <br/>
-   <br/>
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Parameters</h2>
-      <table>
-       <tr>
-        <td class="parametername">THRESHOLD</td>
-        <td class="parametervalue">10</td>
-       </tr>
-       <tr>
-        <td class="parametername">TIME_WIDTH</td>
-        <td class="parametervalue">8</td>
-       </tr>
-       <tr>
-        <td class="parametername">deviceFamily</td>
-        <td class="parametervalue">UNKNOWN</td>
-       </tr>
-       <tr>
-        <td class="parametername">generateLegacySim</td>
-        <td class="parametervalue">false</td>
-       </tr>
-      </table>
-     </td>
-    </tr>
-   </table>&#160;&#160;
-   <table class="flowbox">
-    <tr>
-     <td class="parametersbox">
-      <h2>Software Assignments</h2>(none)</td>
-    </tr>
-   </table>
-  </div>
-  <a name="module_simple_synapse_0"> </a>
-  <div>
-   <hr/>
-   <h2>simple_synapse_0</h2>simple_synapse v1.0.1
-   <br/>
-   <div class="greydiv">
-    <table class="connectionboxes">
-     <tr>
-      <td class="neighbor" rowspan="6">
-       <a href="#module_simple_soma_0">simple_soma_0</a>
-      </td>
-      <td class="from">m_spike&#160;&#160;</td>
-      <td class="main" rowspan="11">simple_synapse_0</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;s_spike</td>
-     </tr>
-     <tr>
-      <td class="from">m_synapse&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;s_synapse</td>
-     </tr>
-     <tr>
-      <td class="from">m_time&#160;&#160;</td>
-     </tr>
-     <tr>
-      <td class="to">&#160;&#160;s_time</td>
+      <td class="to">&#160;&#160;s0</td>
      </tr>
      <tr style="height:6px">
       <td></td>
@@ -331,12 +255,176 @@ div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; bord
       <h2>Parameters</h2>
       <table>
        <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">ADDR_WIDTH</td>
+        <td class="parametervalue">7</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_simple_UP_Server_State_Machine_0"> </a>
+  <div>
+   <hr/>
+   <h2>simple_UP_Server_State_Machine_0</h2>simple_UP_Server_State_Machine v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_simple_soma_SM_0">simple_soma_SM_0</a>
+      </td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="main" rowspan="9">simple_UP_Server_State_Machine_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset_sink</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m1&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_simple_SDC_State_Machine_0">simple_SDC_State_Machine_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">ADDR_WIDTH</td>
+        <td class="parametervalue">7</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_simple_soma_SM_0"> </a>
+  <div>
+   <hr/>
+   <h2>simple_soma_SM_0</h2>simple_soma_SM v1.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk_0">clk_0</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="6">simple_soma_SM_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset_sink</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">m0&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_simple_UP_Server_State_Machine_0">simple_UP_Server_State_Machine_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s0</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
         <td class="parametername">THRESHOLD</td>
         <td class="parametervalue">10</td>
        </tr>
        <tr>
-        <td class="parametername">TIME_WIDTH</td>
+        <td class="parametername">DATA_WIDTH</td>
         <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">ADDR_WIDTH</td>
+        <td class="parametervalue">7</td>
+       </tr>
+       <tr>
+        <td class="parametername">UPLOAD_SERVER_ADDRESS</td>
+        <td class="parametervalue">1</td>
        </tr>
        <tr>
         <td class="parametername">deviceFamily</td>

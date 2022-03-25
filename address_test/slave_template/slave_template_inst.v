@@ -1,0 +1,43 @@
+	slave_template u0 (
+		.clk              (<connected-to-clk>),              //       clock_reset.clk
+		.reset            (<connected-to-reset>),            // clock_reset_reset.reset
+		.slave_address    (<connected-to-slave_address>),    //                s0.address
+		.slave_read       (<connected-to-slave_read>),       //                  .read
+		.slave_write      (<connected-to-slave_write>),      //                  .write
+		.slave_readdata   (<connected-to-slave_readdata>),   //                  .readdata
+		.slave_writedata  (<connected-to-slave_writedata>),  //                  .writedata
+		.slave_byteenable (<connected-to-slave_byteenable>), //                  .byteenable
+		.user_dataout_0   (<connected-to-user_dataout_0>),   //    user_interface.dataout_0
+		.user_dataout_1   (<connected-to-user_dataout_1>),   //                  .dataout_1
+		.user_dataout_2   (<connected-to-user_dataout_2>),   //                  .dataout_2
+		.user_dataout_3   (<connected-to-user_dataout_3>),   //                  .dataout_3
+		.user_dataout_4   (<connected-to-user_dataout_4>),   //                  .dataout_4
+		.user_dataout_5   (<connected-to-user_dataout_5>),   //                  .dataout_5
+		.user_dataout_6   (<connected-to-user_dataout_6>),   //                  .dataout_6
+		.user_dataout_7   (<connected-to-user_dataout_7>),   //                  .dataout_7
+		.user_dataout_8   (<connected-to-user_dataout_8>),   //                  .dataout_8
+		.user_dataout_9   (<connected-to-user_dataout_9>),   //                  .dataout_9
+		.user_dataout_10  (<connected-to-user_dataout_10>),  //                  .dataout_10
+		.user_dataout_11  (<connected-to-user_dataout_11>),  //                  .dataout_11
+		.user_dataout_12  (<connected-to-user_dataout_12>),  //                  .dataout_12
+		.user_dataout_13  (<connected-to-user_dataout_13>),  //                  .dataout_13
+		.user_dataout_14  (<connected-to-user_dataout_14>),  //                  .dataout_14
+		.user_dataout_15  (<connected-to-user_dataout_15>),  //                  .dataout_15
+		.user_datain_0    (<connected-to-user_datain_0>),    //                  .datain_0
+		.user_datain_1    (<connected-to-user_datain_1>),    //                  .datain_1
+		.user_datain_2    (<connected-to-user_datain_2>),    //                  .datain_2
+		.user_datain_3    (<connected-to-user_datain_3>),    //                  .datain_3
+		.user_datain_4    (<connected-to-user_datain_4>),    //                  .datain_4
+		.user_datain_5    (<connected-to-user_datain_5>),    //                  .datain_5
+		.user_datain_6    (<connected-to-user_datain_6>),    //                  .datain_6
+		.user_datain_7    (<connected-to-user_datain_7>),    //                  .datain_7
+		.user_datain_8    (<connected-to-user_datain_8>),    //                  .datain_8
+		.user_datain_9    (<connected-to-user_datain_9>),    //                  .datain_9
+		.user_datain_10   (<connected-to-user_datain_10>),   //                  .datain_10
+		.user_datain_11   (<connected-to-user_datain_11>),   //                  .datain_11
+		.user_datain_12   (<connected-to-user_datain_12>),   //                  .datain_12
+		.user_datain_13   (<connected-to-user_datain_13>),   //                  .datain_13
+		.user_datain_14   (<connected-to-user_datain_14>),   //                  .datain_14
+		.user_datain_15   (<connected-to-user_datain_15>)    //                  .datain_15
+	);
+

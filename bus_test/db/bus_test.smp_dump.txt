@@ -1,7 +1,18 @@
 
-State Machine - |simple_up_server_sm|state
-Name state.STATE_BURST state.STATE_UPLOAD state.STATE_REQUEST state.STATE_IDLE 
-state.STATE_IDLE 0 0 0 0 
-state.STATE_REQUEST 0 0 1 1 
-state.STATE_UPLOAD 0 1 0 1 
-state.STATE_BURST 1 0 0 1 
+State Machine - |synapse_module|statePushSynapse
+Name statePushSynapse.STATE_WAIT statePushSynapse.STATE_PUSH statePushSynapse.STATE_IDLE 
+statePushSynapse.STATE_IDLE 0 0 0 
+statePushSynapse.STATE_PUSH 0 1 1 
+statePushSynapse.STATE_WAIT 1 0 1 
+
+State Machine - |synapse_module|statePullSpike
+Name statePullSpike.STATE_WAIT statePullSpike.STATE_PATCH statePullSpike.STATE_IDLE 
+statePullSpike.STATE_IDLE 0 0 0 
+statePullSpike.STATE_PATCH 0 1 1 
+statePullSpike.STATE_WAIT 1 0 1 
+
+State Machine - |synapse_module|stateFetch
+Name stateFetch.STATE_LOCK stateFetch.STATE_FETCH stateFetch.STATE_IDLE 
+stateFetch.STATE_IDLE 0 0 0 
+stateFetch.STATE_FETCH 0 1 1 
+stateFetch.STATE_LOCK 1 0 1 

@@ -1,0 +1,47 @@
+# system info test_tb on 2022.03.16.11:37:00
+system_info:
+name,value
+DEVICE,5CSEBA6U23I7
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1647398219
+#
+#
+# Files generated for test_tb on 2022.03.16.11:37:00
+files:
+filepath,kind,attributes,module,is_top
+test/testbench/test_tb/simulation/test_tb.vhd,VHDL,,test_tb,true
+test/testbench/test_tb/simulation/submodules/test.vhd,VHDL,,test,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_vhdl_pkg.vhd,VHDL,,altera_conduit_bfm,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm.vhd,VHDL,,altera_conduit_bfm,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0002_vhdl_pkg.vhd,VHDL,,altera_conduit_bfm_0002,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0002.vhd,VHDL,,altera_conduit_bfm_0002,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0003_vhdl_pkg.vhd,VHDL,,altera_conduit_bfm_0003,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0003.vhd,VHDL,,altera_conduit_bfm_0003,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0004_vhdl_pkg.vhd,VHDL,,altera_conduit_bfm_0004,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0004.vhd,VHDL,,altera_conduit_bfm_0004,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0005_vhdl_pkg.vhd,VHDL,,altera_conduit_bfm_0005,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0005.vhd,VHDL,,altera_conduit_bfm_0005,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0006_vhdl_pkg.vhd,VHDL,,altera_conduit_bfm_0006,false
+test/testbench/test_tb/simulation/submodules/altera_conduit_bfm_0006.vhd,VHDL,,altera_conduit_bfm_0006,false
+test/testbench/test_tb/simulation/submodules/altera_avalon_clock_source.vhd,VHDL,,altera_avalon_clock_source,false
+test/testbench/test_tb/simulation/submodules/altera_avalon_reset_source.vhd,VHDL,,altera_avalon_reset_source,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+test_tb.test_inst,test
+test_tb.test_inst.addr_master_0,test_addr_master_0
+test_tb.test_inst.mm_slave_bfm_0,altera_avalon_mm_slave_bfm_vhdl
+test_tb.test_inst.mm_interconnect_0,test_mm_interconnect_0
+test_tb.test_inst.rst_controller,altera_reset_controller
+test_tb.test_inst_addr_master_0_data_in_bfm,altera_conduit_bfm
+test_tb.test_inst_addr_master_0_dbg_data_in_bfm,altera_conduit_bfm_0002
+test_tb.test_inst_addr_master_0_dbg_write_data_bfm,altera_conduit_bfm_0002
+test_tb.test_inst_addr_master_0_dbg_input_en_bfm,altera_conduit_bfm_0003
+test_tb.test_inst_addr_master_0_dbg_output_en_bfm,altera_conduit_bfm_0003
+test_tb.test_inst_addr_master_0_dbg_write_to_bfm,altera_conduit_bfm_0004
+test_tb.test_inst_addr_master_0_input_en_bfm,altera_conduit_bfm_0005
+test_tb.test_inst_addr_master_0_output_en_bfm,altera_conduit_bfm_0005
+test_tb.test_inst_addr_master_0_write_to_bfm,altera_conduit_bfm_0006
+test_tb.test_inst_clk_bfm,altera_avalon_clock_source
+test_tb.test_inst_reset_bfm,altera_avalon_reset_source

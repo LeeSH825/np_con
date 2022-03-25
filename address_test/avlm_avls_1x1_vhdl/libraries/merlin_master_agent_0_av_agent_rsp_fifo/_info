@@ -1,0 +1,33 @@
+m255
+K4
+z2
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/hws_master/np_con/address_test/avlm_avls_1x1_vhdl
+valtera_avalon_sc_fifo
+!s110 1647434853
+!i10b 1
+!s100 o<4[h9[aF_<eG3j;6n1=<2
+IWN9USPT@SgdKiN4`a<6^g3
+R0
+w1647434692
+8avlm_avls_1x1/simulation/submodules/altera_avalon_sc_fifo.v
+Favlm_avls_1x1/simulation/submodules/altera_avalon_sc_fifo.v
+!i122 1
+L0 21 895
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2021.2;73
+r1
+!s85 0
+31
+!s108 1647434853.000000
+!s107 avlm_avls_1x1/simulation/submodules/altera_avalon_sc_fifo.v|
+!s90 -reportprogress|300|avlm_avls_1x1/simulation/submodules/altera_avalon_sc_fifo.v|-work|merlin_master_agent_0_av_agent_rsp_fifo|
+!i113 0
+o-work merlin_master_agent_0_av_agent_rsp_fifo -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+tCvgOpt 0

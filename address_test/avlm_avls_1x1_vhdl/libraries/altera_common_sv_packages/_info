@@ -1,0 +1,93 @@
+m255
+K4
+z2
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/hws_master/np_con/address_test/avlm_avls_1x1_vhdl
+X3/w9KKIsCyFQc+ycWuhjuA==
+Z1 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+DXx4 work 13 verbosity_pkg 0 22 5AYjKjibHG^JCcLD7RLeX1
+Z2 !s110 1647827606
+!i10b 0
+!s100 3238dfB77mLJaLH5BLM;W2
+IN^zozObZADOZVo@0U1cRG2
+!i119 1
+!i8a 884522352
+S1
+R0
+Z3 w1647827606
+8avlm_avls_1x1/simulation/submodules/mentor/avalon_mm_pkg.sv
+Favlm_avls_1x1/simulation/submodules/mentor/avalon_mm_pkg.sv
+!i122 376
+Z4 L0 12 0
+VN^zozObZADOZVo@0U1cRG2
+Z5 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z6 !s108 1647827606.000000
+!s107 avlm_avls_1x1/simulation/submodules/mentor/avalon_mm_pkg.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/mentor/avalon_mm_pkg.sv|-work|altera_common_sv_packages|
+!i113 0
+Z7 o-sv -work altera_common_sv_packages -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z8 tCvgOpt 0
+nf0b5177
+Xv7F2wKPh/hLhd6N8OMt39aaMIn/sCphHKqWm3WFP3k0=
+R1
+R2
+!i10b 0
+!s100 4k4ZMVRZlTiXafULzj`;K1
+IYi=lIYP>D^IhGgjXBhMi^0
+!i119 1
+!i8a 600418848
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/mentor/avalon_utilities_pkg.sv
+Favlm_avls_1x1/simulation/submodules/mentor/avalon_utilities_pkg.sv
+!i122 377
+R4
+VYi=lIYP>D^IhGgjXBhMi^0
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/mentor/avalon_utilities_pkg.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/mentor/avalon_utilities_pkg.sv|-work|altera_common_sv_packages|
+!i113 0
+R7
+R8
+nfe63157
+XnZYoB4Dgv5yYywECEwSxXw==
+R1
+R2
+!i10b 0
+!s100 ]nD29o:7nD?3?0<3:fPM31
+I5AYjKjibHG^JCcLD7RLeX1
+!i119 1
+!i8a 675899984
+S1
+R0
+R3
+8avlm_avls_1x1/simulation/submodules/mentor/verbosity_pkg.sv
+Favlm_avls_1x1/simulation/submodules/mentor/verbosity_pkg.sv
+!i122 375
+R4
+V5AYjKjibHG^JCcLD7RLeX1
+R5
+r1
+!s85 0
+31
+R6
+!s107 avlm_avls_1x1/simulation/submodules/mentor/verbosity_pkg.sv|
+!s90 -reportprogress|300|-sv|avlm_avls_1x1/simulation/submodules/mentor/verbosity_pkg.sv|-work|altera_common_sv_packages|
+!i113 0
+R7
+R8
+nc77f1e7
