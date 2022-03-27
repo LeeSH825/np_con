@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CGXFC9E7F35C8
-set_global_assignment -name TOP_LEVEL_ENTITY shift_reg_post_add
+set_global_assignment -name TOP_LEVEL_ENTITY soma
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:27:16  MARCH 01, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
@@ -56,14 +56,13 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
-set_global_assignment -name VHDL_FILE src_new/shift_reg_post_add.vhd
-set_global_assignment -name VHDL_FILE src_new/shift_reg_post.vhd
-set_global_assignment -name VHDL_FILE src_new/shift_reg.vhd
+set_global_assignment -name VHDL_FILE src_new/soma.vhd
+set_global_assignment -name VHDL_FILE func_test/addr.vhd
+set_global_assignment -name VHDL_FILE func_test/PROPERTIES_PACK.vhd
 set_global_assignment -name VHDL_FILE src_new/fixed_float_types_c.vhdl
 set_global_assignment -name VHDL_FILE src_new/fixed_noresize.vhdl
 set_global_assignment -name VHDL_FILE src_new/fixed_pkg_c.vhdl
 set_global_assignment -name VHDL_FILE src_new/fixed_synth.vhdl
-set_global_assignment -name VHDL_FILE src_new/synapse.vhd
 set_global_assignment -name VHDL_FILE src/simpe_synapse_sm.vhd
 set_global_assignment -name VHDL_FILE src/simple_SDC_sm_mod.vhd
 set_global_assignment -name VHDL_FILE src/simple_up_server_sm_mod.vhd
@@ -77,8 +76,9 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE simulation/test_synapse.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE SYNAPSE_TEST.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE SHIFTREG.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE SHIFTREG_ADD.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE STDP_REG_TEST.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VECTOR_WAVEFORM_FILE STDP_REG_TEST.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE SOMA_TEST.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

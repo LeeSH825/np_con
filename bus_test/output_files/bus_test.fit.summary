@@ -1,13 +1,13 @@
-Fitter Status : Successful - Fri Mar 25 12:51:34 2022
+Fitter Status : Successful - Mon Mar 28 00:00:11 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : bus_test
-Top-level Entity Name : shift_reg_post_add
+Top-level Entity Name : soma
 Family : Cyclone V
 Device : 5CGXFC9E7F35C8
 Timing Models : Final
-Logic utilization (in ALMs) : 87 / 113,560 ( < 1 % )
-Total registers : 108
-Total pins : 120 / 616 ( 19 % )
+Logic utilization (in ALMs) : 75 / 113,560 ( < 1 % )
+Total registers : 64
+Total pins : 139 / 616 ( 23 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 12,492,800 ( 0 % )
 Total RAM Blocks : 0 / 1,220 ( 0 % )

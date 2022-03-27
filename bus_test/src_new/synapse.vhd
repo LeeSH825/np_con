@@ -5,6 +5,8 @@ use IEEE.numeric_std.all;
 use IEEE.fixed_float_types.all;
 use IEEE.fixed_pkg.all;
 
+-- TODO: in STDP_REG -> add response signals
+
 entity synapse_module is
 	generic(	--variables for port
 				-- common variables (for port)
@@ -92,6 +94,31 @@ end entity synapse_module;
 
 architecture rtl of synapse_module is
 
+	component shift_reg_post_add
+		generic(	SHIFT_CAP_PRE : integer;
+					SHIFT_CAP_POST : integer;
+					DATA_WID : integer;
+					ADDR_WID : integer;
+					REAL_WID : integer;
+					IMG_WID : integer;
+		);
+		port(		sys_clk : in std_logic;
+					sys_rst : in std_logic;
+
+					-- for PRE neuron
+
+					STDP_patchPREneuron : in std_logic;
+					STDP_patchPOSTneuron : in std_logic;
+					STDP_DATAIN_PRE_FIFO : in std_logic_vector(DATA_WID-1 downto 0);
+					STDP_DATAIN_POST_FIFO : in std_logic_vector(DATA_WID-1 downto 0);
+					
+
+					synapsePush : in std_logic;
+					STDP_OUT : out std_logic_vector(DATA_WID-1 downto 0)
+
+		);
+	end component;
+
 	-- State variables
 	type state_type_FETCH is (STATE_IDLE, STATE_FETCH, STATE_LOCK);
 	signal stateFetch, stateFetch_next : state_type_FETCH;
@@ -139,11 +166,11 @@ architecture rtl of synapse_module is
 	signal intervalTimeDelta_Stack : INTERVAL_DELTA_REG;
 	signal iTimeDeltaidx : integer := 0;
 
-	signal synapseDelta : sfixed(SYNAPSE_WEIGHT_REAL-1 downto -SYNAPSE_WEIGHT_IMG);
+	signal synapseDelta : sfixed(SYNAPSE_WEIGHT_REAL-1 downto -SYNAPSE_WEIGHT_IMG);		--  Synapse OutPut
 	--------------------------
 	-- SYNAPSE VALUE
 	signal rstSynapse : std_logic := '0';
-	signal synapseWeight : sfixed(SYNAPSE_WEIGHT_REAL-1 downto -SYNAPSE_WEIGHT_IMG);
+	signal synapseWeight : sfixed(SYNAPSE_WEIGHT_REAL-1 downto -SYNAPSE_WEIGHT_IMG);	-- Synapse Weight Value;
 	signal synapseFetchResponse : std_logic := '0';
 	signal synapseFetch : std_logic := '0';		-- flag to fetch synapse value (initial fetch from initializer)
 	signal synapseWrite : std_logic := '0';		-- flag to write synapse value
@@ -154,6 +181,31 @@ architecture rtl of synapse_module is
 
 
 begin
+	STDP_REG: shift_reg_post_add
+	generic map(	SHIFT_CAP_PRE => NUM_STDP_PRE_NEURONS;
+					SHIFT_CAP_POST => NUM_STDP_POST_NEURONS;
+					DATA_WID => INTERVAL_TIME_WIDTH;
+					ADDR_WID => 3;
+					REAL_WID => INTERVAL_TIME_REAL;
+					IMG_WID => INTERVAL_TIME_IMG;
+	)
+	port map(		sys_clk => clk;
+					sys_rst => rst;
+
+					-- for PRE neuron
+
+					STDP_patchPREneuron => STDP_patchPREneuron;
+					STDP_patchPOSTneuron => STDP_patchPOSTneuron;
+					STDP_DATAIN_PRE_FIFO => STDP_DATAIN_PRE_FIFO;
+					STDP_DATAIN_POST_FIFO => STDP_DATAIN_POST_FIFO;
+					
+
+					synapsePush => synapsePush;
+					STDP_OUT => synapseDelta
+
+	);
+
+
 	STATE_MACHINE:
 	process (clk, rst)
 	begin 
@@ -248,42 +300,46 @@ begin
 						when "1100" =>					-- "1100" : pre-neuron
 							-- STDP_DATAIN_PRE_FIFO <= to_sfixed(avs_pullSpike_writedata(SPIKE_DATA_WIDTH-1 downto SPIKE_DATA_WIDTH-INTERVAL_TIME_WIDTH), INTERVAL_TIME_REAL-1, -INTERVAL_TIME_IMG);
 							STDP_DATAIN_PRE_FIFO <= avs_pullSpike_writedata(SPIKE_DATA_WIDTH-1 downto SPIKE_DATA_WIDTH-INTERVAL_TIME_WIDTH);
+							
+							STDP_patchPREneuron <= '1';
+							statePullSpike_next <= STATE_IDLE;
+							-- STDP_arxivPREshift <= '1';
+							-- if STDP_arxivPREshift_fin = '1' then
+							-- 	STDP_arxivPREshift <= '0';
+							-- 	STDP_patchPREneuron <= '1';
+							-- else
+							-- 	STDP_arxivPREshift <= '1';
+							-- 	STDP_patchPREneuron <= '0';
+							-- end if;
 
-							STDP_arxivPREshift <= '1';
-							if STDP_arxivPREshift_fin = '1' then
-								STDP_arxivPREshift <= '0';
-								STDP_patchPREneuron <= '1';
-							else
-								STDP_arxivPREshift <= '1';
-								STDP_patchPREneuron <= '0';
-							end if;
-
-							if STDP_patchPREneuron_fin = '1' then	-- when stored -> push Synapse
-								avs_pullSpike_waitrequest <= '0';
-								statePullSpike_next <= STATE_WAIT;
-							else
-								statePullSpike_next <= STATE_PATCH;
-							end if;
+							-- if STDP_patchPREneuron_fin = '1' then	-- when stored -> push Synapse
+							-- 	avs_pullSpike_waitrequest <= '0';
+							-- 	statePullSpike_next <= STATE_WAIT;
+							-- else
+							-- 	statePullSpike_next <= STATE_PATCH;
+							-- end if;
 
 						when "0011" =>					-- "0011" : post-neuron
 							-- STDP_DATAIN_POST_FIFO <= to_sfixed(avs_pullSpike_writedata(INTERVAL_TIME_WIDTH-1 downto 0), INTERVAL_TIME_REAL-1, -INTERVAL_TIME_IMG);
 							STDP_DATAIN_POST_FIFO <= avs_pullSpike_writedata(INTERVAL_TIME_WIDTH-1 downto 0);
 							
-							STDP_arxivPOSTshift <= '1';
-							if STDP_arxivPOSTshift_fin = '1' then
-								STDP_arxivPOSTshift <= '0';
-								STDP_patchPOSTneuron <= '1';
-							else
-								STDP_arxivPOSTshift <= '1';
-								STDP_patchPOSTneuron <= '0';
-							end if;
+							STDP_patchPOSTneuron <= '1';
+							statePullSpike_next <= STATE_WAIT;
+							-- STDP_arxivPOSTshift <= '1';
+							-- if STDP_arxivPOSTshift_fin = '1' then
+							-- 	STDP_arxivPOSTshift <= '0';
+							-- 	STDP_patchPOSTneuron <= '1';
+							-- else
+							-- 	STDP_arxivPOSTshift <= '1';
+							-- 	STDP_patchPOSTneuron <= '0';
+							-- end if;
 
-							if STDP_patchPOSTneuron_fin = '1' then	-- when stored -> push Synapse
-								avs_pullSpike_waitrequest <= '0';
-								statePullSpike_next <= STATE_WAIT;
-							else
-								statePullSpike_next <= STATE_PATCH;
-							end if;
+							-- if STDP_patchPOSTneuron_fin = '1' then	-- when stored -> push Synapse
+							-- 	avs_pullSpike_waitrequest <= '0';
+							-- 	statePullSpike_next <= STATE_WAIT;
+							-- else
+							-- 	statePullSpike_next <= STATE_PATCH;
+							-- end if;
 
 						when "1111" =>					-- "1111": pre-neuron&post-neuron
 							-- STDP_DATAIN_PRE_FIFO <= to_sfixed(avs_pullSpike_writedata(SPIKE_DATA_WIDTH-1 downto SPIKE_DATA_WIDTH-INTERVAL_TIME_WIDTH), INTERVAL_TIME_REAL-1, -INTERVAL_TIME_IMG);
@@ -291,31 +347,34 @@ begin
 							STDP_DATAIN_PRE_FIFO <= avs_pullSpike_writedata(SPIKE_DATA_WIDTH-1 downto SPIKE_DATA_WIDTH-INTERVAL_TIME_WIDTH);
 							STDP_DATAIN_POST_FIFO <= avs_pullSpike_writedata(INTERVAL_TIME_WIDTH-1 downto 0);
 
-							STDP_arxivPREshift <= '1';
-							if STDP_arxivPREshift_fin = '1' then
-								STDP_arxivPREshift <= '0';
-								STDP_patchPREneuron <= '1';
-							else
-								STDP_arxivPREshift <= '1';
-								STDP_patchPREneuron <= '0';
-							end if;
+							STDP_patchPREneuron <= '1';
+							STDP_patchPOSTneuron <= '1';
+							statePullSpike_next <= STATE_WAIT;
+							-- STDP_arxivPREshift <= '1';
+							-- if STDP_arxivPREshift_fin = '1' then
+							-- 	STDP_arxivPREshift <= '0';
+							-- 	STDP_patchPREneuron <= '1';
+							-- else
+							-- 	STDP_arxivPREshift <= '1';
+							-- 	STDP_patchPREneuron <= '0';
+							-- end if;
 
-							STDP_arxivPOSTshift <= '1';
-							if STDP_arxivPOSTshift_fin = '1' then
-								STDP_arxivPOSTshift <= '0';
-								STDP_patchPOSTneuron <= '1';
-							else
-								STDP_arxivPOSTshift <= '1';
-								STDP_patchPOSTneuron <= '0';
-							end if;
+							-- STDP_arxivPOSTshift <= '1';
+							-- if STDP_arxivPOSTshift_fin = '1' then
+							-- 	STDP_arxivPOSTshift <= '0';
+							-- 	STDP_patchPOSTneuron <= '1';
+							-- else
+							-- 	STDP_arxivPOSTshift <= '1';
+							-- 	STDP_patchPOSTneuron <= '0';
+							-- end if;
 
 
-							if STDP_patchPREneuron_fin = '1' and STDP_patchPOSTneuron_fin = '1' then	-- when stored -> push Synapse
-								avs_pullSpike_waitrequest <= '0';
-								statePullSpike_next <= STATE_WAIT;
-							else
-								statePullSpike_next <= STATE_PATCH;
-							end if;
+							-- if STDP_patchPREneuron_fin = '1' and STDP_patchPOSTneuron_fin = '1' then	-- when stored -> push Synapse
+							-- 	avs_pullSpike_waitrequest <= '0';
+							-- 	statePullSpike_next <= STATE_WAIT;
+							-- else
+							-- 	statePullSpike_next <= STATE_PATCH;
+							-- end if;
 
 						when others =>
 							STDP_DATAIN_PRE_FIFO <= (others => '0');
@@ -329,11 +388,11 @@ begin
 
 				when STATE_WAIT =>			-- Wait until push Synapse Weight successfully
 					synapsePush <= '1';
-					if synapsePush_fin = '1' then
+					-- if synapsePush_fin = '1' then
 						statePullSpike_next <= STATE_IDLE;
-					else
-						statePullSpike_next <= STATE_WAIT;
-					end if;
+					-- else
+					-- 	statePullSpike_next <= STATE_WAIT;
+					-- end if;
 			end case;
 		end if;
 	end process;
@@ -364,93 +423,93 @@ begin
 
 	-- -- STDP_EN_arxivPREneuron_FIFO = STDP_fetchPREneuron xor STDP_patchPREneuron;
 	-- -- STDP_EN_arxivPOSTneuron_FIFO = STDP_fetchPOSTneuron xor STDP_patchPOSTneuron;
-	STDP_FIFO:
-	process(	rst, rstSynapse,
-				STDP_arxivPREneuron_FIFO, STDP_arxivPOSTneuron_FIFO,
-				STDP_DATAIN_PRE_FIFO, STDP_DATAIN_POST_FIFO,
-				STDP_arxivPREshift, STDP_arxivPOSTshift,
-				STDP_arxivPOSTfull_FIFO,
-				STDP_fetchPREneuron, STDP_patchPREneuron, 
-				STDP_fetchPOSTneuron, STDP_patchPOSTneuron)
+	-- STDP_FIFO:
+	-- process(	rst, rstSynapse,
+	-- 			STDP_arxivPREneuron_FIFO, STDP_arxivPOSTneuron_FIFO,
+	-- 			STDP_DATAIN_PRE_FIFO, STDP_DATAIN_POST_FIFO,
+	-- 			STDP_arxivPREshift, STDP_arxivPOSTshift,
+	-- 			STDP_arxivPOSTfull_FIFO,
+	-- 			STDP_fetchPREneuron, STDP_patchPREneuron, 
+	-- 			STDP_fetchPOSTneuron, STDP_patchPOSTneuron)
 
-				variable STDP_arxivPOSTfullIDX_FIFO : integer := 0;
-				variable STDP_tempPOSToriginal : sfixed(INTERVAL_TIME_REAL-1 downto -INTERVAL_TIME_IMG);
-				variable STDP_tempPOSTdatain : sfixed(INTERVAL_TIME_REAL-1 downto -INTERVAL_TIME_IMG);
-				variable STDP_tempPOSTsfixed : sfixed(INTERVAL_TIME_REAL downto -INTERVAL_TIME_IMG);
-	begin
-		-- TODO: if Delta exceeds the MIN-MAX range, then assert rstSynapse 
-		if rst = '1' or rstSynapse = '1' then
-			-- latch init
-			for initPREidx in 0 to NUM_STDP_PRE_NEURONS-1 loop
-				STDP_arxivPREneuron_FIFO(initPREidx) <= (others => '0');
-			end loop;
-			for initPOSTidx in 0 to NUM_STDP_POST_NEURONS-1 loop
-				STDP_arxivPOSTneuron_FIFO(initPOSTidx) <= (others => '0');
-			end loop;
-			-- Variable init
-			STDP_arxivPOSTfullIDX_FIFO := 0;
+	-- 			variable STDP_arxivPOSTfullIDX_FIFO : integer := 0;
+	-- 			variable STDP_tempPOSToriginal : sfixed(INTERVAL_TIME_REAL-1 downto -INTERVAL_TIME_IMG);
+	-- 			variable STDP_tempPOSTdatain : sfixed(INTERVAL_TIME_REAL-1 downto -INTERVAL_TIME_IMG);
+	-- 			variable STDP_tempPOSTsfixed : sfixed(INTERVAL_TIME_REAL downto -INTERVAL_TIME_IMG);
+	-- begin
+	-- 	-- TODO: if Delta exceeds the MIN-MAX range, then assert rstSynapse 
+	-- 	if rst = '1' or rstSynapse = '1' then
+	-- 		-- latch init
+	-- 		for initPREidx in 0 to NUM_STDP_PRE_NEURONS-1 loop
+	-- 			STDP_arxivPREneuron_FIFO(initPREidx) <= (others => '0');
+	-- 		end loop;
+	-- 		for initPOSTidx in 0 to NUM_STDP_POST_NEURONS-1 loop
+	-- 			STDP_arxivPOSTneuron_FIFO(initPOSTidx) <= (others => '0');
+	-- 		end loop;
+	-- 		-- Variable init
+	-- 		STDP_arxivPOSTfullIDX_FIFO := 0;
 
-			STDP_arxivPREshift_fin <= '0';
-			STDP_arxivPOSTshift_fin <= '0';
-			STDP_patchPREneuron_fin <= '0';
-			STDP_patchPOSTneuron_fin <= '0';
-		elsif falling_edge(clk) then
-			-- PRE neuron
-			-- SHIFT
-			for PREidx in 0 to (NUM_STDP_PRE_NEURONS-1)-1 loop	-- simply shift due to insert new interval
-				if STDP_arxivPREshift = '1' then
-					STDP_arxivPREneuron_FIFO(PREidx+1) <= STDP_arxivPREneuron_FIFO(PREidx);
-					-- STDP_arxivPREshift_fin <= '1';
-				else
-					STDP_arxivPREneuron_FIFO(PREidx) <= STDP_arxivPREneuron_FIFO(PREidx);
-					-- STDP_arxivPREshift_fin <= '0';
-				end if;
-			end loop;
-			STDP_arxivPREshift_fin <= '1';
-			-- PATCH
-			if STDP_patchPREneuron = '1' then
-				STDP_arxivPREneuron_FIFO(0) <= STDP_DATAIN_PRE_FIFO;	-- simply add Interval to latest arxiv
-				STDP_patchPREneuron_fin <= '1';
-			else 
-				STDP_arxivPREneuron_FIFO(0) <= STDP_arxivPREneuron_FIFO(0);
-				STDP_patchPREneuron_fin <= '0';
-			end if;
+	-- 		STDP_arxivPREshift_fin <= '0';
+	-- 		STDP_arxivPOSTshift_fin <= '0';
+	-- 		STDP_patchPREneuron_fin <= '0';
+	-- 		STDP_patchPOSTneuron_fin <= '0';
+	-- 	elsif falling_edge(clk) then
+	-- 		-- PRE neuron
+	-- 		-- SHIFT
+	-- 		for PREidx in 0 to (NUM_STDP_PRE_NEURONS-1)-1 loop	-- simply shift due to insert new interval
+	-- 			if STDP_arxivPREshift = '1' then
+	-- 				STDP_arxivPREneuron_FIFO(PREidx+1) <= STDP_arxivPREneuron_FIFO(PREidx);
+	-- 				-- STDP_arxivPREshift_fin <= '1';
+	-- 			else
+	-- 				STDP_arxivPREneuron_FIFO(PREidx) <= STDP_arxivPREneuron_FIFO(PREidx);
+	-- 				-- STDP_arxivPREshift_fin <= '0';
+	-- 			end if;
+	-- 		end loop;
+	-- 		STDP_arxivPREshift_fin <= '1';
+	-- 		-- PATCH
+	-- 		if STDP_patchPREneuron = '1' then
+	-- 			STDP_arxivPREneuron_FIFO(0) <= STDP_DATAIN_PRE_FIFO;	-- simply add Interval to latest arxiv
+	-- 			STDP_patchPREneuron_fin <= '1';
+	-- 		else 
+	-- 			STDP_arxivPREneuron_FIFO(0) <= STDP_arxivPREneuron_FIFO(0);
+	-- 			STDP_patchPREneuron_fin <= '0';
+	-- 		end if;
 
-			-- POST neuron
-			for POSTidx in 0 to (NUM_STDP_POST_NEURONS-1)-1 loop
-				if STDP_arxivPOSTshift = '1' then
-					STDP_arxivPOSTneuron_FIFO(POSTidx+1) <= STDP_arxivPOSTneuron_FIFO(POSTidx);
-					-- STDP_arxivPOSTshift_fin <= '1';
-				else
-					STDP_arxivPOSTneuron_FIFO(POSTidx) <= STDP_arxivPOSTneuron_FIFO(POSTidx);
-					-- STDP_arxivPOSTshift_fin <= '0';
-				end if;
-			end loop;
-			STDP_arxivPOSTshift_fin <= '1';
-			if STDP_patchPOSTneuron = '1' then
-				STDP_arxivPOSTfull_FIFO <= STDP_arxivPOSTfull_FIFO + 1;	
-				-- STDP_arxivPOSTneuron_FIFO(0) <= '0' & STDP_DATAIN_POST_FIFO;	-- simply add interval to latest arxiv ()
-				STDP_arxivPOSTneuron_FIFO(0) <= STDP_DATAIN_POST_FIFO;	-- simply add interval to latest arxiv ()
-				for POSTidx in 1 to (NUM_STDP_POST_NEURONS-1) loop	-- adjust all POSTneuron's timeline
-					if POSTidx <= STDP_arxivPOSTfull_FIFO then
-						STDP_tempPOSToriginal := to_sfixed(STDP_arxivPOSTneuron_FIFO(POSTidx), INTERVAL_TIME_REAL-1, -INTERVAL_TIME_IMG);
-						STDP_tempPOSTdatain := to_sfixed(STDP_DATAIN_POST_FIFO, INTERVAL_TIME_REAL-1, -INTERVAL_TIME_IMG);
-						STDP_tempPOSTsfixed := STDP_tempPOSToriginal + STDP_tempPOSTdatain;
-						STDP_arxivPOSTneuron_FIFO(POSTidx) <= std_logic_vector(STDP_tempPOSTsfixed(INTERVAL_TIME_REAL-1 downto -INTERVAL_TIME_IMG));
-						-- STDP_arxivPOSTneuron_FIFO(POSTidx) <= STDP_arxivPOSTneuron_FIFO(POSTidx)(INTERVAL_TIME_REAL-1 downto -INTERVAL_TIME_IMG) + STDP_DATAIN_POST_FIFO;
-					end if;
-				end loop;
-				STDP_patchPOSTneuron_fin <= '1';
-			else
-				STDP_arxivPOSTfull_FIFO <= STDP_arxivPOSTfull_FIFO;
-				STDP_arxivPOSTneuron_FIFO(0) <= STDP_arxivPOSTneuron_FIFO(0);
-				for POSTidx in 0 to (NUM_STDP_POST_NEURONS-1)-1 loop	-- simply shift due to insert new interval
-					STDP_arxivPOSTneuron_FIFO(POSTidx) <= STDP_arxivPOSTneuron_FIFO(POSTidx);
-				end loop;
-				STDP_patchPOSTneuron_fin <= '0';
-			end if;
-		end if;
-	end process;
+	-- 		-- POST neuron
+	-- 		for POSTidx in 0 to (NUM_STDP_POST_NEURONS-1)-1 loop
+	-- 			if STDP_arxivPOSTshift = '1' then
+	-- 				STDP_arxivPOSTneuron_FIFO(POSTidx+1) <= STDP_arxivPOSTneuron_FIFO(POSTidx);
+	-- 				-- STDP_arxivPOSTshift_fin <= '1';
+	-- 			else
+	-- 				STDP_arxivPOSTneuron_FIFO(POSTidx) <= STDP_arxivPOSTneuron_FIFO(POSTidx);
+	-- 				-- STDP_arxivPOSTshift_fin <= '0';
+	-- 			end if;
+	-- 		end loop;
+	-- 		STDP_arxivPOSTshift_fin <= '1';
+	-- 		if STDP_patchPOSTneuron = '1' then
+	-- 			STDP_arxivPOSTfull_FIFO <= STDP_arxivPOSTfull_FIFO + 1;	
+	-- 			-- STDP_arxivPOSTneuron_FIFO(0) <= '0' & STDP_DATAIN_POST_FIFO;	-- simply add interval to latest arxiv ()
+	-- 			STDP_arxivPOSTneuron_FIFO(0) <= STDP_DATAIN_POST_FIFO;	-- simply add interval to latest arxiv ()
+	-- 			for POSTidx in 1 to (NUM_STDP_POST_NEURONS-1) loop	-- adjust all POSTneuron's timeline
+	-- 				if POSTidx <= STDP_arxivPOSTfull_FIFO then
+	-- 					STDP_tempPOSToriginal := to_sfixed(STDP_arxivPOSTneuron_FIFO(POSTidx), INTERVAL_TIME_REAL-1, -INTERVAL_TIME_IMG);
+	-- 					STDP_tempPOSTdatain := to_sfixed(STDP_DATAIN_POST_FIFO, INTERVAL_TIME_REAL-1, -INTERVAL_TIME_IMG);
+	-- 					STDP_tempPOSTsfixed := STDP_tempPOSToriginal + STDP_tempPOSTdatain;
+	-- 					STDP_arxivPOSTneuron_FIFO(POSTidx) <= std_logic_vector(STDP_tempPOSTsfixed(INTERVAL_TIME_REAL-1 downto -INTERVAL_TIME_IMG));
+	-- 					-- STDP_arxivPOSTneuron_FIFO(POSTidx) <= STDP_arxivPOSTneuron_FIFO(POSTidx)(INTERVAL_TIME_REAL-1 downto -INTERVAL_TIME_IMG) + STDP_DATAIN_POST_FIFO;
+	-- 				end if;
+	-- 			end loop;
+	-- 			STDP_patchPOSTneuron_fin <= '1';
+	-- 		else
+	-- 			STDP_arxivPOSTfull_FIFO <= STDP_arxivPOSTfull_FIFO;
+	-- 			STDP_arxivPOSTneuron_FIFO(0) <= STDP_arxivPOSTneuron_FIFO(0);
+	-- 			for POSTidx in 0 to (NUM_STDP_POST_NEURONS-1)-1 loop	-- simply shift due to insert new interval
+	-- 				STDP_arxivPOSTneuron_FIFO(POSTidx) <= STDP_arxivPOSTneuron_FIFO(POSTidx);
+	-- 			end loop;
+	-- 			STDP_patchPOSTneuron_fin <= '0';
+	-- 		end if;
+	-- 	end if;
+	-- end process;
 
 	PUSH_SYNAPSE:
 	process(	rst,

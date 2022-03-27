@@ -1,5 +1,5 @@
 Analysis & Synthesis report for bus_test
-Fri Mar 25 12:51:07 2022
+Sun Mar 27 23:59:40 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -13,18 +13,16 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: Top-level Entity: |shift_reg_post_add
- 13. Parameter Settings for User Entity Instance: shift_regi_post:PRE_STDP
- 14. Parameter Settings for User Entity Instance: shift_regi_post:POST_STDP
- 15. Port Connectivity Checks: "shift_regi_post:POST_STDP"
- 16. Port Connectivity Checks: "shift_regi_post:PRE_STDP"
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
+  8. State Machine - |soma|statePushSPike
+  9. State Machine - |soma|statePullSynapse
+ 10. State Machine - |soma|stateFetchSoma
+ 11. User-Specified and Inferred Latches
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: Top-level Entity: |soma
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -51,14 +49,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Mar 25 12:51:07 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Mar 27 23:59:40 2022       ;
 ; Quartus Prime Version           ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                   ; bus_test                                    ;
-; Top-level Entity Name           ; shift_reg_post_add                          ;
+; Top-level Entity Name           ; soma                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 105                                         ;
-; Total pins                      ; 120                                         ;
+; Total registers                 ; 64                                          ;
+; Total pins                      ; 139                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -77,7 +75,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC9E7F35C8     ;                    ;
-; Top-level entity name                                                           ; shift_reg_post_add ; bus_test           ;
+; Top-level entity name                                                           ; soma               ; bus_test           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -181,73 +179,167 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                      ; Library ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
-; src_new/shift_reg_post_add.vhd   ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd   ;         ;
-; src_new/shift_reg_post.vhd       ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/shift_reg_post.vhd       ;         ;
+; src_new/soma.vhd                 ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/soma.vhd                 ;         ;
 ; src_new/fixed_float_types_c.vhdl ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/fixed_float_types_c.vhdl ;         ;
 ; src_new/fixed_pkg_c.vhdl         ; yes             ; User VHDL File  ; /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl         ;         ;
 +----------------------------------+-----------------+-----------------+-------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 85            ;
-;                                             ;               ;
-; Combinational ALUT usage for logic          ; 158           ;
-;     -- 7 input functions                    ; 0             ;
-;     -- 6 input functions                    ; 11            ;
-;     -- 5 input functions                    ; 0             ;
-;     -- 4 input functions                    ; 36            ;
-;     -- <=3 input functions                  ; 111           ;
-;                                             ;               ;
-; Dedicated logic registers                   ; 105           ;
-;                                             ;               ;
-; I/O pins                                    ; 120           ;
-;                                             ;               ;
-; Total DSP Blocks                            ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; sys_clk~input ;
-; Maximum fan-out                             ; 105           ;
-; Total fan-out                               ; 1276          ;
-; Average fan-out                             ; 2.54          ;
-+---------------------------------------------+---------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 79             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 147            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 2              ;
+;     -- 5 input functions                    ; 1              ;
+;     -- 4 input functions                    ; 46             ;
+;     -- <=3 input functions                  ; 98             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 64             ;
+;                                             ;                ;
+; I/O pins                                    ; 139            ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; clk_soma~input ;
+; Maximum fan-out                             ; 64             ;
+; Total fan-out                               ; 888            ;
+; Average fan-out                             ; 1.82           ;
++---------------------------------------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                         ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+--------------------+--------------+
-; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                           ; Entity Name        ; Library Name ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+--------------------+--------------+
-; |shift_reg_post_add            ; 158 (14)            ; 105 (21)                  ; 0                 ; 0          ; 120  ; 0            ; |shift_reg_post_add                           ; shift_reg_post_add ; work         ;
-;    |shift_regi_post:POST_STDP| ; 44 (44)             ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |shift_reg_post_add|shift_regi_post:POST_STDP ; shift_regi_post    ; work         ;
-;    |shift_regi_post:PRE_STDP|  ; 100 (100)           ; 42 (42)                   ; 0                 ; 0          ; 0    ; 0            ; |shift_reg_post_add|shift_regi_post:PRE_STDP  ; shift_regi_post    ; work         ;
-+--------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------+--------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |soma                      ; 147 (147)           ; 64 (64)                   ; 0                 ; 0          ; 139  ; 0            ; |soma               ; soma        ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; shift_regi_post:PRE_STDP|top[2]       ; Stuck at GND due to stuck port data_in ;
-; shift_regi_post:POST_STDP|top[2]      ; Stuck at GND due to stuck port data_in ;
-; idx[2]                                ; Stuck at GND due to stuck port data_in ;
-; CAL_ADDR[2]                           ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 4 ;                                        ;
-+---------------------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |soma|statePushSPike                                                                                                       ;
++----------------------------+--------------------------+---------------------------+----------------------------+---------------------------+
+; Name                       ; statePushSPike.STATE_RST ; statePushSPike.STATE_WAIT ; statePushSPike.STATE_SPIKE ; statePushSPike.STATE_IDLE ;
++----------------------------+--------------------------+---------------------------+----------------------------+---------------------------+
+; statePushSPike.STATE_IDLE  ; 0                        ; 0                         ; 0                          ; 0                         ;
+; statePushSPike.STATE_SPIKE ; 0                        ; 0                         ; 1                          ; 1                         ;
+; statePushSPike.STATE_WAIT  ; 0                        ; 1                         ; 0                          ; 1                         ;
+; statePushSPike.STATE_RST   ; 1                        ; 0                         ; 0                          ; 1                         ;
++----------------------------+--------------------------+---------------------------+----------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                           ;
-+----------------------------------+---------------------------+----------------------------------------+
-; Register name                    ; Reason for Removal        ; Registers Removed due to This Register ;
-+----------------------------------+---------------------------+----------------------------------------+
-; shift_regi_post:POST_STDP|top[2] ; Stuck at GND              ; idx[2], CAL_ADDR[2]                    ;
-;                                  ; due to stuck port data_in ;                                        ;
-+----------------------------------+---------------------------+----------------------------------------+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |soma|statePullSynapse                                                                                  ;
++------------------------------+-----------------------------+------------------------------+-----------------------------+
+; Name                         ; statePullSynapse.STATE_WAIT ; statePullSynapse.STATE_PATCH ; statePullSynapse.STATE_IDLE ;
++------------------------------+-----------------------------+------------------------------+-----------------------------+
+; statePullSynapse.STATE_IDLE  ; 0                           ; 0                            ; 0                           ;
+; statePullSynapse.STATE_PATCH ; 0                           ; 1                            ; 1                           ;
+; statePullSynapse.STATE_WAIT  ; 1                           ; 0                            ; 1                           ;
++------------------------------+-----------------------------+------------------------------+-----------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------+
+; State Machine - |soma|stateFetchSoma                                                                            ;
++----------------------------+---------------------------+----------------------------+---------------------------+
+; Name                       ; stateFetchSoma.STATE_LOCK ; stateFetchSoma.STATE_FETCH ; stateFetchSoma.STATE_IDLE ;
++----------------------------+---------------------------+----------------------------+---------------------------+
+; stateFetchSoma.STATE_IDLE  ; 0                         ; 0                          ; 0                         ;
+; stateFetchSoma.STATE_FETCH ; 0                         ; 1                          ; 1                         ;
+; stateFetchSoma.STATE_LOCK  ; 1                         ; 0                          ; 1                         ;
++----------------------------+---------------------------+----------------------------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                         ;
++-----------------------------------------------------+------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal          ; Free of Timing Hazards ;
++-----------------------------------------------------+------------------------------+------------------------+
+; avs_fetchSoma_waitrequest$latch                     ; avs_fetchSoma_waitrequest    ; yes                    ;
+; avs_pullSynapse_waitrequest$latch                   ; Selector39                   ; yes                    ;
+; avm_pushSpike_address[0]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[1]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[2]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[3]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[4]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[5]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[6]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[7]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[8]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[9]$latch                      ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[10]$latch                     ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[11]$latch                     ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[12]$latch                     ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[13]$latch                     ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[14]$latch                     ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_address[15]$latch                     ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_write$latch                           ; avm_pushSpike_write          ; yes                    ;
+; avm_pushSpike_writedata[0]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[1]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[2]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[3]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[4]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[5]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[6]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[7]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[8]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; avm_pushSpike_writedata[9]$latch                    ; avm_pushSpike_address[15]    ; yes                    ;
+; patchMembrane                                       ; Selector38                   ; yes                    ;
+; Addr_UploadServer[0]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[1]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[2]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[3]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[4]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[5]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[6]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[7]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[8]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[9]                                ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[10]                               ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[11]                               ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[12]                               ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[13]                               ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[14]                               ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; Addr_UploadServer[15]                               ; stateFetchSoma.STATE_FETCH   ; yes                    ;
+; spike_rst                                           ; spike_rst                    ; yes                    ;
+; Interval_IN[-5]                                     ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[-4]                                     ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[-3]                                     ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[-2]                                     ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[-1]                                     ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[0]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[1]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[2]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[3]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Interval_IN[4]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[-8]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[-7]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[-6]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[-5]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[-4]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[-3]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[-2]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[-1]                                      ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[0]                                       ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[1]                                       ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[2]                                       ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[3]                                       ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[4]                                       ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[5]                                       ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[6]                                       ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Synapse_IN[7]                                       ; statePullSynapse.STATE_PATCH ; yes                    ;
+; Number of user-specified and inferred latches = 73  ;                              ;                        ;
++-----------------------------------------------------+------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -255,97 +347,49 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 105   ;
-; Number of registers using Synchronous Clear  ; 24    ;
-; Number of registers using Synchronous Load   ; 48    ;
-; Number of registers using Asynchronous Clear ; 95    ;
+; Total registers                              ; 64    ;
+; Number of registers using Synchronous Clear  ; 1     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 37    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 74    ;
+; Number of registers using Clock Enable       ; 53    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|REG[0][2]       ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|REG[1][-4]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|REG[2][-4]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|REG[3][3]       ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:POST_STDP|REG[1][-1]     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:POST_STDP|REG[2][2]      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |shift_reg_post_add|shift_regi_post:POST_STDP|REG[3][-4]     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |shift_reg_post_add|shift_regi_post:PRE_STDP|DATA_CAL_OUT[0] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |shift_reg_post_add|shift_regi_post:POST_STDP|POP_OUT[7]     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |soma|stateFetchSoma_next.STATE_IDLE ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |shift_reg_post_add ;
-+----------------+-------+-----------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                      ;
-+----------------+-------+-----------------------------------------------------------+
-; SHIFT_CAP_PRE  ; 4     ; Signed Integer                                            ;
-; SHIFT_CAP_POST ; 4     ; Signed Integer                                            ;
-; DATA_WID       ; 8     ; Signed Integer                                            ;
-; ADDR_WID       ; 3     ; Signed Integer                                            ;
-; REAL_WID       ; 4     ; Signed Integer                                            ;
-; IMG_WID        ; 4     ; Signed Integer                                            ;
-+----------------+-------+-----------------------------------------------------------+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |soma ;
++----------------------+------------------+----------------------------+
+; Parameter Name       ; Value            ; Type                       ;
++----------------------+------------------+----------------------------+
+; BYTEENABLE_WIDTH     ; 4                ; Signed Integer             ;
+; FETCH_ADDR_WIDTH     ; 2                ; Signed Integer             ;
+; SERVER_ADDR_WIDTH    ; 16               ; Signed Integer             ;
+; SYNAPSE_ADDR_WIDTH   ; 8                ; Signed Integer             ;
+; SYNAPSE_DATA_WIDTH   ; 32               ; Signed Integer             ;
+; SPIKE_ADDR_WIDTH     ; 8                ; Signed Integer             ;
+; SPIKE_DATA_WIDTH     ; 16               ; Signed Integer             ;
+; INTERVAL_TIME_WIDTH  ; 10               ; Signed Integer             ;
+; INTERVAL_TIME_REAL   ; 5                ; Signed Integer             ;
+; INTERVAL_TIME_IMG    ; 5                ; Signed Integer             ;
+; SYNAPSE_WEIGHT_WIDTH ; 16               ; Signed Integer             ;
+; SYNAPSE_WEIGHT_REAL  ; 8                ; Signed Integer             ;
+; SYNAPSE_WEIGHT_IMG   ; 8                ; Signed Integer             ;
+; MEMBRANE_WIDTH       ; 16               ; Signed Integer             ;
+; MEMBRANE_REAL        ; 8                ; Signed Integer             ;
+; MEMBRANE_IMG         ; 8                ; Signed Integer             ;
+; THRESHOLD            ; 0000001000000000 ; Unsigned Binary            ;
++----------------------+------------------+----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: shift_regi_post:PRE_STDP ;
-+----------------+-------+----------------------------------------------+
-; Parameter Name ; Value ; Type                                         ;
-+----------------+-------+----------------------------------------------+
-; SHIFTGEG_CAP   ; 4     ; Signed Integer                               ;
-; DATA_WIDTH     ; 8     ; Signed Integer                               ;
-; ADDR_WIDTH     ; 3     ; Signed Integer                               ;
-; REAL_WIDTH     ; 4     ; Signed Integer                               ;
-; IMG_WIDTH      ; 4     ; Signed Integer                               ;
-+----------------+-------+----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: shift_regi_post:POST_STDP ;
-+----------------+-------+-----------------------------------------------+
-; Parameter Name ; Value ; Type                                          ;
-+----------------+-------+-----------------------------------------------+
-; SHIFTGEG_CAP   ; 4     ; Signed Integer                                ;
-; DATA_WIDTH     ; 8     ; Signed Integer                                ;
-; ADDR_WIDTH     ; 3     ; Signed Integer                                ;
-; REAL_WIDTH     ; 4     ; Signed Integer                                ;
-; IMG_WIDTH      ; 4     ; Signed Integer                                ;
-+----------------+-------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "shift_regi_post:POST_STDP"                                                                  ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; data_cal_en  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data_cal_in  ; Input  ; Info     ; Stuck at GND                                                                        ;
-; data_cal_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "shift_regi_post:PRE_STDP"                                                               ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; pop_en   ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pop_addr ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pop_out  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; dbg_top  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -353,31 +397,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 105                         ;
-;     CLR               ; 15                          ;
-;     CLR SCLR          ; 16                          ;
-;     ENA               ; 2                           ;
-;     ENA CLR           ; 16                          ;
-;     ENA CLR SLD       ; 48                          ;
-;     ENA SCLR          ; 8                           ;
-; arriav_lcell_comb     ; 159                         ;
-;     arith             ; 17                          ;
-;         1 data inputs ; 1                           ;
-;         4 data inputs ; 16                          ;
-;     normal            ; 51                          ;
+; arriav_ff             ; 64                          ;
+;     CLR               ; 11                          ;
+;     ENA               ; 26                          ;
+;     ENA CLR           ; 26                          ;
+;     ENA SCLR          ; 1                           ;
+; arriav_lcell_comb     ; 148                         ;
+;     arith             ; 26                          ;
+;         2 data inputs ; 26                          ;
+;     normal            ; 122                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 15                          ;
-;         4 data inputs ; 20                          ;
-;         6 data inputs ; 11                          ;
-;     shared            ; 91                          ;
-;         0 data inputs ; 3                           ;
-;         2 data inputs ; 64                          ;
-;         3 data inputs ; 24                          ;
-; boundary_port         ; 120                         ;
+;         2 data inputs ; 35                          ;
+;         3 data inputs ; 37                          ;
+;         4 data inputs ; 46                          ;
+;         5 data inputs ; 1                           ;
+;         6 data inputs ; 2                           ;
+; boundary_port         ; 139                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.70                        ;
-; Average LUT depth     ; 3.31                        ;
+; Max LUT depth         ; 2.50                        ;
+; Average LUT depth     ; 1.45                        ;
 +-----------------------+-----------------------------+
 
 
@@ -396,19 +434,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Mar 25 12:51:02 2022
+    Info: Processing started: Sun Mar 27 23:59:35 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off bus_test -c bus_test
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file src_new/shift_reg_post_add.vhd
-    Info (12022): Found design unit 1: shift_reg_post_add-rtl File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 48
-    Info (12023): Found entity 1: shift_reg_post_add File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 8
-Info (12021): Found 2 design units, including 1 entities, in source file src_new/shift_reg_post.vhd
-    Info (12022): Found design unit 1: shift_regi_post-rtler File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post.vhd Line: 40
-    Info (12023): Found entity 1: shift_regi_post File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post.vhd Line: 8
-Info (12021): Found 2 design units, including 1 entities, in source file src_new/shift_reg.vhd
-    Info (12022): Found design unit 1: shift_regi-rtl File: /home/hws_master/np_con/bus_test/src_new/shift_reg.vhd Line: 28
-    Info (12023): Found entity 1: shift_regi File: /home/hws_master/np_con/bus_test/src_new/shift_reg.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file src_new/soma.vhd
+    Info (12022): Found design unit 1: soma-rtl File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 75
+    Info (12023): Found entity 1: soma File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 8
+Info (12021): Found 2 design units, including 1 entities, in source file func_test/addr.vhd
+    Info (12022): Found design unit 1: addr-rtl File: /home/hws_master/np_con/bus_test/func_test/addr.vhd Line: 17
+    Info (12023): Found entity 1: addr File: /home/hws_master/np_con/bus_test/func_test/addr.vhd Line: 7
+Info (12021): Found 1 design units, including 0 entities, in source file func_test/PROPERTIES_PACK.vhd
+    Info (12022): Found design unit 1: PROPERTIES_PACK File: /home/hws_master/np_con/bus_test/func_test/PROPERTIES_PACK.vhd Line: 5
 Info (12021): Found 1 design units, including 0 entities, in source file src_new/fixed_float_types_c.vhdl
     Info (12022): Found design unit 1: fixed_float_types File: /home/hws_master/np_con/bus_test/src_new/fixed_float_types_c.vhdl Line: 16
 Info (12021): Found 2 design units, including 0 entities, in source file src_new/fixed_noresize.vhdl
@@ -420,9 +457,6 @@ Info (12021): Found 2 design units, including 0 entities, in source file src_new
 Info (12021): Found 2 design units, including 1 entities, in source file src_new/fixed_synth.vhdl
     Info (12022): Found design unit 1: fixed_synth-rtl File: /home/hws_master/np_con/bus_test/src_new/fixed_synth.vhdl Line: 25
     Info (12023): Found entity 1: fixed_synth File: /home/hws_master/np_con/bus_test/src_new/fixed_synth.vhdl Line: 15
-Info (12021): Found 2 design units, including 1 entities, in source file src_new/synapse.vhd
-    Info (12022): Found design unit 1: synapse_module-rtl File: /home/hws_master/np_con/bus_test/src_new/synapse.vhd Line: 93
-    Info (12023): Found entity 1: synapse_module File: /home/hws_master/np_con/bus_test/src_new/synapse.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file src/simpe_synapse_sm.vhd
     Info (12022): Found design unit 1: simpe_synapse_sm-Behavior File: /home/hws_master/np_con/bus_test/src/simpe_synapse_sm.vhd Line: 40
     Info (12023): Found entity 1: simpe_synapse_sm File: /home/hws_master/np_con/bus_test/src/simpe_synapse_sm.vhd Line: 7
@@ -435,31 +469,143 @@ Info (12021): Found 2 design units, including 1 entities, in source file src/sim
 Info (12021): Found 2 design units, including 1 entities, in source file src/simple_soma_sm_mod.vhd
     Info (12022): Found design unit 1: simple_soma_sm-behavioral File: /home/hws_master/np_con/bus_test/src/simple_soma_sm_mod.vhd Line: 57
     Info (12023): Found entity 1: simple_soma_sm File: /home/hws_master/np_con/bus_test/src/simple_soma_sm_mod.vhd Line: 5
-Info (12127): Elaborating entity "shift_reg_post_add" for the top level hierarchy
+Info (12127): Elaborating entity "soma" for the top level hierarchy
 Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1470): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1470
 Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1471): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1471
 Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1472): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1472
-Warning (10036): Verilog HDL or VHDL warning at shift_reg_post_add.vhd(88): object "dbg_top_PRE" assigned a value but never read File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 88
-Warning (10540): VHDL Signal Declaration warning at shift_reg_post_add.vhd(91): used explicit default value for signal "ZERO_SIG" because signal was never assigned a value File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 91
-Warning (10540): VHDL Signal Declaration warning at shift_reg_post_add.vhd(92): used explicit default value for signal "ZERO_DATA_IN" because signal was never assigned a value File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 92
-Warning (10036): Verilog HDL or VHDL warning at shift_reg_post_add.vhd(93): object "ZERO_DATA_OUT" assigned a value but never read File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 93
-Warning (10540): VHDL Signal Declaration warning at shift_reg_post_add.vhd(94): used explicit default value for signal "ZERO_ADDR" because signal was never assigned a value File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 94
-Info (12128): Elaborating entity "shift_regi_post" for hierarchy "shift_regi_post:PRE_STDP" File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 97
-Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1470): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1470
-Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1471): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1471
-Warning (10445): VHDL Subtype or Type Declaration warning at fixed_pkg_c.vhdl(1472): subtype or type has null range File: /home/hws_master/np_con/bus_test/src_new/fixed_pkg_c.vhdl Line: 1472
+Warning (10541): VHDL Signal Declaration warning at soma.vhd(62): used implicit default value for signal "avm_pushSpike_byteenable" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 62
+Warning (10540): VHDL Signal Declaration warning at soma.vhd(103): used explicit default value for signal "rstSoma" because signal was never assigned a value File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at soma.vhd(128): signal "stateFetchSoma" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 128
+Warning (10492): VHDL Process Statement warning at soma.vhd(147): signal "Addr_UploadServer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 147
+Warning (10631): VHDL Process Statement warning at soma.vhd(120): inferring latch(es) for signal or variable "Addr_UploadServer", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Warning (10631): VHDL Process Statement warning at soma.vhd(120): inferring latch(es) for signal or variable "avs_fetchSoma_waitrequest", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at soma.vhd(169): signal "statePullSynapse" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 169
+Warning (10492): VHDL Process Statement warning at soma.vhd(189): signal "patchMembrane_fin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 189
+Warning (10631): VHDL Process Statement warning at soma.vhd(156): inferring latch(es) for signal or variable "Synapse_IN", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Warning (10631): VHDL Process Statement warning at soma.vhd(156): inferring latch(es) for signal or variable "Interval_IN", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Warning (10631): VHDL Process Statement warning at soma.vhd(156): inferring latch(es) for signal or variable "avs_pullSynapse_waitrequest", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Warning (10631): VHDL Process Statement warning at soma.vhd(156): inferring latch(es) for signal or variable "patchMembrane", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Warning (10492): VHDL Process Statement warning at soma.vhd(210): signal "spike_rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 210
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1092): ignored choice containing meta-value "'U'" File: /home/hws_master/intelFPGA_lite/21.1/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1092
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1092): ignored choice containing meta-value "'X'" File: /home/hws_master/intelFPGA_lite/21.1/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1092
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1092): ignored choice containing meta-value "'Z'" File: /home/hws_master/intelFPGA_lite/21.1/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1092
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1092): ignored choice containing meta-value "'W'" File: /home/hws_master/intelFPGA_lite/21.1/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1092
+Warning (10325): VHDL Choice warning at std_1164_vhdl1993.vhd(1092): ignored choice containing meta-value "'-'" File: /home/hws_master/intelFPGA_lite/21.1/quartus/libraries/vhdl/ieee/1993/std_1164_vhdl1993.vhd Line: 1092
+Warning (10492): VHDL Process Statement warning at soma.vhd(250): signal "statePushSPike" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 250
+Warning (10492): VHDL Process Statement warning at soma.vhd(256): signal "spike" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 256
+Warning (10492): VHDL Process Statement warning at soma.vhd(263): signal "Addr_UploadServer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 263
+Warning (10492): VHDL Process Statement warning at soma.vhd(265): signal "Interval_Time" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 265
+Warning (10631): VHDL Process Statement warning at soma.vhd(242): inferring latch(es) for signal or variable "avm_pushSpike_address", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Warning (10631): VHDL Process Statement warning at soma.vhd(242): inferring latch(es) for signal or variable "avm_pushSpike_write", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Warning (10631): VHDL Process Statement warning at soma.vhd(242): inferring latch(es) for signal or variable "avm_pushSpike_writedata", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Warning (10631): VHDL Process Statement warning at soma.vhd(242): inferring latch(es) for signal or variable "spike_rst", which holds its previous value in one or more paths through the process File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "spike_rst" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[0]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[1]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[2]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[3]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[4]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[5]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[6]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[7]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[8]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_writedata[9]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_write" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[0]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[1]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[2]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[3]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[4]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[5]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[6]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[7]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[8]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[9]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[10]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[11]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[12]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[13]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[14]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "avm_pushSpike_address[15]" at soma.vhd(242) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 242
+Info (10041): Inferred latch for "patchMembrane" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "avs_pullSynapse_waitrequest" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[-5]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[-4]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[-3]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[-2]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[-1]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[0]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[1]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[2]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[3]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Interval_IN[4]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[-8]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[-7]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[-6]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[-5]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[-4]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[-3]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[-2]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[-1]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[0]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[1]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[2]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[3]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[4]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[5]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[6]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "Synapse_IN[7]" at soma.vhd(156) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+Info (10041): Inferred latch for "avs_fetchSoma_waitrequest" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[0]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[1]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[2]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[3]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[4]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[5]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[6]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[7]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[8]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[9]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[10]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[11]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[12]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[13]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[14]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Info (10041): Inferred latch for "Addr_UploadServer[15]" at soma.vhd(120) File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 120
+Warning (13012): Latch avs_pullSynapse_waitrequest$latch has unsafe behavior File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 156
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal statePullSynapse.STATE_WAIT File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 81
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "dbg_ADDR[2]" is stuck at GND File: /home/hws_master/np_con/bus_test/src_new/shift_reg_post_add.vhd Line: 41
+    Warning (13410): Pin "avm_pushSpike_byteenable[0]" is stuck at GND File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 62
+    Warning (13410): Pin "avm_pushSpike_byteenable[1]" is stuck at GND File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 62
+    Warning (13410): Pin "avm_pushSpike_byteenable[2]" is stuck at GND File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 62
+    Warning (13410): Pin "avm_pushSpike_byteenable[3]" is stuck at GND File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 62
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 294 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 21 input pins
-    Info (21059): Implemented 99 output pins
-    Info (21061): Implemented 174 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
-    Info: Peak virtual memory: 611 megabytes
-    Info: Processing ended: Fri Mar 25 12:51:07 2022
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "avs_fetchSoma_address[0]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 46
+    Warning (15610): No output dependent on input pin "avs_fetchSoma_address[1]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 46
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_address[0]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 53
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_address[1]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 53
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_address[2]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 53
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_address[3]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 53
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_address[4]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 53
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_address[5]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 53
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_address[6]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 53
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_address[7]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 53
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_writedata[10]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 56
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_writedata[11]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 56
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_writedata[12]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 56
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_writedata[13]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 56
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_writedata[14]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 56
+    Warning (15610): No output dependent on input pin "avs_pullSynapse_writedata[15]" File: /home/hws_master/np_con/bus_test/src_new/soma.vhd Line: 56
+Info (21057): Implemented 314 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 63 input pins
+    Info (21059): Implemented 76 output pins
+    Info (21061): Implemented 175 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
+    Info: Peak virtual memory: 615 megabytes
+    Info: Processing ended: Sun Mar 27 23:59:40 2022
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:13
 

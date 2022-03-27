@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "03/25/2022 12:53:21"
+-- Generated on "03/25/2022 17:29:16"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          shift_reg_post_add
 -- 
@@ -34,18 +34,6 @@ END shift_reg_post_add_vhd_vec_tst;
 ARCHITECTURE shift_reg_post_add_arch OF shift_reg_post_add_vhd_vec_tst IS
 -- constants                                                 
 -- signals                                                   
-SIGNAL dbg_ADDR : STD_LOGIC_VECTOR(2 DOWNTO 0);
-SIGNAL dbg_DATA_CAL_POST : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_POST_0 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_POST_1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_POST_2 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_POST_3 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_PRE_0 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_PRE_1 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_PRE_2 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_PRE_3 : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_SUM : STD_LOGIC_VECTOR(7 DOWNTO 0);
-SIGNAL dbg_TEMP_SUM : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL STDP_DATAIN_POST_FIFO : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL STDP_DATAIN_PRE_FIFO : STD_LOGIC_VECTOR(7 DOWNTO 0);
 SIGNAL STDP_OUT : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -56,18 +44,6 @@ SIGNAL sys_clk : STD_LOGIC;
 SIGNAL sys_rst : STD_LOGIC;
 COMPONENT shift_reg_post_add
 	PORT (
-	dbg_ADDR : OUT STD_LOGIC_VECTOR(2 DOWNTO 0);
-	dbg_DATA_CAL_POST : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_POST_0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_POST_1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_POST_2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_POST_3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_PRE_0 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_PRE_1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_PRE_2 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_PRE_3 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_SUM : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
-	dbg_TEMP_SUM : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 	STDP_DATAIN_POST_FIFO : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 	STDP_DATAIN_PRE_FIFO : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 	STDP_OUT : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -82,18 +58,6 @@ BEGIN
 	i1 : shift_reg_post_add
 	PORT MAP (
 -- list connections between master ports and signals
-	dbg_ADDR => dbg_ADDR,
-	dbg_DATA_CAL_POST => dbg_DATA_CAL_POST,
-	dbg_POST_0 => dbg_POST_0,
-	dbg_POST_1 => dbg_POST_1,
-	dbg_POST_2 => dbg_POST_2,
-	dbg_POST_3 => dbg_POST_3,
-	dbg_PRE_0 => dbg_PRE_0,
-	dbg_PRE_1 => dbg_PRE_1,
-	dbg_PRE_2 => dbg_PRE_2,
-	dbg_PRE_3 => dbg_PRE_3,
-	dbg_SUM => dbg_SUM,
-	dbg_TEMP_SUM => dbg_TEMP_SUM,
 	STDP_DATAIN_POST_FIFO => STDP_DATAIN_POST_FIFO,
 	STDP_DATAIN_PRE_FIFO => STDP_DATAIN_PRE_FIFO,
 	STDP_OUT => STDP_OUT,
@@ -109,9 +73,9 @@ t_prcs_sys_clk: PROCESS
 BEGIN
 LOOP
 	sys_clk <= '0';
-	WAIT FOR 2500 ps;
+	WAIT FOR 5000 ps;
 	sys_clk <= '1';
-	WAIT FOR 2500 ps;
+	WAIT FOR 5000 ps;
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_sys_clk;
@@ -121,6 +85,10 @@ t_prcs_sys_rst: PROCESS
 BEGIN
 	sys_rst <= '0';
 	WAIT FOR 10000 ps;
+	sys_rst <= '1';
+	WAIT FOR 10000 ps;
+	sys_rst <= '0';
+	WAIT FOR 270000 ps;
 	sys_rst <= '1';
 	WAIT FOR 10000 ps;
 	sys_rst <= '0';
@@ -303,7 +271,7 @@ BEGIN
 	synapsePush <= '0';
 	WAIT FOR 240000 ps;
 	synapsePush <= '1';
-	WAIT FOR 10000 ps;
+	WAIT FOR 20000 ps;
 	synapsePush <= '0';
 WAIT;
 END PROCESS t_prcs_synapsePush;

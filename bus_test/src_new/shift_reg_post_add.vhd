@@ -23,24 +23,25 @@ entity shift_reg_post_add is
 			STDP_patchPOSTneuron : in std_logic;
 			STDP_DATAIN_PRE_FIFO : in std_logic_vector(DATA_WID-1 downto 0);
 			STDP_DATAIN_POST_FIFO : in std_logic_vector(DATA_WID-1 downto 0);
+			
 
 			synapsePush : in std_logic;
-			STDP_OUT : out std_logic_vector(DATA_WID-1 downto 0);
+			STDP_OUT : out std_logic_vector(DATA_WID-1 downto 0)
 			
-			dbg_PRE_0 : out std_logic_vector(DATA_WID-1 downto 0);
-			dbg_PRE_1 : out std_logic_vector(DATA_WID-1 downto 0);
-			dbg_PRE_2 : out std_logic_vector(DATA_WID-1 downto 0);
-			dbg_PRE_3 : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_PRE_0 : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_PRE_1 : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_PRE_2 : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_PRE_3 : out std_logic_vector(DATA_WID-1 downto 0);
 
-			dbg_POST_0 : out std_logic_vector(DATA_WID-1 downto 0);
-			dbg_POST_1 : out std_logic_vector(DATA_WID-1 downto 0);
-			dbg_POST_2 : out std_logic_vector(DATA_WID-1 downto 0);
-			dbg_POST_3 : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_POST_0 : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_POST_1 : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_POST_2 : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_POST_3 : out std_logic_vector(DATA_WID-1 downto 0);
 
-			dbg_DATA_CAL_POST : out std_logic_vector(DATA_WID-1 downto 0);
-			dbg_ADDR : out std_logic_vector(ADDR_WID-1downto 0);
-			dbg_SUM : out std_logic_vector(DATA_WID-1 downto 0);
-			dbg_TEMP_SUM : out std_logic_vector(DATA_WID-1 downto 0)
+			-- dbg_DATA_CAL_POST : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_ADDR : out std_logic_vector(ADDR_WID-1downto 0);
+			-- dbg_SUM : out std_logic_vector(DATA_WID-1 downto 0);
+			-- dbg_TEMP_SUM : out std_logic_vector(DATA_WID-1 downto 0)
 		
 	);
 end entity shift_reg_post_add;
@@ -59,8 +60,8 @@ architecture rtl of shift_reg_post_add is
 
 					DATA_EN : in std_logic;
 					DATA_IN : in std_logic_vector(DATA_WID-1 downto 0);
-					DATA_MOD_EN : in std_logic;
-					DATA_MOD_IN : in std_logic_vector(DATA_WID-1 downto 0);
+					DATA_ADJ_EN : in std_logic;
+					DATA_ADJ_IN : in std_logic_vector(DATA_WID-1 downto 0);
 					DATA_CAL_EN : in std_logic;
 					DATA_CAL_IN : in std_logic_vector(DATA_WID-1 downto 0);
 					DATA_CAL_OUT : out std_logic_vector(DATA_WID-1 downto 0);
@@ -69,11 +70,11 @@ architecture rtl of shift_reg_post_add is
 					POP_ADDR : in std_logic_vector(ADDR_WID-1 downto 0);
 					POP_OUT : out std_logic_vector(DATA_WID-1 downto 0);
 		
-					dbg_0 : out std_logic_vector(DATA_WID-1 downto 0);
-					dbg_1 : out std_logic_vector(DATA_WID-1 downto 0);
-					dbg_2 : out std_logic_vector(DATA_WID-1 downto 0);
-					dbg_3 : out std_logic_vector(DATA_WID-1 downto 0);
-					dbg_top : out std_logic_vector(ADDR_WID-1 downto 0)
+					-- dbg_0 : out std_logic_vector(DATA_WID-1 downto 0);
+					-- dbg_1 : out std_logic_vector(DATA_WID-1 downto 0);
+					-- dbg_2 : out std_logic_vector(DATA_WID-1 downto 0);
+					-- dbg_3 : out std_logic_vector(DATA_WID-1 downto 0);
+					TOP : out std_logic_vector(ADDR_WID-1 downto 0)
 	
 		);
 	end component;
@@ -85,8 +86,8 @@ architecture rtl of shift_reg_post_add is
 	signal temp_sum : std_logic_vector(DATA_WID-1 downto 0);
 	-- signal PRE_SUM : sfixed(REAL_WID downto -IMG_WID);
 	signal PRE_SUM_temp : sfixed(REAL_WID downto -IMG_WID);
-	signal dbg_top_PRE : std_logic_vector(ADDR_WID-1 downto 0);
-	signal dbg_top_POST : std_logic_vector(ADDR_WID-1 downto 0);
+	signal TOP_PRE : std_logic_vector(ADDR_WID-1 downto 0);
+	signal TOP_POST : std_logic_vector(ADDR_WID-1 downto 0);
 	
 	signal ZERO_SIG : std_logic := '0';
 	signal ZERO_DATA_IN : std_logic_vector(DATA_WID-1 downto 0) := (others => '0');
@@ -106,8 +107,8 @@ begin
 
 					DATA_EN => STDP_patchPREneuron,
 					DATA_IN => STDP_DATAIN_PRE_FIFO,
-					DATA_MOD_EN => STDP_patchPOSTneuron,
-					DATA_MOD_IN =>STDP_DATAIN_POST_FIFO,
+					DATA_ADJ_EN => STDP_patchPOSTneuron,
+					DATA_ADJ_IN =>STDP_DATAIN_POST_FIFO,
 					DATA_CAL_EN => CAL_ENA,
 					DATA_CAL_IN => DATA_CAL_POST,
 					DATA_CAL_OUT => temp_sum,
@@ -116,11 +117,11 @@ begin
 					POP_ADDR => ZERO_ADDR,
 					POP_OUT => ZERO_DATA_OUT,
 
-					dbg_0 => dbg_PRE_0,
-					dbg_1 => dbg_PRE_1,
-					dbg_2 => dbg_PRE_2,
-					dbg_3 => dbg_PRE_3,
-					dbg_top => dbg_top_PRE
+					-- dbg_0 => dbg_PRE_0,
+					-- dbg_1 => dbg_PRE_1,
+					-- dbg_2 => dbg_PRE_2,
+					-- dbg_3 => dbg_PRE_3,
+					TOP => TOP_PRE
 	);
 
 	POST_STDP: shift_regi_post
@@ -135,8 +136,8 @@ begin
 
 					DATA_EN => STDP_patchPOSTneuron,
 					DATA_IN => STDP_DATAIN_POST_FIFO,
-					DATA_MOD_EN => STDP_patchPOSTneuron,
-					DATA_MOD_IN => STDP_DATAIN_POST_FIFO,
+					DATA_ADJ_EN => STDP_patchPOSTneuron,
+					DATA_ADJ_IN => STDP_DATAIN_POST_FIFO,
 					DATA_CAL_EN => ZERO_SIG,
 					DATA_CAL_IN => ZERO_DATA_IN,
 					DATA_CAL_OUT => ZERO_DATA_OUT,
@@ -145,11 +146,11 @@ begin
 					POP_ADDR =>CAL_ADDR,
 					POP_OUT => DATA_CAL_POST,
 
-					dbg_0 => dbg_POST_0,
-					dbg_1 => dbg_POST_1,
-					dbg_2 => dbg_POST_2,
-					dbg_3 => dbg_POST_3,
-					dbg_top => dbg_top_POST
+					-- dbg_0 => dbg_POST_0,
+					-- dbg_1 => dbg_POST_1,
+					-- dbg_2 => dbg_POST_2,
+					-- dbg_3 => dbg_POST_3,
+					TOP => TOP_POST
 	);
 process(sys_clk, sys_rst,
 		STDP_patchPOSTneuron, STDP_patchPREneuron,
@@ -165,9 +166,9 @@ if sys_rst = '1' then
 	PRE_SUM := (others => '0');
 elsif falling_edge(sys_clk) then
 	if STDP_patchPOSTneuron = '1' or STDP_patchPREneuron = '1' then
-		idx := to_integer(signed(dbg_top_POST));
+		idx := to_integer(signed(TOP_POST));
 		-- CAL_ADDR <= std_logic_vector(to_signed(idx, CAL_ADDR'length));
-		-- if idx = to_integer(signed(dbg_top_POST)) then
+		-- if idx = to_integer(signed(TOP_POST)) then
 		-- 	CAL_ENA <= '0';
 		-- else
 		-- 	idx := idx + 1;
@@ -195,10 +196,10 @@ elsif falling_edge(sys_clk) then
 	end if;
 
 end if;
-dbg_SUM <= std_logic_vector(PRE_SUM(REAL_WID-1 downto -IMG_WID));
+-- dbg_SUM <= std_logic_vector(PRE_SUM(REAL_WID-1 downto -IMG_WID));
 end process;
-	dbg_DATA_CAL_POST <= DATA_CAL_POST;
-	dbg_ADDR <= CAL_ADDR;
+	-- dbg_DATA_CAL_POST <= DATA_CAL_POST;
+	-- dbg_ADDR <= CAL_ADDR;
 	-- dbg_SUM <= std_logic_vector(PRE_SUM(REAL_WID-1 downto -IMG_WID));
-	dbg_TEMP_SUM <= temp_sum;
+	-- dbg_TEMP_SUM <= temp_sum;
 end architecture rtl;

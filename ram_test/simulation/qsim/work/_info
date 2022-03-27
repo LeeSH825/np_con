@@ -1,0 +1,115 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+!s11e vcom 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/hws_master/np_con/ram_test/simulation/qsim
+T_opt
+Z2 !s110 1648292059
+Vi7WE66>04`[]Y]c?d^a``3
+04 23 16 work ram_control_vhd_vec_tst ram_control_arch 1
+=1-000ae431a4f1-623ef0db-6ef99-578b
+!s124 OEM10U2 
+o-quiet -auto_acc_if_foreign -work work -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim
+tCvgOpt 0
+n@_opt
+OL;O;2021.2;73
+Eram_control
+Z3 w1648292059
+Z4 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z5 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 ifCF;jMz=g:13W5l5cHfz2
+Z6 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z7 DPx8 cyclonev 19 cyclonev_components 0 22 @[;@4iENDn:FXNMEKOPaE3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+Z10 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 [;j8BoI1E1V3D]DHXCFOn0
+!i122 2
+R1
+Z11 8ram_test.vho
+Z12 Fram_test.vho
+l0
+L37 1
+V5iib<P?EG^ePAGUD^1TV71
+!s100 ;KDEUi9H3j5TSY^FeT1SY0
+Z13 OL;C;2021.2;73
+32
+R2
+!i10b 1
+Z14 !s108 1648292059.000000
+Z15 !s90 -work|work|ram_test.vho|
+Z16 !s107 ram_test.vho|
+!i113 0
+Z17 o-work work
+Z18 tExplicit 1 CvgOpt 0
+Astructure
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 11 ram_control 0 22 5iib<P?EG^ePAGUD^1TV71
+!i122 2
+l136
+L90 602
+Ve_LCmY_ZImDK:DEoJ5S7>0
+!s100 CfQ9gKi=3T]h?jUAa`mRK2
+R13
+32
+R2
+!i10b 1
+R14
+R15
+R16
+!i113 0
+R17
+R18
+Eram_control_vhd_vec_tst
+Z19 w1648292058
+R8
+R9
+!i122 3
+R1
+Z20 8ram_test_sim.vwf.vht
+Z21 Fram_test_sim.vwf.vht
+l0
+L32 1
+V??`i>>2AnikE0E_:I>S1R2
+!s100 SJ:bWMcfPdB?J:ABQ[z3Q2
+R13
+32
+R2
+!i10b 1
+R14
+Z22 !s90 -work|work|ram_test_sim.vwf.vht|
+Z23 !s107 ram_test_sim.vwf.vht|
+!i113 0
+R17
+R18
+Aram_control_arch
+R8
+R9
+DEx4 work 23 ram_control_vhd_vec_tst 0 22 ??`i>>2AnikE0E_:I>S1R2
+!i122 3
+l53
+L34 241
+VeJnOCCif]Ni9:8;ZN2Dj43
+!s100 d6U`JaJ6G;go;f3RkH<@92
+R13
+32
+R2
+!i10b 1
+R14
+R22
+R23
+!i113 0
+R17
+R18

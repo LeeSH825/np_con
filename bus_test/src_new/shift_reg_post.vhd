@@ -5,6 +5,8 @@ use IEEE.numeric_std.all;
 use IEEE.fixed_float_types.all;
 use IEEE.fixed_pkg.all;
 
+use work.properties_pack.all;
+
 entity shift_regi_post is
 	generic(	SHIFTGEG_CAP : integer := 4;
 				DATA_WIDTH : integer := 8;
@@ -19,8 +21,8 @@ entity shift_regi_post is
 			-- shiftFlag : in std_logic;
 			DATA_EN : in std_logic;
 			DATA_IN : in std_logic_vector(DATA_WIDTH-1 downto 0);
-			DATA_MOD_EN : in std_logic;
-			DATA_MOD_IN : in std_logic_vector(DATA_WIDTH-1 downto 0);
+			DATA_ADJ_EN : in std_logic;
+			DATA_ADJ_IN : in std_logic_vector(DATA_WIDTH-1 downto 0);
 			DATA_CAL_EN : in std_logic;
 			DATA_CAL_IN : in std_logic_vector(DATA_WIDTH-1 downto 0);
 			DATA_CAL_OUT : out std_logic_vector(DATA_WIDTH-1 downto 0);
@@ -29,11 +31,11 @@ entity shift_regi_post is
 			POP_ADDR : in std_logic_vector(ADDR_WIDTH-1 downto 0);
 			POP_OUT : out std_logic_vector(DATA_WIDTH-1 downto 0);
 
-			dbg_0 : out std_logic_vector(DATA_WIDTH-1 downto 0);
-			dbg_1 : out std_logic_vector(DATA_WIDTH-1 downto 0);
-			dbg_2 : out std_logic_vector(DATA_WIDTH-1 downto 0);
-			dbg_3 : out std_logic_vector(DATA_WIDTH-1 downto 0);
-			dbg_top : out std_logic_vector(ADDR_WIDTH-1 downto 0)
+			-- dbg_0 : out std_logic_vector(DATA_WIDTH-1 downto 0);
+			-- dbg_1 : out std_logic_vector(DATA_WIDTH-1 downto 0);
+			-- dbg_2 : out std_logic_vector(DATA_WIDTH-1 downto 0);
+			-- dbg_3 : out std_logic_vector(DATA_WIDTH-1 downto 0);
+			TOP : out std_logic_vector(ADDR_WIDTH-1 downto 0)
 	);
 end entity shift_regi_post;
 
@@ -46,7 +48,7 @@ begin
 	SHIFT_REGIST:
 	process(rst, clk,
 			DATA_EN, DATA_IN, 
-			DATA_MOD_EN, DATA_MOD_IN,
+			DATA_ADJ_EN, DATA_ADJ_IN,
 			DATA_CAL_EN, DATA_CAL_IN,
 			POP_EN, POP_ADDR,
 			REG, 
@@ -77,7 +79,7 @@ begin
 			if DATA_EN = '1'  then 		-- Data Input
 				if top < SHIFTGEG_CAP-1 then
 					top <= top + 1;
-			end if;
+				end if;
 				-- temp_in1 := to_sfixed(REG(0), REAL_WIDTH-1, -IMG_WIDTH);
 				temp_in2 := to_sfixed(DATA_IN, REAL_WIDTH-1, -IMG_WIDTH);
 				-- temp_sum := temp_in1 + temp_in2;
@@ -97,12 +99,12 @@ begin
 						REG(idx) <= REG(idx);
 				end loop;	
 			end if;
-			if DATA_MOD_EN = '1' then		-- Time Adjustment
+			if DATA_ADJ_EN = '1' then		-- Time Adjustment
 				for idx in 0 to SHIFTGEG_CAP-1 loop
 					if idx <= top then
 						-- temp_in1 := REG(idx);
 						-- temp_in1 := to_sfixed(REG(idx), REAL_WIDTH-1, -IMG_WIDTH);
-						temp_in2 := to_sfixed(DATA_MOD_IN, REAL_WIDTH-1, -IMG_WIDTH);
+						temp_in2 := to_sfixed(DATA_ADJ_IN, REAL_WIDTH-1, -IMG_WIDTH);
 						-- temp_sum := temp_in1 + temp_in2;
 						temp_sum := REG(idx) - temp_in2;
 						-- REG(idx) <= std_logic_vector(temp_sum(REAL_WIDTH-1 downto -IMG_WIDTH));
@@ -122,7 +124,7 @@ begin
 			else
 				DATA_CAL_OUT <= (others => '0');
 			end if;
-			if POP_EN = '1' then
+			if POP_EN = '1' then							-- Get Synapse Weight
 				-- temp_addr := to_integer(signed(POP_ADDR));
 				-- POP_OUT <= REG(temp_addr);
 				POP_OUT <= std_logic_vector(REG(to_integer(signed(POP_ADDR))));
@@ -140,10 +142,10 @@ begin
 		end if;
 
 	end process;
-	dbg_0 <= std_logic_vector(REG(0));
-	dbg_1 <= std_logic_vector(REG(1));
-	dbg_2 <= std_logic_vector(REG(2));
-	dbg_3 <= std_logic_vector(REG(3));
-	dbg_top <= std_logic_vector(to_signed(top, dbg_top'length));
+	-- dbg_0 <= std_logic_vector(REG(0));
+	-- dbg_1 <= std_logic_vector(REG(1));
+	-- dbg_2 <= std_logic_vector(REG(2));
+	-- dbg_3 <= std_logic_vector(REG(3));
+	TOP <= std_logic_vector(to_signed(top, TOP'length));
 	
 end architecture rtler;

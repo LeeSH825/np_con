@@ -89,7 +89,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A11       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A13       :        :                   :         : 8A        :                
 VCCIO8A                      : A14       : power  :                   : 2.5V    : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :         : 8A        :                
+avs_pullSynapse_address[4]   : A15       : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A16       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A17       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : A18       :        :                   :         : 8A        :                
@@ -122,12 +122,12 @@ GND                          : AA11      :        :                   :         
 GND                          : AA12      : gnd    :                   :         :           :                
 VCC                          : AA13      : power  :                   : 1.1V    :           :                
 GND                          : AA14      : gnd    :                   :         :           :                
-dbg_PRE_2[6]                 : AA15      : output : 2.5 V             :         : 3A        : N              
-dbg_POST_2[1]                : AA16      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_3[7]                : AA17      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_3[2]                : AA18      : output : 2.5 V             :         : 3B        : N              
+dbg_TIME[7]                  : AA15      : output : 2.5 V             :         : 3A        : N              
+dbg_ADDR[6]                  : AA16      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_waitrequest  : AA17      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[18] : AA18      : input  : 2.5 V             :         : 3B        : N              
 GND                          : AA19      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AA20      :        :                   :         : 4A        :                
+avm_pushSpike_byteenable[0]  : AA20      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA21      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA22      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AA23      :        :                   :         : 5A        :                
@@ -154,13 +154,13 @@ GND                          : AB9       : gnd    :                   :         
 GND                          : AB10      :        :                   :         : B0L       :                
 GND                          : AB11      : gnd    :                   :         :           :                
 GND                          : AB12      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB13      :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AB14      :        :                   :         : 3A        :                
-dbg_PRE_2[2]                 : AB15      : output : 2.5 V             :         : 3A        : N              
-dbg_POST_1[5]                : AB16      : output : 2.5 V             :         : 3B        : N              
+dbg_Membrane[7]              : AB13      : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_writedata[4]   : AB14      : output : 2.5 V             :         : 3A        : N              
+dbg_TIME[6]                  : AB15      : output : 2.5 V             :         : 3A        : N              
+dbg_ADDR[1]                  : AB16      : output : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AB17      : power  :                   : 2.5V    : 3B        :                
-dbg_POST_0[2]                : AB18      : output : 2.5 V             :         : 3B        : N              
-dbg_PRE_2[0]                 : AB19      : output : 2.5 V             :         : 4A        : N              
+dbg_Membrane[1]              : AB18      : output : 2.5 V             :         : 3B        : N              
+avs_fetchSoma_waitrequest    : AB19      : output : 2.5 V             :         : 4A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AB21      :        :                   :         : 4A        :                
 GND                          : AB22      : gnd    :                   :         :           :                
@@ -187,14 +187,14 @@ GND                          : AC8       : gnd    :                   :         
 VCCE_GXBL                    : AC9       : power  :                   : 1.1V    :           :                
 GND                          : AC10      : gnd    :                   :         :           :                
 VCCA_FPLL                    : AC11      : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC12      :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC13      :        :                   :         : 3A        :                
-dbg_PRE_3[1]                 : AC14      : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_address[15]    : AC12      : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_address[12]    : AC13      : output : 2.5 V             :         : 3A        : N              
+dbg_TIME[0]                  : AC14      : output : 2.5 V             :         : 3A        : N              
 GND                          : AC15      : gnd    :                   :         :           :                
-STDP_DATAIN_POST_FIFO[4]     : AC16      : input  : 2.5 V             :         : 3B        : N              
-sys_clk                      : AC17      : input  : 2.5 V             :         : 3B        : N              
-dbg_PRE_1[2]                 : AC18      : output : 2.5 V             :         : 3B        : N              
-dbg_PRE_0[3]                 : AC19      : output : 2.5 V             :         : 4A        : N              
+dbg_ADDR[10]                 : AC16      : output : 2.5 V             :         : 3B        : N              
+clk_soma                     : AC17      : input  : 2.5 V             :         : 3B        : N              
+dbg_Membrane[4]              : AC18      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[24] : AC19      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AC20      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC21      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC22      :        :                   :         : 4A        :                
@@ -206,7 +206,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AC27      :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC28      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC29      :        :                   :         : 5A        :                
 VCCIO5B                      : AC30      : power  :                   : 2.5V    : 5B        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AC31      :        :                   :         : 5B        :                
+avs_pullSynapse_writedata[10] : AC31      : input  : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC32      :        :                   :         : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC33      :        :                   :         : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AC34      :        :                   :         : 5B        :                
@@ -220,20 +220,20 @@ GND                          : AD7       : gnd    :                   :         
 VCCE_GXBL                    : AD8       : power  :                   : 1.1V    :           :                
 GND                          : AD9       : gnd    :                   :         :           :                
 GND                          : AD10      : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD11      :        :                   :         : 3A        :                
+avs_pullSynapse_writedata[2] : AD11      : input  : 2.5 V             :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD12      :        :                   :         : 3A        :                
 VCCIO3A                      : AD13      : power  :                   : 2.5V    : 3A        :                
-dbg_PRE_1[5]                 : AD14      : output : 2.5 V             :         : 3A        : N              
-dbg_PRE_3[0]                 : AD15      : output : 2.5 V             :         : 3A        : N              
-STDP_DATAIN_POST_FIFO[6]     : AD16      : input  : 2.5 V             :         : 3B        : N              
-dbg_ADDR[1]                  : AD17      : output : 2.5 V             :         : 3B        : N              
+avm_pushSpike_address[2]     : AD14      : output : 2.5 V             :         : 3A        : N              
+dbg_TIME[2]                  : AD15      : output : 2.5 V             :         : 3A        : N              
+dbg_Membrane[2]              : AD16      : output : 2.5 V             :         : 3B        : N              
+dbg_Membrane[8]              : AD17      : output : 2.5 V             :         : 3B        : N              
 GND                          : AD18      : gnd    :                   :         :           :                
-dbg_SUM[1]                   : AD19      : output : 2.5 V             :         : 4A        : N              
-dbg_SUM[2]                   : AD20      : output : 2.5 V             :         : 4A        : N              
+avs_pullSynapse_writedata[1] : AD19      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD20      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD21      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD22      :        :                   :         : 4A        :                
 VCCIO4A                      : AD23      : power  :                   : 2.5V    : 4A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AD24      :        :                   :         : 5A        :                
+avs_pullSynapse_writedata[11] : AD24      : input  : 2.5 V             :         : 5A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AD25      :        :                   :         : 5A        :                
 VCCA_FPLL                    : AD26      : power  :                   : 2.5V    :           :                
 VCCPGM                       : AD27      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
@@ -257,13 +257,13 @@ TDI                          : AE10      : input  :                   :         
 GND                          : AE11      : gnd    :                   :         :           :                
 VCC_AUX                      : AE12      : power  :                   : 2.5V    :           :                
 VCCPD3A                      : AE13      : power  :                   : 2.5V    : 3A        :                
-dbg_PRE_1[7]                 : AE14      : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_writedata[8]   : AE14      : output : 2.5 V             :         : 3A        : N              
 VCCPD3A                      : AE15      : power  :                   : 2.5V    : 3A        :                
 VCCIO3B                      : AE16      : power  :                   : 2.5V    : 3B        :                
 VCCPD3B4A                    : AE17      : power  :                   : 2.5V    : 3B, 4A    :                
 VCC_AUX                      : AE18      : power  :                   : 2.5V    :           :                
-dbg_SUM[7]                   : AE19      : output : 2.5 V             :         : 4A        : N              
-dbg_SUM[4]                   : AE20      : output : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[11]  : AE19      : input  : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[12]  : AE20      : input  : 2.5 V             :         : 4A        : N              
 GND                          : AE21      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AE22      : power  :                   : 2.5V    : 3B, 4A    :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AE23      :        :                   :         : 4A        :                
@@ -290,12 +290,12 @@ VCCIO3A                      : AF9       : power  :                   : 2.5V    
 DCLK                         : AF10      :        :                   :         : 3A        :                
 TDO                          : AF11      : output :                   :         : 3A        :                
 VCCPGM                       : AF12      : power  :                   : 1.8V/2.5V/3.0V/3.3V :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AF13      :        :                   :         : 3A        :                
+avm_pushSpike_waitrequest    : AF13      : input  : 2.5 V             :         : 3A        : N              
 GND                          : AF14      : gnd    :                   :         :           :                
 VCCPD3B4A                    : AF15      : power  :                   : 2.5V    : 3B, 4A    :                
 VCCPD3B4A                    : AF16      : power  :                   : 2.5V    : 3B, 4A    :                
 DNU                          : AF17      :        :                   :         :           :                
-dbg_TEMP_SUM[2]              : AF18      : output : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[3]   : AF18      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AF19      : power  :                   : 2.5V    : 4A        :                
 VCCPD3B4A                    : AF20      : power  :                   : 2.5V    : 3B, 4A    :                
 VCCPD3B4A                    : AF21      : power  :                   : 2.5V    : 3B, 4A    :                
@@ -324,13 +324,13 @@ DNU                          : AG9       :        :                   :         
 nCSO, DATA4                  : AG10      :        :                   :         : 3A        :                
 TMS                          : AG11      : input  :                   :         : 3A        :                
 VCCIO3A                      : AG12      : power  :                   : 2.5V    : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG13      :        :                   :         : 3A        :                
-dbg_PRE_1[0]                 : AG14      : output : 2.5 V             :         : 3A        : N              
-dbg_DATA_CAL_POST[5]         : AG15      : output : 2.5 V             :         : 3B        : N              
-dbg_DATA_CAL_POST[7]         : AG16      : output : 2.5 V             :         : 3B        : N              
+avm_pushSpike_address[14]    : AG13      : output : 2.5 V             :         : 3A        : N              
+dbg_Membrane[6]              : AG14      : output : 2.5 V             :         : 3A        : N              
+dbg_ADDR[15]                 : AG15      : output : 2.5 V             :         : 3B        : N              
+dbg_Membrane[11]             : AG16      : output : 2.5 V             :         : 3B        : N              
 GND                          : AG17      : gnd    :                   :         :           :                
-STDP_DATAIN_PRE_FIFO[6]      : AG18      : input  : 2.5 V             :         : 4A        : N              
-STDP_DATAIN_PRE_FIFO[7]      : AG19      : input  : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[10]  : AG18      : input  : 2.5 V             :         : 4A        : N              
+avs_pullSynapse_writedata[3] : AG19      : input  : 2.5 V             :         : 4A        : N              
 VREFB4AN0                    : AG20      : power  :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG21      :        :                   :         : 4A        :                
 VCCIO4A                      : AG22      : power  :                   : 2.5V    : 4A        :                
@@ -342,7 +342,7 @@ GND                          : AG27      : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG28      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG29      :        :                   :         : 5A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG30      :        :                   :         : 5A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG31      :        :                   :         : 5B        :                
+avs_pullSynapse_address[6]   : AG31      : input  : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : AG32      : power  :                   : 2.5V    : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG33      :        :                   :         : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG34      :        :                   :         : 5B        :                
@@ -357,17 +357,17 @@ AS_DATA2, DATA2              : AH8       :        :                   :         
 AS_DATA0, ASDO, DATA0        : AH9       :        :                   :         : 3A        :                
 GND                          : AH10      : gnd    :                   :         :           :                
 VREFB3AN0                    : AH11      : power  :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AH12      :        :                   :         : 3A        :                
-dbg_POST_1[0]                : AH13      : output : 2.5 V             :         : 3A        : N              
-dbg_PRE_3[6]                 : AH14      : output : 2.5 V             :         : 3A        : N              
+avs_pullSynapse_writedata[28] : AH12      : input  : 2.5 V             :         : 3A        : N              
+avs_pullSynapse_writedata[27] : AH13      : input  : 2.5 V             :         : 3A        : N              
+dbg_Membrane[3]              : AH14      : output : 2.5 V             :         : 3A        : N              
 VCCIO3B                      : AH15      : power  :                   : 2.5V    : 3B        :                
-dbg_POST_1[7]                : AH16      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_3[3]                : AH17      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[19] : AH16      : input  : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[23] : AH17      : input  : 2.5 V             :         : 3B        : N              
 VREFB3BN0                    : AH18      : power  :                   :         : 3B        :                
-STDP_DATAIN_PRE_FIFO[1]      : AH19      : input  : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[15]  : AH19      : input  : 2.5 V             :         : 4A        : N              
 GND                          : AH20      : gnd    :                   :         :           :                
-dbg_TEMP_SUM[4]              : AH21      : output : 2.5 V             :         : 4A        : N              
-dbg_TEMP_SUM[0]              : AH22      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH21      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AH22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH23      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AH24      :        :                   :         : 4A        :                
 VCCIO4A                      : AH25      : power  :                   : 2.5V    : 4A        :                
@@ -388,20 +388,20 @@ GND                          : AJ5       : gnd    :                   :         
 AS_DATA3, DATA3              : AJ6       :        :                   :         : 3A        :                
 AS_DATA1, DATA1              : AJ7       :        :                   :         : 3A        :                
 VCCIO3A                      : AJ8       : power  :                   : 2.5V    : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ9       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ10      :        :                   :         : 3A        :                
+avm_pushSpike_address[5]     : AJ9       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_writedata[1]   : AJ10      : output : 2.5 V             :         : 3A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ11      :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AJ12      :        :                   :         : 3A        :                
+dbg_Membrane[9]              : AJ12      : output : 2.5 V             :         : 3A        : N              
 GND                          : AJ13      : gnd    :                   :         :           :                
-dbg_PRE_3[7]                 : AJ14      : output : 2.5 V             :         : 3A        : N              
-STDP_DATAIN_POST_FIFO[0]     : AJ15      : input  : 2.5 V             :         : 3B        : N              
-dbg_ADDR[0]                  : AJ16      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_0[4]                : AJ17      : output : 2.5 V             :         : 3B        : N              
+avm_pushSpike_address[4]     : AJ14      : output : 2.5 V             :         : 3A        : N              
+dbg_patchMembrane            : AJ15      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[4] : AJ16      : input  : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[29] : AJ17      : input  : 2.5 V             :         : 3B        : N              
 VCCIO4A                      : AJ18      : power  :                   : 2.5V    : 4A        :                
-STDP_DATAIN_PRE_FIFO[2]      : AJ19      : input  : 2.5 V             :         : 4A        : N              
-STDP_OUT[2]                  : AJ20      : output : 2.5 V             :         : 4A        : N              
-STDP_OUT[1]                  : AJ21      : output : 2.5 V             :         : 4A        : N              
-dbg_SUM[0]                   : AJ22      : output : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[13]  : AJ19      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ20      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ21      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AJ22      :        :                   :         : 4A        :                
 GND                          : AJ23      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ24      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AJ25      :        :                   :         : 4A        :                
@@ -421,23 +421,23 @@ NC                           : AK4       :        :                   :         
 TCK                          : AK5       : input  :                   :         : 3A        :                
 GND                          : AK6       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK7       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK8       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK9       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK10      :        :                   :         : 3A        :                
+avm_pushSpike_writedata[9]   : AK8       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_address[7]     : AK9       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_address[13]    : AK10      : output : 2.5 V             :         : 3A        : N              
 VCCIO3A                      : AK11      : power  :                   : 2.5V    : 3A        :                
-dbg_PRE_2[7]                 : AK12      : output : 2.5 V             :         : 3A        : N              
-dbg_PRE_2[4]                 : AK13      : output : 2.5 V             :         : 3A        : N              
-dbg_PRE_2[5]                 : AK14      : output : 2.5 V             :         : 3A        : N              
-STDP_DATAIN_POST_FIFO[2]     : AK15      : input  : 2.5 V             :         : 3B        : N              
+dbg_TIME[5]                  : AK12      : output : 2.5 V             :         : 3A        : N              
+dbg_TIME[4]                  : AK13      : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_writedata[3]   : AK14      : output : 2.5 V             :         : 3A        : N              
+dbg_ADDR[14]                 : AK15      : output : 2.5 V             :         : 3B        : N              
 GND                          : AK16      : gnd    :                   :         :           :                
-dbg_POST_0[6]                : AK17      : output : 2.5 V             :         : 3B        : N              
-dbg_PRE_1[1]                 : AK18      : output : 2.5 V             :         : 3B        : N              
-STDP_DATAIN_PRE_FIFO[3]      : AK19      : input  : 2.5 V             :         : 4A        : N              
-synapsePush                  : AK20      : input  : 2.5 V             :         : 4A        : N              
+avs_pullSynapse_writedata[26] : AK17      : input  : 2.5 V             :         : 3B        : N              
+avs_fetchSoma_writedata[9]   : AK18      : input  : 2.5 V             :         : 3B        : N              
+dbg_ADDR[8]                  : AK19      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK20      :        :                   :         : 4A        :                
 VCCIO4A                      : AK21      : power  :                   : 2.5V    : 4A        :                
-dbg_TEMP_SUM[3]              : AK22      : output : 2.5 V             :         : 4A        : N              
-RESERVED_INPUT_WITH_WEAK_PULLUP : AK23      :        :                   :         : 4A        :                
-dbg_PRE_0[4]                 : AK24      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK22      :        :                   :         : 4A        :                
+avs_pullSynapse_address[5]   : AK23      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK24      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK25      :        :                   :         : 4A        :                
 GND                          : AK26      : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK27      :        :                   :         : 4A        :                
@@ -453,23 +453,23 @@ NC                           : AL2       :        :                   :         
 NC                           : AL3       :        :                   :         :           :                
 NC                           : AL4       :        :                   :         :           :                
 GND                          : AL5       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AL6       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AL7       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AL8       :        :                   :         : 3A        :                
+avm_pushSpike_address[11]    : AL6       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_writedata[0]   : AL7       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_address[9]     : AL8       : output : 2.5 V             :         : 3A        : N              
 GND                          : AL9       : gnd    :                   :         :           :                
-dbg_PRE_2[3]                 : AL10      : output : 2.5 V             :         : 3A        : N              
-dbg_DATA_CAL_POST[0]         : AL11      : output : 2.5 V             :         : 3B        : N              
-STDP_DATAIN_POST_FIFO[3]     : AL12      : input  : 2.5 V             :         : 3B        : N              
-STDP_DATAIN_POST_FIFO[5]     : AL13      : input  : 2.5 V             :         : 3B        : N              
+dbg_Membrane[12]             : AL10      : output : 2.5 V             :         : 3A        : N              
+dbg_ADDR[0]                  : AL11      : output : 2.5 V             :         : 3B        : N              
+avs_fetchSoma_write          : AL12      : input  : 2.5 V             :         : 3B        : N              
+rst_soma                     : AL13      : input  : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AL14      : power  :                   : 2.5V    : 3B        :                
-dbg_DATA_CAL_POST[1]         : AL15      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_1[4]                : AL16      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_1[6]                : AL17      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_0[7]                : AL18      : output : 2.5 V             :         : 3B        : N              
+dbg_ADDR[2]                  : AL15      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[7] : AL16      : input  : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[30] : AL17      : input  : 2.5 V             :         : 3B        : N              
+avs_fetchSoma_writedata[7]   : AL18      : input  : 2.5 V             :         : 3B        : N              
 GND                          : AL19      : gnd    :                   :         :           :                
-STDP_DATAIN_PRE_FIFO[5]      : AL20      : input  : 2.5 V             :         : 4A        : N              
-STDP_DATAIN_PRE_FIFO[0]      : AL21      : input  : 2.5 V             :         : 4A        : N              
-dbg_TEMP_SUM[6]              : AL22      : output : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[8]   : AL20      : input  : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[2]   : AL21      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AL22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AL23      :        :                   :         : 4A        :                
 VCCIO4A                      : AL24      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AL25      :        :                   :         : 4A        :                
@@ -487,29 +487,29 @@ NC                           : AM2       :        :                   :         
 GND                          : AM3       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AM4       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AM5       :        :                   :         : 3A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AM6       :        :                   :         : 3A        :                
+avm_pushSpike_writedata[6]   : AM6       : output : 2.5 V             :         : 3A        : N              
 VCCIO3A                      : AM7       : power  :                   : 2.5V    : 3A        :                
-dbg_PRE_3[2]                 : AM8       : output : 2.5 V             :         : 3A        : N              
-dbg_POST_2[3]                : AM9       : output : 2.5 V             :         : 3A        : N              
-dbg_PRE_3[3]                 : AM10      : output : 2.5 V             :         : 3A        : N              
-dbg_DATA_CAL_POST[3]         : AM11      : output : 2.5 V             :         : 3B        : N              
+dbg_TIME[3]                  : AM8       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_writedata[7]   : AM9       : output : 2.5 V             :         : 3A        : N              
+dbg_Membrane[15]             : AM10      : output : 2.5 V             :         : 3A        : N              
+dbg_ADDR[12]                 : AM11      : output : 2.5 V             :         : 3B        : N              
 GND                          : AM12      : gnd    :                   :         :           :                
-dbg_POST_2[6]                : AM13      : output : 2.5 V             :         : 3B        : N              
-dbg_PRE_0[1]                 : AM14      : output : 2.5 V             :         : 3B        : N              
-dbg_DATA_CAL_POST[6]         : AM15      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_2[7]                : AM16      : output : 2.5 V             :         : 3B        : N              
+dbg_Membrane[13]             : AM13      : output : 2.5 V             :         : 3B        : N              
+dbg_ADDR[13]                 : AM14      : output : 2.5 V             :         : 3B        : N              
+dbg_ADDR[4]                  : AM15      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[21] : AM16      : input  : 2.5 V             :         : 3B        : N              
 VCCIO3B                      : AM17      : power  :                   : 2.5V    : 3B        :                
-dbg_POST_0[5]                : AM18      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_3[6]                : AM19      : output : 2.5 V             :         : 4A        : N              
-dbg_TEMP_SUM[7]              : AM20      : output : 2.5 V             :         : 4A        : N              
-dbg_POST_0[3]                : AM21      : output : 2.5 V             :         : 4A        : N              
+dbg_ADDR[5]                  : AM18      : output : 2.5 V             :         : 3B        : N              
+dbg_ADDR[9]                  : AM19      : output : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[6]   : AM20      : input  : 2.5 V             :         : 4A        : N              
+avs_pullSynapse_writedata[25] : AM21      : input  : 2.5 V             :         : 4A        : N              
 GND                          : AM22      : gnd    :                   :         :           :                
-STDP_OUT[4]                  : AM23      : output : 2.5 V             :         : 4A        : N              
-dbg_SUM[5]                   : AM24      : output : 2.5 V             :         : 4A        : N              
+dbg_ADDR[7]                  : AM23      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM24      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AM25      :        :                   :         : 4A        :                
-dbg_PRE_0[7]                 : AM26      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM26      :        :                   :         : 4A        :                
 VCCIO4A                      : AM27      : power  :                   : 2.5V    : 4A        :                
-dbg_POST_2[2]                : AM28      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AM28      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AM29      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AM30      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AM31      :        :                   :         : 4A        :                
@@ -519,31 +519,31 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AM34      :        :                   :      
 NC                           : AN1       :        :                   :         :           :                
 NC                           : AN2       :        :                   :         :           :                
 NC                           : AN3       :        :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AN4       :        :                   :         : 3A        :                
-dbg_PRE_1[3]                 : AN5       : output : 2.5 V             :         : 3A        : N              
+dbg_Membrane[5]              : AN4       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_write          : AN5       : output : 2.5 V             :         : 3A        : N              
 GND                          : AN6       : gnd    :                   :         :           :                
-dbg_PRE_1[4]                 : AN7       : output : 2.5 V             :         : 3A        : N              
-dbg_PRE_3[5]                 : AN8       : output : 2.5 V             :         : 3A        : N              
-dbg_POST_2[5]                : AN9       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_address[0]     : AN7       : output : 2.5 V             :         : 3A        : N              
+dbg_TIME[8]                  : AN8       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_writedata[2]   : AN9       : output : 2.5 V             :         : 3A        : N              
 VCCIO3B                      : AN10      : power  :                   : 2.5V    : 3B        :                
-STDP_DATAIN_POST_FIFO[1]     : AN11      : input  : 2.5 V             :         : 3B        : N              
-dbg_PRE_0[6]                 : AN12      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_1[2]                : AN13      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_2[0]                : AN14      : output : 2.5 V             :         : 3B        : N              
+dbg_Membrane[14]             : AN11      : output : 2.5 V             :         : 3B        : N              
+dbg_ADDR[3]                  : AN12      : output : 2.5 V             :         : 3B        : N              
+avm_pushSpike_address[6]     : AN13      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[22] : AN14      : input  : 2.5 V             :         : 3B        : N              
 GND                          : AN15      : gnd    :                   :         :           :                
-dbg_POST_0[0]                : AN16      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_3[1]                : AN17      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_3[4]                : AN18      : output : 2.5 V             :         : 3B        : N              
-dbg_PRE_1[6]                 : AN19      : output : 2.5 V             :         : 4A        : N              
+avs_pullSynapse_writedata[17] : AN16      : input  : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[0] : AN17      : input  : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[9] : AN18      : input  : 2.5 V             :         : 3B        : N              
+avs_fetchSoma_writedata[1]   : AN19      : input  : 2.5 V             :         : 4A        : N              
 VCCIO4A                      : AN20      : power  :                   : 2.5V    : 4A        :                
-dbg_PRE_2[1]                 : AN21      : output : 2.5 V             :         : 4A        : N              
-STDP_patchPOSTneuron         : AN22      : input  : 2.5 V             :         : 4A        : N              
-STDP_OUT[0]                  : AN23      : output : 2.5 V             :         : 4A        : N              
-dbg_SUM[6]                   : AN24      : output : 2.5 V             :         : 4A        : N              
+avs_pullSynapse_writedata[20] : AN21      : input  : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[14]  : AN22      : input  : 2.5 V             :         : 4A        : N              
+avm_pushSpike_address[3]     : AN23      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN24      :        :                   :         : 4A        :                
 GND                          : AN25      : gnd    :                   :         :           :                
-STDP_OUT[5]                  : AN26      : output : 2.5 V             :         : 4A        : N              
-dbg_TEMP_SUM[1]              : AN27      : output : 2.5 V             :         : 4A        : N              
-dbg_POST_2[4]                : AN28      : output : 2.5 V             :         : 4A        : N              
+dbg_Membrane[10]             : AN26      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN27      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AN28      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AN29      :        :                   :         : 4A        :                
 VCCIO4A                      : AN30      : power  :                   : 2.5V    : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AN31      :        :                   :         : 4A        :                
@@ -553,32 +553,32 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AN34      :        :                   :      
 GND                          : AP2       : gnd    :                   :         :           :                
 NC                           : AP3       :        :                   :         :           :                
 GND                          : AP4       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AP5       :        :                   :         : 3A        :                
-dbg_PRE_0[5]                 : AP6       : output : 2.5 V             :         : 3A        : N              
-dbg_POST_1[1]                : AP7       : output : 2.5 V             :         : 3A        : N              
+avs_fetchSoma_writedata[0]   : AP5       : input  : 2.5 V             :         : 3A        : N              
+avm_pushSpike_writedata[5]   : AP6       : output : 2.5 V             :         : 3A        : N              
+avm_pushSpike_address[10]    : AP7       : output : 2.5 V             :         : 3A        : N              
 GND                          : AP8       : gnd    :                   :         :           :                
-dbg_DATA_CAL_POST[2]         : AP9       : output : 2.5 V             :         : 3B        : N              
-dbg_DATA_CAL_POST[4]         : AP10      : output : 2.5 V             :         : 3B        : N              
-STDP_DATAIN_POST_FIFO[7]     : AP11      : input  : 2.5 V             :         : 3B        : N              
-dbg_PRE_0[2]                 : AP12      : output : 2.5 V             :         : 3B        : N              
+dbg_TIME[1]                  : AP9       : output : 2.5 V             :         : 3B        : N              
+dbg_TIME[9]                  : AP10      : output : 2.5 V             :         : 3B        : N              
+dbg_Membrane[0]              : AP11      : output : 2.5 V             :         : 3B        : N              
+dbg_ADDR[11]                 : AP12      : output : 2.5 V             :         : 3B        : N              
 GND                          : AP13      : gnd    :                   :         :           :                
-dbg_POST_1[3]                : AP14      : output : 2.5 V             :         : 3B        : N              
-dbg_PRE_3[4]                 : AP15      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_0[1]                : AP16      : output : 2.5 V             :         : 3B        : N              
-dbg_POST_3[0]                : AP17      : output : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[31] : AP14      : input  : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[16] : AP15      : input  : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[6] : AP16      : input  : 2.5 V             :         : 3B        : N              
+avs_pullSynapse_writedata[8] : AP17      : input  : 2.5 V             :         : 3B        : N              
 GND                          : AP18      : gnd    :                   :         :           :                
-STDP_DATAIN_PRE_FIFO[4]      : AP19      : input  : 2.5 V             :         : 4A        : N              
-dbg_POST_3[5]                : AP20      : output : 2.5 V             :         : 4A        : N              
-dbg_PRE_0[0]                 : AP21      : output : 2.5 V             :         : 4A        : N              
-sys_rst                      : AP22      : input  : 2.5 V             :         : 4A        : N              
+avm_pushSpike_address[1]     : AP19      : output : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[5]   : AP20      : input  : 2.5 V             :         : 4A        : N              
+avs_pullSynapse_writedata[5] : AP21      : input  : 2.5 V             :         : 4A        : N              
+avs_fetchSoma_writedata[4]   : AP22      : input  : 2.5 V             :         : 4A        : N              
 GND                          : AP23      : gnd    :                   :         :           :                
-STDP_OUT[3]                  : AP24      : output : 2.5 V             :         : 4A        : N              
-STDP_OUT[7]                  : AP25      : output : 2.5 V             :         : 4A        : N              
-dbg_SUM[3]                   : AP26      : output : 2.5 V             :         : 4A        : N              
-STDP_OUT[6]                  : AP27      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP24      :        :                   :         : 4A        :                
+avm_pushSpike_address[8]     : AP25      : output : 2.5 V             :         : 4A        : N              
+avs_pullSynapse_write        : AP26      : input  : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP27      :        :                   :         : 4A        :                
 GND                          : AP28      : gnd    :                   :         :           :                
-STDP_patchPREneuron          : AP29      : input  : 2.5 V             :         : 4A        : N              
-dbg_TEMP_SUM[5]              : AP30      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP29      :        :                   :         : 4A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AP30      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AP31      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AP32      :        :                   :         : 4A        :                
 GND                          : AP33      : gnd    :                   :         :           :                
@@ -644,7 +644,7 @@ GND                          : C25       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : C26       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C27       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C28       :        :                   :         : 7A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : C29       :        :                   :         : 7A        :                
+avm_pushSpike_byteenable[3]  : C29       : output : 2.5 V             :         : 7A        : N              
 VCCIO7A                      : C30       : power  :                   : 2.5V    : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C31       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : C32       :        :                   :         : 7A        :                
@@ -665,17 +665,17 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : D12       :        :                   :      
 VCCIO8A                      : D13       : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D14       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D16       :        :                   :         : 8A        :                
+avs_pullSynapse_writedata[15] : D16       : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D17       :        :                   :         : 8A        :                
 GND                          : D18       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D19       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D21       :        :                   :         : 7A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 7A        :                
+avs_fetchSoma_address[1]     : D22       : input  : 2.5 V             :         : 7A        : N              
 VCCIO7A                      : D23       : power  :                   : 2.5V    : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D24       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D25       :        :                   :         : 7A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : D26       :        :                   :         : 7A        :                
+avs_pullSynapse_address[3]   : D26       : input  : 2.5 V             :         : 7A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : D27       :        :                   :         : 7A        :                
 GND                          : D28       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : D29       :        :                   :         : 7A        :                
@@ -698,14 +698,14 @@ GND                          : E11       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : E12       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E13       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E14       :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E15       :        :                   :         : 8A        :                
+avs_fetchSoma_address[0]     : E15       : input  : 2.5 V             :         : 8A        : N              
 VCCIO8A                      : E16       : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E17       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E18       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E19       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E20       :        :                   :         : 7A        :                
 GND                          : E21       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : E22       :        :                   :         : 7A        :                
+avs_pullSynapse_writedata[14] : E22       : input  : 2.5 V             :         : 7A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : E23       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E24       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : E25       :        :                   :         : 7A        :                
@@ -735,11 +735,11 @@ GND                          : F14       : gnd    :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : F15       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F16       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F17       :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : F18       :        :                   :         : 8A        :                
+avm_pushSpike_byteenable[1]  : F18       : output : 2.5 V             :         : 8A        : N              
 VCCIO7A                      : F19       : power  :                   : 2.5V    : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F20       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F21       :        :                   :         : 7A        :                
-dbg_ADDR[2]                  : F22       : output : 2.5 V             :         : 7A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F22       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F23       :        :                   :         : 7A        :                
 GND                          : F24       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : F25       :        :                   :         : 7A        :                
@@ -803,7 +803,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : H14       :        :                   :      
 VCCIO8A                      : H15       : power  :                   : 2.5V    : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H16       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H17       :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : H18       :        :                   :         : 7A        :                
+avs_pullSynapse_address[7]   : H18       : input  : 2.5 V             :         : 7A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : H19       :        :                   :         : 7A        :                
 GND                          : H20       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : H21       :        :                   :         : 7A        :                
@@ -878,7 +878,7 @@ VCCIO7A                      : K21       : power  :                   : 2.5V    
 RESERVED_INPUT_WITH_WEAK_PULLUP : K22       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K23       :        :                   :         : 7A        :                
 VCC_AUX                      : K24       : power  :                   : 2.5V    :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : K25       :        :                   :         : 7A        :                
+avs_pullSynapse_address[0]   : K25       : input  : 2.5 V             :         : 7A        : N              
 GND                          : K26       : gnd    :                   :         :           :                
 NC                           : K27       :        :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K28       :        :                   :         : 6A        :                
@@ -900,7 +900,7 @@ GND                          : L9        : gnd    :                   :         
 NC                           : L10       :        :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L11       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L12       :        :                   :         : 8A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : L13       :        :                   :         : 8A        :                
+avm_pushSpike_byteenable[2]  : L13       : output : 2.5 V             :         : 8A        : N              
 GND                          : L14       : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L15       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L16       :        :                   :         : 8A        :                
@@ -934,7 +934,7 @@ GND                          : M9        : gnd    :                   :         
 GND                          : M10       : gnd    :                   :         :           :                
 VCCA_FPLL                    : M11       : power  :                   : 2.5V    :           :                
 GND                          : M12       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : M13       :        :                   :         : 8A        :                
+avs_pullSynapse_writedata[13] : M13       : input  : 2.5 V             :         : 8A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : M14       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M15       :        :                   :         : 8A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M16       :        :                   :         : 8A        :                
@@ -984,11 +984,11 @@ GND                          : N25       : gnd    :                   :         
 VCCPD6A                      : N26       : power  :                   : 2.5V    : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N27       :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N28       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N29       :        :                   :         : 6A        :                
+avs_pullSynapse_address[2]   : N29       : input  : 2.5 V             :         : 6A        : N              
 VCCIO6A                      : N30       : power  :                   : 2.5V    : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N31       :        :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N32       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : N33       :        :                   :         : 6A        :                
+avs_pullSynapse_writedata[12] : N33       : input  : 2.5 V             :         : 6A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : N34       :        :                   :         : 6A        :                
 GND                          : P1        : gnd    :                   :         :           :                
 GND                          : P2        : gnd    :                   :         :           :                
@@ -1020,7 +1020,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : P27       :        :                   :      
 GND                          : P28       : gnd    :                   :         :           :                
 VREFB6AN0                    : P29       : power  :                   :         : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P30       :        :                   :         : 6A        :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : P31       :        :                   :         : 6A        :                
+avs_pullSynapse_address[1]   : P31       : input  : 2.5 V             :         : 6A        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : P32       :        :                   :         : 6A        :                
 VCCIO6A                      : P33       : power  :                   : 2.5V    : 6A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : P34       :        :                   :         : 6A        :                

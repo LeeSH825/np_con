@@ -1,0 +1,80 @@
+Determining the location of the ModelSim executable...
+
+Using: /home/hws_master/intelFPGA_lite/21.1/questa_fse/bin
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ram_test -c ram_test --vector_source="/home/hws_master/np_con/ram_test/ram_test_sim.vwf" --testbench_file="/home/hws_master/np_con/ram_test/simulation/qsim/ram_test_sim.vwf.vht"
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition    Info: Copyright (C) 2021  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sat Mar 26 19:54:18 2022Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off ram_test -c ram_test --vector_source=/home/hws_master/np_con/ram_test/ram_test_sim.vwf --testbench_file=/home/hws_master/np_con/ram_test/simulation/qsim/ram_test_sim.vwf.vhtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="/home/hws_master/np_con/ram_test/simulation/qsim/" ram_test -c ram_test
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition    Info: Copyright (C) 2021  Intel Corporation. All rights reserved.    Info: Your use of Intel Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Intel Program License     Info: Subscription Agreement, the Intel Quartus Prime License Agreement,    Info: the Intel FPGA IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Intel and sold by Intel or its authorized distributors.  Please    Info: refer to the applicable agreement for further details, at    Info: https://fpgasoftware.intel.com/eula.    Info: Processing started: Sat Mar 26 19:54:18 2022Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=/home/hws_master/np_con/ram_test/simulation/qsim/ ram_test -c ram_testWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file ram_test.vho in folder "/home/hws_master/np_con/ram_test/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 700 megabytes    Info: Processing ended: Sat Mar 26 19:54:19 2022    Info: Elapsed time: 00:00:01    Info: Total CPU time (on all processors): 00:00:00
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+/home/hws_master/np_con/ram_test/simulation/qsim/ram_test.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+/home/hws_master/intelFPGA_lite/21.1/questa_fse/bin/vsim -c -do ram_test.do
+
+Reading pref.tcl
+# 2021.2
+# do ram_test.do
+# ** Warning: (vlib-34) Library already exists at "work".# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:54:19 on Mar 26,2022
+# vcom -work work ram_test.vho 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package altera_lnsim_components
+# -- Loading package VITAL_Timing
+# -- Loading package VITAL_Primitives
+# -- Loading package cyclonev_atom_pack
+# -- Loading package cyclonev_components
+# -- Compiling entity ram_control
+# -- Compiling architecture structure of ram_control
+# End time: 19:54:19 on Mar 26,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 19:54:19 on Mar 26,2022
+# vcom -work work ram_test_sim.vwf.vht 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity ram_control_vhd_vec_tst
+# -- Compiling architecture ram_control_arch of ram_control_vhd_vec_tst
+# End time: 19:54:19 on Mar 26,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.ram_control_vhd_vec_tst # Start time: 19:54:19 on Mar 26,2022# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# //  Questa Intel Starter FPGA Edition-64# //  Version 2021.2 linux_x86_64 Apr 14 2021# //# //  Copyright 1991-2021 Mentor Graphics Corporation# //  All Rights Reserved.# //# //  QuestaSim and its associated documentation contain trade# //  secrets and commercial or financial information that are the property of# //  Mentor Graphics Corporation and are privileged, confidential,# //  and exempt from disclosure under the Freedom of Information Act,# //  5 U.S.C. Section 552. Furthermore, this information# //  is prohibited from disclosure under the Trade Secrets Act,# //  18 U.S.C. Section 1905.# //
+# Loading std.standard# Loading std.textio(body)# Loading ieee.std_logic_1164(body)# Loading work.ram_control_vhd_vec_tst(ram_control_arch)#1# Loading altera_lnsim.altera_lnsim_components# Loading ieee.vital_timing(body)# Loading ieee.vital_primitives(body)# Loading cyclonev.cyclonev_atom_pack(body)# Loading cyclonev.cyclonev_components# Loading work.ram_control(structure)#1# Loading ieee.std_logic_arith(body)# Loading cyclonev.cyclonev_io_obuf(arch)#1# Loading cyclonev.cyclonev_io_ibuf(arch)#1# Loading cyclonev.cyclonev_ram_block(block_arch)#1# Loading sv_std.std# Loading altera_lnsim.generic_m10k(fast)# Loading altera_lnsim.altera_lnsim_functions(fast)# Loading altera_lnsim.common_28nm_ram_block(fast)# Loading altera_lnsim.common_28nm_ram_pulse_generator(fast)# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#1
+# after#33
+# End time: 19:54:19 on Mar 26,2022, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading /home/hws_master/np_con/ram_test/ram_test_sim.vwf...
+
+Reading /home/hws_master/np_con/ram_test/simulation/qsim/ram_test.msim.vcd...
+
+Processing channel transitions... 
+
+Writing the resulting VWF to /home/hws_master/np_con/ram_test/simulation/qsim/ram_test_20220326195419.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.

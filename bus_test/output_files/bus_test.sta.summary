@@ -2,52 +2,308 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'sys_clk'
-Slack : -9.509
-TNS   : -342.052
+Type  : Slow 1100mV 85C Model Setup 'rst_soma'
+Slack : -5.611
+TNS   : -127.432
 
-Type  : Slow 1100mV 85C Model Hold 'sys_clk'
-Slack : 0.208
+Type  : Slow 1100mV 85C Model Setup 'patchMembrane_fin'
+Slack : -5.156
+TNS   : -7.371
+
+Type  : Slow 1100mV 85C Model Setup 'clk_soma'
+Slack : -4.307
+TNS   : -187.113
+
+Type  : Slow 1100mV 85C Model Hold 'patchMembrane_fin'
+Slack : 0.397
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'sys_clk'
+Type  : Slow 1100mV 85C Model Hold 'clk_soma'
+Slack : 0.419
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'rst_soma'
+Slack : 1.137
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'statePullSynapse.STATE_PATCH'
+Slack : -4.706
+TNS   : -96.666
+
+Type  : Slow 1100mV 85C Model Recovery 'stateFetchSoma.STATE_FETCH'
+Slack : -3.991
+TNS   : -62.111
+
+Type  : Slow 1100mV 85C Model Recovery 'patchMembrane_fin'
+Slack : -3.422
+TNS   : -6.826
+
+Type  : Slow 1100mV 85C Model Recovery 'clk_soma'
+Slack : -2.625
+TNS   : -94.748
+
+Type  : Slow 1100mV 85C Model Removal 'clk_soma'
+Slack : 1.005
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'patchMembrane_fin'
+Slack : 1.419
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'statePullSynapse.STATE_PATCH'
+Slack : 1.590
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'stateFetchSoma.STATE_FETCH'
+Slack : 2.225
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk_soma'
 Slack : -0.724
-TNS   : -144.535
+TNS   : -71.394
 
-Type  : Slow 1100mV 0C Model Setup 'sys_clk'
-Slack : -9.577
-TNS   : -332.842
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'rst_soma'
+Slack : 0.132
+TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'sys_clk'
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'statePullSynapse.STATE_PATCH'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'stateFetchSoma.STATE_FETCH'
+Slack : 0.393
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'patchMembrane_fin'
+Slack : 0.454
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'rst_soma'
+Slack : -5.617
+TNS   : -130.110
+
+Type  : Slow 1100mV 0C Model Setup 'patchMembrane_fin'
+Slack : -5.199
+TNS   : -7.279
+
+Type  : Slow 1100mV 0C Model Setup 'clk_soma'
+Slack : -4.179
+TNS   : -176.186
+
+Type  : Slow 1100mV 0C Model Hold 'clk_soma'
+Slack : 0.207
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'patchMembrane_fin'
+Slack : 0.389
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'rst_soma'
+Slack : 1.015
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'statePullSynapse.STATE_PATCH'
+Slack : -4.749
+TNS   : -96.951
+
+Type  : Slow 1100mV 0C Model Recovery 'stateFetchSoma.STATE_FETCH'
+Slack : -4.052
+TNS   : -62.023
+
+Type  : Slow 1100mV 0C Model Recovery 'patchMembrane_fin'
+Slack : -3.459
+TNS   : -6.782
+
+Type  : Slow 1100mV 0C Model Recovery 'clk_soma'
+Slack : -2.464
+TNS   : -88.219
+
+Type  : Slow 1100mV 0C Model Removal 'clk_soma'
+Slack : 0.606
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'patchMembrane_fin'
+Slack : 1.400
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'statePullSynapse.STATE_PATCH'
+Slack : 1.531
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'stateFetchSoma.STATE_FETCH'
+Slack : 2.164
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk_soma'
+Slack : -0.724
+TNS   : -71.974
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'rst_soma'
+Slack : 0.079
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'statePullSynapse.STATE_PATCH'
 Slack : 0.311
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'sys_clk'
-Slack : -0.724
-TNS   : -140.980
-
-Type  : Fast 1100mV 85C Model Setup 'sys_clk'
-Slack : -3.213
-TNS   : -78.530
-
-Type  : Fast 1100mV 85C Model Hold 'sys_clk'
-Slack : 0.144
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'stateFetchSoma.STATE_FETCH'
+Slack : 0.341
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'sys_clk'
-Slack : -0.046
-TNS   : -4.429
-
-Type  : Fast 1100mV 0C Model Setup 'sys_clk'
-Slack : -2.882
-TNS   : -62.519
-
-Type  : Fast 1100mV 0C Model Hold 'sys_clk'
-Slack : 0.150
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'patchMembrane_fin'
+Slack : 0.453
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'sys_clk'
+Type  : Fast 1100mV 85C Model Setup 'rst_soma'
+Slack : -2.604
+TNS   : -51.258
+
+Type  : Fast 1100mV 85C Model Setup 'clk_soma'
+Slack : -2.488
+TNS   : -100.398
+
+Type  : Fast 1100mV 85C Model Setup 'patchMembrane_fin'
+Slack : -1.786
+TNS   : -2.283
+
+Type  : Fast 1100mV 85C Model Hold 'clk_soma'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'patchMembrane_fin'
+Slack : 0.298
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'rst_soma'
+Slack : 0.519
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'statePullSynapse.STATE_PATCH'
+Slack : -1.609
+TNS   : -29.582
+
+Type  : Fast 1100mV 85C Model Recovery 'clk_soma'
+Slack : -1.524
+TNS   : -51.637
+
+Type  : Fast 1100mV 85C Model Recovery 'stateFetchSoma.STATE_FETCH'
+Slack : -1.254
+TNS   : -19.557
+
+Type  : Fast 1100mV 85C Model Recovery 'patchMembrane_fin'
+Slack : -1.011
+TNS   : -1.969
+
+Type  : Fast 1100mV 85C Model Removal 'clk_soma'
+Slack : 0.327
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'patchMembrane_fin'
+Slack : 0.951
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'statePullSynapse.STATE_PATCH'
+Slack : 1.013
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'stateFetchSoma.STATE_FETCH'
+Slack : 1.353
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'rst_soma'
+Slack : -0.160
+TNS   : -2.859
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk_soma'
 Slack : -0.072
-TNS   : -6.781
+TNS   : -4.519
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'statePullSynapse.STATE_PATCH'
+Slack : 0.386
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'patchMembrane_fin'
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'stateFetchSoma.STATE_FETCH'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'rst_soma'
+Slack : -2.114
+TNS   : -41.835
+
+Type  : Fast 1100mV 0C Model Setup 'clk_soma'
+Slack : -1.989
+TNS   : -81.724
+
+Type  : Fast 1100mV 0C Model Setup 'patchMembrane_fin'
+Slack : -1.718
+TNS   : -2.117
+
+Type  : Fast 1100mV 0C Model Hold 'clk_soma'
+Slack : 0.169
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'patchMembrane_fin'
+Slack : 0.260
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'rst_soma'
+Slack : 0.463
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'statePullSynapse.STATE_PATCH'
+Slack : -1.537
+TNS   : -28.858
+
+Type  : Fast 1100mV 0C Model Recovery 'clk_soma'
+Slack : -1.294
+TNS   : -44.544
+
+Type  : Fast 1100mV 0C Model Recovery 'stateFetchSoma.STATE_FETCH'
+Slack : -1.221
+TNS   : -18.940
+
+Type  : Fast 1100mV 0C Model Recovery 'patchMembrane_fin'
+Slack : -0.986
+TNS   : -1.940
+
+Type  : Fast 1100mV 0C Model Removal 'clk_soma'
+Slack : 0.212
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'patchMembrane_fin'
+Slack : 0.995
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'statePullSynapse.STATE_PATCH'
+Slack : 1.038
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'stateFetchSoma.STATE_FETCH'
+Slack : 1.348
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'rst_soma'
+Slack : -0.132
+TNS   : -2.097
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk_soma'
+Slack : -0.077
+TNS   : -4.816
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'statePullSynapse.STATE_PATCH'
+Slack : 0.399
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'patchMembrane_fin'
+Slack : 0.422
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'stateFetchSoma.STATE_FETCH'
+Slack : 0.478
+TNS   : 0.000
 
 ------------------------------------------------------------

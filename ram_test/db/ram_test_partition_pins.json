@@ -1,0 +1,165 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "DATA_OUT_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_OUT_out[15]",
+					"strict" : false
+				},
+				{
+					"name" : "W_EN_in",
+					"strict" : false
+				},
+				{
+					"name" : "R_EN_in",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ADDR_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[3]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[4]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[5]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[6]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[7]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[8]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[9]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[10]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[11]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[12]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[13]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[14]",
+					"strict" : false
+				},
+				{
+					"name" : "DATA_IN_in[15]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

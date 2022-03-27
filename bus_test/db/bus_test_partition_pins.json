@@ -4,323 +4,163 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "STDP_OUT[0]",
+					"name" : "avs_fetchSoma_waitrequest",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_OUT[1]",
+					"name" : "avs_pullSynapse_waitrequest",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_OUT[2]",
+					"name" : "avm_pushSpike_address[0]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_OUT[3]",
+					"name" : "avm_pushSpike_address[1]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_OUT[4]",
+					"name" : "avm_pushSpike_address[2]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_OUT[5]",
+					"name" : "avm_pushSpike_address[3]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_OUT[6]",
+					"name" : "avm_pushSpike_address[4]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_OUT[7]",
+					"name" : "avm_pushSpike_address[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_0[0]",
+					"name" : "avm_pushSpike_address[6]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_0[1]",
+					"name" : "avm_pushSpike_address[7]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_0[2]",
+					"name" : "avm_pushSpike_address[8]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_0[3]",
+					"name" : "avm_pushSpike_address[9]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_0[4]",
+					"name" : "avm_pushSpike_address[10]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_0[5]",
+					"name" : "avm_pushSpike_address[11]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_0[6]",
+					"name" : "avm_pushSpike_address[12]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_0[7]",
+					"name" : "avm_pushSpike_address[13]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_1[0]",
+					"name" : "avm_pushSpike_address[14]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_1[1]",
+					"name" : "avm_pushSpike_address[15]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_1[2]",
+					"name" : "avm_pushSpike_write",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_1[3]",
+					"name" : "avm_pushSpike_writedata[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_1[4]",
+					"name" : "avm_pushSpike_writedata[1]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_1[5]",
+					"name" : "avm_pushSpike_writedata[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_1[6]",
+					"name" : "avm_pushSpike_writedata[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_1[7]",
+					"name" : "avm_pushSpike_writedata[4]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_2[0]",
+					"name" : "avm_pushSpike_writedata[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_2[1]",
+					"name" : "avm_pushSpike_writedata[6]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_2[2]",
+					"name" : "avm_pushSpike_writedata[7]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_2[3]",
+					"name" : "avm_pushSpike_writedata[8]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_2[4]",
+					"name" : "avm_pushSpike_writedata[9]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_2[5]",
+					"name" : "dbg_patchMembrane",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_2[6]",
+					"name" : "dbg_TIME[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_2[7]",
+					"name" : "dbg_TIME[1]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_3[0]",
+					"name" : "dbg_TIME[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_3[1]",
+					"name" : "dbg_TIME[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_3[2]",
+					"name" : "dbg_TIME[4]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_3[3]",
+					"name" : "dbg_TIME[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_3[4]",
+					"name" : "dbg_TIME[6]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_3[5]",
+					"name" : "dbg_TIME[7]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_3[6]",
+					"name" : "dbg_TIME[8]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_PRE_3[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_0[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_0[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_0[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_0[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_0[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_0[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_0[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_0[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_1[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_1[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_1[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_1[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_1[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_1[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_1[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_1[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_2[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_2[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_2[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_2[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_2[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_2[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_2[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_2[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_3[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_3[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_3[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_3[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_3[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_3[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_3[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_POST_3[7]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_DATA_CAL_POST[0]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_DATA_CAL_POST[1]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_DATA_CAL_POST[2]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_DATA_CAL_POST[3]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_DATA_CAL_POST[4]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_DATA_CAL_POST[5]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_DATA_CAL_POST[6]",
-					"strict" : false
-				},
-				{
-					"name" : "dbg_DATA_CAL_POST[7]",
+					"name" : "dbg_TIME[9]",
 					"strict" : false
 				},
 				{
@@ -332,151 +172,311 @@
 					"strict" : false
 				},
 				{
-					"name" : "dbg_SUM[0]",
+					"name" : "dbg_ADDR[2]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_SUM[1]",
+					"name" : "dbg_ADDR[3]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_SUM[2]",
+					"name" : "dbg_ADDR[4]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_SUM[3]",
+					"name" : "dbg_ADDR[5]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_SUM[4]",
+					"name" : "dbg_ADDR[6]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_SUM[5]",
+					"name" : "dbg_ADDR[7]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_SUM[6]",
+					"name" : "dbg_ADDR[8]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_SUM[7]",
+					"name" : "dbg_ADDR[9]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_TEMP_SUM[0]",
+					"name" : "dbg_ADDR[10]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_TEMP_SUM[1]",
+					"name" : "dbg_ADDR[11]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_TEMP_SUM[2]",
+					"name" : "dbg_ADDR[12]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_TEMP_SUM[3]",
+					"name" : "dbg_ADDR[13]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_TEMP_SUM[4]",
+					"name" : "dbg_ADDR[14]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_TEMP_SUM[5]",
+					"name" : "dbg_ADDR[15]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_TEMP_SUM[6]",
+					"name" : "dbg_Membrane[0]",
 					"strict" : false
 				},
 				{
-					"name" : "dbg_TEMP_SUM[7]",
+					"name" : "dbg_Membrane[1]",
 					"strict" : false
 				},
 				{
-					"name" : "sys_clk",
+					"name" : "dbg_Membrane[2]",
 					"strict" : false
 				},
 				{
-					"name" : "synapsePush",
+					"name" : "dbg_Membrane[3]",
 					"strict" : false
 				},
 				{
-					"name" : "sys_rst",
+					"name" : "dbg_Membrane[4]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_patchPREneuron",
+					"name" : "dbg_Membrane[5]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_patchPOSTneuron",
+					"name" : "dbg_Membrane[6]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_POST_FIFO[0]",
+					"name" : "dbg_Membrane[7]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_PRE_FIFO[0]",
+					"name" : "dbg_Membrane[8]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_POST_FIFO[1]",
+					"name" : "dbg_Membrane[9]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_PRE_FIFO[1]",
+					"name" : "dbg_Membrane[10]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_POST_FIFO[2]",
+					"name" : "dbg_Membrane[11]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_PRE_FIFO[2]",
+					"name" : "dbg_Membrane[12]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_POST_FIFO[3]",
+					"name" : "dbg_Membrane[13]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_PRE_FIFO[3]",
+					"name" : "dbg_Membrane[14]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_POST_FIFO[4]",
+					"name" : "dbg_Membrane[15]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_PRE_FIFO[4]",
+					"name" : "avs_fetchSoma_write",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_POST_FIFO[5]",
+					"name" : "rst_soma",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_PRE_FIFO[5]",
+					"name" : "avs_pullSynapse_write",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_POST_FIFO[6]",
+					"name" : "avm_pushSpike_waitrequest",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_PRE_FIFO[6]",
+					"name" : "clk_soma",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_POST_FIFO[7]",
+					"name" : "avs_fetchSoma_writedata[0]",
 					"strict" : false
 				},
 				{
-					"name" : "STDP_DATAIN_PRE_FIFO[7]",
+					"name" : "avs_fetchSoma_writedata[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[4]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[5]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[6]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[7]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[8]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[9]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[10]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[11]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[12]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[13]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[14]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_fetchSoma_writedata[15]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[0]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[1]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[2]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[3]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[4]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[5]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[6]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[7]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[8]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[9]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[16]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[17]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[18]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[19]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[20]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[21]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[22]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[23]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[24]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[25]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[26]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[27]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[28]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[29]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[30]",
+					"strict" : false
+				},
+				{
+					"name" : "avs_pullSynapse_writedata[31]",
 					"strict" : false
 				}
 			]
