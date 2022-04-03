@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Sun Mar 27 23:59:40 2022
+Analysis & Synthesis Status : Successful - Sun Apr  3 16:39:22 2022
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : bus_test
-Top-level Entity Name : soma
+Top-level Entity Name : server_unit
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 64
-Total pins : 139
+Total registers : 16
+Total pins : 402
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

@@ -2,7 +2,7 @@
 # ** Warning: (vlib-34) Library already exists at "work".
 # Errors: 0, Warnings: 1
 # Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 00:00:46 on Mar 28,2022
+# Start time: 03:13:26 on Apr 03,2022
 # vcom -work work bus_test.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -14,22 +14,22 @@
 # -- Loading package altera_lnsim_components
 # -- Loading package cyclonev_atom_pack
 # -- Loading package cyclonev_components
-# -- Compiling entity soma
-# -- Compiling architecture structure of soma
-# End time: 00:00:46 on Mar 28,2022, Elapsed time: 0:00:00
+# -- Compiling entity Synapse_Unit
+# -- Compiling architecture structure of Synapse_Unit
+# End time: 03:13:26 on Apr 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Questa Intel Starter FPGA Edition-64 vcom 2021.2 Compiler 2021.04 Apr 14 2021
-# Start time: 00:00:46 on Mar 28,2022
-# vcom -work work SOMA_TEST.vwf.vht 
+# Start time: 03:13:26 on Apr 03,2022
+# vcom -work work SYNAPSE_CLR.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity soma_vhd_vec_tst
-# -- Compiling architecture soma_arch of soma_vhd_vec_tst
-# End time: 00:00:46 on Mar 28,2022, Elapsed time: 0:00:00
+# -- Compiling entity Synapse_Unit_vhd_vec_tst
+# -- Compiling architecture Synapse_Unit_arch of Synapse_Unit_vhd_vec_tst
+# End time: 03:13:26 on Apr 03,2022, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.soma_vhd_vec_tst 
-# Start time: 00:00:46 on Mar 28,2022
+# vsim -c -t 1ps -L cyclonev -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Synapse_Unit_vhd_vec_tst 
+# Start time: 03:13:26 on Apr 03,2022
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  Questa Intel Starter FPGA Edition-64
 # //  Version 2021.2 linux_x86_64 Apr 14 2021
@@ -48,7 +48,7 @@
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.soma_vhd_vec_tst(soma_arch)#1
+# Loading work.synapse_unit_vhd_vec_tst(synapse_unit_arch)#1
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading altera.dffeas_pack
@@ -56,79 +56,89 @@
 # Loading altera_lnsim.altera_lnsim_components
 # Loading cyclonev.cyclonev_atom_pack(body)
 # Loading cyclonev.cyclonev_components
-# Loading work.soma(structure)#1
+# Loading work.synapse_unit(structure)#1
 # Loading ieee.std_logic_arith(body)
 # Loading cyclonev.cyclonev_io_obuf(arch)#1
 # Loading cyclonev.cyclonev_io_ibuf(arch)#1
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#1
-# Loading altera.dffeas(vital_dffeas)#1
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#2
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#3
-# Loading altera.dffeas(vital_dffeas)#2
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#4
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#5
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#6
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#7
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#8
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#9
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#10
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#11
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#12
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#13
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#14
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#15
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#16
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#17
-# Loading altera.dffeas(vital_dffeas)#3
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#18
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#19
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#20
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#21
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#22
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#23
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#24
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#25
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#26
-# Loading altera.dffeas(vital_dffeas)#4
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#27
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#28
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#29
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#30
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#31
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#32
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#33
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#34
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#35
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#36
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#37
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#38
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#39
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#40
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#41
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#42
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#43
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#44
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#45
+# Loading altera.dffeas(vital_dffeas)#1
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#271
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#46
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#47
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#48
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#49
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#717
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#17
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#184
+# Loading altera.dffeas(vital_dffeas)#2
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#7
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#704
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#699
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#72
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#404
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#273
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#162
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#24
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#412
+# Loading altera.dffeas(vital_dffeas)#3
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#426
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#714
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#134
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#626
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#686
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#50
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#42
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#716
 # Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#51
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#52
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#53
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#54
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#55
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#56
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#57
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#58
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#59
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#60
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#61
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#632
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#671
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#64
+# Loading altera.dffeas(vital_dffeas)#4
 # Loading altera.dffeas(vital_dffeas)#5
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#62
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#695
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#67
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#68
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#69
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#77
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#227
 # Loading altera.dffeas(vital_dffeas)#6
-# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#63
+# Loading altera.dffeas(vital_dffeas)#7
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#73
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#76
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#678
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#152
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#322
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#598
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#85
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#88
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#89
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#91
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#457
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#267
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#110
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#251
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#243
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#157
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#123
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#124
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#155
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#705
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#700
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#182
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#357
+# Loading altera.dffeas(vital_dffeas)#8
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#231
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#258
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#327
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#538
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#352
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#355
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#406
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#422
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#467
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#703
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#553
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#554
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#679
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#710
+# Loading cyclonev.cyclonev_lcell_comb(vital_lcell_comb)#718
 # after#35
-# End time: 00:00:47 on Mar 28,2022, Elapsed time: 0:00:01
+# End time: 03:13:28 on Apr 03,2022, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 0

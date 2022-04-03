@@ -26,22 +26,22 @@ entity shift_reg_post_add is
 			
 
 			synapsePush : in std_logic;
-			STDP_OUT : out std_logic_vector(DATA_WID-1 downto 0)
+			STDP_OUT : out std_logic_vector(DATA_WID-1 downto 0);
 			
-			-- dbg_PRE_0 : out std_logic_vector(DATA_WID-1 downto 0);
-			-- dbg_PRE_1 : out std_logic_vector(DATA_WID-1 downto 0);
-			-- dbg_PRE_2 : out std_logic_vector(DATA_WID-1 downto 0);
-			-- dbg_PRE_3 : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_PRE_0 : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_PRE_1 : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_PRE_2 : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_PRE_3 : out std_logic_vector(DATA_WID-1 downto 0);
 
-			-- dbg_POST_0 : out std_logic_vector(DATA_WID-1 downto 0);
-			-- dbg_POST_1 : out std_logic_vector(DATA_WID-1 downto 0);
-			-- dbg_POST_2 : out std_logic_vector(DATA_WID-1 downto 0);
-			-- dbg_POST_3 : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_POST_0 : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_POST_1 : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_POST_2 : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_POST_3 : out std_logic_vector(DATA_WID-1 downto 0);
 
-			-- dbg_DATA_CAL_POST : out std_logic_vector(DATA_WID-1 downto 0);
-			-- dbg_ADDR : out std_logic_vector(ADDR_WID-1downto 0);
-			-- dbg_SUM : out std_logic_vector(DATA_WID-1 downto 0);
-			-- dbg_TEMP_SUM : out std_logic_vector(DATA_WID-1 downto 0)
+			dbg_DATA_CAL_POST : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_ADDR : out std_logic_vector(ADDR_WID-1downto 0);
+			dbg_SUM : out std_logic_vector(DATA_WID-1 downto 0);
+			dbg_TEMP_SUM : out std_logic_vector(DATA_WID-1 downto 0)
 		
 	);
 end entity shift_reg_post_add;
@@ -70,10 +70,10 @@ architecture rtl of shift_reg_post_add is
 					POP_ADDR : in std_logic_vector(ADDR_WID-1 downto 0);
 					POP_OUT : out std_logic_vector(DATA_WID-1 downto 0);
 		
-					-- dbg_0 : out std_logic_vector(DATA_WID-1 downto 0);
-					-- dbg_1 : out std_logic_vector(DATA_WID-1 downto 0);
-					-- dbg_2 : out std_logic_vector(DATA_WID-1 downto 0);
-					-- dbg_3 : out std_logic_vector(DATA_WID-1 downto 0);
+					dbg_0 : out std_logic_vector(DATA_WID-1 downto 0);
+					dbg_1 : out std_logic_vector(DATA_WID-1 downto 0);
+					dbg_2 : out std_logic_vector(DATA_WID-1 downto 0);
+					dbg_3 : out std_logic_vector(DATA_WID-1 downto 0);
 					TOP : out std_logic_vector(ADDR_WID-1 downto 0)
 	
 		);
@@ -84,7 +84,7 @@ architecture rtl of shift_reg_post_add is
 	signal CAL_ADDR : std_logic_vector(ADDR_WID-1 downto 0);
 	signal DATA_CAL_POST : std_logic_vector(DATA_WID-1 downto 0);
 	signal temp_sum : std_logic_vector(DATA_WID-1 downto 0);
-	-- signal PRE_SUM : sfixed(REAL_WID downto -IMG_WID);
+	signal PRE_SUM : sfixed(REAL_WID downto -IMG_WID);
 	signal PRE_SUM_temp : sfixed(REAL_WID downto -IMG_WID);
 	signal TOP_PRE : std_logic_vector(ADDR_WID-1 downto 0);
 	signal TOP_POST : std_logic_vector(ADDR_WID-1 downto 0);
@@ -117,10 +117,10 @@ begin
 					POP_ADDR => ZERO_ADDR,
 					POP_OUT => ZERO_DATA_OUT,
 
-					-- dbg_0 => dbg_PRE_0,
-					-- dbg_1 => dbg_PRE_1,
-					-- dbg_2 => dbg_PRE_2,
-					-- dbg_3 => dbg_PRE_3,
+					dbg_0 => dbg_PRE_0,
+					dbg_1 => dbg_PRE_1,
+					dbg_2 => dbg_PRE_2,
+					dbg_3 => dbg_PRE_3,
 					TOP => TOP_PRE
 	);
 
@@ -146,10 +146,10 @@ begin
 					POP_ADDR =>CAL_ADDR,
 					POP_OUT => DATA_CAL_POST,
 
-					-- dbg_0 => dbg_POST_0,
-					-- dbg_1 => dbg_POST_1,
-					-- dbg_2 => dbg_POST_2,
-					-- dbg_3 => dbg_POST_3,
+					dbg_0 => dbg_POST_0,
+					dbg_1 => dbg_POST_1,
+					dbg_2 => dbg_POST_2,
+					dbg_3 => dbg_POST_3,
 					TOP => TOP_POST
 	);
 process(sys_clk, sys_rst,
@@ -198,8 +198,8 @@ elsif falling_edge(sys_clk) then
 end if;
 -- dbg_SUM <= std_logic_vector(PRE_SUM(REAL_WID-1 downto -IMG_WID));
 end process;
-	-- dbg_DATA_CAL_POST <= DATA_CAL_POST;
-	-- dbg_ADDR <= CAL_ADDR;
-	-- dbg_SUM <= std_logic_vector(PRE_SUM(REAL_WID-1 downto -IMG_WID));
-	-- dbg_TEMP_SUM <= temp_sum;
+	dbg_DATA_CAL_POST <= DATA_CAL_POST;
+	dbg_ADDR <= CAL_ADDR;
+	dbg_SUM <= std_logic_vector(PRE_SUM(REAL_WID-1 downto -IMG_WID));
+	dbg_TEMP_SUM <= temp_sum;
 end architecture rtl;

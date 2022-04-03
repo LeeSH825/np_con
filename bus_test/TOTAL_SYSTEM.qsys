@@ -1,0 +1,1598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags=""
+   categories="System" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element SERVER_UNIT_0
+   {
+      datum _sortIndex
+      {
+         value = "1";
+         type = "int";
+      }
+   }
+   element SERVER_UNIT_0.pullsoma
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element SERVER_UNIT_0.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_0
+   {
+      datum _sortIndex
+      {
+         value = "2";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_0.initsoma
+   {
+      datum baseAddress
+      {
+         value = "18";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_0.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "36";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_1
+   {
+      datum _sortIndex
+      {
+         value = "3";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_1.initsoma
+   {
+      datum baseAddress
+      {
+         value = "16";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_1.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_2
+   {
+      datum _sortIndex
+      {
+         value = "4";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_2.initsoma
+   {
+      datum baseAddress
+      {
+         value = "14";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_2.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "28";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_3
+   {
+      datum _sortIndex
+      {
+         value = "5";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_3.initsoma
+   {
+      datum baseAddress
+      {
+         value = "12";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_3.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "24";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_4
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_4.initsoma
+   {
+      datum baseAddress
+      {
+         value = "10";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_4.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "20";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_5
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_5.initsoma
+   {
+      datum baseAddress
+      {
+         value = "8";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_5.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "16";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_6
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_6.initsoma
+   {
+      datum baseAddress
+      {
+         value = "6";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_6.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "12";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_7
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_7.initsoma
+   {
+      datum baseAddress
+      {
+         value = "4";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_7.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "8";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_8
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_8.initsoma
+   {
+      datum baseAddress
+      {
+         value = "2";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_8.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "4";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_9
+   {
+      datum _sortIndex
+      {
+         value = "11";
+         type = "int";
+      }
+   }
+   element SOMA_UNIT_9.initsoma
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element SOMA_UNIT_9.pullsynapse
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_0
+   {
+      datum _sortIndex
+      {
+         value = "12";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_0.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "40";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_1
+   {
+      datum _sortIndex
+      {
+         value = "13";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_1.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "36";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_1.pullspike
+   {
+      datum baseAddress
+      {
+         value = "36";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_10
+   {
+      datum _sortIndex
+      {
+         value = "22";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_10.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_10.pullspike
+   {
+      datum baseAddress
+      {
+         value = "0";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_2
+   {
+      datum _sortIndex
+      {
+         value = "14";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_2.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_2.pullspike
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_3
+   {
+      datum _sortIndex
+      {
+         value = "15";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_3.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "28";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_3.pullspike
+   {
+      datum baseAddress
+      {
+         value = "28";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_4
+   {
+      datum _sortIndex
+      {
+         value = "16";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_4.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "24";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_4.pullspike
+   {
+      datum baseAddress
+      {
+         value = "24";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_5
+   {
+      datum _sortIndex
+      {
+         value = "17";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_5.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "20";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_5.pullspike
+   {
+      datum baseAddress
+      {
+         value = "20";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_6
+   {
+      datum _sortIndex
+      {
+         value = "18";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_6.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "16";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_6.pullspike
+   {
+      datum baseAddress
+      {
+         value = "16";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_7
+   {
+      datum _sortIndex
+      {
+         value = "19";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_7.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "12";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_7.pullspike
+   {
+      datum baseAddress
+      {
+         value = "12";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_8
+   {
+      datum _sortIndex
+      {
+         value = "20";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_8.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "8";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_8.pullspike
+   {
+      datum baseAddress
+      {
+         value = "8";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_9
+   {
+      datum _sortIndex
+      {
+         value = "21";
+         type = "int";
+      }
+   }
+   element SYNAPSE_UNIT_9.initsynapse
+   {
+      datum baseAddress
+      {
+         value = "4";
+         type = "String";
+      }
+   }
+   element SYNAPSE_UNIT_9.pullspike
+   {
+      datum baseAddress
+      {
+         value = "4";
+         type = "String";
+      }
+   }
+   element clk_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="5CGXFC9E7F35C8" />
+ <parameter name="deviceFamily" value="Cyclone V" />
+ <parameter name="deviceSpeedGrade" value="8_H7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="false" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="bus_test.qpf" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
+ <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
+ <module name="SERVER_UNIT_0" kind="SERVER_UNIT" version="1.0" enabled="1" />
+ <module name="SOMA_UNIT_0" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_1" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_2" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_3" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_4" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_5" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_6" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_7" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_8" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SOMA_UNIT_9" kind="SOMA_UNIT" version="1.0" enabled="1">
+  <parameter name="BYTEENABLE_WIDTH" value="4" />
+  <parameter name="FETCH_ADDR_WIDTH" value="2" />
+  <parameter name="INTERVAL_TIME_IMG" value="5" />
+  <parameter name="INTERVAL_TIME_REAL" value="5" />
+  <parameter name="INTERVAL_TIME_WIDTH" value="10" />
+  <parameter name="MEMBRANE_IMG" value="8" />
+  <parameter name="MEMBRANE_REAL" value="8" />
+  <parameter name="MEMBRANE_WIDTH" value="16" />
+  <parameter name="SERVER_ADDR_WIDTH" value="16" />
+  <parameter name="SPIKE_ADDR_WIDTH" value="32" />
+  <parameter name="SPIKE_DATA_WIDTH" value="16" />
+  <parameter name="SYNAPSE_ADDR_WIDTH" value="32" />
+  <parameter name="SYNAPSE_DATA_WIDTH" value="32" />
+  <parameter name="SYNAPSE_WEIGHT_IMG" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_REAL" value="8" />
+  <parameter name="SYNAPSE_WEIGHT_WIDTH" value="16" />
+ </module>
+ <module name="SYNAPSE_UNIT_0" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_1" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_10" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_2" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_3" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_4" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_5" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_6" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_7" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_8" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="SYNAPSE_UNIT_9" kind="SYNAPSE_UNIT" version="1.0" enabled="1">
+  <parameter name="NUM_STDP_POST_NEURONS" value="2" />
+  <parameter name="NUM_STDP_PRE_NEURONS" value="4" />
+  <parameter name="WIDTH_STDP_ADDR_POST" value="1" />
+  <parameter name="WIDTH_STDP_ADDR_PRE" value="2" />
+ </module>
+ <module name="clk_0" kind="clock_source" version="21.1" enabled="1">
+  <parameter name="clockFrequency" value="50000000" />
+  <parameter name="clockFrequencyKnown" value="true" />
+  <parameter name="inputClockFrequency" value="0" />
+  <parameter name="resetSynchronousEdges" value="NONE" />
+ </module>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_0.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0012" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_1.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_2.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000e" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_3.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000c" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_4.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000a" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_5.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0008" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_6.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0006" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_7.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0004" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_8.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0002" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsoma"
+   end="SOMA_UNIT_9.initsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_0.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0028" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_1.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0024" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_2.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_3.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x001c" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_4.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0018" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_5.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0014" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_6.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_7.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000c" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_8.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0008" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_9.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0004" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.initsynapse"
+   end="SYNAPSE_UNIT_10.initsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_1.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0024" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_2.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_3.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x001c" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_4.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0018" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_5.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0014" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_6.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_7.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000c" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_8.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0008" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_9.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0004" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsoma"
+   end="SYNAPSE_UNIT_10.pullspike">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_9.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_8.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_7.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_6.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_5.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_4.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_3.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_2.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_1.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SOMA_UNIT_0.pushspike"
+   end="SERVER_UNIT_0.pullsoma">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0024" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_1.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0020" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_2.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x001c" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_3.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0018" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_4.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0014" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_5.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0010" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_6.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x000c" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_7.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0008" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_8.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0004" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SERVER_UNIT_0.pushsynapse"
+   end="SOMA_UNIT_9.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_2.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_1.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_0.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_3.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_4.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_5.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_6.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_7.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_8.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_9.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="21.1"
+   start="SYNAPSE_UNIT_10.pushsynapse"
+   end="SERVER_UNIT_0.pullsynapse">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x0000" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SERVER_UNIT_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_0.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_1.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_2.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_3.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_4.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_5.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_6.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_7.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_8.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SOMA_UNIT_9.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_1.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_2.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_3.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_4.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_5.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_6.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_7.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_8.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_9.clock_sink" />
+ <connection
+   kind="clock"
+   version="21.1"
+   start="clk_0.clk"
+   end="SYNAPSE_UNIT_10.clock_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SERVER_UNIT_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_0.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_1.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_2.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_3.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_4.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_5.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_6.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_7.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_8.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SOMA_UNIT_9.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_1.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_2.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_3.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_4.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_5.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_6.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_7.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_8.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_9.reset_sink" />
+ <connection
+   kind="reset"
+   version="21.1"
+   start="clk_0.clk_reset"
+   end="SYNAPSE_UNIT_10.reset_sink" />
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>

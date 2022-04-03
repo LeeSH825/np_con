@@ -1,19 +1,160 @@
 
-State Machine - |soma|statePushSPike
-Name statePushSPike.STATE_RST statePushSPike.STATE_WAIT statePushSPike.STATE_SPIKE statePushSPike.STATE_IDLE 
-statePushSPike.STATE_IDLE 0 0 0 0 
-statePushSPike.STATE_SPIKE 0 0 1 1 
-statePushSPike.STATE_WAIT 0 1 0 1 
-statePushSPike.STATE_RST 1 0 0 1 
+State Machine - |server_unit|Server_module:SOMA_SERVER|stateInitModule_next
+Name stateInitModule_next.STATE_WAIT stateInitModule_next.STATE_INIT stateInitModule_next.STATE_IDLE 
+stateInitModule_next.STATE_IDLE 0 0 0 
+stateInitModule_next.STATE_INIT 0 1 1 
+stateInitModule_next.STATE_WAIT 1 0 1 
 
-State Machine - |soma|statePullSynapse
-Name statePullSynapse.STATE_WAIT statePullSynapse.STATE_PATCH statePullSynapse.STATE_IDLE 
-statePullSynapse.STATE_IDLE 0 0 0 
-statePullSynapse.STATE_PATCH 0 1 1 
-statePullSynapse.STATE_WAIT 1 0 1 
+State Machine - |server_unit|Server_module:SOMA_SERVER|stateFindTargetIN_next
+Name stateFindTargetIN_next.STATE_WAIT stateFindTargetIN_next.STATE_FIND stateFindTargetIN_next.STATE_IDLE 
+stateFindTargetIN_next.STATE_IDLE 0 0 0 
+stateFindTargetIN_next.STATE_FIND 0 1 1 
+stateFindTargetIN_next.STATE_WAIT 1 0 1 
 
-State Machine - |soma|stateFetchSoma
-Name stateFetchSoma.STATE_LOCK stateFetchSoma.STATE_FETCH stateFetchSoma.STATE_IDLE 
-stateFetchSoma.STATE_IDLE 0 0 0 
-stateFetchSoma.STATE_FETCH 0 1 1 
-stateFetchSoma.STATE_LOCK 1 0 1 
+State Machine - |server_unit|Server_module:SOMA_SERVER|stateFindTargetAddr_next
+Name stateFindTargetAddr_next.STATE_WAIT stateFindTargetAddr_next.STATE_FIND stateFindTargetAddr_next.STATE_IDLE 
+stateFindTargetAddr_next.STATE_IDLE 0 0 0 
+stateFindTargetAddr_next.STATE_FIND 0 1 1 
+stateFindTargetAddr_next.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|stateQueryData_next
+Name stateQueryData_next.STATE_WAIT stateQueryData_next.STATE_QUERY stateQueryData_next.STATE_IDLE 
+stateQueryData_next.STATE_IDLE 0 0 0 
+stateQueryData_next.STATE_QUERY 0 1 1 
+stateQueryData_next.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|statePushData_next
+Name statePushData_next.STATE_WAIT statePushData_next.STATE_PUSH statePushData_next.STATE_REQ statePushData_next.STATE_IDLE 
+statePushData_next.STATE_IDLE 0 0 0 0 
+statePushData_next.STATE_REQ 0 0 1 1 
+statePushData_next.STATE_PUSH 0 1 0 1 
+statePushData_next.STATE_WAIT 1 0 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|statePullData_next
+Name statePullData_next.STATE_PATCH_WITH_FOUND statePullData_next.STATE_FIND statePullData_next.STATE_QUERY statePullData_next.STATE_PUSH statePullData_next.STATE_PATCH statePullData_next.STATE_IDLE 
+statePullData_next.STATE_IDLE 0 0 0 0 0 0 
+statePullData_next.STATE_PATCH 0 0 0 0 1 1 
+statePullData_next.STATE_PUSH 0 0 0 1 0 1 
+statePullData_next.STATE_QUERY 0 0 1 0 0 1 
+statePullData_next.STATE_FIND 0 1 0 0 0 1 
+statePullData_next.STATE_PATCH_WITH_FOUND 1 0 0 0 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|stateQueryData
+Name stateQueryData.STATE_WAIT stateQueryData.STATE_QUERY stateQueryData.STATE_IDLE 
+stateQueryData.STATE_IDLE 0 0 0 
+stateQueryData.STATE_QUERY 0 1 1 
+stateQueryData.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|stateFindTargetIN
+Name stateFindTargetIN.STATE_WAIT stateFindTargetIN.STATE_FIND stateFindTargetIN.STATE_IDLE 
+stateFindTargetIN.STATE_IDLE 0 0 0 
+stateFindTargetIN.STATE_FIND 0 1 1 
+stateFindTargetIN.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|stateFindTargetAddr
+Name stateFindTargetAddr.STATE_WAIT stateFindTargetAddr.STATE_FIND stateFindTargetAddr.STATE_IDLE 
+stateFindTargetAddr.STATE_IDLE 0 0 0 
+stateFindTargetAddr.STATE_FIND 0 1 1 
+stateFindTargetAddr.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|stateInitModule
+Name stateInitModule.STATE_WAIT stateInitModule.STATE_INIT stateInitModule.STATE_IDLE 
+stateInitModule.STATE_IDLE 0 0 0 
+stateInitModule.STATE_INIT 0 1 1 
+stateInitModule.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|statePushData
+Name statePushData.STATE_WAIT statePushData.STATE_PUSH statePushData.STATE_REQ statePushData.STATE_IDLE 
+statePushData.STATE_IDLE 0 0 0 0 
+statePushData.STATE_REQ 0 0 1 1 
+statePushData.STATE_PUSH 0 1 0 1 
+statePushData.STATE_WAIT 1 0 0 1 
+
+State Machine - |server_unit|Server_module:SOMA_SERVER|statePullData
+Name statePullData.STATE_PATCH_WITH_FOUND statePullData.STATE_FIND statePullData.STATE_QUERY statePullData.STATE_PUSH statePullData.STATE_PATCH statePullData.STATE_IDLE 
+statePullData.STATE_IDLE 0 0 0 0 0 0 
+statePullData.STATE_PATCH 0 0 0 0 1 1 
+statePullData.STATE_PUSH 0 0 0 1 0 1 
+statePullData.STATE_QUERY 0 0 1 0 0 1 
+statePullData.STATE_FIND 0 1 0 0 0 1 
+statePullData.STATE_PATCH_WITH_FOUND 1 0 0 0 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|stateInitModule_next
+Name stateInitModule_next.STATE_WAIT stateInitModule_next.STATE_INIT stateInitModule_next.STATE_IDLE 
+stateInitModule_next.STATE_IDLE 0 0 0 
+stateInitModule_next.STATE_INIT 0 1 1 
+stateInitModule_next.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|stateFindTargetIN_next
+Name stateFindTargetIN_next.STATE_WAIT stateFindTargetIN_next.STATE_FIND stateFindTargetIN_next.STATE_IDLE 
+stateFindTargetIN_next.STATE_IDLE 0 0 0 
+stateFindTargetIN_next.STATE_FIND 0 1 1 
+stateFindTargetIN_next.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|stateFindTargetAddr_next
+Name stateFindTargetAddr_next.STATE_WAIT stateFindTargetAddr_next.STATE_FIND stateFindTargetAddr_next.STATE_IDLE 
+stateFindTargetAddr_next.STATE_IDLE 0 0 0 
+stateFindTargetAddr_next.STATE_FIND 0 1 1 
+stateFindTargetAddr_next.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|stateQueryData_next
+Name stateQueryData_next.STATE_WAIT stateQueryData_next.STATE_QUERY stateQueryData_next.STATE_IDLE 
+stateQueryData_next.STATE_IDLE 0 0 0 
+stateQueryData_next.STATE_QUERY 0 1 1 
+stateQueryData_next.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|statePushData_next
+Name statePushData_next.STATE_WAIT statePushData_next.STATE_PUSH statePushData_next.STATE_REQ statePushData_next.STATE_IDLE 
+statePushData_next.STATE_IDLE 0 0 0 0 
+statePushData_next.STATE_REQ 0 0 1 1 
+statePushData_next.STATE_PUSH 0 1 0 1 
+statePushData_next.STATE_WAIT 1 0 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|statePullData_next
+Name statePullData_next.STATE_PATCH_WITH_FOUND statePullData_next.STATE_FIND statePullData_next.STATE_QUERY statePullData_next.STATE_PUSH statePullData_next.STATE_PATCH statePullData_next.STATE_IDLE 
+statePullData_next.STATE_IDLE 0 0 0 0 0 0 
+statePullData_next.STATE_PATCH 0 0 0 0 1 1 
+statePullData_next.STATE_PUSH 0 0 0 1 0 1 
+statePullData_next.STATE_QUERY 0 0 1 0 0 1 
+statePullData_next.STATE_FIND 0 1 0 0 0 1 
+statePullData_next.STATE_PATCH_WITH_FOUND 1 0 0 0 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|stateQueryData
+Name stateQueryData.STATE_WAIT stateQueryData.STATE_QUERY stateQueryData.STATE_IDLE 
+stateQueryData.STATE_IDLE 0 0 0 
+stateQueryData.STATE_QUERY 0 1 1 
+stateQueryData.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|stateFindTargetIN
+Name stateFindTargetIN.STATE_WAIT stateFindTargetIN.STATE_FIND stateFindTargetIN.STATE_IDLE 
+stateFindTargetIN.STATE_IDLE 0 0 0 
+stateFindTargetIN.STATE_FIND 0 1 1 
+stateFindTargetIN.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|stateFindTargetAddr
+Name stateFindTargetAddr.STATE_WAIT stateFindTargetAddr.STATE_FIND stateFindTargetAddr.STATE_IDLE 
+stateFindTargetAddr.STATE_IDLE 0 0 0 
+stateFindTargetAddr.STATE_FIND 0 1 1 
+stateFindTargetAddr.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|stateInitModule
+Name stateInitModule.STATE_WAIT stateInitModule.STATE_INIT stateInitModule.STATE_IDLE 
+stateInitModule.STATE_IDLE 0 0 0 
+stateInitModule.STATE_INIT 0 1 1 
+stateInitModule.STATE_WAIT 1 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|statePushData
+Name statePushData.STATE_WAIT statePushData.STATE_PUSH statePushData.STATE_REQ statePushData.STATE_IDLE 
+statePushData.STATE_IDLE 0 0 0 0 
+statePushData.STATE_REQ 0 0 1 1 
+statePushData.STATE_PUSH 0 1 0 1 
+statePushData.STATE_WAIT 1 0 0 1 
+
+State Machine - |server_unit|Server_module:SYNAPSE_SERVER|statePullData
+Name statePullData.STATE_PATCH_WITH_FOUND statePullData.STATE_FIND statePullData.STATE_QUERY statePullData.STATE_PUSH statePullData.STATE_PATCH statePullData.STATE_IDLE 
+statePullData.STATE_IDLE 0 0 0 0 0 0 
+statePullData.STATE_PATCH 0 0 0 0 1 1 
+statePullData.STATE_PUSH 0 0 0 1 0 1 
+statePullData.STATE_QUERY 0 0 1 0 0 1 
+statePullData.STATE_FIND 0 1 0 0 0 1 
+statePullData.STATE_PATCH_WITH_FOUND 1 0 0 0 0 1 
